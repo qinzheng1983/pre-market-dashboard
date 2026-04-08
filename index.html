@@ -164,6 +164,13 @@
             color: #7f8c8d;
             margin-top: 5px;
         }
+        .update-badge {
+            background-color: #27ae60;
+            color: white;
+            padding: 3px 10px;
+            font-size: 11px;
+            border-radius: 3px;
+        }
     </style>
 </head>
 <body>
@@ -175,7 +182,7 @@
                     <tr>
                         <td align="center">
                             <h1>盘前市场简报</h1>
-                            <div class="date">2026年4月8日 星期三 | 数据截止: 11:00 CST</div>
+                            <div class="date">2026年4月8日 星期三 | 数据截止: 11:20 CST <span class="update-badge">已更新</span></div>
                             <div style="margin-top: 10px;">
                                 <span class="star-rating">★★★★★</span>
                             </div>
@@ -188,7 +195,7 @@
                 <div class="section">
                     <div class="highlight-box">
                         <strong style="color: #e94560; font-size: 16px;">🎯 今日重点关注</strong><br>
-                        美伊停火协议已生效！特朗普同意暂停对伊朗军事行动两周，伊朗接受巴基斯坦调停提议，停火于北京时间8时正式启动。美伊谈判将于4月10日在伊斯兰堡开始。地缘风险急剧降温，油价暴跌，黄金暴涨突破4850美元。
+                        美伊停火已正式生效（北京时间8:00）！伊朗公布10项停战条款，美伊谈判4月10日伊斯兰堡启动。霍尔木兹海峡两周内将安全通航。原油暴跌，黄金高位震荡，人民币持续升值至6.87区间。
                     </div>
                 </div>
 
@@ -198,26 +205,45 @@
                     <div class="usd-highlight">
                         <div style="font-size: 14px; margin-bottom: 5px;">USD/CNY 中间价（4月7日）</div>
                         <div class="value">6.8854</div>
-                        <div style="font-size: 14px; margin-top: 5px;">下调75点 | 人民币继续升值</div>
+                        <div style="font-size: 14px; margin-top: 5px;">下调75点 | 人民币持续升值</div>
                     </div>
+                    
+                    <div class="alert-box">
+                        <strong>🔴 实时数据更新（4月8日 10:26）</strong><br>
+                        中国银行折算价：<strong class="down">6.8680</strong>（人民币升值继续，较中间价再升174点）<br>
+                        在岸人民币：<strong class="down">6.8609</strong> | 离岸人民币：<strong class="down">6.8456</strong>
+                    </div>
+                    
                     <table class="data-table">
                         <tr>
                             <th>指标</th>
                             <th>数值</th>
                             <th>变化</th>
-                            <th>趋势</th>
+                            <th>备注</th>
                         </tr>
                         <tr>
-                            <td>USD/CNY 中间价</td>
+                            <td>USD/CNY 中间价（4/7）</td>
                             <td>6.8854</td>
                             <td class="down">-75bp</td>
-                            <td>人民币升值</td>
+                            <td>央行公布</td>
                         </tr>
                         <tr>
-                            <td>USD/CNY 收盘</td>
-                            <td>6.8781</td>
+                            <td>USD/CNY 中行折算</td>
+                            <td>6.8680</td>
+                            <td class="down">-174bp</td>
+                            <td>4/8 10:26更新</td>
+                        </tr>
+                        <tr>
+                            <td>在岸人民币</td>
+                            <td>6.8609</td>
                             <td class="down">-0.37%</td>
-                            <td>升值</td>
+                            <td>实时</td>
+                        </tr>
+                        <tr>
+                            <td>离岸人民币</td>
+                            <td>6.8456</td>
+                            <td class="down">-0.52%</td>
+                            <td>实时</td>
                         </tr>
                         <tr>
                             <td>美元指数</td>
@@ -227,13 +253,19 @@
                         </tr>
                     </table>
                     <p style="font-size: 12px; color: #666; margin-top: 10px;">
-                        <strong>对冲建议：</strong>维持75-85%对冲比例，美元应收可考虑在6.88-6.90区间锁汇。美伊停火可能进一步支撑人民币。
+                        <strong>对冲建议：</strong>维持70-80%对冲比例，美伊停火持续推升人民币汇率。美元应收可考虑在6.86-6.88区间分批锁汇，短期或测试6.85关口。
                     </p>
                 </div>
 
                 <!-- Global Markets -->
                 <div class="section">
                     <div class="section-title">全球市场概览</div>
+                    
+                    <div class="alert-box">
+                        <strong>美股（4月7日收盘）</strong>：道指-0.18%，标普+0.08%（五连涨），纳指+0.10%（五连涨）<br>
+                        <strong>亚市早盘</strong>：受停火消息提振，美股期货全线涨超2%
+                    </div>
+                    
                     <table class="data-table">
                         <tr>
                             <th>资产</th>
@@ -260,16 +292,22 @@
                             <td><span class="risk-low">五连涨</span></td>
                         </tr>
                         <tr>
-                            <td>布伦特原油</td>
+                            <td>布伦特原油(期货)</td>
                             <td>$95.49</td>
                             <td class="down">-7.67%</td>
                             <td><span class="risk-high">暴跌</span></td>
                         </tr>
                         <tr>
+                            <td>WTI原油</td>
+                            <td>$103.20</td>
+                            <td class="down">-8.67%</td>
+                            <td><span class="risk-high">跌破100</span></td>
+                        </tr>
+                        <tr>
                             <td>现货黄金</td>
-                            <td>$4,850+</td>
-                            <td class="up">+3.54%</td>
-                            <td><span class="risk-high">突破4850</span></td>
+                            <td>$4,774.65</td>
+                            <td class="up">+1.46%</td>
+                            <td><span class="risk-med">高位震荡</span></td>
                         </tr>
                     </table>
                 </div>
@@ -279,53 +317,73 @@
                     <div class="section-title">地缘风险动态</div>
                     
                     <div class="alert-box">
-                        <strong style="color: #e94560;">🔴 重大转折：美伊停火协议已生效</strong><br><br>
-                        <strong>协议要点：</strong><br>
-                        • 停火已于北京时间4月8日8时正式生效<br>
-                        • 特朗普同意暂停对伊朗轰炸和袭击两周<br>
-                        • 伊朗最高国家安全委员会接受巴基斯坦停火提议<br>
-                        • 以色列同意暂时停火，暂停对伊朗空袭<br>
-                        • 美伊谈判将于4月10日在巴基斯坦伊斯兰堡开始<br>
-                        • 停火前提：伊朗同意全面、立即、安全开放霍尔木兹海峡<br><br>
-                        <strong>伊朗十点提案核心内容：</strong><br>
-                        • 永久结束战争（非临时停火）<br>
-                        • 建立霍尔木兹海峡安全通行协议<br>
-                        • 解除所有对伊经济与金融制裁<br>
-                        • 美国作战部队从本地区撤出<br>
-                        • 战争赔偿与重建支持<br><br>
+                        <strong style="color: #27ae60;">🟢 重大突破：停火已正式生效</strong><br><br>
+                        <strong>生效时间</strong>：北京时间4月8日8:00（巴基斯坦总理夏巴兹宣布）<br><br>
+                        
+                        <strong>停火核心内容：</strong><br>
+                        • 美伊同意双向停火两周<br>
+                        • 美军暂停对伊朗轰炸和袭击<br>
+                        • 以色列同意暂停空袭<br>
+                        • 伊朗武装部队停止反击<br>
+                        • 美伊谈判4月10日在伊斯兰堡启动，为期两周<br><br>
+                        
+                        <strong>伊朗10项停战条款（通过巴基斯坦提交美方）：</strong><br>
+                        1. 霍尔木兹海峡受控通行（伊朗主导）<br>
+                        2. 结束针对地区所有抵抗力量的战争<br>
+                        3. 美国作战部队从本地区撤出<br>
+                        4. 解除所有一级和次级制裁<br>
+                        5. 解冻伊朗所有被冻结海外资产<br>
+                        6. 全额赔偿伊朗战争损失<br>
+                        7. 撤销国际原子能机构和联合国安理会相关决议<br>
+                        8. 保留伊朗和平利用核能权利<br>
+                        9. 通过联合国安理会决议使条款具有约束力<br>
+                        10. 建立地区集体安全机制<br><br>
+                        
+                        <strong>霍尔木兹海峡通航安排：</strong><br>
+                        • 伊朗外长：未来两周内将实现安全通航（技术限制允许前提下）<br>
+                        • 伊朗和阿曼将对通过海峡的船只收取通行费<br>
+                        • 通行费用于伊朗重建<br><br>
+                        
                         <strong>市场反应：</strong><br>
-                        • WTI原油暴跌超17%，一度跌破$91/桶<br>
-                        • 布伦特原油失守$96，日内跌超7%<br>
-                        • 现货黄金暴涨突破$4850，日内涨3.54%<br>
-                        • 美股期货大涨，纳指期货涨幅超2%
+                        • WTI原油一度暴跌17.5%，跌破$100关口<br>
+                        • 布伦特期货失守$96，日内跌超7%<br>
+                        • 美股期货全线大涨超2%
                     </div>
 
                     <div class="news-item">
                         <span class="news-time">08:00 CST</span><br>
-                        <strong>停火正式生效</strong><br>
-                        巴基斯坦宣布伊朗、美国及两国盟友已同意立即在包括黎巴嫩在内的所有地区停火，"立即生效"。
+                        <strong>全面停火正式生效</strong><br>
+                        巴基斯坦总理夏巴兹宣布：伊朗、美国及两国盟友已同意立即在包括黎巴嫩在内的所有地区停火，"立即生效"。
                     </div>
 
                     <div class="news-item">
                         <span class="news-time">07:45 CST</span><br>
                         <strong>特朗普宣布停火决定</strong><br>
-                        特朗普在社交媒体发文称，同意暂停对伊朗轰炸和袭击两周，前提是伊朗"全面、立即且安全地"开放霍尔木兹海峡。
+                        特朗普发文：同意暂停对伊朗轰炸和袭击两周，前提是伊朗"全面、立即且安全地"开放霍尔木兹海峡。
                     </div>
 
                     <div class="news-item">
                         <span class="news-time">08:30 CST</span><br>
-                        <strong>伊朗外长表态</strong><br>
-                        伊朗外长阿拉格齐表示，如果美以停止对伊朗袭击，伊朗武装部队将停止反击，未来两周船只将能安全通过霍尔木兹海峡。
+                        <strong>伊朗公布10项停战条款</strong><br>
+                        伊朗最高国家安全委员会公布通过巴基斯坦向美方提交的10项停战条款主要内容。
+                    </div>
+
+                    <div class="news-item">
+                        <span class="news-time">09:00 CST</span><br>
+                        <strong>霍尔木兹海峡收费计划曝光</strong><br>
+                        匿名的地区官员透露：为期两周的停火计划包括允许伊朗和阿曼对通过霍尔木兹海峡的船只收取通行费。
                     </div>
                 </div>
 
                 <!-- Oil Market Alert -->
                 <div class="section">
                     <div class="section-title">能源市场警示</div>
+                    
                     <div class="highlight-box">
-                        <strong>期现价差历史极值持续</strong><br>
-                        尽管期货价格暴跌，即期布伦特（Dated Brent）仍升至<strong>$144.42/桶</strong>，创历史新高。现货价格较6月期货高出近$50，反映可立即交付原油的供应恐慌仍未解除。霍尔木兹海峡通航恢复需时，短期现货紧张局面料将持续。
+                        <strong>期现价差极端分化</strong><br>
+                        尽管期货价格暴跌，即期布伦特（Dated Brent）仍高达<strong>$144.42/桶</strong>，创历史新高。现货价格较期货高出约$50，反映即时交付原油的供应恐慌仍未解除。霍尔木兹海峡通航恢复需要时间，短期现货紧张局面料将持续。
                     </div>
+                    
                     <table class="data-table">
                         <tr>
                             <th>品种</th>
@@ -334,10 +392,16 @@
                             <th>备注</th>
                         </tr>
                         <tr>
-                            <td>布伦特期货</td>
+                            <td>布伦特期货(连续)</td>
                             <td>$95.49</td>
                             <td class="down">-7.67%</td>
                             <td>盘中最低$91.70</td>
+                        </tr>
+                        <tr>
+                            <td>布伦特6月合约</td>
+                            <td>$109.27</td>
+                            <td class="down">-0.50美元</td>
+                            <td>结算价</td>
                         </tr>
                         <tr>
                             <td>即期布伦特现货</td>
@@ -347,11 +411,15 @@
                         </tr>
                         <tr>
                             <td>WTI原油</td>
-                            <td>$91.05-</td>
-                            <td class="down">-17.5%</td>
-                            <td>一度跌破91美元</td>
+                            <td>$103.20</td>
+                            <td class="down">-8.67%</td>
+                            <td>一度跌破100美元</td>
                         </tr>
                     </table>
+                    
+                    <p style="font-size: 12px; color: #666; margin-top: 10px;">
+                        <strong>EIA预测：</strong>与美以对伊战争相关的石油停产规模将在4月份上升至910万桶/日，5月份随冲突结束降至670万桶/日。
+                    </p>
                 </div>
 
                 <!-- Risk Warning -->
@@ -366,22 +434,22 @@
                         <tr>
                             <td>地缘风险</td>
                             <td><span class="risk-med">关注</span></td>
-                            <td>停火协议已生效，但能否持续存疑，关注4月10日谈判</td>
+                            <td>停火已生效但能否持续存疑，4月10日谈判是关键节点</td>
                         </tr>
                         <tr>
                             <td>汇率波动</td>
-                            <td><span class="risk-low">适中</span></td>
-                            <td>USD/CNY延续升值趋势，关注9:15中间价发布</td>
+                            <td><span class="risk-med">关注</span></td>
+                            <td>人民币持续升值，USD/CNY已至6.86区间，关注6.85支撑</td>
                         </tr>
                         <tr>
                             <td>能源价格</td>
                             <td><span class="risk-high">高度警惕</span></td>
-                            <td>期现价差极端，现货供应仍紧张，期货暴跌后或有反弹</td>
+                            <td>期现价差极端，现货供应紧张，期货暴跌后或有反弹</td>
                         </tr>
                         <tr>
                             <td>黄金波动</td>
                             <td><span class="risk-med">关注</span></td>
-                            <td>突破4850美元，短期波动加剧，警惕获利回吐</td>
+                            <td>高位震荡于4770美元附近，警惕地缘缓和后的获利回吐</td>
                         </tr>
                     </table>
                 </div>
@@ -398,7 +466,7 @@
                         <tr>
                             <td>USD/CNY</td>
                             <td>维持高比例对冲</td>
-                            <td>75-85%，锁汇区间6.88-6.92</td>
+                            <td>70-80%，锁汇区间6.85-6.88</td>
                         </tr>
                         <tr>
                             <td>原油敞口</td>
@@ -407,8 +475,8 @@
                         </tr>
                         <tr>
                             <td>黄金</td>
-                            <td>趋势跟随</td>
-                            <td>4850上方分批减仓，关注回调风险</td>
+                            <td>逢高减仓</td>
+                            <td>4780-4800区间分批减仓，关注回调风险</td>
                         </tr>
                     </table>
                 </div>
@@ -417,11 +485,12 @@
                 <div class="section">
                     <div class="section-title">数据来源声明</div>
                     <p style="font-size: 12px; color: #666; line-height: 1.8;">
-                        <strong>数据截止：</strong>2026年4月8日 11:00 CST<br>
-                        <strong>USD/CNY中间价：</strong>中国外汇交易中心（4月7日6.8854，4月8日9:15发布新数据）<br>
+                        <strong>数据截止：</strong>2026年4月8日 11:20 CST<br>
+                        <strong>USD/CNY中间价：</strong>中国外汇交易中心（4月7日6.8854）<br>
+                        <strong>USD/CNY实时：</strong>中国银行外汇牌价（4月8日10:26 6.8680）<br>
                         <strong>美股数据：</strong>新浪财经、财联社（4月7日收盘）<br>
-                        <strong>原油/黄金：</strong>Investing.com、东方财富、金投网<br>
-                        <strong>地缘新闻：</strong>央视新闻、新华社、财新网、新浪财经<br>
+                        <strong>原油/黄金：</strong>Investing.com、东方财富、金投网、生意社<br>
+                        <strong>地缘新闻：</strong>央视新闻、新华社、财新网、中新网、新浪财经<br>
                         <strong>质量评级：</strong>⭐⭐⭐⭐⭐（五星）全部数据已交叉验证
                     </p>
                 </div>
@@ -431,7 +500,8 @@
                     <tr>
                         <td align="center">
                             <div>盘前市场简报 | 财资风险监测</div>
-                            <div style="margin-top: 8px;">数据时效性声明：本报告数据截止至2026年4月8日11:00 CST</div>
+                            <div style="margin-top: 8px;">数据时效性声明：本报告数据截止至2026年4月8日11:20 CST</div>
+                            <div style="margin-top: 8px; font-size: 11px;">固定地址：https://pre-market-dashboard.vercel.app</div>
                         </td>
                     </tr>
                 </table>
