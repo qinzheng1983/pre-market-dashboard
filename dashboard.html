@@ -40,14 +40,6 @@
             align-items: center;
             gap: 10px;
         }
-        .category-title .icon {
-            font-size: 24px;
-        }
-        .report-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
         .report-card {
             background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
@@ -91,12 +83,6 @@
             border-radius: 4px;
             font-size: 12px;
         }
-        .badge-new {
-            background: #e94560;
-        }
-        .badge-archive {
-            background: #0f3460;
-        }
         .footer {
             margin-top: 40px;
             text-align: center;
@@ -120,19 +106,17 @@
     <!-- 盘前市场简报 -->
     <div class="category">
         <div class="category-title">
-            <span class="icon">📈</span>
+            <span style="font-size:24px">📈</span>
             盘前市场简报
         </div>
-        <div class="report-grid">
-            <a href="index.html" class="report-card">
-                <div class="date">
-                    <span>每日 08:30 更新</span>
-                    <span class="badge badge-new">最新</span>
-                </div>
-                <div class="title">盘前市场简报</div>
-                <div class="desc">覆盖全球市场开盘前关键数据与事件：美股、原油、黄金、USD/CNY中间价、地缘动态。每日开盘前必看。</div>
-            </a>
-        </div>
+        <a href="index.html" class="report-card">
+            <div class="date">
+                <span>2026年4月20日（周一）08:30 更新</span>
+                <span class="badge">最新</span>
+            </div>
+            <div class="title">盘前市场简报</div>
+            <div class="desc">覆盖全球市场开盘前关键数据与事件：美股、原油、黄金、USD/CNY中间价、地缘动态。每日开盘前必看。</div>
+        </a>
     </div>
 
     <div class="divider"></div>
@@ -140,31 +124,21 @@
     <!-- 财资日报 -->
     <div class="category">
         <div class="category-title">
-            <span class="icon">📊</span>
+            <span style="font-size:24px">📊</span>
             财资日报
         </div>
-        <div class="report-grid">
-            <a href="finance-daily/20260420.html" class="report-card">
-                <div class="date">
-                    <span>2026年4月20日（周一）</span>
-                    <span class="badge badge-new">最新</span>
-                </div>
-                <div class="title">财资日报（完整版）</div>
-                <div class="desc">美伊谈判破裂 | 伊朗重封霍尔木兹 | 油价$95.35 | 黄金$4,787 | 纳指13连涨<br>含货币政策、汇率、新能源、有色金属、贵金属、地缘风险、全球市场八大板块</div>
-            </a>
-            <a href="finance-daily/20260417.html" class="report-card">
-                <div class="date">
-                    <span>2026年4月17日（周五）</span>
-                    <span class="badge badge-archive">归档</span>
-                </div>
-                <div class="title">财资日报（完整版）</div>
-                <div class="desc">黎以停火10天 | 美股续创新高 | 原油$99.39 | 人民币6.8616<br>含货币政策、汇率、新能源、有色金属、贵金属、地缘风险六大板块</div>
-            </a>
-        </div>
+        <a href="finance-daily/20260420.html" class="report-card">
+            <div class="date">
+                <span>2026年4月20日（周一）16:00 更新</span>
+                <span class="badge">最新</span>
+            </div>
+            <div class="title">财资日报（完整版）</div>
+            <div class="desc">美伊谈判破裂 | 伊朗重封霍尔木兹 | 油价$95.35 | 黄金$4,787 | 纳指13连涨<br>含货币政策、汇率、新能源、有色金属、贵金属、地缘风险、全球市场八大板块</div>
+        </a>
     </div>
 
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-04-20 15:00 CST
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-04-20 16:00 CST
     </div>
 </body>
 </html>
