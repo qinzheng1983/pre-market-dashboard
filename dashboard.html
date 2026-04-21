@@ -50,7 +50,6 @@
             text-decoration: none;
             color: white;
             display: block;
-            margin-bottom: 15px;
         }
         .report-card:hover {
             transform: translateY(-5px);
@@ -104,36 +103,6 @@
             height: 1px;
             background: rgba(255,255,255,0.1);
         }
-        .history-list {
-            max-width: 900px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-        }
-        .history-item {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
-            padding: 15px;
-            text-decoration: none;
-            color: white;
-            display: block;
-            transition: all 0.3s;
-        }
-        .history-item:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: #e94560;
-        }
-        .history-item .h-date {
-            font-size: 12px;
-            color: #e94560;
-            margin-bottom: 5px;
-        }
-        .history-item .h-title {
-            font-size: 14px;
-            font-weight: 600;
-        }
     </style>
 </head>
 <body>
@@ -169,17 +138,11 @@
         <a href="finance-daily/20260421.html" class="report-card">
             <div class="date">
                 <span>2026年4月21日（周二）09:10 更新 | CFO视角版</span>
-                <span class="badge-cfo">NEW CFO版</span>
+                <span class="badge-cfo">CFO视角</span>
             </div>
             <div class="title">财资日报 — CFO视角版</div>
-            <div class="desc">&#128308; 美伊停火期限临近谈判悬而未决 | 印尼镍矿HPM公式突变 | USD/CNY 6.8648（1年6%分位极低）| LME镍7,985 | 钴41.48万（1年35%分位偏低）| Q1净利预增72-92%<br><br>新增：风险仪表盘（红黄绿灯）、对我司影响量化分析、历史分位数据、CFO行动建议</div>
+            <div class="desc">风险仪表盘（红黄绿灯） | 印尼镍矿HPM公式突变 | USD/CNY 6.8648（1年6%分位极低）| LME镍7,985 | 钴41.48万（1年35%分位偏低）| Q1净利预增72-92%<br><br>含：对我司影响量化分析、历史分位数据、CFO行动建议、汇率/有色金属/新能源/贵金属/地缘风险六大板块</div>
         </a>
-        <div class="history-list">
-            <a href="finance-daily/20260420.html" class="history-item">
-                <div class="h-date">2026-04-20 周一</div>
-                <div class="h-title">财资日报 v2</div>
-            </a>
-        </div>
     </div>
 
     <div class="footer">
