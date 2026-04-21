@@ -50,6 +50,7 @@
             text-decoration: none;
             color: white;
             display: block;
+            margin-bottom: 15px;
         }
         .report-card:hover {
             transform: translateY(-5px);
@@ -83,6 +84,14 @@
             border-radius: 4px;
             font-size: 12px;
         }
+        .badge-cfo {
+            display: inline-block;
+            background: #4a90d9;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
         .footer {
             margin-top: 40px;
             text-align: center;
@@ -95,18 +104,48 @@
             height: 1px;
             background: rgba(255,255,255,0.1);
         }
+        .history-list {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .history-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: all 0.3s;
+        }
+        .history-item:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #e94560;
+        }
+        .history-item .h-date {
+            font-size: 12px;
+            color: #e94560;
+            margin-bottom: 5px;
+        }
+        .history-item .h-title {
+            font-size: 14px;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>财资报告中心</h1>
-        <p>跨国企业资金管理决策参考</p>
+        <p>跨国企业资金管理决策参考 | 中伟新材 CFO视角</p>
     </div>
 
     <!-- 盘前市场简报 -->
     <div class="category">
         <div class="category-title">
-            <span style="font-size:24px">📈</span>
+            <span style="font-size:24px">&#128200;</span>
             盘前市场简报
         </div>
         <a href="index.html" class="report-card">
@@ -124,21 +163,27 @@
     <!-- 财资日报 -->
     <div class="category">
         <div class="category-title">
-            <span style="font-size:24px">📊</span>
+            <span style="font-size:24px">&#128202;</span>
             财资日报
         </div>
-        <a href="finance-daily/20260420.html" class="report-card">
+        <a href="finance-daily/20260421.html" class="report-card">
             <div class="date">
-                <span>2026年4月20日（周一）16:00 更新 v2</span>
-                <span class="badge">最新</span>
+                <span>2026年4月21日（周二）09:10 更新 | CFO视角版</span>
+                <span class="badge-cfo">NEW CFO版</span>
             </div>
-            <div class="title">财资日报（完整版 v2）</div>
-            <div class="desc">美伊谈判破裂 | 伊朗重封霍尔木兹 | 油价$95.35 | 黄金$4,787 | 纳指13连涨 | LME库存数据 | 供需平衡表 | 机构目标价汇总<br>含货币政策、汇率、新能源、有色金属、贵金属、地缘风险、全球市场八大板块</div>
+            <div class="title">财资日报 — CFO视角版</div>
+            <div class="desc">&#128308; 美伊停火期限临近谈判悬而未决 | 印尼镍矿HPM公式突变 | USD/CNY 6.8648（1年6%分位极低）| LME镍7,985 | 钴41.48万（1年35%分位偏低）| Q1净利预增72-92%<br><br>新增：风险仪表盘（红黄绿灯）、对我司影响量化分析、历史分位数据、CFO行动建议</div>
         </a>
+        <div class="history-list">
+            <a href="finance-daily/20260420.html" class="history-item">
+                <div class="h-date">2026-04-20 周一</div>
+                <div class="h-title">财资日报 v2</div>
+            </a>
+        </div>
     </div>
 
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-04-20 16:00 CST
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-04-21 09:10 CST
     </div>
 </body>
 </html>
