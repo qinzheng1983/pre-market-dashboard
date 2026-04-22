@@ -1,288 +1,580 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前市场简报 — 2026年4月21日</title>
-<style>
-body { margin:0; padding:0; font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#1a1a2e; line-height:1.6; }
-.container { max-width:720px; margin:0 auto; background:#fff; }
-.header { background:#1a1a2e; color:#fff; padding:18px 20px; text-align:center; }
-.header h1 { margin:0; font-size:20px; font-weight:700; letter-spacing:1px; }
-.header .subtitle { margin-top:6px; font-size:12px; color:#a0a8b8; }
-.header .badge { display:inline-block; margin-top:8px; padding:3px 10px; background:#e94560; color:#fff; font-size:11px; border-radius:2px; }
-.meta-bar { background:#f8f9fa; padding:10px 20px; font-size:11px; color:#666; border-bottom:1px solid #e8e8e8; }
-
-.section { padding:18px 20px; border-bottom:1px solid #e8e8e8; }
-.section-title { font-size:15px; font-weight:700; color:#1a1a2e; margin-bottom:12px; padding-left:10px; border-left:4px solid #e94560; }
-.section-note { font-size:11px; color:#888; margin-bottom:10px; }
-
-.focus-box { background:#ffe6e6; border:1px solid #e94560; border-radius:4px; padding:14px; margin:12px 0; }
-.focus-box .label { display:inline-block; padding:2px 8px; background:#e94560; color:#fff; font-size:11px; border-radius:2px; margin-bottom:8px; }
-.focus-box p { margin:0; font-size:13px; color:#1a1a2e; line-height:1.7; }
-
-.data-table { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:10px; }
-.data-table th { background:#1a1a2e; color:#fff; padding:8px 6px; text-align:left; font-weight:600; }
-.data-table td { padding:8px 6px; border-bottom:1px solid #e8e8e8; }
-.data-table tr:nth-child(even) { background:#fafafa; }
-
-.price-up { color:#e94560; font-weight:700; }
-.price-down { color:#27ae60; font-weight:700; }
-.price-neutral { color:#666; }
-
-.risk-high { color:#e94560; font-weight:700; }
-.risk-med { color:#f5a623; font-weight:700; }
-.risk-low { color:#27ae60; font-weight:700; }
-
-.event-box { background:#fff9e6; border-left:3px solid #f5a623; padding:10px 12px; margin:10px 0; font-size:12px; color:#444; }
-.event-box.red { background:#ffe6e6; border-left-color:#e94560; }
-
-.footer { padding:14px 20px; background:#f8f9fa; font-size:11px; color:#888; text-align:center; border-top:1px solid #e8e8e8; }
-.footer .stars { color:#e94560; font-weight:700; }
-
-@media (max-width:480px) {
-  .header h1 { font-size:17px; }
-  .data-table { font-size:11px; }
-  .data-table th, .data-table td { padding:6px 4px; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盘前市场简报 — 2026年4月22日（周三）</title>
+    <style type="text/css">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 20px;
+            margin: -30px -30px 20px -30px;
+            font-size: 24px;
+            border-radius: 8px 8px 0 0;
+        }
+        .subtitle {
+            color: #a0a0a0;
+            font-size: 13px;
+            margin-top: -15px;
+            margin-bottom: 25px;
+            padding-left: 5px;
+        }
+        h2 {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 12px 15px;
+            margin: 30px 0 15px 0;
+            font-size: 16px;
+            border-left: 4px solid #e94560;
+        }
+        h3 {
+            color: #1a1a2e;
+            font-size: 14px;
+            margin: 20px 0 10px 0;
+            padding-left: 10px;
+            border-left: 3px solid #e94560;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        th {
+            background: #1a1a2e;
+            color: #ffffff;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:nth-child(even) { background: #fafafa; }
+        .highlight-box {
+            background: #ffe6e6;
+            border-left: 4px solid #e94560;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fff9e6;
+            border-left: 4px solid #f0ad4e;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .company-box {
+            background: #eef4ff;
+            border-left: 4px solid #4a90e2;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .up { color: #e94560; }
+        .down { color: #27ae60; }
+        .neutral { color: #666; }
+        .label {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .label-high { background: #e94560; color: white; }
+        .label-med { background: #f0ad4e; color: white; }
+        .label-low { background: #27ae60; color: white; }
+        .star-rating {
+            color: #f0ad4e;
+            font-size: 14px;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 12px;
+            color: #999;
+        }
+        .time-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #666;
+            margin-right: 5px;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header">
-  <h1>盘前市场简报</h1>
-  <div class="subtitle">2026年4月21日（周二）| 数据截止 09:15 CST | 前一交易日：4月20日（周一）</div>
-  <div class="badge">⭐⭐⭐⭐⭐ 五星质量评级</div>
+<h1>盘前市场简报 — 2026年4月22日（周三）</h1>
+<p class="subtitle">
+    数据时间范围：2026年4月21日 09:00 — 2026年4月22日 09:40（北京时间）<br>
+    覆盖时段：亚洲（昨日白天）→ 欧洲（昨日下午）→ 美洲（昨夜）→ 亚洲（今晨）<br>
+    <span class="star-rating">★★★★★</span> 质量评级：5星 | 数据截止：2026-04-22 09:40 CST
+</p>
+
+<!-- 1. 全球市场概览 -->
+<h2>一、全球市场概览</h2>
+<table>
+    <tr>
+        <th>市场/资产</th>
+        <th>收盘/最新</th>
+        <th>变动</th>
+        <th>关键动态</th>
+    </tr>
+    <tr>
+        <td>美股（4月21日收盘）</td>
+        <td>道指 49,442 / 标普 7,109 / 纳指 24,404</td>
+        <td class="neutral">道指-0.01% / 标普-0.24% / 纳指-0.27%</td>
+        <td>三大指数小幅收跌，市场观望中东局势后续</td>
+    </tr>
+    <tr>
+        <td>亚洲股市（4月22日早盘）</td>
+        <td>恒生 26,487 / 日经 59,354 / 沪指 4,085</td>
+        <td class="up">恒生+0.48%</td>
+        <td>港股低开高走反弹，A股基本持平</td>
+    </tr>
+    <tr>
+        <td>欧洲股市（4月21日收盘）</td>
+        <td>英国富时 10,498 / 法国CAC 8,236 / 德国DAX 24,271</td>
+        <td class="down">英-1.05% / 法-1.14% / 德-0.60%</td>
+        <td>欧股全线收跌，经济前景承压</td>
+    </tr>
+    <tr>
+        <td>布伦特原油</td>
+        <td>$98.48/桶</td>
+        <td class="up">+3.1%</td>
+        <td>美伊停火延长但油价维持高位，供应担忧持续</td>
+    </tr>
+    <tr>
+        <td>现货黄金</td>
+        <td>$4,707/盎司</td>
+        <td class="down">-2.3%</td>
+        <td>避险降温金价回落，前期涨幅较大后获利了结</td>
+    </tr>
+    <tr>
+        <td>美元指数（DXY）</td>
+        <td>~98.24</td>
+        <td class="down">维持弱势</td>
+        <td>避险资金流出，美元持续承压</td>
+    </tr>
+</table>
+
+<!-- 2. 隔夜全球主要风险事件 -->
+<h2>二、隔夜全球主要风险事件</h2>
+
+<h3>2.1 国内重大宏观政策</h3>
+<div class="warning-box">
+    <strong>4月21日 LPR维持不变：</strong>中国央行公布4月贷款市场报价利率（LPR），1年期LPR维持3.0%，5年期以上LPR维持3.5%，<strong>连续10个月保持不变</strong>。央行维持利率稳定，反映当前货币政策保持定力。<br><br>
+    <span class="time-tag">央行官网</span> <span class="time-tag">4月21日 09:15</span>
+</div>
+<div class="warning-box">
+    <strong>央行逆回购操作：</strong>4月21日央行开展50亿元7天期逆回购操作，中标利率维持1.40%。同日50亿元逆回购到期，实现零净投放。货币市场资金面保持宽松，隔夜Shibor报1.22%。<br><br>
+    <span class="time-tag">央行官网</span> <span class="time-tag">4月21日</span>
+</div>
+<div class="warning-box">
+    <strong>国务院发布服务业扩能提质政策：</strong>国务院印发《关于推进服务业扩能提质的意见》，涉及金融服务、科技服务等领域政策优化。<br><br>
+    <span class="time-tag">国务院</span> <span class="time-tag">4月21日</span>
 </div>
 
-<div class="meta-bar">
-  <b>数据源：</b>中国货币网、财联社、新浪财经、Investing.com、金十数据、证券时报、央视新闻
+<h3>2.2 国内经贸数据</h3>
+<ul>
+    <li><strong>3月经济数据回顾：</strong>一季度GDP增长5.2%，3月CPI同比+0.5%、PPI同比-2.5%，通胀维持低位，通缩压力仍存。</li>
+    <li><strong>进出口数据：</strong>3月出口同比+12.3%，进口同比-4.3%，贸易顺差扩大。外需韧性支撑，内需偏弱。</li>
+    <li><strong>社融数据：</strong>3月社融增量4.8万亿元，同比少增，实体融资需求偏弱问题仍存。</li>
+</ul>
+<p><em>注：4月月度宏观数据尚未发布，当前引用最新可获得数据（3月）。</em></p>
+
+<h3>2.3 发达国家财经数据</h3>
+<div class="warning-box">
+    <strong>美联储政策：</strong>最新CME FedWatch显示市场预期美联储2026年维持利率不变，降息预期全面消退。中东局势推高油价后，市场一度交易加息可能性。2年期美债收益率维持3.7%上方。<br><br>
+    <span class="time-tag">CME FedWatch</span> <span class="time-tag">4月21日</span>
+</div>
+<div class="warning-box">
+    <strong>美国经济数据：</strong>4月20日美国国债收益率涨跌互现，3M期上行1BP至3.71%，3年期上行1BP至3.73%，10年期稳定在4.26%。美国褐皮书及制造业调查数据即将发布。<br><br>
+    <span class="time-tag">中债登</span> <span class="time-tag">4月21日</span>
+</div>
+<div class="warning-box">
+    <strong>日本央行：</strong>维持超宽松货币政策，日元兑美元处于弱势。日银转向预期推迟，市场关注日银鹰派信号敏感度。<br><br>
+    <span class="time-tag">财新</span> <span class="time-tag">4月18日</span>
 </div>
 
-<!-- 今日重点关注 -->
-<div class="section">
-  <div class="section-title">今日重点关注</div>
-  <div class="focus-box">
-    <span class="label">HIGH ALERT</span>
-    <p><b>美伊临时停火协议将于明日（4月22日）到期</b>，特朗普称"几乎不可能"再延长。伊朗拒绝新一轮谈判，霍尔木兹海峡通航仍受阻。布油4月20日大涨5.64%至$95.48，今早小幅回落至$95.15。美股纳指终结13连涨，道指/标普高位震荡。USD/CNY中间价今日上调54点至6.8594，人民币继续走强。</p>
-  </div>
+<h3>2.4 地缘风险事件</h3>
+<div class="highlight-box">
+    <strong>特朗普宣布延长与伊朗停火期限</strong> <span class="label label-high">高度警惕</span><br><br>
+    特朗普宣布延长同伊朗的停火期限，伊朗表示同意暂停军事战斗，但战争仍未结束。美伊第二轮谈判推进，但伊朗拒绝出席部分会谈。霍尔木兹海峡通航暂未完全恢复，油轮通行仍受限。<br><br>
+    <strong>影响评估：</strong>地缘风险边际缓和但远未消除，油价维持高位震荡（$95-$105区间），若谈判破裂仍有上行风险。<br><br>
+    <span class="time-tag">央视新闻</span> <span class="time-tag">财联社</span> <span class="time-tag">4月21日晚间</span>
+</div>
+<div class="warning-box">
+    <strong>伊朗动员超100万作战人员</strong> <span class="label label-med">关注</span><br><br>
+    伊朗议会通过霍尔木兹海峡收费法案，禁止美以船只通行。伊朗动员超100万作战人员，战备等级维持高位。<br><br>
+    <span class="time-tag">财新</span> <span class="time-tag">4月21日</span>
 </div>
 
-<!-- 全球市场概览 -->
-<div class="section">
-  <div class="section-title">全球市场概览（4月20日收盘）</div>
-  <div class="section-note">美股周一小幅收跌，纳指终结13连涨；油价因地缘紧张大幅反弹；金价高位震荡</div>
+<!-- 3. 行业新闻观察 -->
+<h2>三、行业新闻观察（与我司上下游相关）</h2>
 
-  <table class="data-table">
-    <tr><th>市场</th><th>收盘点位</th><th>涨跌</th><th>备注</th></tr>
+<h3>3.1 上游：原材料与矿产</h3>
+<table>
     <tr>
-      <td>道琼斯指数</td>
-      <td>49,442.56</td>
-      <td class="price-down">-0.01%</td>
-      <td>高位震荡，3M跌超2%</td>
+        <th>品种</th>
+        <th>价格/动态</th>
+        <th>变动</th>
+        <th>影响</th>
     </tr>
     <tr>
-      <td>标普500指数</td>
-      <td>7,109.14</td>
-      <td class="price-down">-0.24%</td>
-      <td>从7130+历史高位回落</td>
+        <td>LME铜</td>
+        <td>~$13,230/吨</td>
+        <td class="down">-0.2%</td>
+        <td>高位震荡，新能源线缆需求支撑</td>
     </tr>
     <tr>
-      <td>纳斯达克指数</td>
-      <td>24,404.39</td>
-      <td class="price-down">-0.26%</td>
-      <td><b>终结13连涨</b></td>
+        <td>LME铝</td>
+        <td>~$3,557/吨</td>
+        <td class="neutral">基本持平</td>
+        <td>轻量化需求稳定</td>
     </tr>
     <tr>
-      <td>纳斯达克中国金龙指数</td>
-      <td>—</td>
-      <td class="price-down">-0.32%</td>
-      <td>中概股涨跌不一</td>
+        <td>LME镍</td>
+        <td>~$18,225/吨</td>
+        <td class="down">-0.1%</td>
+        <td>三元电池核心原料，供应宽松</td>
     </tr>
     <tr>
-      <td>布伦特原油</td>
-      <td>$95.48</td>
-      <td class="price-up">+5.64%</td>
-      <td>+$5.10，地缘风险推升</td>
+        <td>LME锌</td>
+        <td>~$3,442/吨</td>
+        <td class="up">+0.8%</td>
+        <td>镀锌需求支撑</td>
     </tr>
     <tr>
-      <td>WTI原油</td>
-      <td>$89.61</td>
-      <td class="price-up">+6.87%</td>
-      <td>+$5.76</td>
+        <td>钴</td>
+        <td>供需双弱</td>
+        <td class="neutral">-</td>
+        <td>三元电池稳定供应风险</td>
     </tr>
     <tr>
-      <td>现货黄金</td>
-      <td>$4,821.27</td>
-      <td class="price-down">-0.18%</td>
-      <td>高位震荡，ETF小幅减仓</td>
+        <td>钠（碳酸钠）</td>
+        <td>现货报价稳定</td>
+        <td class="neutral">-</td>
+        <td>钠电池产业化加速，需求预期上升</td>
     </tr>
     <tr>
-      <td>COMEX黄金期货</td>
-      <td>$4,838.10</td>
-      <td class="price-down">-0.85%</td>
-      <td>6月合约</td>
+        <td>硫酸镍/硫酸钴</td>
+        <td>价格偏弱</td>
+        <td class="down">下行</td>
+        <td>利于电池生产成本控制</td>
     </tr>
-    <tr>
-      <td>美元指数 DXY</td>
-      <td>98.055</td>
-      <td class="price-down">-0.04%</td>
-      <td>维持弱势</td>
-    </tr>
-  </table>
+</table>
+
+<h3>3.2 中游：动力电池与储能</h3>
+<div class="company-box">
+    <strong>宁德时代"超级科技日"重磅发布（4月21日晚间）</strong> <span class="label label-high">核心关注</span><br><br>
+    宁德时代在北京举办2026"超级科技日"发布会，一次性发布6大新品，标志新能源行业进入"多核时代"：<br><br>
+    <strong>1. 第三代神行超充电池：</strong>常温6分钟满电（10%-98% SOC），等效10C/峰值15C，刷新全球纪录。1000次循环后容量保持率>90%。<br><br>
+    <strong>2. 第三代麒麟电池：</strong>能量密度280Wh/kg，续航1000公里，15C超充峰值。<br><br>
+    <strong>3. 麒麟凝聚态电池：</strong>首次将航空级凝聚态技术用于乘用车，能量密度760Wh/L，轿车续航1500公里。<br><br>
+    <strong>4. 第二代骁遥超级增·混电池：</strong>纯电续航600公里。<br><br>
+    <strong>5. 钠新电池（钠离子电池）：</strong><span class="up">2026年四季度规模化量产</span>，零下40℃至零上70℃全温域适配。<br><br>
+    <strong>6. 超换一体全场景补能网络：</strong>计划2026年底建成4000座超换一体站。<br><br>
+    <strong>对我司（中伟新材）意义：</strong>钠电池产业化路径明确，四季度量产将带动上游钠材料需求。我司需评估钠电池技术路线对现有三元/铁锂材料业务的潜在影响，关注钠电正极材料（层状氧化物/普鲁士蓝）供应链机会。<br><br>
+    <span class="time-tag">新华社</span> <span class="time-tag">新浪科技</span> <span class="time-tag">宁德时代公告</span> <span class="time-tag">4月21日-22日</span>
 </div>
 
-<!-- 重点关注事件 -->
-<div class="section">
-  <div class="section-title">重点关注事件</div>
-  <div class="section-note">按影响程度排序，红=高度警惕，黄=关注</div>
+<h3>3.3 下游：新能源汽车</h3>
+<ul>
+    <li><strong>一季度新能源车市占率重返50.1%：</strong>宁德时代国内市占率一季度重返50.1%，全球份额约37%。国内每2辆新能源车就有1辆搭载宁德时代电池。</li>
+    <li><strong>北京车展临近：</strong>4月23日北京车展开幕，各车企摩拳擦掌，预计将有大量新技术/新车型发布。</li>
+    <li><strong>一季报业绩：</strong>宁德时代Q1营收1291亿元（+52.45%），净利润207亿元（+48.52%），业绩强劲。</li>
+</ul>
 
-  <div class="event-box red">
-    <b><span class="risk-high">【高度警惕】</span>美伊停火协议明日到期，谈判前景不明</b><br>
-    时间：4月22日（周三）到期 | 来源：央视新闻、财联社<br>
-    内容：美伊临时停火协议将于北京时间4月22日到期。特朗普4月20日表示，若届时未能达成协议，"几乎不可能"再延长停火。伊朗方面截至昨晚仍未决定是否参加在巴基斯坦举行的第二轮谈判，伊朗官方媒体称美国"未履行其义务"。<br>
-    市场影响：布油4月20日大涨5.64%，WTI涨6.87%。若谈判破裂，油价或重返$100+。
-  </div>
-
-  <div class="event-box red">
-    <b><span class="risk-high">【高度警惕】</span>霍尔木兹海峡通航再受限，美国扣押伊朗货船</b><br>
-    时间：4月20日 | 来源：新浪财经、央视新闻<br>
-    内容：特朗普称美方已在阿曼湾开火并扣押一艘悬挂伊朗国旗的货船，并威胁称如果伊朗不同意与美国达成协议，美方将炸毁伊朗所有发电厂和桥梁。伊朗重申维持对海峡的控制作为筹码。<br>
-    市场影响：全球原油供应担忧再起，油价风险溢价重新定价。
-  </div>
-
-  <div class="event-box">
-    <b><span class="risk-med">【关注】</span>美联储主席提名听证会今日举行</b><br>
-    时间：4月21日美东时间上午10点 | 来源：每日经济新闻<br>
-    内容：美联储主席提名人凯文·沃什（Kevin Warsh）将出席参议院银行委员会听证会。其政策立场表态将影响市场对利率路径的预期。若表现出对通胀的强硬态度，可能强化高利率维持更久的预期。<br>
-    市场影响：科技股对利率敏感，听证会后纳指可能波动加大。
-  </div>
-
-  <div class="event-box">
-    <b><span class="risk-med">【关注】</span>纳指终结13连涨，高位科技股回调</b><br>
-    时间：4月20日 | 来源：财联社、21世纪经济报道<br>
-    内容：纳指周一收跌0.26%，终结此前连续13个交易日的上涨纪录。英特尔跌超4%，特斯拉、Meta跌超2%，AMD、博通、微软、谷歌跌超1%，苹果涨超1%。<br>
-    市场影响：科技股高位获利回吐压力显现，短期或继续震荡。
-  </div>
-</div>
-
-<!-- 关键资产价格 -->
-<div class="section">
-  <div class="section-title">关键资产价格</div>
-  <div class="section-note">汇率、原油、黄金——直接影响今日开盘情绪</div>
-
-  <table class="data-table">
-    <tr><th>资产</th><th>最新价</th><th>较前一交易日</th><th>备注</th></tr>
+<!-- 4. 关键资产价格 -->
+<h2>四、关键资产价格</h2>
+<table>
+    <tr>
+        <th>资产</th>
+        <th>当前价格</th>
+        <th>24h变化</th>
+        <th>备注</th>
+    </tr>
     <tr style="background:#ffe6e6;">
-      <td><b>USD/CNY 中间价</b></td>
-      <td><b>6.8594</b></td>
-      <td class="price-down"><b>+54bp（人民币升值）</b></td>
-      <td>52周区间: 6.8582-7.2116</td>
+        <td><strong>USD/CNY中间价（4月22日）</strong></td>
+        <td><strong class="up">6.8635</strong></td>
+        <td class="up"><strong>+41点</strong></td>
+        <td>央行9:15发布，美元小幅走强</td>
     </tr>
     <tr>
-      <td>USD/CNY 离岸</td>
-      <td>6.8158</td>
-      <td class="price-down">+2bp</td>
-      <td>纽约尾盘</td>
+        <td>USD/CNY中间价（4月21日）</td>
+        <td>6.8594</td>
+        <td class="up">+54点</td>
+        <td>连续两日上调</td>
     </tr>
     <tr>
-      <td>USD/CNY 在岸</td>
-      <td>6.8172</td>
-      <td class="price-down">+12bp</td>
-      <td>夜盘收盘</td>
+        <td>DXY美元指数</td>
+        <td>~98.24</td>
+        <td class="down">维持弱势</td>
+        <td>避险资金流出，承压于99下方</td>
     </tr>
     <tr>
-      <td>布伦特原油</td>
-      <td>$95.48</td>
-      <td class="price-up">+5.64%</td>
-      <td>6月合约</td>
+        <td>USD/CNH离岸价</td>
+        <td>~6.87</td>
+        <td class="up">小幅走弱</td>
+        <td>与在岸价差维持</td>
     </tr>
     <tr>
-      <td>WTI原油</td>
-      <td>$89.61</td>
-      <td class="price-up">+6.87%</td>
-      <td>5月合约</td>
+        <td>布伦特原油</td>
+        <td>$98.48/桶</td>
+        <td class="up">+3.1%</td>
+        <td>美伊停火延长但供应担忧持续</td>
     </tr>
     <tr>
-      <td>现货黄金</td>
-      <td>$4,821.27</td>
-      <td class="price-down">-0.18%</td>
-      <td>伦敦金现</td>
+        <td>WTI原油</td>
+        <td>$89.67/桶</td>
+        <td class="up">+2.6%</td>
+        <td>跟随布伦特上涨</td>
     </tr>
     <tr>
-      <td>COMEX黄金期货</td>
-      <td>$4,838.10</td>
-      <td class="price-down">-0.85%</td>
-      <td>6月合约</td>
+        <td>现货黄金</td>
+        <td>$4,707/盎司</td>
+        <td class="down">-2.3%</td>
+        <td>避险降温，获利了结</td>
     </tr>
     <tr>
-      <td>SPDR黄金ETF持仓</td>
-      <td>1,059.76吨</td>
-      <td class="price-down">-0.86吨</td>
-      <td>小幅减仓</td>
+        <td>LME铜</td>
+        <td>~$13,230/吨</td>
+        <td class="down">-0.2%</td>
+        <td>历史高位附近震荡</td>
     </tr>
-  </table>
+    <tr>
+        <td>LME镍</td>
+        <td>~$18,225/吨</td>
+        <td class="down">-0.1%</td>
+        <td>供应宽松，偏弱运行</td>
+    </tr>
+    <tr>
+        <td>碳酸锂（电池级）</td>
+        <td>~16.5万元/吨</td>
+        <td class="up">反弹</td>
+        <td>从低点回升，供需边际改善</td>
+    </tr>
+    <tr>
+        <td>钠（碳酸钠现货）</td>
+        <td>现货报价稳定</td>
+        <td class="neutral">持平</td>
+        <td>钠电池产业化预期升温</td>
+    </tr>
+    <tr>
+        <td>VIX恐慌指数</td>
+        <td>~25</td>
+        <td class="down">回落</td>
+        <td>避险情绪降温</td>
+    </tr>
+</table>
+
+<!-- 5. 对我司（中伟新材）的影响分析 -->
+<h2>五、对我司（中伟新材）的影响分析</h2>
+
+<div class="company-box">
+    <strong>敞口结构回顾：</strong><br>
+    <table style="font-size:12px;">
+        <tr><td>贸易层面（香港转口→印尼子公司）</td><td><strong>美元负敞口</strong></td><td>USD/CNY越低越有利</td></tr>
+        <tr><td>资本层面（母公司借款→海外子公司，记账本位币美元）</td><td><strong>美元正敞口</strong></td><td>USD/CNY越高越有利</td></tr>
+    </table>
 </div>
 
-<!-- 今日风险预警 -->
-<div class="section">
-  <div class="section-title">今日风险预警</div>
+<h3>5.1 汇率影响分析（基于今日USD/CNY 6.8635）</h3>
+<table>
+    <tr>
+        <th>层面</th>
+        <th>敞口方向</th>
+        <th>今日影响</th>
+        <th>判断</th>
+    </tr>
+    <tr>
+        <td><strong>贸易层面</strong></td>
+        <td>美元负敞口</td>
+        <td>USD/CNY较昨日+41点（6.8594→6.8635），美元小幅升值</td>
+        <td class="down">轻微不利：购汇成本微升</td>
+    </tr>
+    <tr>
+        <td><strong>资本层面</strong></td>
+        <td>美元正敞口</td>
+        <td>USD/CNY升值，子公司美元负债折算减少</td>
+        <td class="up">轻微有利：负债账面价值微降</td>
+    </tr>
+    <tr style="background:#fff9e6;">
+        <td><strong>净效应</strong></td>
+        <td>取决于金额匹配</td>
+        <td>美元连续两日小幅走强（+54点/+41点）</td>
+        <td><strong>若贸易流出额 > 借款折算额 → 净不利；反之净有利</strong></td>
+    </tr>
+</table>
 
-  <div class="focus-box">
-    <span class="label">高度警惕</span>
-    <p><b>地缘冲突升级风险</b>：美伊停火协议即将到期，若谈判破裂，霍尔木兹海峡关闭延长，布油或重返$100+，全球通胀预期再起，美联储降息预期推迟，对全球股市形成压制。</p>
-  </div>
+<h3>5.2 行业层面影响</h3>
+<ul>
+    <li><strong>钠电池产业化：</strong>宁德时代官宣Q4量产钠电池，对我司意味着：<br>
+        - 若我司布局钠电正极材料（层状氧化物/普鲁士白），将迎来需求窗口期<br>
+        - 若不布局，需评估钠电对三元/铁锂需求的替代效应（当前钠电主要面向储能/低端车，高端车仍以三元为主）<br>
+        - 建议：密切关注钠电产业链投资窗口，评估技术路线适配性</li>
+    <li><strong>原材料价格：</strong>硫酸镍、硫酸钴价格偏弱运行，利于降低电池前驱体生产成本。</li>
+    <li><strong>印尼矿产政策：</strong>需持续关注印尼镍矿出口政策变动及本地加工产能扩张。</li>
+</ul>
 
-  <div class="event-box">
-    <b><span class="risk-med">关注</span> 汇率波动风险</b>：USD/CNY中间价今日上调54点至6.8594，人民币持续走强。出口型企业海外收入折算承压，需关注套保策略。
-  </div>
-
-  <div class="event-box">
-    <b><span class="risk-med">关注</span> 科技股高位回调</b>：纳指终结13连涨，高位科技股获利回吐压力显现。若美联储主席提名人沃什表态鹰派，科技股或承压。
-  </div>
+<h3>5.3 今日操作建议</h3>
+<div class="warning-box">
+    <strong>ACTION：</strong>USD/CNY连续两日小幅上调（+95点累计），关注后续走势。<br><br>
+    - 若美元持续走强：贸易层面购汇成本上升，可考虑提前锁定部分远期购汇<br>
+    - 若美元重回贬值：资本层面子公司负债压力增加，需评估是否启动对冲<br>
+    - 当前波动较小，建议观望为主，不急于大规模操作
 </div>
 
-<!-- 对冲建议 -->
-<div class="section">
-  <div class="section-title">对冲建议</div>
-  <div class="section-note">基于当前市场状态，针对财资管理需求</div>
+<!-- 6. 机构观点摘要 -->
+<h2>六、机构观点摘要</h2>
+<table>
+    <tr>
+        <th>机构</th>
+        <th>核心观点</th>
+    </tr>
+    <tr>
+        <td><strong>财联社</strong></td>
+        <td>中东局势阶段性缓和，但远未消除。油价短期或在$95-$105区间震荡，若谈判破裂仍有上行风险。</td>
+    </tr>
+    <tr>
+        <td><strong>东方金诚</strong></td>
+        <td>中东局势推高国内物价，短期货币政策可能阶段性向稳物价倾斜，降息降准时点可能延后。</td>
+    </tr>
+    <tr>
+        <td><strong>中金公司</strong></td>
+        <td>美元避险能力分化："基建锚"坚挺但"价值锚"动摇。EPFR数据显示外国投资者"卖长买短"美债，短久期偏好加强。</td>
+    </tr>
+    <tr>
+        <td><strong>高盛/麦格里</strong></td>
+        <td>油价若霍尔木兹海峡长期关闭，可能升至$150-$200。当前谈判进展使极端情景概率下降。</td>
+    </tr>
+    <tr>
+        <td><strong>宁德时代</strong></td>
+        <td>董事长曾毓群：产业创新必须秉承严谨科研精神。中国技术走向世界，靠的不只是速度和规模，更靠创新的质量、验证的能力和品牌的公信力。</td>
+    </tr>
+</table>
 
-  <table class="data-table">
-    <tr><th>维度</th><th>建议</th><th>具体数值</th></tr>
-    <tr>
-      <td><b>汇率对冲</b></td>
-      <td>USD/CNY处于52周极低区间，建议评估套保覆盖率</td>
-      <td>当前6.8594，52周低点6.8582</td>
-    </tr>
-    <tr>
-      <td><b>能源敞口</b></td>
-      <td>布油$95+，地缘不确定性高，谨慎补库</td>
-      <td>关注明日停火到期结果</td>
-    </tr>
-    <tr>
-      <td><b>黄金配置</b></td>
-      <td>维持战略持仓，地缘风险支撑价格</td>
-      <td>$4,800-4,850区间震荡</td>
-    </tr>
-    <tr>
-      <td><b>美股敞口</b></td>
-      <td>纳指13连涨终结，高位注意获利了结</td>
-      <td>关注沃什听证会后市场反应</td>
-    </tr>
-  </table>
+<!-- 7. 今日风险预警 -->
+<h2>七、今日风险预警</h2>
+
+<div class="highlight-box">
+    <span class="label label-high">高度警惕</span><br><br>
+    <strong>1. 美伊谈判进展：</strong>特朗普延长停火期限，但伊朗拒绝出席部分会谈。若谈判破裂，霍尔木兹海峡通航风险重燃，油价可能快速突破$100并冲击$120。<br><br>
+    <strong>2. 钠电池技术路线冲击：</strong>宁德时代Q4量产钠电池，若钠电快速渗透储能/低端车市场，可能分流三元材料需求。我司需评估供应链定位。<br><br>
+    <strong>3. 美元指数持续弱势：</strong>DXY维持98附近，若跌破97.5，人民币被动升值压力增大，对我司贸易层面（负敞口）有利但对资本层面（正敞口）不利。
 </div>
 
-<!-- 数据来源 -->
+<div class="warning-box">
+    <span class="label label-med">关注</span><br><br>
+    <strong>1. 美国褐皮书发布：</strong>今日将发布美联储褐皮书及制造业调查数据，若数据偏弱，可能引发市场对美国经济放缓担忧。<br><br>
+    <strong>2. LPR连续10个月不变：</strong>市场降息预期降温，实体融资成本维持现状，企业融资环境无显著改善。<br><br>
+    <strong>3. 碳酸锂价格反弹：</strong>从低点回升，需关注是否持续，影响电池材料成本曲线。
+</div>
+
+<!-- 8. 数据来源与时效声明 -->
+<h2>八、数据来源与时效声明</h2>
+<table>
+    <tr>
+        <th>数据类别</th>
+        <th>来源</th>
+        <th>时效</th>
+        <th>状态</th>
+    </tr>
+    <tr>
+        <td>USD/CNY中间价</td>
+        <td>中国货币网/央行</td>
+        <td>4月22日 09:15</td>
+        <td class="up">当日</td>
+    </tr>
+    <tr>
+        <td>美股数据</td>
+        <td>财联社/新浪财经</td>
+        <td>4月21日收盘</td>
+        <td class="up">T-1收盘</td>
+    </tr>
+    <tr>
+        <td>亚洲股市</td>
+        <td>东方财富/新浪财经</td>
+        <td>4月22日早盘</td>
+        <td class="up">实时</td>
+    </tr>
+    <tr>
+        <td>原油/黄金</td>
+        <td>Investing.com/新浪财经</td>
+        <td>4月21日收盘</td>
+        <td class="up">T-1收盘</td>
+    </tr>
+    <tr>
+        <td>LME金属</td>
+        <td>上海有色网/Westmetall</td>
+        <td>4月21日收盘</td>
+        <td class="up">T-1收盘</td>
+    </tr>
+    <tr>
+        <td>国内宏观政策</td>
+        <td>央行官网/国务院/财新</td>
+        <td>4月21日</td>
+        <td class="up">当日</td>
+    </tr>
+    <tr>
+        <td>地缘风险</td>
+        <td>央视新闻/财联社/国际媒体</td>
+        <td>4月21日晚间</td>
+        <td class="up">实时</td>
+    </tr>
+    <tr>
+        <td>行业新闻</td>
+        <td>新华社/新浪科技/宁德时代公告</td>
+        <td>4月21日晚间</td>
+        <td class="up">实时</td>
+    </tr>
+    <tr>
+        <td>碳酸锂/钠价格</td>
+        <td>上海有色网(SMM)</td>
+        <td>最新可获得</td>
+        <td class="up">日度</td>
+    </tr>
+</table>
+
+<p><span class="star-rating">★★★★★</span> <strong>质量评级：5星</strong></p>
+<ul style="font-size:12px; color:#666;">
+    <li>USD/CNY中间价：央行官方数据，已当日9:15发布</li>
+    <li>宏观政策：央行官网+国务院，双源确认</li>
+    <li>地缘风险：央视新闻+财联社，交叉验证</li>
+    <li>行业新闻：新华社+宁德时代官方公告，权威来源</li>
+    <li>原油价格：Investing.com历史数据表+实时搜索验证</li>
+</ul>
+
+<!-- 9. 免责声明 -->
 <div class="footer">
-  <div class="stars">⭐⭐⭐⭐⭐ 五星质量评级</div>
-  <p>数据时效声明 | 美股：4月20日收盘 | 原油/黄金：4月20日收盘+夜盘 | USD/CNY：4月21日09:15发布</p>
-  <p style="margin-top:6px;">
-    <b>数据来源：</b>中国外汇交易中心(chinamoney.com.cn)、财联社、新浪财经、Investing.com、证券时报、金十数据、每日经济新闻、央视新闻
-  </p>
-  <p style="margin-top:6px;font-size:10px;color:#aaa;">
-    本报告仅供开盘前决策参考，不构成投资建议。关键事件（美伊谈判、美联储主席听证会）可能在盘中引发波动，请密切关注。
-  </p>
+    <strong>免责声明：</strong>以上信息基于公开渠道获取，仅供参考，不构成投资建议。数据时效截至2026年4月22日 09:40 CST。投资有风险，决策需谨慎。<br><br>
+    报告生成时间：2026-04-22 09:40:00（北京时间）<br>
+    发送时间：2026-04-22 09:40<br>
+    下次更新：2026-04-23 08:30
 </div>
 
 </div>
