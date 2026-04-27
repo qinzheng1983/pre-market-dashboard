@@ -1,0 +1,61 @@
+{
+  "analysis_date": "2026-04-05",
+  "data_period": "2021-04-06 to 2026-04-03",
+  "trading_days": 1304,
+  "risk_free_rate": 0.02,
+  "individual_assets": {
+    "USDCNH": {
+      "annual_return": 0.04373459839348004,
+      "annual_volatility": 0.0627532854703908,
+      "sharpe_ratio": 0.3782208089276673
+    },
+    "EURCNH": {
+      "annual_return": 0.03581223939906341,
+      "annual_volatility": 0.07842595781352953,
+      "sharpe_ratio": 0.2016199717529696
+    },
+    "CNYRUB": {
+      "annual_return": -0.017268515421577313,
+      "annual_volatility": 0.16019046318724628,
+      "sharpe_ratio": -0.2326512744895071
+    },
+    "CNYTHB": {
+      "annual_return": -0.021103834483609866,
+      "annual_volatility": 0.04731652998721727,
+      "sharpe_ratio": -0.8686992578431727
+    }
+  },
+  "optimal_portfolio": {
+    "weights": {
+      "USDCNH": 0.4999999999999999,
+      "EURCNH": 0.5,
+      "CNYRUB": 0.0,
+      "CNYTHB": 3.0531133177191805e-16
+    },
+    "annual_return": 0.039773418896271714,
+    "annual_volatility": 0.050138020989147,
+    "sharpe_ratio": 0.3943797243323967
+  },
+  "min_variance_portfolio": {
+    "weights": {
+      "USDCNH": 0.2792131023605313,
+      "EURCNH": 0.17958948519054632,
+      "CNYRUB": 0.04255089940859804,
+      "CNYTHB": 0.4986465130403243
+    },
+    "annual_return": 0.007384630195462294,
+    "annual_volatility": 0.033237738512773174,
+    "sharpe_ratio": -0.37954958336559674
+  },
+  "equal_weight_portfolio": {
+    "weights": {
+      "USDCNH": 0.25,
+      "EURCNH": 0.25,
+      "CNYRUB": 0.25,
+      "CNYTHB": 0.25
+    },
+    "annual_return": 0.01029362197183907,
+    "annual_volatility": 0.04908316961571649,
+    "sharpe_ratio": -0.1977536924398814
+  }
+}

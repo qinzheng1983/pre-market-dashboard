@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中东地缘风险与汇率分析 | 2026-03-16</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .header .date { color: #64748b; font-size: 0.9rem; }
+        
+        .alert-box {
+            background: linear-gradient(135deg, #f9731620, #f9731605);
+            border: 1px solid #f9731640;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .alert-title { color: #f97316; font-weight: 600; font-size: 1.1rem; }
+        .alert-text { color: #fdba74; margin-top: 0.5rem; line-height: 1.6; }
+        
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .score-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .score-value { font-size: 2.5rem; font-weight: 700; }
+        .score-label { color: #64748b; font-size: 0.85rem; margin-top: 0.25rem; }
+        .score-trend { font-size: 0.8rem; margin-top: 0.5rem; }
+        .trend-up { color: #ef4444; }
+        .trend-down { color: #22c55e; }
+        
+        .section {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f97316;
+            margin-bottom: 1rem;
+        }
+        
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .scenario-card {
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+            padding: 1.25rem;
+            border-left: 4px solid;
+        }
+        .scenario-optimistic { border-color: #22c55e; }
+        .scenario-base { border-color: #eab308; }
+        .scenario-pessimistic { border-color: #ef4444; }
+        
+        .scenario-title { font-weight: 600; margin-bottom: 0.5rem; }
+        .scenario-prob { font-size: 0.8rem; color: #64748b; margin-bottom: 0.75rem; }
+        .scenario-fx { font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0; }
+        .scenario-desc { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; }
+        
+        .fx-highlight { background: rgba(249, 115, 22, 0.15); padding: 0.25rem 0.5rem; border-radius: 4px; }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        th { color: #64748b; font-weight: 500; }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #f9731615, #f9731605);
+            border: 1px solid #f9731630;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .footer {
+            text-align: center;
+            color: #475569;
+            font-size: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 中东地缘风险与汇率分析</h1>
+            <div class="date">报告日期: 2026-03-16 | 基于实时数据API</div>
+        </div>
+        
+        <div class="alert-box">
+            <div class="alert-title">⚠️ 风险升级警报</div>
+            <div class="alert-text">
+                2026年2月美以联合打击伊朗后，地缘风险从"ELEVATED"(48分)飙升至"HIGH"(63.5分)。
+                当前处于"边谈边斗"格局，USD/CNY预计在<span class="fx-highlight">7.20-7.50区间</span>波动，
+                建议维持<strong>65-75%对冲比例</strong>。
+            </div>
+        </div>
+        
+        <div class="score-grid">
+            <div class="score-card">
+                <div class="score-value" style="color: #f97316;">63.5</div>
+                <div class="score-label">综合风险指数</div>
+                <div class="score-trend trend-up">🔺 HIGH (较3月+15.5)</div>
+            </div>
+            <div class="score-card">
+                <div class="score-value" style="color: #eab308;">7.25</div>
+                <div class="score-label">USD/CNY 在岸</div>
+                <div class="score-trend">区间: 7.20-7.35</div>
+            </div>
+            <div class="score-card">
+                <div class="score-value" style="color: #22c55e;">70%</div>
+                <div class="score-label">推荐对冲比例</div>
+                <div class="score-trend">基于HIGH风险等级</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📊 三种情景下的汇率预测</div>
+            <div class="scenario-grid">
+                <div class="scenario-card scenario-optimistic">
+                    <div class="scenario-title">🟢 情景一：冲突缓和</div>
+                    <div class="scenario-prob">概率: 30%</div>
+                    <div class="scenario-fx" style="color: #22c55e;">7.15 - 7.20</div>
+                    <div class="scenario-desc">
+                        美伊谈判取得突破，油价下跌10-15%，美元指数走弱，人民币相对受益。
+                        建议对冲比例降至50-60%。
+                    </div>
+                </div>
+                
+                <div class="scenario-card scenario-base">
+                    <div class="scenario-title">🟡 情景二：僵持持续</div>
+                    <div class="scenario-prob">概率: 45% (基准情景)</div>
+                    <div class="scenario-fx" style="color: #eab308;">7.20 - 7.35</div>
+                    <div class="scenario-desc">
+                        "边谈边斗"格局延续，制裁维持但无进一步升级。
+                        维持60-70%对冲比例。
+                    </div>
+                </div>
+                
+                <div class="scenario-card scenario-pessimistic">
+                    <div class="scenario-title">🔴 情景三：全面升级</div>
+                    <div class="scenario-prob">概率: 25%</div>
+                    <div class="scenario-fx" style="color: #ef4444;">7.35 - 7.50</div>
+                    <div class="scenario-desc">
+                        霍尔木兹海峡封锁，油价突破$100，美元指数暴涨。
+                        紧急提升至80-90%对冲。
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📈 关键监测指标</div>
+            <table>
+                <tr>
+                    <th>指标</th>
+                    <th>当前状态</th>
+                    <th>警戒线</th>
+                    <th>汇率影响</th>
+                </tr>
+                <tr>
+                    <td>布伦特原油</td>
+                    <td>~$75/桶</td>
+                    <td style="color: #f97316;">>$90</td>
+                    <td>USD/CNY ↑</td>
+                </tr>
+                <tr>
+                    <td>美元指数 DXY</td>
+                    <td>~103</td>
+                    <td style="color: #f97316;">>107</td>
+                    <td>USD/CNY ↑</td>
+                </tr>
+                <tr>
+                    <td>伊朗里亚尔</td>
+                    <td>923,050/USD</td>
+                    <td style="color: #f97316;">>1,000,000</td>
+                    <td>危机信号</td>
+                </tr>
+                <tr>
+                    <td>USD/CNY波动率</td>
+                    <td>低</td>
+                    <td style="color: #f97316;">单日>0.3%</td>
+                    <td>触发对冲调整</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="recommendation">
+            <div class="section-title">💡 操作建议</div>
+            <p><strong>短期（1-3个月）:</strong></p>
+            <ul style="margin-left: 1.5rem; color: #94a3b8; line-height: 1.8;">
+                <li>维持<strong>65-75%</strong>对冲比例</li>
+                <li>关注美伊谈判进展（下一次：2026-04-15）</li>
+                <li>设置<strong>USD/CNY 7.35</strong>止损线</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;"><strong>中期（3-6个月）:</strong></p>
+            <ul style="margin-left: 1.5rem; color: #94a3b8; line-height: 1.8;">
+                <li>根据核协议谈判结果调整对冲策略</li>
+                <li>准备应对制裁扩大至中国企业的风险</li>
+                <li>考虑黄金作为避险配置（目标：10-15%）</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">📋 数据来源</div>
+            <p style="color: #64748b; font-size: 0.85rem; line-height: 1.6;">
+                • Reuters - 中东实时新闻<br>
+                • US Treasury - 制裁公告<br>
+                • UN Security Council - 外交动态<br>
+                • 中国外汇交易中心 - 汇率中间价<br>
+                • 国际原子能机构(IAEA) - 伊朗核活动监测
+            </p>
+        </div>
+        
+        <div class="footer">
+            生成时间: 2026-03-16 08:45:00 | 数据模式: 实时API + 历史数据交叉验证 | 建议每日更新
+        </div>
+    </div>
+</body>
+</html>

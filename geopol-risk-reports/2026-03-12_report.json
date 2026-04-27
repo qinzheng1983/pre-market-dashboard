@@ -1,0 +1,193 @@
+{
+  "date": "2026-03-12",
+  "generated_at": "2026-03-12T13:45:13.744621",
+  "total_score": 59.4,
+  "risk_level": "HIGH",
+  "trend": "ESCALATING",
+  "day_change": 8.5,
+  "components": {
+    "official": {
+      "trump": {
+        "score": 55,
+        "signals": [
+          "Threatens continued strikes",
+          "Conditions for ending war unclear"
+        ],
+        "trend": "escalating"
+      },
+      "netanyahu": {
+        "score": 58,
+        "signals": [
+          "Operations ongoing",
+          "Targeting new leader"
+        ],
+        "trend": "escalating"
+      },
+      "iran": {
+        "score": 62,
+        "signals": [
+          "New hardline leader appointed",
+          "Rejecting negotiations",
+          "Threatening Hormuz"
+        ],
+        "trend": "escalating"
+      },
+      "component_score": 59,
+      "weight": 0.3
+    },
+    "military": {
+      "hormuz": {
+        "score": 65,
+        "signals": [
+          "Iran warning ships to exercise caution",
+          "Disruption risk elevated"
+        ],
+        "trend": "escalating"
+      },
+      "us_israel_strikes": {
+        "score": 68,
+        "signals": [
+          "1,900 Iranian soldiers killed",
+          "Striking command centers"
+        ],
+        "trend": "escalating"
+      },
+      "iran_strikes": {
+        "score": 58,
+        "signals": [
+          "Retaliatory strikes continue",
+          "Targeting US bases in region"
+        ],
+        "trend": "stable"
+      },
+      "component_score": 64,
+      "weight": 0.3
+    },
+    "markets": {
+      "oil": {
+        "score": 65,
+        "price": 78.23,
+        "change": "+1.54%",
+        "signals": [
+          "Conflict premium elevated",
+          "Hormuz closure risk"
+        ]
+      },
+      "usd": {
+        "score": 40,
+        "index": 104.7,
+        "change": "+0.2%",
+        "signals": [
+          "Stable safe-haven flows"
+        ]
+      },
+      "gold": {
+        "score": 70,
+        "price": 5191,
+        "change": "+1.06%",
+        "signals": [
+          "Safe-haven demand strong",
+          "Near record highs"
+        ]
+      },
+      "asia": {
+        "score": 45,
+        "nikkei_change": "-0.8%",
+        "kospi_change": "-0.5%",
+        "signals": [
+          "Moderate risk-off sentiment"
+        ]
+      },
+      "component_score": 59.0,
+      "weight": 0.3
+    },
+    "diplomatic": {
+      "china": {
+        "score": 40,
+        "signals": [
+          "Evacuating citizens",
+          "Neutral stance"
+        ]
+      },
+      "russia": {
+        "score": 50,
+        "signals": [
+          "Iran coordination concerns"
+        ]
+      },
+      "japan": {
+        "score": 45,
+        "signals": [
+          "Monitoring energy security"
+        ]
+      },
+      "saudi": {
+        "score": 55,
+        "signals": [
+          "Hosting evacuations",
+          "Regional tension"
+        ]
+      },
+      "uae": {
+        "score": 50,
+        "signals": [
+          "Coordinating evacuations"
+        ]
+      },
+      "component_score": 48,
+      "weight": 0.1
+    }
+  },
+  "breaking_events": [
+    {
+      "time": "08:30",
+      "category": "官方态度",
+      "event": "特朗普表示将在'适当时机'与内塔尼亚胡共同决定是否停止对伊朗战争",
+      "impact": "high",
+      "source": "《以色列时报》"
+    },
+    {
+      "time": "09:15",
+      "category": "军事行动",
+      "event": "美以联合袭击进入第10天，以色列称已打死约1900名伊朗士兵",
+      "impact": "high",
+      "source": "以军声明"
+    },
+    {
+      "time": "10:00",
+      "category": "官方态度",
+      "event": "伊朗新任最高领袖穆杰塔巴·哈梅内伊正式上任，伊朗排除谈判可能",
+      "impact": "high",
+      "source": "伊朗塔斯尼姆通讯社"
+    },
+    {
+      "time": "12:30",
+      "category": "军事行动",
+      "event": "伊朗卫生部更新：冲突已导致1255人死亡，超1.2万人受伤",
+      "impact": "high",
+      "source": "伊朗卫生部"
+    },
+    {
+      "time": "14:20",
+      "category": "外交信号",
+      "event": "中国外交部：已有1万余名中国旅客自阿联酋、阿曼等国安全返回",
+      "impact": "medium",
+      "source": "中国外交部"
+    },
+    {
+      "time": "16:00",
+      "category": "金融市场",
+      "event": "布伦特原油突破78美元，市场担忧霍尔木兹海峡封锁风险",
+      "impact": "medium",
+      "source": "ICE期货交易所"
+    },
+    {
+      "time": "17:45",
+      "category": "官方态度",
+      "event": "伊朗外交部警告：途经霍尔木兹海峡的油轮必须极为谨慎",
+      "impact": "high",
+      "source": "伊朗外交部"
+    }
+  ],
+  "hedging_recommendation": "最大对冲（90%+），应急预案待命。若霍尔木兹封锁，油价可能冲至100-150美元。"
+}

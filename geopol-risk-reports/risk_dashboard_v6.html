@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中东地缘风险指挥中心 | Middle East Risk Command</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: 'Inter', system-ui, sans-serif;
+                background: #0a0a0a;
+                color: #fafafa;
+            }
+            .mono {
+                font-family: 'JetBrains Mono', monospace;
+            }
+        }
+        @layer components {
+            .glass-panel {
+                background: rgba(26, 26, 26, 0.8);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .risk-gauge-bg {
+                background: conic-gradient(
+                    from 180deg,
+                    #2e7d32 0deg 72deg,
+                    #f9a825 72deg 144deg,
+                    #e65100 144deg 180deg,
+                    #b71c1c 180deg 360deg
+                );
+            }
+            .glow-red {
+                box-shadow: 0 0 30px rgba(183, 28, 28, 0.3);
+            }
+            .glow-amber {
+                box-shadow: 0 0 20px rgba(230, 81, 0, 0.2);
+            }
+            .data-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+            .ticker {
+                animation: scroll 30s linear infinite;
+            }
+            @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .pulse-ring {
+                animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+            }
+            @keyframes pulse-ring {
+                0% { transform: scale(0.8); opacity: 1; }
+                100% { transform: scale(1.5); opacity: 0; }
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden">
+    <!-- Top Alert Bar -->
+    <div class="bg-red-900/30 border-b border-red-800/50 text-red-100 text-sm py-2 overflow-hidden">
+        <div class="ticker whitespace-nowrap flex gap-12">
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/16 01:00 伊朗最高领袖遭袭身亡
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/14 03:00 特朗普宣布轰炸哈尔克岛
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+                2026/03/13 18:30 沙特空军基地遇袭，5架美加油机受损
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/09 12:46 布伦特原油突破118美元
+            </span>
+            <!-- Duplicate for seamless loop -->
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/16 01:00 伊朗最高领袖遭袭身亡
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/14 03:00 特朗普宣布轰炸哈尔克岛
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-amber-500 rounded-full animate-pulse"></span>
+                2026/03/13 18:30 沙特空军基地遇袭，5架美加油机受损
+            </span>
+            <span class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                2026/03/09 12:46 布伦特原油突破118美元
+            </span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-panel sticky top-0 z-50 px-6 py-4">
+        <div class="max-w-[1800px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center glow-red">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold text-white">中东地缘风险指挥中心</h1>
+                    <p class="text-xs text-gray-400 mono">MIDDLE EAST RISK COMMAND CENTER</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="text-right">
+                    <p class="text-xs text-gray-500">最后更新</p>
+                    <p class="text-sm font-medium mono text-white">2026/03/17 09:18 CST</p>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 bg-red-900/30 rounded-full border border-red-700/50">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                    </span>
+                    <span class="text-sm font-semibold text-red-400">LIVE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="max-w-[1800px] mx-auto p-6 space-y-6">
+        <!-- Risk Score Hero -->
+        <section class="glass-panel rounded-2xl p-8 glow-red">
+            <div class="grid lg:grid-cols-3 gap-8 items-center">
+                <!-- Risk Gauge -->
+                <div class="relative flex flex-col items-center">
+                    <div class="relative w-64 h-32 overflow-hidden">
+                        <div class="absolute inset-0 risk-gauge-bg rounded-t-full"></div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 h-28 bg-[#0a0a0a] rounded-t-full flex items-end justify-center pb-4">
+                            <div class="text-center">
+                                <div class="text-5xl font-bold text-red-500">92</div>
+                                <div class="text-sm text-gray-400 mt-1">/100 风险评分</div>
+                            </div>
+                        </div>
+                        <!-- Gauge Needle -->
+                        <div class="absolute bottom-0 left-1/2 w-1 h-28 bg-white origin-bottom -translate-x-1/2" style="transform: translateX(-50%) rotate(75deg);"></div>
+                        <div class="absolute bottom-0 left-1/2 w-4 h-4 bg-white rounded-full -translate-x-1/2 translate-y-1/2"></div>
+                    </div>
+                    <div class="mt-4 px-6 py-2 bg-red-900/50 rounded-full border border-red-700/50">
+                        <span class="text-lg font-bold text-red-400">极高风险 EXTREME</span>
+                    </div>
+                </div>
+
+                <!-- Key Metrics -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                        <div>
+                            <p class="text-sm text-gray-400">USD/CNY 在岸</p>
+                            <p class="text-2xl font-bold mono text-white">6.9004</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-2 py-1 bg-red-900/50 text-red-400 text-xs rounded">+0.06%</span>
+                            <p class="text-xs text-gray-500 mt-1">中行中间价 6.8961</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                        <div>
+                            <p class="text-sm text-gray-400">布伦特原油</p>
+                            <p class="text-2xl font-bold mono text-amber-400">$103.14</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-2 py-1 bg-amber-900/50 text-amber-400 text-xs rounded">+2.67%</span>
+                            <p class="text-xs text-gray-500 mt-1">ICE期货 2026/05</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between p-4 bg-white/5 rounded-xl">
+                        <div>
+                            <p class="text-sm text-gray-400">黄金期货</p>
+                            <p class="text-2xl font-bold mono text-yellow-400">$5,061.70</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="px-2 py-1 bg-yellow-900/50 text-yellow-400 text-xs rounded">+0.43%</span>
+                            <p class="text-xs text-gray-500 mt-1">COMEX</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scenario Analysis -->
+                <div class="space-y-3">
+                    <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">情景分析</h3>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between p-3 bg-red-900/20 rounded-lg border border-red-800/30">
+                            <span class="text-sm text-red-300">C: 全面升级</span>
+                            <div class="flex items-center gap-3">
+                                <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-red-500" style="width: 50%"></div>
+                                </div>
+                                <span class="text-sm mono text-red-400">50%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-amber-900/20 rounded-lg border border-amber-800/30">
+                            <span class="text-sm text-amber-300">B: 僵持延续</span>
+                            <div class="flex items-center gap-3">
+                                <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-amber-500" style="width: 35%"></div>
+                                </div>
+                                <span class="text-sm mono text-amber-400">35%</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-green-900/20 rounded-lg border border-green-800/30">
+                            <span class="text-sm text-green-300">A: 冲突缓和</span>
+                            <div class="flex items-center gap-3">
+                                <div class="w-24 h-2 bg-gray-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-green-500" style="width: 15%"></div>
+                                </div>
+                                <span class="text-sm mono text-green-400">15%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-3 bg-blue-900/20 rounded-lg border border-blue-800/30">
+                        <p class="text-xs text-blue-300">💡 对冲建议: <span class="font-semibold">90-100% 最大防御型</span></p>
+                        <p class="text-xs text-blue-400/70 mt-1">止损线: 7.00 | 目标区间: 6.90-7.30</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="grid lg:grid-cols-2 gap-6">
+            <!-- FX Chart -->
+            <div class="glass-panel rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-white">USD/CNY 汇率预测</h2>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-blue-900/50 text-blue-400 text-xs rounded-full">高风险情景</span>
+                    </div>
+                </div>
+                <canvas id="fxChart" height="200"></canvas>
+                <div class="mt-4 grid grid-cols-3 gap-4 text-center">
+                    <div class="p-3 bg-white/5 rounded-lg">
+                        <p class="text-xs text-gray-500">7日预测</p>
+                        <p class="text-lg font-bold mono text-amber-400">6.95-7.05</p>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-lg">
+                        <p class="text-xs text-gray-500">30日预测</p>
+                        <p class="text-lg font-bold mono text-red-400">7.05-7.30</p>
+                    </div>
+                    <div class="p-3 bg-white/5 rounded-lg">
+                        <p class="text-xs text-gray-500">关键阻力</p>
+                        <p class="text-lg font-bold mono text-white">7.00 / 7.10</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Oil Price Chart -->
+            <div class="glass-panel rounded-2xl p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-white">原油价格走势</h2>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-amber-900/50 text-amber-400 text-xs rounded-full">+51.74% YTD</span>
+                    </div>
+                </div>
+                <canvas id="oilChart" height="200"></canvas>
+                <div class="mt-4 flex items-center justify-between p-4 bg-amber-900/20 rounded-lg border border-amber-800/30">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <div class="pulse-ring absolute inset-0 rounded-full bg-amber-500"></div>
+                            <div class="w-3 h-3 bg-amber-500 rounded-full relative"></div>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-amber-300">霍尔木兹海峡状态</p>
+                            <p class="text-xs text-amber-400/70">船舶流量下降 93%</p>
+                        </div>
+                    </div>
+                    <span class="text-2xl font-bold mono text-amber-400">$103.14</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Timeline -->
+        <section class="glass-panel rounded-2xl p-6">
+            <h2 class="text-lg font-semibold text-white mb-6">风险事件时间线</h2>
+            <div class="relative">
+                <!-- Timeline Line -->
+                <div class="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-red-500/50 via-amber-500/50 to-green-500/50"></div>
+                
+                <div class="space-y-4">
+                    <!-- Recent Events (High Risk) -->
+                    <div class="flex gap-4 pl-10 relative">
+                        <div class="absolute left-2 w-4 h-4 bg-red-500 rounded-full border-2 border-[#0a0a0a] glow-red"></div>
+                        <div class="flex-1 p-4 bg-red-900/20 rounded-xl border border-red-800/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-red-400 mono">2026/03/16 01:00</span>
+                                <span class="px-2 py-0.5 bg-red-900/50 text-red-400 text-xs rounded">极高影响</span>
+                            </div>
+                            <p class="text-sm text-white font-medium">伊朗最高领袖哈梅内伊在德黑兰遭袭身亡</p>
+                            <p class="text-xs text-gray-500 mt-1">来源: Reuters | 冲突进入新阶段，报复风险极高</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pl-10 relative">
+                        <div class="absolute left-2 w-4 h-4 bg-red-500 rounded-full border-2 border-[#0a0a0a]"></div>
+                        <div class="flex-1 p-4 bg-red-900/20 rounded-xl border border-red-800/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-red-400 mono">2026/03/14 03:00</span>
+                                <span class="px-2 py-0.5 bg-red-900/50 text-red-400 text-xs rounded">极高影响</span>
+                            </div>
+                            <p class="text-sm text-white font-medium">特朗普宣布轰炸伊朗原油出口枢纽哈尔克岛</p>
+                            <p class="text-xs text-gray-500 mt-1">来源: 财新网 | 伊朗考虑允许人民币结算油轮通过</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pl-10 relative">
+                        <div class="absolute left-2 w-4 h-4 bg-amber-500 rounded-full border-2 border-[#0a0a0a]"></div>
+                        <div class="flex-1 p-4 bg-amber-900/20 rounded-xl border border-amber-800/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-amber-400 mono">2026/03/13 18:30</span>
+                                <span class="px-2 py-0.5 bg-amber-900/50 text-amber-400 text-xs rounded">高影响</span>
+                            </div>
+                            <p class="text-sm text-white font-medium">伊朗导弹击中沙特苏丹王子空军基地，5架美加油机受损</p>
+                            <p class="text-xs text-gray-500 mt-1">来源: 华尔街日报 | 美军空中加油能力受损</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pl-10 relative">
+                        <div class="absolute left-2 w-4 h-4 bg-red-500 rounded-full border-2 border-[#0a0a0a]"></div>
+                        <div class="flex-1 p-4 bg-red-900/20 rounded-xl border border-red-800/30">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs text-red-400 mono">2026/03/09 12:46</span>
+                                <span class="px-2 py-0.5 bg-red-900/50 text-red-400 text-xs rounded">极高影响</span>
+                            </div>
+                            <p class="text-sm text-white font-medium">布伦特原油价格突破118美元/桶</p>
+                            <p class="text-xs text-gray-500 mt-1">来源: 俄卫星社 | 2022年6月以来首次突破100美元</p>
+                        </div>
+                    </div>
+
+                    <!-- Earlier Events -->
+                    <div class="flex gap-4 pl-10 relative opacity-60">
+                        <div class="absolute left-2 w-3 h-3 bg-amber-500 rounded-full border-2 border-[#0a0a0a]"></div>
+                        <div class="flex-1 p-3 bg-white/5 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500 mono">2026/03/02 08:15</span>
+                                <span class="text-xs text-gray-500">伊朗宣布封锁霍尔木兹海峡</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pl-10 relative opacity-60">
+                        <div class="absolute left-2 w-3 h-3 bg-red-500 rounded-full border-2 border-[#0a0a0a]"></div>
+                        <div class="flex-1 p-3 bg-white/5 rounded-lg">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs text-gray-500 mono">2026/02/28 02:30</span>
+                                <span class="text-xs text-gray-500">美以联军对伊朗发动首轮空袭</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Cards -->
+        <section class="grid md:grid-cols-3 gap-6">
+            <div class="glass-panel rounded-2xl p-6 glow-red">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-red-900/50 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-white">立即行动</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-red-400">▸</span>
+                        维持90-100%对冲比例
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-red-400">▸</span>
+                        设置USD/CNY止损线于7.00
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-red-400">▸</span>
+                        监控美军动向和伊朗反击
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6 glow-amber">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-amber-900/50 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-white">关键监测</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-amber-400">▸</span>
+                        霍尔木兹海峡船舶通行量
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-amber-400">▸</span>
+                        战争险保费变化
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-amber-400">▸</span>
+                        美伊双方官方表态
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-panel rounded-2xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-white">数据来源</h3>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-400">▸</span>
+                        中国外汇交易中心 (央行)
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-400">▸</span>
+                        ICE期货 / Investing.com
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-blue-400">▸</span>
+                        Reuters / 财新 / 新华社
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-panel mt-12 py-6 px-6">
+        <div class="max-w-[1800px] mx-auto flex items-center justify-between text-xs text-gray-500">
+            <p>OpenClaw Risk Dashboard v6.0 | 数据更新时间: 2026/03/17 09:18 CST</p>
+            <p>本报告仅供参考，不构成投资建议</p>
+        </div>
+    </footer>
+
+    <script>
+        // FX Chart
+        const fxCtx = document.getElementById('fxChart').getContext('2d');
+        new Chart(fxCtx, {
+            type: 'line',
+            data: {
+                labels: ['Current', 'Q2\'26', 'Q3\'26', 'Q4\'26', 'H1\'27', 'H2\'27'],
+                datasets: [{
+                    label: 'USD/CNY 预测',
+                    data: [6.90, 7.07, 7.17, 7.25, 7.28, 7.31],
+                    borderColor: '#ef4444',
+                    backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4
+                }, {
+                    label: '当前水平',
+                    data: [6.90, 6.90, 6.90, 6.90, 6.90, 6.90],
+                    borderColor: '#10b981',
+                    borderWidth: 1,
+                    borderDash: [5, 5],
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#9ca3af', font: { family: 'Inter' } }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono' } },
+                        min: 6.8,
+                        max: 7.4
+                    },
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#9ca3af', font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+
+        // Oil Chart
+        const oilCtx = document.getElementById('oilChart').getContext('2d');
+        new Chart(oilCtx, {
+            type: 'line',
+            data: {
+                labels: ['2/17', '2/24', '3/3', '3/9', '3/13', '3/17'],
+                datasets: [{
+                    label: '布伦特原油',
+                    data: [68, 72, 85, 118, 101, 103],
+                    borderColor: '#f59e0b',
+                    backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: { color: '#9ca3af', font: { family: 'Inter' } }
+                    }
+                },
+                scales: {
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#9ca3af', font: { family: 'JetBrains Mono' } },
+                        min: 60,
+                        max: 130
+                    },
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#9ca3af', font: { family: 'Inter' } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

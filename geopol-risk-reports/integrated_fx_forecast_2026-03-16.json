@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-03-16T09:07:46.650588",
+  "base_fx": 7.25,
+  "signals": [
+    {
+      "factor": "地缘风险",
+      "weight": 0.3,
+      "value": 63.5,
+      "direction": "bearish",
+      "impact": "high"
+    },
+    {
+      "factor": "中美利差",
+      "weight": 0.25,
+      "value": 2.5,
+      "direction": "bearish",
+      "impact": "high"
+    },
+    {
+      "factor": "贸易顺差",
+      "weight": 0.2,
+      "value": 800,
+      "direction": "bullish",
+      "impact": "high"
+    },
+    {
+      "factor": "资本流动",
+      "weight": 0.15,
+      "value": -50,
+      "direction": "bearish",
+      "impact": "high"
+    },
+    {
+      "factor": "原油价格",
+      "weight": 0.1,
+      "value": 75,
+      "direction": "neutral",
+      "impact": "low"
+    }
+  ],
+  "composite": {
+    "net_score": 0.5,
+    "bullish_score": 0.2,
+    "bearish_score": 0.7,
+    "trend": "depreciation",
+    "intensity": "strong"
+  },
+  "scenarios": [
+    {
+      "name": "乐观情景",
+      "probability": 0.25,
+      "fx_range": [
+        7.15,
+        7.22
+      ],
+      "catalyst": "地缘缓和+利差收窄",
+      "risk_level": "LOW",
+      "hedge_ratio": 50
+    },
+    {
+      "name": "基准情景",
+      "probability": 0.5,
+      "fx_range": [
+        7.22,
+        7.35
+      ],
+      "catalyst": "当前格局延续",
+      "risk_level": "MEDIUM",
+      "hedge_ratio": 65
+    },
+    {
+      "name": "悲观情景",
+      "probability": 0.25,
+      "fx_range": [
+        7.35,
+        7.55
+      ],
+      "catalyst": "地缘升级+资本外流",
+      "risk_level": "HIGH",
+      "hedge_ratio": 85
+    }
+  ],
+  "expected_fx": 7.3012,
+  "hedge_recommendation": {
+    "hedge_ratio": 66,
+    "strategy": "防御型",
+    "products": [
+      "远期结汇",
+      "美元看涨期权",
+      "风险逆转期权"
+    ],
+    "confidence": "strong"
+  }
+}

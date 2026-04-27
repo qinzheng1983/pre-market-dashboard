@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "skills": {
+    "superpowers": {
+      "name": "Superpowers Dev Workflow",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=superpowers",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "planning-with-files": {
+      "name": "Planning with files",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=planning-with-files",
+      "source": "skillhub",
+      "version": "2.26.1"
+    },
+    "web-design": {
+      "name": "Web Design",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=web-design",
+      "source": "skillhub",
+      "version": "1.0.0"
+    }
+  }
+}

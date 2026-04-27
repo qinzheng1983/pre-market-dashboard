@@ -1,0 +1,130 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "generated_at": "2026-03-16T08:41:19.008259",
+    "data_mode": "historical",
+    "analysis_date": "2025-03-13",
+    "warnings": []
+  },
+  "data_quality": {
+    "mode": "historical",
+    "mode_description": "历史归档数据",
+    "event_count": 3,
+    "new_events_count": 3,
+    "warnings": []
+  },
+  "date": "2025-03-13",
+  "analysis_window": {
+    "start": "2025-03-13T00:00:00",
+    "end": "2025-03-14T00:00:00",
+    "description": "2025-03-13 00:00 - 24:00"
+  },
+  "total_score": 48.0,
+  "risk_level": "ELEVATED",
+  "risk_emoji": "🟡",
+  "trend": "STABLE",
+  "day_change": null,
+  "baseline_context": {
+    "period": "2025年3月基础态势",
+    "description": "制裁+谈判博弈期，无直接军事冲突",
+    "key_factors": [
+      "特朗普政府'极限施压'政策（NSPM-2）",
+      "美伊间接谈判僵持（阿曼渠道）",
+      "伊朗里亚尔持续贬值",
+      "胡塞武装红海袭扰"
+    ]
+  },
+  "components": {
+    "official": {
+      "score": 58.3,
+      "base_score": 52,
+      "new_impact": 6.3,
+      "weight": 0.3,
+      "trend": "escalating",
+      "signals": [
+        "【当日新信号】",
+        "  (+6) 美国制裁伊朗石油部长及航运网络",
+        "  (+1) 哈梅内伊任命新的执法部队意识形态负责人"
+      ]
+    },
+    "military": {
+      "score": 38.0,
+      "base_score": 38,
+      "new_impact": 0.0,
+      "weight": 0.3,
+      "trend": "stable",
+      "signals": [
+        "分析周期内无重大新信号"
+      ]
+    },
+    "markets": {
+      "score": 48.0,
+      "base_score": 48,
+      "new_impact": 0.0,
+      "weight": 0.3,
+      "trend": "stable",
+      "signals": [
+        "分析周期内无重大新信号"
+      ]
+    },
+    "diplomatic": {
+      "score": 46.7,
+      "base_score": 42,
+      "new_impact": 4.7,
+      "weight": 0.1,
+      "trend": "escalating",
+      "signals": [
+        "【当日新信号】",
+        "  (+5) 英国威胁触发JCPOA回弹制裁机制"
+      ]
+    }
+  },
+  "breaking_events": [
+    {
+      "time": "09:00",
+      "date": "2025-03-13",
+      "category": "official",
+      "event": "哈梅内伊任命新的执法部队意识形态负责人",
+      "impact": "low",
+      "source": "Defapress / ISW",
+      "verified": true
+    },
+    {
+      "time": "10:30",
+      "date": "2025-03-13",
+      "category": "diplomatic",
+      "event": "英国威胁触发JCPOA回弹制裁机制",
+      "impact": "medium",
+      "source": "UK/UNSC / Reuters",
+      "verified": true
+    },
+    {
+      "time": "14:00",
+      "date": "2025-03-13",
+      "category": "official",
+      "event": "美国制裁伊朗石油部长及航运网络",
+      "impact": "high",
+      "source": "US Treasury / Reuters",
+      "verified": true
+    }
+  ],
+  "data_sources": [
+    "ISW Iran Update (March 2025)",
+    "Reuters - Middle East",
+    "US Treasury Press Release",
+    "UN Security Council Meeting Records"
+  ],
+  "time_line_validation": {
+    "analysis_date": "2025-03-13",
+    "data_mode": "historical",
+    "included_dates": [
+      "2025-03-13"
+    ],
+    "excluded": [
+      "2025年6月'12日战争'历史事件",
+      "2026年预测/模拟场景",
+      "未经验证的社交媒体传言"
+    ]
+  },
+  "hedging_recommendation": "维持60-70%对冲比例。地缘压力持续，但无急剧恶化迹象。"
+}

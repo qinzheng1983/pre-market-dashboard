@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 14px; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+.container { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 30px; }
+h1 { color: #1a1a2e; border-bottom: 3px solid #e94560; padding-bottom: 15px; margin-bottom: 10px; font-size: 22px; }
+.subtitle { color: #666; font-size: 12px; margin-bottom: 25px; }
+h2 { color: #1a1a2e; font-size: 16px; margin-top: 30px; margin-bottom: 15px; border-left: 4px solid #e94560; padding-left: 12px; background: #f8f9fa; padding: 10px 12px; }
+h3 { color: #333; font-size: 14px; margin: 20px 0 10px 0; font-weight: 600; }
+table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+th { background: #1a1a2e; color: #fff; padding: 12px 10px; text-align: left; font-weight: 600; }
+td { padding: 10px; border-bottom: 1px solid #eee; }
+tr:nth-child(even) { background: #f8f9fa; }
+tr:hover { background: #f0f0f0; }
+.highlight { background: #fff3cd; padding: 2px 6px; border-radius: 3px; font-weight: 600; }
+.up { color: #dc3545; }
+.down { color: #28a745; }
+.neutral { color: #6c757d; }
+.critical { color: #dc3545; font-weight: 600; }
+.warning { color: #fd7e14; }
+.positive { color: #28a745; }
+.news-item { margin: 12px 0; padding: 12px 15px; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #1a1a2e; }
+.news-title { font-weight: 600; color: #1a1a2e; }
+.news-content { color: #333; margin-top: 5px; }
+.risk-high { background: #f8d7da; color: #721c24; padding: 10px 15px; border-radius: 6px; margin: 8px 0; }
+.risk-medium { background: #fff3cd; color: #856404; padding: 10px 15px; border-radius: 6px; margin: 8px 0; }
+.footer { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 12px; text-align: center; }
+.sources { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 20px; font-size: 12px; }
+.metric-box { display: inline-block; background: #1a1a2e; color: #fff; padding: 8px 15px; border-radius: 4px; margin: 5px 10px 5px 0; }
+.metric-value { font-size: 18px; font-weight: 600; }
+.metric-label { font-size: 11px; opacity: 0.9; }
+</style>
+</head>
+<body>
+<div class="container">
+<h1>财资日报 — 2026年3月25日（周三）</h1>
+<div class="subtitle">编制单位：资金管理部 | 数据截止时间：北京时间 16:30 | 报告周期：2026年3月25日</div>
+
+<div style="margin: 20px 0;">
+<div class="metric-box">
+<div class="metric-value">6.8911</div>
+<div class="metric-label">USD/CNY中间价 (+32BP)</div>
+</div>
+<div class="metric-box">
+<div class="metric-value">15.7万</div>
+<div class="metric-label">碳酸锂(万元/吨)</div>
+</div>
+<div class="metric-box">
+<div class="metric-value">95900</div>
+<div class="metric-label">现货铜(元/吨) +1860</div>
+</div>
+</div>
+
+<h2>一、中国货币政策 📊</h2>
+
+<h3>1.1 央行公开市场操作</h3>
+<table>
+<tr>
+<th>操作类型</th>
+<th>金额（亿元）</th>
+<th>利率</th>
+<th>期限</th>
+<th>市场影响</th>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>MLF操作</strong></td>
+<td><strong>5,000</strong></td>
+<td>多重价位中标</td>
+<td>1年期</td>
+<td><strong>净投放500亿元（连续第13个月加量续做）</strong></td>
+</tr>
+<tr>
+<td>MLF到期</td>
+<td>4,500</td>
+<td>-</td>
+<td>-</td>
+<td>到期回收</td>
+</tr>
+<tr>
+<td>买断式逆回购</td>
+<td>13,000</td>
+<td>-</td>
+<td>3M/6M</td>
+<td>净回笼3,000亿元</td>
+</tr>
+<tr>
+<td><strong>3月中期流动性合计</strong></td>
+<td colspan="4"><strong>净回笼2,500亿元</strong>（MLF净投放500亿+买断式逆回购净回笼3000亿）</td>
+</tr>
+</table>
+
+<h3>1.2 货币市场利率与汇率</h3>
+<table>
+<tr>
+<th>指标</th>
+<th>当前值</th>
+<th>较昨日</th>
+<th>解读</th>
+</tr>
+<tr>
+<td>SHIBOR隔夜</td>
+<td>1.3170%</td>
+<td>-0.20BP</td>
+<td>流动性充裕</td>
+</tr>
+<tr>
+<td>SHIBOR 7天</td>
+<td>1.4220%</td>
+<td>+0.50BP</td>
+<td>跨月资金需求</td>
+</tr>
+<tr>
+<td>DR007</td>
+<td>1.4259%</td>
+<td>+0.5BP</td>
+<td>接近政策利率</td>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>USD/CNY中间价</strong></td>
+<td><strong>6.8911</strong></td>
+<td><span class="positive"><strong>+32BP</strong></span></td>
+<td><strong>央行连续上调，人民币走升</strong></td>
+</tr>
+<tr>
+<td>USD/CNY市场价</td>
+<td>6.8936</td>
+<td><span class="positive">-0.15%</span></td>
+<td>现汇买入6.8751，卖出6.9040</td>
+</tr>
+</table>
+
+<h3>1.3 货币政策动态</h3>
+<div class="news-item">
+<div class="news-title">MLF连续第13个月加量续做</div>
+<div class="news-content">央行今日开展5000亿元MLF操作，考虑到期4500亿元，实现净投放500亿元，为连续第13个月加量续做。尽管3月中期流动性净回笼2500亿元，但主要与今年前2个月净投放高达1.9万亿元、当前资金面持续充裕有关，不代表央行收紧中长期流动性。</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">机构观点</div>
+<div class="news-content"><strong>东方金诚王青</strong>：短期内外部不确定性升高，国内货币政策以保持流动性充裕、稳定市场预期为主；当前政策重心阶段性向控制物价过快上涨倾斜，降准等操作可能适度延后。<br><strong>中信证券明明</strong>：春节以来流动性整体宽松，近期地缘冲突抬升输入性通胀风险，货币政策总量操作将更加平稳，保持适度宽松基调。</div>
+</div>
+
+<h2>二、新能源产业 🔋</h2>
+
+<h3>2.1 动力电池与储能</h3>
+<table>
+<tr>
+<th>指标</th>
+<th>数据</th>
+<th>环比/变化</th>
+<th>趋势</th>
+</tr>
+<tr>
+<td>3月锂电排产</td>
+<td>明显回升</td>
+<td>环比大幅增长</td>
+<td><span class="positive">📈 回暖</span></td>
+</tr>
+<tr>
+<td>储能招标规模</td>
+<td>供需两旺</td>
+<td>中东地缘提振需求</td>
+<td><span class="positive">📈 增长</span></td>
+</tr>
+<tr>
+<td>电池级碳酸锂</td>
+<td>15.7万元/吨</td>
+<td>较去年6月低点+160.4%</td>
+<td><span class="positive">📈 强势上涨</span></td>
+</tr>
+<tr>
+<td>工业级碳酸锂</td>
+<td>14.0万元/吨</td>
+<td>较去年6月低点+140.1%</td>
+<td><span class="positive">📈 大幅上涨</span></td>
+</tr>
+</table>
+
+<h3>2.2 新能源汽车</h3>
+<div class="news-item">
+<div class="news-title">3月排产明显回升，全年需求向好</div>
+<div class="news-content">东莞证券研报指出，进入3月锂电池市场需求恢复较快，产业链3月预排产环比明显回升。动力方面，随着节后各地汽车以旧换新补贴细则全面落地、春季车展促销启动、车企新品陆续上市，有望逐步带动新一轮需求释放。储能方面，保持供需两旺，国内新型储能容量电价补偿政策鼓励，中东地缘冲突进一步提振储能需求。</div>
+</div>
+
+<h3>2.3 产业链价格追踪</h3>
+<table>
+<tr>
+<th>材料</th>
+<th>价格</th>
+<th>较6月低点</th>
+<th>走势</th>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>电池级碳酸锂</strong></td>
+<td><strong>15.7万元/吨</strong></td>
+<td><span class="positive"><strong>+160.4%</strong></span></td>
+<td><strong>📈 强势上涨</strong></td>
+</tr>
+<tr>
+<td>工业级碳酸锂</td>
+<td>14.0万元/吨</td>
+<td><span class="positive">+140.1%</span></td>
+<td>📈 大幅上涨</td>
+</tr>
+<tr>
+<td>氢氧化锂（电池级）</td>
+<td>14.3万元/吨</td>
+<td>-</td>
+<td>📈 上涨</td>
+</tr>
+</table>
+
+<h3>2.4 行业动态</h3>
+<div class="news-item">
+<div class="news-title">碳酸锂价格企稳回升的核心逻辑</div>
+<div class="news-content">据中信建投研报，国内碳酸锂库存去化节奏放缓，周度下降414吨至9.9万吨以下，各环节库存均处低位，冶炼厂库存创近三年新低。供给小幅增加，但受津巴布韦出口禁令等因素影响，后续供给弹性有限。需求端持续复苏，储能、动力电池等需求向好，中东局势亦推升欧洲户储需求。预计未来一个季度，低库存将成为核心矛盾，锂价易涨难跌。</div>
+</div>
+
+<h2>三、金属与大宗商品 ⛏️</h2>
+
+<h3>3.1 有色金属（以镍为代表）</h3>
+<table>
+<tr>
+<th>品种</th>
+<th>现货价格</th>
+<th>日涨跌</th>
+<th>走势</th>
+<th>关键驱动</th>
+</tr>
+<tr>
+<td>铜</td>
+<td>95,900元/吨</td>
+<td><span class="positive">+1,860</span></td>
+<td>📈 上涨</td>
+<td>地缘缓和预期，但库存高企</td>
+</tr>
+<tr>
+<td>铝</td>
+<td>23,760元/吨</td>
+<td><span class="positive">+290</span></td>
+<td>📈 上涨</td>
+<td>能源成本高企</td>
+</tr>
+<tr>
+<td>镍</td>
+<td>137,950元/吨</td>
+<td><span class="positive">+1,800</span></td>
+<td>📈 上涨</td>
+<td>印尼矿配收紧</td>
+</tr>
+<tr>
+<td>锌</td>
+<td>22,970元/吨</td>
+<td><span class="positive">+60</span></td>
+<td>📈 上涨</td>
+<td>供应扰动</td>
+</tr>
+<tr>
+<td>锡</td>
+<td>357,750元/吨</td>
+<td><span class="positive">+14,250</span></td>
+<td>📈 大涨</td>
+<td>供应紧张，领涨有色</td>
+</tr>
+</table>
+
+<h3>3.2 贵金属与能源</h3>
+<table>
+<tr>
+<th>品种</th>
+<th>价格</th>
+<th>24h变化</th>
+<th>影响因素</th>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>黄金</strong></td>
+<td><strong>$4,584.98/盎司</strong></td>
+<td><span class="positive"><strong>+2.0%</strong></span></td>
+<td><strong>中东局势反复，避险需求推升</strong></td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>$104.49/桶</td>
+<td><span class="positive">+4.55%</span></td>
+<td>美伊和谈预期波动，油价剧烈震荡</td>
+</tr>
+<tr>
+<td>WTI原油</td>
+<td>$92.35/桶</td>
+<td><span class="positive">+4.79%</span></td>
+<td>跟随布伦特急涨</td>
+</tr>
+</table>
+
+<h2>四、机构观点汇总 🏦</h2>
+
+<h3>4.1 货币政策观点</h3>
+<table>
+<tr>
+<th>机构</th>
+<th>核心观点</th>
+<th>关键判断</th>
+</tr>
+<tr>
+<td>东方金诚</td>
+<td>外部不确定性骤然升高，国内货币政策以保持流动性充裕、稳定市场预期为主</td>
+<td>降准等操作可能适度延后</td>
+</tr>
+<tr>
+<td>中信证券</td>
+<td>地缘冲突抬升输入性通胀风险，货币政策总量操作更加平稳</td>
+<td>保持适度宽松基调</td>
+</tr>
+<tr>
+<td>招联金融</td>
+<td>MLF加量续作传递明确维稳信号，打消流动性收紧担忧</td>
+<td>财政与货币政策形成合力</td>
+</tr>
+</table>
+
+<h3>4.2 新能源行业观点</h3>
+<table>
+<tr>
+<th>机构</th>
+<th>评级/观点</th>
+<th>关键逻辑</th>
+</tr>
+<tr>
+<td>东莞证券</td>
+<td>乐观</td>
+<td>3月锂电产业链排产明显回升，全年锂电池整体需求增速预期维持乐观</td>
+</tr>
+<tr>
+<td>中信建投</td>
+<td>看好</td>
+<td>低库存将成为核心矛盾，锂价易涨难跌；行业拐点迹象明显</td>
+</tr>
+<tr>
+<td>上海钢联</td>
+<td>高位震荡</td>
+<td>2026年碳酸锂价格中枢有望上移至12-18万元/吨，难以回到2025年中的低价</td>
+</tr>
+</table>
+
+<h3>4.3 大宗商品观点</h3>
+<table>
+<tr>
+<th>机构</th>
+<th>品种</th>
+<th>观点</th>
+<th>目标价位</th>
+</tr>
+<tr>
+<td>花旗银行</td>
+<td>铜</td>
+<td>下调预测</td>
+<td>未来三个月目标从$14,000砍至$11,000</td>
+</tr>
+<tr>
+<td>期货公司汇总</td>
+<td>有色系</td>
+<td>分化</td>
+<td>铜：暂时观望；锌：偏弱运行；铝：偏弱调整；镍：反弹承压</td>
+</tr>
+</table>
+
+<h2>五、行业风险预警 ⚠️</h2>
+
+<h3>5.1 风险矩阵</h3>
+<table>
+<tr>
+<th>风险类型</th>
+<th>风险等级</th>
+<th>具体描述</th>
+<th>影响范围</th>
+<th>应对建议</th>
+</tr>
+<tr>
+<td>🔴 地缘风险</td>
+<td><span class="critical">高</span></td>
+<td>中东局势反复，美伊15点方案谈判前景存疑</td>
+<td>能源价格、汇率</td>
+<td>维持80-90%对冲比例</td>
+</tr>
+<tr>
+<td>🔴 价格风险</td>
+<td><span class="critical">高</span></td>
+<td>碳酸锂价格暴涨挤压中下游利润</td>
+<td>动力电池产业链</td>
+<td>锁价、套保</td>
+</tr>
+<tr>
+<td>🟡 汇率风险</td>
+<td><span class="warning">中</span></td>
+<td>USD/CNY波动加大</td>
+<td>进口成本、外债</td>
+<td>加强汇率对冲</td>
+</tr>
+<tr>
+<td>🟡 供应风险</td>
+<td><span class="warning">中</span></td>
+<td>津巴布韦锂矿出口禁令、印尼镍矿配额审批偏慢</td>
+<td>锂价、镍价</td>
+<td>多元化采购</td>
+</tr>
+</table>
+
+<h3>5.2 重点关注事项</h3>
+<div class="news-item">
+<div class="news-title">短期关注（1周内）</div>
+<div class="news-content">• 特朗普5天期限（3月28日）前后的美伊谈判进展<br>
+• 央行MLF操作后资金面变化<br>
+• 3月新能源车销量数据发布</div>
+</div>
+
+<div class="news-item">
+<div class="news-title">中期关注（1个月内）>/div>
+<div class="news-content">• 二季度降准落地可能性<br>
+• 锂电产业链排产恢复持续性<br>
+• 津巴布韦锂矿出口禁令进展</div>
+</div>
+
+<h3>5.3 对冲与操作建议</h3>
+<table>
+<tr>
+<th>风险敞口</th>
+<th>建议对冲比例</th>
+<th>工具选择</th>
+<th>备注</th>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>汇率风险（USD/CNY）</strong></td>
+<td><strong>80-90%</strong></td>
+<td>远期结售汇、期权</td>
+<td>央行中间价连续上调引导方向</td>
+</tr>
+<tr>
+<td>商品价格风险（镍）</td>
+<td>50-70%</td>
+<td>期货套保</td>
+<td>关注13-14万区间</td>
+</tr>
+<tr>
+<td>商品价格风险（碳酸锂）</td>
+<td>视情况</td>
+<td>长单锁价</td>
+<td>价格易涨难跌</td>
+</tr>
+<tr>
+<td>利率风险</td>
+<td>30-50%</td>
+<td>利率互换</td>
+<td>降准预期下利率下行</td>
+</tr>
+</table>
+
+<h2>六、数据速览 📈</h2>
+
+<table>
+<tr>
+<th>类别</th>
+<th>指标</th>
+<th>数值</th>
+<th>变化</th>
+</tr>
+<tr style="background:#fff3cd">
+<td><strong>汇率</strong></td>
+<td><strong>USD/CNY中间价</strong></td>
+<td><strong>6.8911</strong></td>
+<td><span class="positive"><strong>+32BP</strong></span></td>
+</tr>
+<tr>
+<td>汇率</td>
+<td>USD/CNY市场价</td>
+<td>6.8936</td>
+<td><span class="positive">-0.15%</span></td>
+</tr>
+<tr>
+<td>利率</td>
+<td>DR007</td>
+<td>1.4259%</td>
+<td>+0.5BP</td>
+</tr>
+<tr>
+<td>利率</td>
+<td>SHIBOR 3M</td>
+<td>1.5182%</td>
+<td>+0.38BP</td>
+</tr>
+<tr>
+<td>新能源</td>
+<td>碳酸锂（电池级）</td>
+<td>15.7万元/吨</td>
+<td><span class="positive">+160.4%</span>（较6月低点）</td>
+</tr>
+<tr>
+<td>新能源</td>
+<td>碳酸锂（工业级）</td>
+<td>14.0万元/吨</td>
+<td><span class="positive">+140.1%</span>（较6月低点）</td>
+</tr>
+<tr>
+<td>有色</td>
+<td>现货铜</td>
+<td>95,900元/吨</td>
+<td><span class="positive">+1,860</span></td>
+</tr>
+<tr>
+<td>有色</td>
+<td>现货铝</td>
+<td>23,760元/吨</td>
+<td><span class="positive">+290</span></td>
+</tr>
+<tr>
+<td>有色</td>
+<td>现货镍</td>
+<td>137,950元/吨</td>
+<td><span class="positive">+1,800</span></td>
+</tr>
+<tr>
+<td>能源</td>
+<td>布伦特原油</td>
+<td>$104.49/桶</td>
+<td><span class="positive">+4.55%</span></td>
+</tr>
+<tr>
+<td>贵金属</td>
+<td>黄金</td>
+<td>$4,584.98/盎司</td>
+<td><span class="positive">+2.0%</span></td>
+</tr>
+</table>
+
+<div class="sources">
+<strong>数据来源</strong><br>
+<strong>货币政策</strong>：中国人民银行、中国外汇交易中心、全国银行间同业拆借中心<br>
+<strong>货币市场</strong>：SHIBOR官网、新华财经<br>
+<strong>新能源</strong>：中国汽车工业协会、乘联会、高工锂电、财联社、东莞证券、中信建投<br>
+<strong>金属大宗</strong>：上海期货交易所、LME、上海有色网(SMM)、长江有色金属网、国家统计局<br>
+<strong>机构观点</strong>：东方金诚、中信证券、招联金融、上海钢联、花旗银行
+</div>
+
+<div class="footer">
+<p><strong>免责声明</strong>：以上信息基于公开渠道获取，仅供参考，不构成投资建议。</p>
+<p><strong>报告生成时间</strong>：2026年3月25日 16:30（北京时间）</p>
+</div>
+
+</div>
+</body>
+</html>

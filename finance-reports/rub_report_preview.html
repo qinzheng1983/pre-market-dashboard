@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Microsoft YaHei, Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+.page { max-width: 800px; margin: 0 auto 20px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+h1 { color: #c62828; text-align: center; font-size: 24px; border-bottom: 3px solid #1a237e; padding-bottom: 15px; }
+h2 { padding: 10px 15px; font-size: 16px; margin: 25px 0 15px; color: white; }
+h2.primary { background: #1a237e; }
+h2.rub { background: #1976d2; }
+h2.green { background: #00695c; }
+h2.red { background: #c62828; }
+.meta { text-align: center; color: #666; font-size: 12px; margin-bottom: 20px; }
+.market-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+.market-table th { background: #1a237e; color: white; padding: 10px; text-align: center; }
+.market-table td { padding: 8px; text-align: center; border-bottom: 1px solid #ddd; }
+.market-table tr:nth-child(even) { background: #f9f9f9; }
+.rub-table th { background: #1976d2; }
+.rub-table tr:nth-child(even) { background: #e3f2fd; }
+.highlight { color: #c62828; font-weight: bold; }
+.news-item { margin: 8px 0; padding-left: 15px; font-size: 13px; line-height: 1.6; }
+.policy-box { background: #f5f5f5; padding: 15px; margin: 10px 0; border-left: 4px solid #00695c; }
+.policy-title { color: #1a237e; font-weight: bold; font-size: 14px; margin-bottom: 8px; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; }
+.subsection { color: #1a237e; font-weight: bold; font-size: 14px; margin: 15px 0 10px; padding-left: 10px; border-left: 4px solid #1a237e; }
+.subsection.rub { color: #1976d2; border-left-color: #1976d2; }
+</style>
+</head>
+<body>
+
+<div class="page">
+<h1>📰 今日财经新闻（日报）</h1>
+<div class="meta">公司名称 | 财务管理部 资金管理科 | 2026年03月17日<br>□ 绝密 □ 机密 □ 秘密 ☑ 一般</div>
+
+<h2 class="primary">📊 市场行情摘要</h2>
+<table class="market-table">
+<tr><th>指标</th><th>数值</th><th>涨跌</th><th>备注</th></tr>
+<tr><td>USD/CNY 中间价</td><td class="highlight">6.8961</td><td>+45bp</td><td>央行公布</td></tr>
+<tr><td>USD/RUB 卢布</td><td class="highlight">80.15</td><td class="highlight">+4.5%</td><td>跌破80关口⚠️</td></tr>
+<tr><td>CNY/RUB 卢布</td><td>11.62</td><td>+4.3%</td><td>1人民币</td></tr>
+<tr><td>布伦特原油</td><td class="highlight">$103.14</td><td class="highlight">+2.67%</td><td>ICE期货</td></tr>
+<tr><td>黄金期货</td><td>$5,061.70</td><td>+0.43%</td><td>COMEX</td></tr>
+</table>
+
+<h2 class="rub">🇷🇺 一、卢布汇率专题</h2>
+
+<div class="subsection rub">💱 汇率速览</div>
+<table class="market-table rub-table">
+<tr><th>时间</th><th>汇率</th><th>备注</th></tr>
+<tr><td>当前（3月17日）</td><td>1 USD = <b class="highlight">80.15</b> RUB</td><td>跌破80关口</td></tr>
+<tr><td>3月3日</td><td>1 USD = 76.68 RUB</td><td>1 CNY = 10.98 RUB</td></tr>
+<tr><td>3月以来变动</td><td>贬值 <b class="highlight">+4.5%</b></td><td>波动加剧</td></tr>
+</table>
+
+<div class="subsection rub">🏛️ 俄罗斯央行政策</div>
+<div class="news-item">• 俄罗斯央行基准利率：<b>15.5%</b>（2月13日降息50个基点，连续第六次降息）</div>
+<div class="news-item">• 下次利率决议：<b class="highlight">3月20日（本周五）18:30</b>公布</div>
+<div class="news-item">• 2026年通胀预期：4.5%-5.5%，预计下半年回落至4%目标附近</div>
+<div class="news-item">• 当前年化通胀率：6.3%（1月受一次性因素影响略有抬头）</div>
+
+<div class="subsection rub">📈 俄罗斯经济概况</div>
+<div class="news-item">• 2025年全年通胀率降至5.6%，较2024年下降3.9个百分点</div>
+<div class="news-item">• 劳动力市场紧张局势逐步缓解，失业率处于历史低位</div>
+<div class="news-item">• 俄罗斯经济继续回归平衡增长轨道</div>
+<div class="news-item">• 普京预计2026年通胀率有望进一步降至5%</div>
+
+<div class="subsection rub">⚠️ 风险预警</div>
+<div class="news-item">• <b class="highlight">【汇率风险】</b>卢布兑美元3月以来贬值超4%，跨境支付受阻</div>
+<div class="news-item">• <b class="highlight">【制裁影响】</b>俄气银行等金融机构受制裁，外汇短缺加剧</div>
+<div class="news-item">• <b class="highlight">【地缘风险】</b>美伊冲突推高油价，通过汇率渠道产生通胀效应</div>
+<div class="news-item">• <b class="highlight">【政策应对】</b>俄央行表示如有必要将干预汇市，维持金融稳定</div>
+</div>
+
+<div class="page">
+<h2 class="primary">📈 二、聚焦热点</h2>
+
+<div class="subsection">💰 资金动向</div>
+<div class="news-item">1. 央行开展逆回购操作，维护银行体系流动性合理充裕</div>
+<div class="news-item">2. USD/CNY中间价报6.8961，较前一交易日调升45个基点</div>
+<div class="news-item">3. 银行间债市表现平稳，国债收益率维持震荡走势</div>
+
+<div class="subsection">📊 宏观经济</div>
+<div class="news-item">1. 中国2月官方制造业PMI为49.0%，环比下降0.3个百分点</div>
+<div class="news-item">2. 2026年政府工作报告明确GDP增长目标5%左右</div>
+<div class="news-item">3. 通胀水平维持低位运行，货币政策保持稳健中性</div>
+
+<div class="subsection">⚠️ 地缘风险</div>
+<div class="news-item">1. <b class="highlight">【极高风险】3月16日伊朗最高领袖哈梅内伊遭袭身亡</b></div>
+<div class="news-item">2. 霍尔木兹海峡船舶流量下降93%，全球能源供应紧张</div>
+<div class="news-item">3. 伊拉克准备削减约300万桶/日石油产量</div>
+
+<h2 class="green">🚗 三、汽车行业讯息</h2>
+<table class="market-table">
+<tr><th style="background:#00695c;">细分领域</th><th style="background:#00695c;">关键讯息</th></tr>
+<tr><td>新能源整车</td><td style="text-align:left;">长城汽车2月海外销量同比增长35%，新能源渗透率达38%</td></tr>
+<tr><td>动力电池</td><td style="text-align:left;">国内2月装机量同比增长42%，磷酸铁锂电池占比超70%</td></tr>
+<tr><td>智能驾驶</td><td style="text-align:left;">工信部加快明确L3/L4级智驾安全准则</td></tr>
+<tr><td>汽车芯片</td><td style="text-align:left;">1-2月集成电路出口额同比增长18.5%</td></tr>
+<tr><td>充电设施</td><td style="text-align:left;">国家能源局：扩大农村充电设施覆盖范围</td></tr>
+<tr><td>整车交付</td><td style="text-align:left;">华为鸿蒙智行累计交付128万辆</td></tr>
+</table>
+</div>
+
+<div class="page">
+<h2 class="primary">🏛️ 四、国家政策</h2>
+
+<div class="policy-box">
+<div class="policy-title">▸ 财政部 | 国债发行</div>
+<b>政策：</b>拟续发行320亿元50年期记账式附息国债，票面利率维持2.28%<br>
+<b>解读：</b>长期国债发行维持稳定利率，有利于企业锁定长期融资成本
+</div>
+
+<div class="policy-box">
+<div class="policy-title">▸ 国家能源局 | 农村能源</div>
+<b>政策：</b>推进农村能源革命，扩大农村充电设施覆盖，支持分布式光伏<br>
+<b>解读：</b>利好新能源产业链，预计带动千亿级投资
+</div>
+
+<div class="policy-box">
+<div class="policy-title">▸ 工信部 | 智能驾驶</div>
+<b>政策：</b>加快明确L3/L4级智能驾驶安全准则<br>
+<b>解读：</b>智能驾驶法规加速完善，关注自动驾驶技术领先企业
+</div>
+
+<div class="policy-box">
+<div class="policy-title">▸ 央行 | 货币政策</div>
+<b>政策：</b>开展逆回购操作，维护流动性合理充裕<br>
+<b>解读：</b>货币政策保持稳健，有利于金融市场稳定运行
+</div>
+
+<div class="footer">
+数据来源：央行/俄罗斯央行/ICE期货/Investing.com | 生成时间：2026-03-17 15:30<br>Finance Daily Report v3.1 RUB | OpenClaw
+</div>
+</div>
+
+</body>
+</html>

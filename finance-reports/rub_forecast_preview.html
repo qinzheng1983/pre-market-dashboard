@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Microsoft YaHei, Arial, sans-serif; background: #f5f5f5; margin: 0; padding: 20px; }
+.page { max-width: 800px; margin: 0 auto 20px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+h1 { color: #c62828; text-align: center; font-size: 24px; border-bottom: 3px solid #1a237e; padding-bottom: 15px; }
+h2 { padding: 10px 15px; font-size: 16px; margin: 25px 0 15px; color: white; }
+h2.primary { background: #1a237e; }
+h2.forecast { background: #2e7d32; }
+h2.rub { background: #1976d2; }
+.meta { text-align: center; color: #666; font-size: 12px; margin-bottom: 20px; }
+.market-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
+.market-table th { background: #1a237e; color: white; padding: 10px; text-align: center; }
+.market-table td { padding: 8px; text-align: center; border-bottom: 1px solid #ddd; }
+.market-table tr:nth-child(even) { background: #f9f9f9; }
+.forecast-table th { background: #2e7d32; }
+.forecast-table tr:nth-child(even) { background: #e8f5e9; }
+.highlight { color: #c62828; font-weight: bold; }
+.forecast-green { color: #2e7d32; font-weight: bold; }
+.news-item { margin: 8px 0; padding-left: 15px; font-size: 13px; line-height: 1.6; }
+.quote-box { background: #f5f5f5; padding: 15px; margin: 10px 0; border-left: 4px solid #1976d2; font-style: italic; }
+.quote-source { color: #666; font-size: 12px; margin-top: 8px; text-align: right; }
+.footer { text-align: center; font-size: 11px; color: #999; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; }
+.subsection { color: #1a237e; font-weight: bold; font-size: 14px; margin: 15px 0 10px; padding-left: 10px; border-left: 4px solid #1a237e; }
+.subsection.green { color: #2e7d32; border-left-color: #2e7d32; }
+.subsection.red { color: #c62828; border-left-color: #c62828; }
+.warning-box { background: #fff3e0; padding: 15px; margin: 10px 0; border-left: 4px solid #e65100; }
+</style>
+</head>
+<body>
+
+<div class="page">
+<h1>卢布对人民币汇率预测专题</h1>
+<div class="meta">公司名称 | 财务管理部 资金管理科 | 2026年03月17日<br>□ 绝密 □ 机密 □ 秘密 ☑ 一般</div>
+
+<h2 class="primary">📊 当前汇率水平</h2>
+<table class="market-table">
+<tr><th>货币对</th><th>当前汇率</th><th>变动</th><th>备注</th></tr>
+<tr><td>USD/RUB</td><td class="highlight">80.15</td><td class="highlight">+4.5%</td><td>3月13日跌破80关口</td></tr>
+<tr><td>CNY/RUB</td><td class="highlight">11.62</td><td class="highlight">+4.3%</td><td>1人民币兑卢布</td></tr>
+<tr><td>USD/RUB (3月3日)</td><td>76.68</td><td>-</td><td>3月3日水平</td></tr>
+<tr><td>CNY/RUB (3月3日)</td><td>10.98</td><td>-</td><td>3月3日水平</td></tr>
+</table>
+
+<div class="subsection red">🔍 关键变化</div>
+<div class="news-item">• 3月13日卢布兑美元自1月9日以来首次<b class="highlight">跌破80关口</b></div>
+<div class="news-item">• 3月以来卢布累计贬值约<b class="highlight">4.5%</b>，波动加剧</div>
+<div class="news-item">• 当前CNY/RUB约11.62，较3月3日的10.98升值约<b class="highlight">5.8%</b></div>
+</div>
+
+<div class="page">
+<h2 class="forecast">📈 汇率预测情景（2026年）</h2>
+<table class="market-table forecast-table">
+<tr><th>情景</th><th>USD/RUB</th><th>CNY/RUB</th><th>概率</th><th>触发条件</th></tr>
+<tr><td>乐观情景<br>（部分制裁解除）</td><td>77-78</td><td>11.0-11.1</td><td>25%</td><td style="text-align:left;">若俄美会谈达成部分制裁解除协议</td></tr>
+<tr><td><b>基准情景</b><br>（维持现状）</td><td><b class="forecast-green">81-82</b></td><td><b class="forecast-green">11.2</b></td><td><b>50%</b></td><td style="text-align:left;">到8月底，外贸与货币政策维持当前状态</td></tr>
+<tr><td>悲观情景<br>（局势恶化）</td><td>85</td><td>11.3-11.4</td><td>25%</td><td style="text-align:left;">若地缘局势不利，制裁进一步收紧</td></tr>
+</table>
+
+<h2 class="primary">⚖️ 影响因素分析</h2>
+
+<div class="subsection green">▲ 卢布升值支撑因素</div>
+<div class="news-item">• 俄罗斯央行高利率政策（当前15.5%，预期年底13.5-14.5%）</div>
+<div class="news-item">• 通胀放缓趋势（2026年预期4.5%-5.5%，下半年接近4%）</div>
+<div class="news-item">• 俄美会谈可能带来地缘政治缓和</div>
+
+<div class="subsection red">▼ 卢布贬值压力因素</div>
+<div class="news-item">• 美伊冲突推高油价，通过汇率渠道产生通胀效应</div>
+<div class="news-item">• 跨境支付受阻，外汇短缺加剧</div>
+<div class="news-item">• 经常账户恶化，石油收入下降</div>
+<div class="news-item">• 央行上半年减少外汇销售</div>
+
+<h2 class="rub">🏛️ 俄罗斯央行政策动态</h2>
+<div class="news-item">• <b class="highlight">下次利率决议：3月20日（本周五）18:30公布</b></div>
+<div class="news-item">• 市场预期：可能继续降息50-100个基点至14.5-15.0%</div>
+<div class="news-item">• 2026年基准利率预测区间：13.5%-14.5%</div>
+<div class="news-item">• 央行表示如有必要将干预汇市，维持金融稳定</div>
+</div>
+
+<div class="page">
+<h2 class="primary">💬 专家观点</h2>
+
+<div class="quote-box">
+"若达成某种协议（部分解除制裁），美元兑卢布可能升至77-78；否则可能贬值至82-83，甚至更高。"
+<div class="quote-source">— Alfa-Forex投资策略主管 斯巴达克·索博列夫</div>
+</div>
+
+<div class="quote-box">
+"尽管当前基本面对卢布不利，但峰会结果仍可能对汇率产生一定影响。预计整体走势以温和贬值为主。"
+<div class="quote-source">— BCS投资世界专家 亚历山大·谢佩列夫</div>
+</div>
+
+<div class="quote-box">
+"预计到年底利率可能降至13-15%，届时美元兑卢布汇率可能升至90-100。"
+<div class="quote-source">— 实用投资学院创始人 费奥多尔·西多罗夫</div>
+</div>
+
+<h2 class="forecast">🎯 交易建议与风险提示</h2>
+
+<div class="subsection">短期策略（1-4周）</div>
+<div class="news-item">观望为主，等待3月20日利率决议和地缘政治明朗</div>
+
+<div class="subsection green">中期展望（1-3个月）</div>
+<div class="news-item">基准情景下，CNY/RUB或<b class="forecast-green">温和升至11.2-11.3</b>区间</div>
+
+<div class="subsection">对冲建议</div>
+<div class="news-item">建议企业在<b class="forecast-green">11.0-11.2</b>区间逐步建仓，防范贬值风险</div>
+
+<div class="warning-box">
+<b>⚠️ 风险警示</b><br>
+地缘风险仍为主要不确定因素，需密切关注俄美会谈进展。若美伊冲突升级或制裁进一步收紧，卢布可能面临更大贬值压力。
+</div>
+
+<div class="footer">
+数据来源：俄罗斯央行/Alfa-Forex/BCS/市场分析师 | 生成时间：2026-03-17 19:00<br>仅供参考，不构成投资建议 | OpenClaw
+</div>
+</div>
+
+</body>
+</html>

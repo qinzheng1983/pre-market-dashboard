@@ -1,0 +1,9 @@
+{
+  "name": "pre-market-dashboard",
+  "version": "1.0.0",
+  "description": "盘前市场简报看板 - Pre-market briefing dashboard",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "dependencies": {}
+}

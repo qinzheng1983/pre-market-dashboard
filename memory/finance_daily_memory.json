@@ -1,0 +1,333 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "created_at": "2026-03-30",
+    "last_updated": "2026-03-30",
+    "total_entries": 0,
+    "description": "财经日报信息记忆与遗忘系统"
+  },
+  "config": {
+    "weight_settings": {
+      "half_life_days": {
+        "critical": 90,
+        "high": 30,
+        "medium": 7,
+        "low": 3
+      },
+      "significance_multipliers": {
+        "critical": 2.0,
+        "high": 1.5,
+        "medium": 1.0,
+        "low": 0.7
+      },
+      "forget_threshold": 0.01,
+      "max_retention_days": 365,
+      "force_retention_critical_days": 180
+    },
+    "presentation_rules": {
+      "max_full_presentations": 3,
+      "comparison_threshold": 0.1
+    }
+  },
+  "information_categories": {
+    "monetary_policy": {
+      "display_name": "货币政策",
+      "subcategories": {
+        "lpr": {
+          "display_name": "LPR利率",
+          "default_significance": "medium",
+          "half_life_override": 30
+        },
+        "open_market_operation": {
+          "display_name": "公开市场操作",
+          "default_significance": "low",
+          "half_life_override": 7
+        },
+        "reserve_requirement": {
+          "display_name": "存款准备金率",
+          "default_significance": "critical",
+          "half_life_override": 90
+        }
+      }
+    },
+    "exchange_rate": {
+      "display_name": "汇率",
+      "subcategories": {
+        "usdcny_mid": {
+          "display_name": "USD/CNY中间价",
+          "default_significance": "high",
+          "half_life_override": 7
+        },
+        "usdcny_market": {
+          "display_name": "USD/CNY市场价",
+          "default_significance": "medium",
+          "half_life_override": 3
+        }
+      }
+    },
+    "new_energy": {
+      "display_name": "新能源",
+      "subcategories": {
+        "lithium_price": {
+          "display_name": "碳酸锂价格",
+          "default_significance": "high",
+          "half_life_override": 7
+        },
+        "battery_installation": {
+          "display_name": "动力电池装机量",
+          "default_significance": "medium",
+          "half_life_override": 30
+        },
+        "sodium_battery": {
+          "display_name": "钠离子电池",
+          "default_significance": "critical",
+          "half_life_override": 180
+        },
+        "ev_sales": {
+          "display_name": "新能源汽车销量",
+          "default_significance": "medium",
+          "half_life_override": 30
+        }
+      }
+    },
+    "metals": {
+      "display_name": "有色金属",
+      "subcategories": {
+        "copper": {
+          "display_name": "铜",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "aluminum": {
+          "display_name": "铝",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "nickel": {
+          "display_name": "镍",
+          "default_significance": "high",
+          "half_life_override": 7
+        },
+        "tin": {
+          "display_name": "锡",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "steel": {
+          "display_name": "钢材",
+          "default_significance": "medium",
+          "half_life_override": 7
+        },
+        "iron_ore": {
+          "display_name": "铁矿石",
+          "default_significance": "medium",
+          "half_life_override": 7
+        }
+      }
+    },
+    "precious_metals": {
+      "display_name": "贵金属",
+      "subcategories": {
+        "gold": {
+          "display_name": "黄金",
+          "default_significance": "high",
+          "half_life_override": 3
+        },
+        "silver": {
+          "display_name": "白银",
+          "default_significance": "medium",
+          "half_life_override": 3
+        }
+      }
+    },
+    "energy": {
+      "display_name": "能源",
+      "subcategories": {
+        "brent_oil": {
+          "display_name": "布伦特原油",
+          "default_significance": "high",
+          "half_life_override": 3
+        },
+        "wti_oil": {
+          "display_name": "WTI原油",
+          "default_significance": "high",
+          "half_life_override": 3
+        }
+      }
+    },
+    "geopolitical": {
+      "display_name": "地缘风险",
+      "subcategories": {
+        "middle_east": {
+          "display_name": "中东局势",
+          "default_significance": "critical",
+          "half_life_override": 90
+        },
+        "trade_war": {
+          "display_name": "贸易摩擦",
+          "default_significance": "critical",
+          "half_life_override": 90
+        },
+        "sanctions": {
+          "display_name": "制裁措施",
+          "default_significance": "high",
+          "half_life_override": 30
+        }
+      }
+    },
+    "market_indices": {
+      "display_name": "市场指数",
+      "subcategories": {
+        "dow_jones": {
+          "display_name": "道琼斯指数",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "nasdaq": {
+          "display_name": "纳斯达克指数",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "dxy": {
+          "display_name": "美元指数",
+          "default_significance": "high",
+          "half_life_override": 7
+        },
+        "shanghai_composite": {
+          "display_name": "上证指数",
+          "default_significance": "medium",
+          "half_life_override": 3
+        },
+        "hang_seng": {
+          "display_name": "恒生指数",
+          "default_significance": "medium",
+          "half_life_override": 3
+        }
+      }
+    }
+  },
+  "fact_database": {
+    "lpr_stable_10m": {
+      "content": "LPR连续10个月维持不变",
+      "category": "monetary_policy",
+      "subcategory": "lpr",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "medium"
+    },
+    "usdcny_69223": {
+      "content": "USD/CNY中间价6.9223，较3月27日+82bp",
+      "category": "exchange_rate",
+      "subcategory": "usdcny_mid",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    },
+    "lithium_price_decline": {
+      "content": "碳酸锂价格近一周累计下跌8.23%",
+      "category": "new_energy",
+      "subcategory": "lithium_price",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    },
+    "sodium_battery_catl": {
+      "content": "宁德时代发布首款轻型商用车量产钠离子电池",
+      "category": "new_energy",
+      "subcategory": "sodium_battery",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "critical"
+    },
+    "aluminum_surge": {
+      "content": "铝价大涨720元/吨至24520元/吨，受地缘影响",
+      "category": "metals",
+      "subcategory": "aluminum",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    },
+    "tin_surge": {
+      "content": "锡价大涨6250元/吨至362250元/吨，供应担忧",
+      "category": "metals",
+      "subcategory": "tin",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    },
+    "gold_price_4504": {
+      "content": "现货黄金4504美元/盎司，沪金1010.80元/克",
+      "category": "precious_metals",
+      "subcategory": "gold",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    },
+    "middle_east_risk": {
+      "content": "中东局势升级，霍尔木兹海峡运输风险",
+      "category": "geopolitical",
+      "subcategory": "middle_east",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 2,
+      "significance": "critical"
+    },
+    "houthi_join_war": {
+      "content": "胡塞武装正式参战，对以色列发动巡航导弹和无人机打击",
+      "category": "geopolitical",
+      "subcategory": "middle_east",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "critical"
+    },
+    "us_marines_deployed": {
+      "content": "美国向中东派遣两批数千名海军陆战队员",
+      "category": "geopolitical",
+      "subcategory": "middle_east",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "critical"
+    },
+    "gold_new_paradigm": {
+      "content": "地缘冲突推高通胀→高利率→压制金价，传统避险逻辑受挑战",
+      "category": "precious_metals",
+      "subcategory": "gold",
+      "first_seen": "2026-03-30",
+      "last_seen": "2026-03-30",
+      "presentation_count": 1,
+      "significance": "high"
+    }
+  },
+  "daily_snapshots": {
+    "2026-03-30": {
+      "generated_at": "2026-03-30T16:30:00+08:00",
+      "facts_presented": [
+        "lpr_stable_10m",
+        "usdcny_69223",
+        "lithium_price_decline",
+        "sodium_battery_catl",
+        "aluminum_surge",
+        "tin_surge",
+        "gold_price_4504",
+        "middle_east_risk",
+        "houthi_join_war",
+        "us_marines_deployed",
+        "gold_new_paradigm"
+      ],
+      "presentation_summary": {
+        "type": "complete_daily",
+        "note": "日内信息统一汇总展示，包含下午及晚间收集的全部信息"
+      }
+    }
+  },
+  "archived_facts": {}
+}

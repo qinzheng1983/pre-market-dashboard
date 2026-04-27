@@ -1,0 +1,113 @@
+{
+  "date": "2026-03-15",
+  "generated_at": "2026-03-15T13:57:19.497137",
+  "analysis_window": {
+    "start": "2026-03-15T00:00:00",
+    "end": "2026-03-16T00:00:00",
+    "description": "2026-03-15 00:00 - 24:00"
+  },
+  "total_score": 48.0,
+  "risk_level": "ELEVATED",
+  "risk_emoji": "🟡",
+  "trend": "DE-ESCALATING",
+  "day_change": -30.5,
+  "baseline_context": {
+    "period": "2025年3月基础态势",
+    "description": "制裁+谈判博弈期，无直接军事冲突",
+    "key_factors": [
+      "特朗普政府'极限施压'政策（NSPM-2）",
+      "美伊间接谈判僵持（阿曼渠道）",
+      "伊朗里亚尔持续贬值",
+      "胡塞武装红海袭扰"
+    ]
+  },
+  "components": {
+    "official": {
+      "score": 58.3,
+      "base_score": 52,
+      "new_impact": 6.3,
+      "weight": 0.3,
+      "trend": "escalating",
+      "signals": [
+        "【当日新信号】",
+        "  (+6) 美国制裁伊朗石油部长及航运网络",
+        "  (+1) 哈梅内伊任命新的执法部队意识形态负责人",
+        "【近期背景】",
+        "  (03-14) 伊朗、俄罗斯、中国外长准备北京会晤"
+      ]
+    },
+    "military": {
+      "score": 38.0,
+      "base_score": 38,
+      "new_impact": 0.0,
+      "weight": 0.3,
+      "trend": "stable",
+      "signals": [
+        "【近期背景】",
+        "  (03-14) 胡塞武装宣布恢复对国际航运的攻击"
+      ]
+    },
+    "markets": {
+      "score": 48.0,
+      "base_score": 48,
+      "new_impact": 0.0,
+      "weight": 0.3,
+      "trend": "stable",
+      "signals": [
+        "【近期背景】",
+        "  (03-14) 伊朗里亚尔跌至历史新低"
+      ]
+    },
+    "diplomatic": {
+      "score": 46.7,
+      "base_score": 42,
+      "new_impact": 4.7,
+      "weight": 0.1,
+      "trend": "escalating",
+      "signals": [
+        "【当日新信号】",
+        "  (+5) 英国威胁触发JCPOA回弹制裁机制"
+      ]
+    }
+  },
+  "breaking_events": [
+    {
+      "time": "09:00",
+      "category": "official",
+      "event": "哈梅内伊任命新的执法部队意识形态负责人",
+      "impact": "low",
+      "source": "Defapress / ISW"
+    },
+    {
+      "time": "10:30",
+      "category": "diplomatic",
+      "event": "英国威胁触发JCPOA回弹制裁机制",
+      "impact": "medium",
+      "source": "UK/UNSC / Reuters"
+    },
+    {
+      "time": "14:00",
+      "category": "official",
+      "event": "美国制裁伊朗石油部长及航运网络",
+      "impact": "high",
+      "source": "US Treasury / Reuters"
+    }
+  ],
+  "new_events_count": 3,
+  "data_sources": [
+    "ISW Iran Update (March 13, 2025)",
+    "Reuters - Middle East",
+    "US Treasury Press Release",
+    "UN Security Council Meeting (March 12, 2025)",
+    "Al Jazeera - Iran Economic Report"
+  ],
+  "time_line_validation": {
+    "included": "2025-03-11 至 2025-03-13 事件",
+    "excluded": [
+      "2025年6月'12日战争'历史事件",
+      "2026年预测/模拟场景",
+      "未经验证的社交媒体传言"
+    ]
+  },
+  "hedging_recommendation": "维持当前对冲水平，持续监测。"
+}

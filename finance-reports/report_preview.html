@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    background: #f5f5f5; 
+    padding: 20px;
+}
+.page {
+    width: 800px;
+    margin: 0 auto 20px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header { text-align: center; margin-bottom: 30px; }
+.company { font-size: 24px; font-weight: bold; color: #1a237e; margin-bottom: 10px; }
+.meta { font-size: 12px; color: #666; margin-bottom: 5px; }
+.classification { font-size: 11px; color: #999; }
+.title { 
+    font-size: 22px; 
+    font-weight: bold; 
+    color: #c62828; 
+    text-align: center;
+    margin: 30px 0;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #1a237e;
+}
+.section {
+    background: #1a237e;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 25px 0 15px;
+}
+.section.green { background: #00695c; }
+.section.red { background: #c62828; }
+
+.subsection {
+    color: #1a237e;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    padding-left: 10px;
+    border-left: 4px solid #1a237e;
+}
+
+.subsection.warning { 
+    color: #c62828; 
+    border-left-color: #c62828;
+}
+
+.subsection.auto {
+    color: #00695c;
+    border-left-color: #00695c;
+}
+
+p { 
+    font-size: 12px; 
+    line-height: 1.8; 
+    color: #333;
+    margin: 8px 0;
+    padding-left: 10px;
+}
+
+.highlight { color: #c62828; font-weight: bold; }
+
+/* 表格样式 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 12px;
+}
+th {
+    background: #1a237e;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+tr:nth-child(even) { background: #f9f9f9; }
+
+.policy-item {
+    background: #f5f5f5;
+    padding: 15px;
+    margin: 10px 0;
+    border-left: 4px solid #00695c;
+}
+.policy-header {
+    color: #1a237e;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+.policy-content {
+    font-size: 12px;
+    color: #333;
+    margin: 5px 0;
+}
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+</style>
+</head>
+<body>
+
+<!-- 第1页: 封面 + 市场行情 -->
+<div class="page">
+    <div class="header">
+        <div class="company">公司名称</div>
+        <div class="meta">财务管理部 资金管理科 · 2026年03月17日</div>
+        <div class="classification">□ 绝密 □ 机密 □ 秘密 ☑ 一般</div>
+    </div>
+    
+    <div class="title">📰 今日财经新闻（日报）</div>
+    
+    <div class="section">📊 市场行情摘要</div>
+    <table>
+        <tr>
+            <th>指标</th>
+            <th>数值</th>
+            <th>涨跌</th>
+            <th>备注</th>
+        </tr>
+        <tr>
+            <td>USD/CNY 中间价</td>
+            <td><span class="highlight">6.8961</span></td>
+            <td>+45bp</td>
+            <td>央行公布</td>
+        </tr>
+        <tr>
+            <td>USD/CNY 市场汇率</td>
+            <td>6.9004</td>
+            <td>+0.06%</td>
+            <td>即期</td>
+        </tr>
+        <tr>
+            <td>布伦特原油</td>
+            <td><span class="highlight">$103.14</span></td>
+            <td class="highlight">+2.67%</td>
+            <td>ICE期货</td>
+        </tr>
+        <tr>
+            <td>黄金期货</td>
+            <td>$5,061.70</td>
+            <td>+0.43%</td>
+            <td>COMEX</td>
+        </tr>
+        <tr>
+            <td>上证指数</td>
+            <td>3,341.00</td>
+            <td>+0.53%</td>
+            <td>收盘</td>
+        </tr>
+    </table>
+    
+    <div class="section">💰 资金动向</div>
+    <p>1. 央行开展逆回购操作，维护银行体系流动性合理充裕</p>
+    <p>2. USD/CNY中间价报<span class="highlight">6.8961</span>，较前一交易日调升45个基点</p>
+    <p>3. 银行间债市表现平稳，国债收益率维持震荡走势</p>
+    
+    <div class="section">📊 宏观经济</div>
+    <p>1. 中国2月官方制造业PMI为<span class="highlight">49.0%</span>，环比下降0.3个百分点</p>
+    <p>2. 2026年政府工作报告明确GDP增长目标<span class="highlight">5%左右</span></p>
+    <p>3. 通胀水平维持低位运行，货币政策保持稳健中性</p>
+</div>
+
+<!-- 第2页: 国内国际新闻 -->
+<div class="page">
+    <div class="section">🇨🇳 国内新闻</div>
+    <p>1. 国家能源局：推进农村能源革命，扩大农村充电设施覆盖，支持分布式光伏发展</p>
+    <p>2. 华为鸿蒙智行全系累计交付量达<span class="highlight">128万辆</span>，发布新一代双光路激光雷达技术</p>
+    <p>3. 小米集团雷军提交建议案，涵盖人形机器人、智能驾驶安全准则等领域</p>
+    
+    <div class="section">🌍 国际新闻</div>
+    <p>1. 美联储3月利率决议即将公布，市场预期维持利率不变</p>
+    <p>2. 欧元区1月失业率意外降至<span class="highlight">6.1%</span>历史新低，经济复苏迹象显现</p>
+    <p>3. 特朗普正式提名凯文·沃什出任下任美联储主席，需参议院确认</p>
+    
+    <div class="section">📉 资本市场</div>
+    <p>1. 美股：道指48,739点，标普500报6,869点，纳指22,807点，受美伊冲突影响波动加大</p>
+    <p>2. A股：沪指3,341点，市场观望情绪浓厚，成交缩量</p>
+    <p>3. 港股：恒生指数24,231点，科技股表现分化，能源股受油价上涨提振</p>
+    
+    <div class="section">🛢️ 黄金原油</div>
+    <p>1. 布伦特原油报<span class="highlight">$103.14（+2.67%）</span>，霍尔木兹海峡封锁持续</p>
+    <p>2. COMEX黄金报$5,061.70，地缘风险支撑避险需求</p>
+    <p>3. WTI原油报$99.85（+2.62%），美国考虑暂缓《琼斯法案》降低物流成本</p>
+</div>
+
+<!-- 第3页: 地缘风险 + 汽车行业 -->
+<div class="page">
+    <div class="section red">⚠️ 地缘风险（极高）</div>
+    <div class="subsection warning">🔴 美伊冲突升级</div>
+    <p>1. <span class="highlight">【极高风险】3月16日伊朗最高领袖哈梅内伊遭袭身亡</span></p>
+    <p>2. 霍尔木兹海峡船舶流量下降<span class="highlight">93%</span>，全球能源供应面临严峻挑战</p>
+    <p>3. 伊拉克准备削减约300万桶/日石油产量</p>
+    <p>4. 各国动用战略储备应对供应紧张</p>
+    
+    <div class="section green">🚗 汽车行业讯息（新增）</div>
+    <table>
+        <tr>
+            <th style="background:#00695c;">细分领域</th>
+            <th style="background:#00695c;">关键讯息</th>
+        </tr>
+        <tr>
+            <td>新能源整车</td>
+            <td style="text-align:left;">长城汽车2月海外销量同比增长35%，新能源渗透率达38%</td>
+        </tr>
+        <tr>
+            <td>动力电池</td>
+            <td style="text-align:left;">国内2月装机量同比增长42%，磷酸铁锂电池占比超70%</td>
+        </tr>
+        <tr>
+            <td>智能驾驶</td>
+            <td style="text-align:left;">工信部加快明确L3/L4级智驾安全准则，纳入交通违法处罚</td>
+        </tr>
+        <tr>
+            <td>汽车芯片</td>
+            <td style="text-align:left;">1-2月集成电路出口额同比增长18.5%</td>
+        </tr>
+        <tr>
+            <td>充电设施</td>
+            <td style="text-align:left;">国家能源局：扩大农村充电设施覆盖范围</td>
+        </tr>
+        <tr>
+            <td>整车交付</td>
+            <td style="text-align:left;">华为鸿蒙智行累计交付128万辆，发布新一代激光雷达</td>
+        </tr>
+    </table>
+</div>
+
+<!-- 第4页: 国家政策 -->
+<div class="page">
+    <div class="section">🏛️ 国家政策</div>
+    
+    <div class="policy-item">
+        <div class="policy-header">▸ 财政部 | 国债发行</div>
+        <div class="policy-content"><b>政策：</b>拟续发行320亿元50年期记账式附息国债，票面利率维持2.28%</div>
+        <div class="policy-content"><b>解读：</b>长期国债发行维持稳定利率，显示货币政策保持稳健，有利于企业锁定长期融资成本，降低财务费用。</div>
+    </div>
+    
+    <div class="policy-item">
+        <div class="policy-header">▸ 国家能源局 | 农村能源</div>
+        <div class="policy-content"><b>政策：</b>推进农村能源革命，扩大农村充电设施覆盖，支持分布式光伏发展</div>
+        <div class="policy-content"><b>解读：</b>利好新能源产业链，尤其是分布式光伏、充电桩、储能等相关企业，预计带动千亿级投资。</div>
+    </div>
+    
+    <div class="policy-item">
+        <div class="policy-header">▸ 工信部 | 智能驾驶</div>
+        <div class="policy-content"><b>政策：</b>加快明确L3/L4级智能驾驶安全准则，将L2级辅助驾驶"脱手脱眼"纳入交通违法处罚</div>
+        <div class="policy-content"><b>解读：</b>智能驾驶法规加速完善，有利于行业规范化发展，关注自动驾驶技术领先企业及产业链投资机会。</div>
+    </div>
+    
+    <div class="policy-item">
+        <div class="policy-header">▸ 央行 | 货币政策</div>
+        <div class="policy-content"><b>政策：</b>开展逆回购操作，维护流动性合理充裕，保持货币政策稳健中性</div>
+        <div class="policy-content"><b>解读：</b>央行通过公开市场操作维护流动性，显示货币政策保持稳健，有利于金融市场稳定运行。</div>
+    </div>
+    
+    <div class="footer">
+        数据来源：央行/国家统计局/ICE期货/Investing.com<br>
+        生成时间：2026-03-17 14:00 | Finance Daily Report v3.0 | OpenClaw
+    </div>
+</div>
+
+</body>
+</html>
