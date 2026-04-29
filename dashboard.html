@@ -8,12 +8,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: #1a1a2e;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             padding: 40px 20px;
         }
         .header {
@@ -29,15 +26,23 @@
             font-size: 16px;
             opacity: 0.7;
         }
-        .report-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            width: 100%;
+        .category {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+        .category-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 4px solid #e94560;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .report-card {
             background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 12px;
             padding: 25px;
@@ -56,6 +61,9 @@
             color: #e94560;
             font-weight: 600;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .report-card .title {
             font-size: 20px;
@@ -67,12 +75,6 @@
             opacity: 0.7;
             line-height: 1.6;
         }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.5;
-        }
         .badge {
             display: inline-block;
             background: #27ae60;
@@ -80,41 +82,69 @@
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 12px;
-            margin-left: 8px;
+        }
+        .badge-cfo {
+            display: inline-block;
+            background: #4a90d9;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        .divider {
+            max-width: 900px;
+            margin: 30px auto;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>财资报告中心</h1>
-        <p>跨国企业资金管理决策参考</p>
+        <p>跨国企业资金管理决策参考 | 中伟新材 CFO视角</p>
     </div>
-    
-    <div class="report-grid">
-        <!-- 盘前简报 -->
+
+    <div class="category">
+        <div class="category-title">
+            <span style="font-size:24px">&#128200;</span>
+            盘前市场简报
+        </div>
         <a href="index.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
-            <div class="title">盘前市场简报</div>
-            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>数据截止前一交易日收盘</div>
-        </a>
-        
-        <!-- 财资日报 -->
-        <a href="finance-daily/20260424.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
-            <div class="title">财资日报</div>
-            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>当日完整收盘数据与深度分析</div>
-        </a>
-        
-        <!-- 财资周报 -->
-        <a href="finance-weekly/2026w18.html" class="report-card">
-            <div class="date">2026年第18周 <span class="badge">最新</span></div>
-            <div class="title">财资周报</div>
-            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>第18周周报（4/27-4/28，数据截止周二）：镍锂双涨超预算16-19%，MLF缩量</div>
+            <div class="date">
+                <span>2026年4月29日（周三）09:20 更新</span>
+                <span class="badge">最新</span>
+            </div>
+            <div class="title">盘前市场简报 v3.0（行动导向版）</div>
+            <div class="desc">美伊谈判僵局持续 | 布油突破$110（+2.80%）| 美股科技股回调 | USD/CNY 6.8608（+19bp）| LME镍连涨五日逼近$19,500 | 今日5项行动清单</div>
         </a>
     </div>
-    
+
+    <div class="divider"></div>
+
+    <div class="category">
+        <div class="category-title">
+            <span style="font-size:24px">&#128202;</span>
+            财资日报
+        </div>
+        <a href="finance-daily/20260429.html" class="report-card">
+            <div class="date">
+                <span>2026年4月29日（周三）16:06 更新 | CFO结构版 v4.1</span>
+                <span class="badge-cfo">CFO视角</span>
+            </div>
+            <div class="title">财资日报 — CFO结构版</div>
+            <div class="desc">核心风险仪表盘（6项红黄绿灯） | 对我司影响与行动建议（ACTION分组） | 货币政策/汇率/新能源/有色/贵金属/地缘/对冲建议<br><br>USD/CNY 6.8608（央行调贬19点）| LME镍$19,430（超预算21%）| 碳酸锂174,500元/吨（IGO减产）| 布油$111.30 | 央行MLF缩量续作</div>
+        </a>
+    </div>
+
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-04-28 16:34
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-04-29 16:15 CST
     </div>
 </body>
 </html>
