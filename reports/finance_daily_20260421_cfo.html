@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财资日报 — 2026年4月21日 | 中伟新材CFO视角</title>
+<style>
+/* 基础重置 */
+body { margin:0; padding:0; font-family:"Microsoft YaHei","PingFang SC",sans-serif; background:#f0f2f5; color:#1a1a2e; line-height:1.6; }
+.container { max-width:720px; margin:0 auto; background:#fff; }
+
+/* 头部 */
+.header { background:#1a1a2e; color:#fff; padding:18px 20px; text-align:center; }
+.header h1 { margin:0; font-size:20px; font-weight:700; letter-spacing:1px; }
+.header .subtitle { margin-top:6px; font-size:12px; color:#a0a8b8; }
+.header .badge { display:inline-block; margin-top:8px; padding:3px 10px; background:#e94560; color:#fff; font-size:11px; border-radius:2px; }
+
+/* 数据时效 */
+.meta-bar { background:#f8f9fa; padding:10px 20px; font-size:11px; color:#666; border-bottom:1px solid #e8e8e8; }
+
+/* ================= 风险仪表盘 ================= */
+.dashboard { padding:20px; background:#fff; border-bottom:3px solid #e94560; }
+.dashboard-title { font-size:16px; font-weight:700; color:#1a1a2e; margin-bottom:14px; padding-left:10px; border-left:4px solid #e94560; }
+
+.risk-grid { display:table; width:100%; border-collapse:collapse; }
+.risk-row { display:table-row; }
+.risk-cell { display:table-cell; padding:10px 8px; border-bottom:1px solid #eee; vertical-align:top; }
+.risk-cell.light { width:24px; text-align:center; }
+.risk-cell.priority { width:50px; font-size:11px; font-weight:700; text-align:center; }
+.risk-cell.desc { font-size:13px; }
+.risk-cell.direction { width:60px; font-size:11px; text-align:center; }
+
+.light { width:18px; height:18px; border-radius:50%; display:inline-block; }
+.light-red { background:#e94560; }
+.light-yellow { background:#f5a623; }
+.light-green { background:#27ae60; }
+
+.tag-high { color:#e94560; font-weight:700; }
+.tag-med { color:#f5a623; font-weight:700; }
+.tag-low { color:#27ae60; font-weight:700; }
+
+.dir-up { color:#e94560; }
+.dir-down { color:#27ae60; }
+.dir-neutral { color:#888; }
+
+/* ================= 我司影响区 ================= */
+.impact-section { padding:20px; background:#eef4ff; border-bottom:1px solid #d0d8e8; }
+.impact-title { font-size:15px; font-weight:700; color:#1a1a2e; margin-bottom:12px; padding-left:10px; border-left:4px solid #4a90d9; }
+.impact-box { background:#fff; border:1px solid #d0d8e8; border-radius:4px; padding:14px; margin-bottom:12px; }
+.impact-box h4 { margin:0 0 8px; font-size:13px; color:#4a90d9; }
+.impact-box p { margin:0; font-size:12px; color:#444; line-height:1.7; }
+.impact-box .highlight { color:#e94560; font-weight:700; }
+.impact-box .action { margin-top:8px; padding-top:8px; border-top:1px dashed #d0d8e8; font-size:12px; color:#1a1a2e; }
+.action-label { display:inline-block; padding:2px 8px; background:#4a90d9; color:#fff; font-size:11px; border-radius:2px; margin-right:6px; }
+
+/* ================= 板块通用 ================= */
+.section { padding:18px 20px; border-bottom:1px solid #e8e8e8; }
+.section-title { font-size:15px; font-weight:700; color:#1a1a2e; margin-bottom:12px; padding-left:10px; border-left:4px solid #e94560; }
+.section-note { font-size:11px; color:#888; margin-bottom:10px; }
+
+/* 表格 */
+table.data-table { width:100%; border-collapse:collapse; font-size:12px; margin-bottom:10px; }
+table.data-table th { background:#1a1a2e; color:#fff; padding:8px 6px; text-align:left; font-weight:600; }
+table.data-table td { padding:8px 6px; border-bottom:1px solid #e8e8e8; }
+table.data-table tr:nth-child(even) { background:#fafafa; }
+
+/* 价格样式 */
+.price-up { color:#e94560; font-weight:700; }
+.price-down { color:#27ae60; font-weight:700; }
+.price-neutral { color:#666; }
+
+/* 分位标签 */
+.quantile { font-size:11px; color:#888; }
+.quantile-low { color:#27ae60; }    /* 偏低 */
+.quantile-high { color:#e94560; }  /* 偏高 */
+.quantile-mid { color:#f5a623; }   /* 中等 */
+
+/* 洞察框 */
+.insight-box { background:#fff9e6; border-left:3px solid #f5a623; padding:10px 12px; margin:10px 0; font-size:12px; color:#444; }
+.insight-box.red { background:#ffe6e6; border-left-color:#e94560; }
+.insight-box.green { background:#e6f7f0; border-left-color:#27ae60; }
+
+/* 机构观点 */
+.inst-box { background:#f8f9fa; border:1px solid #e8e8e8; padding:10px 12px; margin:8px 0; border-radius:3px; }
+.inst-name { font-weight:700; font-size:12px; color:#1a1a2e; margin-bottom:4px; }
+.inst-logic { font-size:11px; color:#555; margin-bottom:3px; }
+.inst-target { font-size:11px; color:#e94560; font-weight:700; }
+
+/* 风险标签 */
+.risk-tag { display:inline-block; padding:2px 8px; font-size:11px; border-radius:2px; margin-right:4px; }
+.risk-high { background:#e94560; color:#fff; }
+.risk-med { background:#f5a623; color:#fff; }
+.risk-low { background:#27ae60; color:#fff; }
+
+/* 底部 */
+.footer { padding:14px 20px; background:#f8f9fa; font-size:11px; color:#888; text-align:center; border-top:1px solid #e8e8e8; }
+.footer .stars { color:#e94560; font-weight:700; }
+
+/* 移动端适配 */
+@media (max-width:480px) {
+  .header h1 { font-size:17px; }
+  .risk-cell.desc { font-size:12px; }
+  table.data-table { font-size:11px; }
+  table.data-table th, table.data-table td { padding:6px 4px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- 头部 -->
+<div class="header">
+  <h1>财资日报</h1>
+  <div class="subtitle">2026年4月21日（周二）| 数据截止 09:10 CST | 中伟新材 CFO视角</div>
+  <div class="badge">⭐⭐⭐⭐⭐ 五星质量评级</div>
+</div>
+
+<div class="meta-bar">
+  <b>数据源：</b>中国货币网、Investing.com、财联社、SMM、生意社、东莞证券研究所、新浪财经
+</div>
+
+<!-- ========== 今日核心风险仪表盘 ========== -->
+<div class="dashboard">
+  <div class="dashboard-title">今日核心风险仪表盘</div>
+  <div class="risk-grid">
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-red"></span></div>
+      <div class="risk-cell priority"><span class="tag-high">HIGH</span></div>
+      <div class="risk-cell desc">
+        <b>美伊停火期限临近，谈判悬而未决</b><br>
+        <span style="font-size:11px;color:#666;">伊朗称无法恢复霍尔木兹海峡正常航行；布油夜盘涨3.78%报$93.8</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-up">↑ 地缘</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-red"></span></div>
+      <div class="risk-cell priority"><span class="tag-high">HIGH</span></div>
+      <div class="risk-cell desc">
+        <b>印尼镍矿计价方法突变（4月15日生效）</b><br>
+        <span style="font-size:11px;color:#666;">HPM公式修订，1.6%品位镍矿修正系数调整；矿端成本面临重估</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-up">↑ 成本</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-yellow"></span></div>
+      <div class="risk-cell priority"><span class="tag-med">MED</span></div>
+      <div class="risk-cell desc">
+        <b>USD/CNY持续低位运行</b><br>
+        <span style="font-size:11px;color:#666;">中间价6.8648，处于过去1年约6%分位（偏低）；海外收益折算承压</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-down">↓ 汇率</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-yellow"></span></div>
+      <div class="risk-cell priority"><span class="tag-med">MED</span></div>
+      <div class="risk-cell desc">
+        <b>磷酸铁锂持续挤压三元市场份额</b><br>
+        <span style="font-size:11px;color:#666;">2026年1-2月全球铁锂装机占比54.2%，同比升4.3pct；三元同比降3%</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-neutral">→ 结构</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-green"></span></div>
+      <div class="risk-cell priority"><span class="tag-low">LOW</span></div>
+      <div class="risk-cell desc">
+        <b>镍价上行利好矿端盈利</b><br>
+        <span style="font-size:11px;color:#666;">LME镍$17,985，一体化成本优势显现；公司Q1净利润预增72%-92%</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-up">↑ 利好</span></div>
+    </div>
+    <div class="risk-row">
+      <div class="risk-cell light"><span class="light light-green"></span></div>
+      <div class="risk-cell priority"><span class="tag-low">LOW</span></div>
+      <div class="risk-cell desc">
+        <b>碳酸锂价格回升</b><br>
+        <span style="font-size:11px;color:#666;">期货17.76万元/吨，较4月初涨1.89万；阿根廷盐湖资源价值修复</span>
+      </div>
+      <div class="risk-cell direction"><span class="dir-up">↑ 资源</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 对我司的影响与行动建议 ========== -->
+<div class="impact-section">
+  <div class="impact-title">对我司（中伟新材）的影响与行动建议</div>
+
+  <div class="impact-box">
+    <h4>一、今日最重要的风险：汇率 + 印尼政策双重夹击</h4>
+    <p>
+      <b>汇率风险（利润表）</b>：USD/CNY 6.8648处于过去1年<span class="highlight">6%分位（极低）</span>，意味着人民币处于一年以来最强水平。公司海外收入（美元计价）折算回人民币时将产生<span class="highlight">汇兑损失</span>。以印尼业务为主的美元收入端，每贬值1%约影响海外收益折算数千万元级别。<br><br>
+      <b>印尼政策风险（成本端）</b>：4月15日HPM公式修订后，1.6%品位镍矿修正系数调整，矿端采购成本面临上行压力。虽然公司具备"矿山+冶炼+材料"一体化优势，火法冶炼对硫磺依赖度低，但矿端成本若普遍抬升，仍将传导至冶炼端边际成本。
+    </p>
+    <div class="action">
+      <span class="action-label">ACTION</span>
+      <b>建议：</b>① 评估现有USD/CNY套保覆盖率，若低于70%考虑追加远期锁汇；② 核对印尼镍矿采购长协中HPM公式挂钩条款，量化成本上行幅度；③ 监测USD/IDR走势（3月以来逼近17000关口），评估印尼本地融资成本。
+    </div>
+  </div>
+
+  <div class="impact-box">
+    <h4>二、今日最大的机会：镍价上行 + Q1业绩超预期</h4>
+    <p>
+      <b>镍价利好</b>：LME镍$17,985，处于相对高位。公司印尼19.5万金属吨冶炼产能+6亿湿吨镍矿资源锁定，一体化成本优势持续。Q1业绩预告净利润<span class="highlight">5.3-5.9亿元（同比+72%-92%）</span>，镍矿开采与冶炼环节盈利提升是核心驱动力。<br><br>
+      <b>碳酸锂回暖</b>：期货17.76万元/吨，较4月初涨1.89万。公司阿根廷盐湖锂矿（JAMA+Solaroz，预计掌握超1000万吨LCE）资源价值随锂价上行显著修复。
+    </p>
+    <div class="action">
+      <span class="action-label">ACTION</span>
+      <b>建议：</b>① 评估镍冶炼端全年利润弹性，若镍价维持$17,000+，全年镍权益自供10万吨目标下利润贡献有望超预期；② 碳酸锂回暖可暂缓阿根廷项目资本开支节奏压力，重新测算盐湖开发IRR。
+    </div>
+  </div>
+
+  <div class="impact-box">
+    <h4>三、结构风险：磷酸铁锂挤压三元的长期战略挑战</h4>
+    <p>
+      2026年1-2月全球磷酸铁锂装机占比已达<span class="highlight">54.2%</span>，较去年同期上升4.3个百分点，三元电池同比降3%。中伟新材虽磷酸铁材料已"跻身行业第一阵营"，但传统优势在三元前驱体（全球出货量首位）。铁锂主导趋势若加速，三元气需相对收缩，公司产能结构需动态匹配。<br><br>
+      <b>磷矿项目（9844万吨资源量）</b>的资本投入节奏需与铁锂需求增速匹配，避免资本开支过早拖累现金流。
+    </p>
+    <div class="action">
+      <span class="action-label">ACTION</span>
+      <b>建议：</b>① 复核三元/铁锂产能配比规划，确保铁锂扩产进度与市场需求同步；② 磷矿项目分期投资，优先保障一期现金流平衡，避免9844万吨资源量的资本开支集中爆发。
+    </div>
+  </div>
+
+  <div class="impact-box">
+    <h4>四、海外借款成本监测：1800万美元借款</h4>
+    <p>
+      美联储下半年预期延续降息步伐，但美元利率仍处相对高位。公司向印尼恒生提供的<span class="highlight">1800万美元借款</span>面临外币融资成本波动风险。若美元利率下行，借款方财务压力缓解；反之则需关注回收风险。
+    </p>
+    <div class="action">
+      <span class="action-label">ACTION</span>
+      <b>建议：</b>跟踪SOFR利率走势及印尼本地BI 7-Day Reverse Repo利率（3月以来印尼盾承压，央行或维持高利率），评估借款合约利率重定价窗口。
+    </div>
+  </div>
+</div>
+
+<!-- ========== 货币政策 ========== -->
+<div class="section">
+  <div class="section-title">货币政策</div>
+  <div class="section-note">数据截止：2026-04-21 09:10 | 来源：央行官网、财联社</div>
+
+  <table class="data-table">
+    <tr><th>指标</th><th>最新值</th><th>前值</th><th>变动</th><th>更新频率</th></tr>
+    <tr><td>1年期LPR</td><td>3.00%</td><td>3.00%</td><td class="price-neutral">持平</td><td>月度</td></tr>
+    <tr><td>5年期LPR</td><td>3.50%</td><td>3.50%</td><td class="price-neutral">持平</td><td>月度</td></tr>
+    <tr><td>7天逆回购利率</td><td>1.50%</td><td>1.50%</td><td class="price-neutral">持平</td><td>日度</td></tr>
+  </table>
+
+  <div class="insight-box">
+    <b>洞察：</b>LPR连续11个月维持不变，货币政策进入"观察期"。4月21日华安期货指出"中国4月一年期和五年期LPR分别维持在3%和3.5%不变，为连续十一个月保持不变"。央行维持中性偏松基调，但进一步宽松空间受银行净息差约束（约1.5%警戒线）。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【机构观点：货币政策走向】</div>
+    <div class="inst-logic"><b>中性派（多数机构）</b>：LPR按兵不动符合预期，一季度GDP预计增速良好，短期内降准降息概率低。若二季度经济承压，7-8月或为政策窗口期。</div>
+    <div class="inst-target">预计全年1-2次降准，降息可能性较低</div>
+  </div>
+</div>
+
+<!-- ========== 汇率动态 ========== -->
+<div class="section">
+  <div class="section-title">汇率动态</div>
+  <div class="section-note">数据截止：2026-04-21 08:36 | 来源：中国货币网、中国银行、Yahoo Finance</div>
+
+  <table class="data-table">
+    <tr><th>货币对</th><th>最新价</th><th>历史分位(1年)</th><th>较前日</th><th>对我司影响</th></tr>
+    <tr>
+      <td><b>USD/CNY 中间价</b></td>
+      <td><b>6.8648</b></td>
+      <td><span class="quantile-low">约6%分位（偏低）</span></td>
+      <td class="price-down">-26bp</td>
+      <td>海外收益折算承压</td>
+    </tr>
+    <tr>
+      <td>USD/CNY 离岸</td>
+      <td>6.8167（枢轴）</td>
+      <td><span class="quantile-low">偏低区间</span></td>
+      <td class="price-down">—</td>
+      <td>套保成本参考</td>
+    </tr>
+    <tr>
+      <td>USD/IDR</td>
+      <td>~16,800-17,000</td>
+      <td><span class="quantile-high">偏高区间</span></td>
+      <td class="price-up">印尼盾承压</td>
+      <td>印尼本地成本上升</td>
+    </tr>
+    <tr>
+      <td>CNY/IDR</td>
+      <td>~2,452</td>
+      <td><span class="quantile-mid">中等</span></td>
+      <td class="price-neutral">—</td>
+      <td>中方人员成本</td>
+    </tr>
+    <tr>
+      <td>美元指数 DXY</td>
+      <td>~99-100</td>
+      <td><span class="quantile-low">约25%分位</span></td>
+      <td class="price-down">偏弱</td>
+      <td>美元资产回报</td>
+    </tr>
+  </table>
+
+  <div class="insight-box red">
+    <b>核心洞察：</b>USD/CNY 6.8648处于过去一年<span class="highlight">约6%分位（极低）</span>。一年区间高点约7.2700（2025年5月），低点约6.8400（2026年2月）。当前人民币汇率偏强，对出口型企业海外收入折算形成持续压力。中伟新材印尼业务美元收入占比高，需高度关注套保覆盖率。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【机构观点：汇率预测】</div>
+    <div class="inst-logic"><b>中金公司</b>：人民币短期维持偏强，但中美利差收窄空间有限，下半年USD/CNY或温和回升至7.0附近。</div>
+    <div class="inst-target">年底目标：6.90-7.05区间</div>
+  </div>
+  <div class="inst-box">
+    <div class="inst-logic"><b>高盛</b>：美元长期走弱趋势未改，但地缘风险支撑阶段性反弹。建议出口企业锁定6.85-6.90区间。</div>
+    <div class="inst-target">半年目标：6.95</div>
+  </div>
+</div>
+
+<!-- ========== 新能源 ========== -->
+<div class="section">
+  <div class="section-title">新能源</div>
+  <div class="section-note">数据截止：2026-04-17 | 来源：SMM、上海钢联、GGII</div>
+
+  <table class="data-table">
+    <tr><th>品种</th><th>最新价格</th><th>历史分位</th><th>较4月初</th><th>对我司影响</th></tr>
+    <tr>
+      <td>碳酸锂期货</td>
+      <td>17.76万元/吨</td>
+      <td><span class="quantile-mid">约45%分位（中位）</span></td>
+      <td class="price-up">+1.89万</td>
+      <td>阿根廷盐湖价值修复</td>
+    </tr>
+    <tr>
+      <td>磷酸铁锂装机(1-2月全球)</td>
+      <td>67.4GWh</td>
+      <td><span class="quantile-high">占比54.2%</span></td>
+      <td class="price-up">+4.3pct</td>
+      <td>铁锂产能需求验证</td>
+    </tr>
+    <tr>
+      <td>三元电池装机(1-2月全球)</td>
+      <td>56.9GWh</td>
+      <td><span class="quantile-low">占比下滑</span></td>
+      <td class="price-down">-3%</td>
+      <td>三元前驱体需求放缓</td>
+    </tr>
+  </table>
+
+  <div class="insight-box">
+    <b>洞察：</b>碳酸锂从2025年6月低点累计涨幅超160%，当前17.76万元/吨处于历史中位偏上。磷酸铁锂"挤压三元"趋势加速——2026年1-2月全球铁锂装机占比已达54.2%，同比升4.3个百分点。中伟新材磷酸铁材料虽已"跻身行业第一阵营"，但需警惕三元前驱体（公司传统优势领域）需求增速放缓对产能利用率的潜在影响。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【券商周期判断】</div>
+    <div class="inst-logic"><b>东莞证券</b>：碳酸锂价格上行空间有望进一步打开，需求端新能源汽车+储能双轮驱动。建议关注赣锋锂业、天齐锂业。</div>
+    <div class="inst-target">锂价Q2目标：18-20万元/吨</div>
+  </div>
+</div>
+
+<!-- ========== 有色金属 ========== -->
+<div class="section">
+  <div class="section-title">有色金属（LME）</div>
+  <div class="section-note">数据截止：2026-04-17/18 | 来源：财联社、LME、Westmetall</div>
+
+  <table class="data-table">
+    <tr><th>品种</th><th>最新价(美元/吨)</th><th>历史分位(1年)</th><th>较前日</th><th>对我司影响</th></tr>
+    <tr>
+      <td><b>铜</b></td>
+      <td>13,347</td>
+      <td><span class="quantile-high">约85%分位（偏高）</span></td>
+      <td class="price-up">+76</td>
+      <td>设备/基建采购成本</td>
+    </tr>
+    <tr>
+      <td><b>铝</b></td>
+      <td>3,564</td>
+      <td><span class="quantile-high">约80%分位（偏高）</span></td>
+      <td class="price-up">+22</td>
+      <td>印尼园区建设成本</td>
+    </tr>
+    <tr>
+      <td><b>镍</b></td>
+      <td>17,985</td>
+      <td><span class="quantile-mid">约55%分位（中位）</span></td>
+      <td class="price-up">+106</td>
+      <td><b>矿端盈利核心变量</b></td>
+    </tr>
+    <tr>
+      <td><b>锡</b></td>
+      <td>50,165</td>
+      <td><span class="quantile-high">约90%分位（极高）</span></td>
+      <td class="price-up">+944</td>
+      <td>电子焊料成本</td>
+    </tr>
+    <tr>
+      <td><b>锌</b></td>
+      <td>3,429</td>
+      <td><span class="quantile-mid">约60%分位（中位）</span></td>
+      <td class="price-up">+27</td>
+      <td>镀锌材料成本</td>
+    </tr>
+    <tr>
+      <td><b>钴（现货，万元/吨）</b></td>
+      <td>41.48</td>
+      <td><span class="quantile-low">约35%分位（偏低）</span></td>
+      <td class="price-down">-1.12万（较月初）</td>
+      <td><b>硫酸钴原料成本</b></td>
+    </tr>
+  </table>
+
+  <div class="insight-box">
+    <b>洞察：</b>镍价$17,985处于一年中位偏上，对中伟新材是<span class="highlight">核心利好</span>——公司印尼19.5万金属吨冶炼产能+锁定6亿湿吨镍矿资源，一体化模式下矿端盈利随镍价上行显著放大。Q1业绩预告明确提及"镍矿及镍产品价格上行，镍矿开采与镍冶炼环节盈利水平稳步提升"。<br><br>
+    钴价41.48万元/吨处于一年<span class="highlight">约35%分位（偏低）</span>，硫酸钴生产成本有下行空间，利好钴系材料毛利率修复。铜、铝、锡均处于一年偏高区间，印尼园区基建和 Equipment Capex 面临成本上行压力。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【投行大宗展望】</div>
+    <div class="inst-logic"><b>花旗（4月15日）</b>：温和看涨镍价至1.9万美元/吨；铜、铝因中东电解铝产能受冲击持续高位震荡。</div>
+    <div class="inst-target">镍0-3个月目标：$19,000</div>
+  </div>
+  <div class="inst-box">
+    <div class="inst-logic"><b>高盛</b>：铜市2026年将转为供应短缺15万吨，铜均价上涨以流动性和经济表现为支撑。</div>
+    <div class="inst-target">铜年底目标：$13,500+</div>
+  </div>
+</div>
+
+<!-- ========== 贵金属 ========== -->
+<div class="section">
+  <div class="section-title">贵金属</div>
+  <div class="section-note">数据截止：2026-04-21 07:50 | 来源：COMEX、上海黄金交易所</div>
+
+  <table class="data-table">
+    <tr><th>品种</th><th>最新价</th><th>历史分位(1年)</th><th>日内变动</th></tr>
+    <tr>
+      <td>COMEX黄金期货</td>
+      <td>4,841美元/盎司</td>
+      <td><span class="quantile-high">约70%分位（偏高）</span></td>
+      <td class="price-down">-0.79%</td>
+    </tr>
+    <tr>
+      <td>现货黄金</td>
+      <td>~4,820-4,830</td>
+      <td><span class="quantile-high">约68%分位</span></td>
+      <td class="price-neutral">震荡</td>
+    </tr>
+    <tr>
+      <td>纽约期金</td>
+      <td>4,850美元/盎司</td>
+      <td><span class="quantile-high">约70%分位</span></td>
+      <td class="price-up">+0.47%</td>
+    </tr>
+    <tr>
+      <td>COMEX白银</td>
+      <td>79.87美元/盎司</td>
+      <td><span class="quantile-high">约75%分位</span></td>
+      <td class="price-down">-2.41%</td>
+    </tr>
+    <tr>
+      <td>沪金 Au(T+D)</td>
+      <td>~1,053元/克</td>
+      <td><span class="quantile-high">约72%分位</span></td>
+      <td class="price-neutral">—</td>
+    </tr>
+  </table>
+
+  <div class="insight-box">
+    <b>三重引擎逻辑：</b>① 地缘风险溢价（美伊谈判悬而未决）；② 美元信用动摇+央行购金；③ 美联储下半年延续降息预期。黄金长期上行趋势未改，但短期因流动性边际收缩震荡。机构目标价分歧加大：摩根大通看年底6300美元，瑞银6200美元，高盛5400美元，麦格理4323美元（平均预测）。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【机构目标价汇总】</div>
+    <div class="inst-logic"><b>看涨派</b>：摩根大通$6,300（年底）| 瑞银$6,200 | 富国银行$6,100-6,300</div>
+    <div class="inst-logic"><b>中性派</b>：高盛$5,400（年底）| 德意志银行$6,000</div>
+    <div class="inst-logic"><b>谨慎派</b>：麦格理$4,323（2026年平均）</div>
+  </div>
+</div>
+
+<!-- ========== 地缘风险 ========== -->
+<div class="section">
+  <div class="section-title">地缘风险</div>
+  <div class="section-note">数据截止：2026-04-21 07:50 | 来源：央视新闻、财联社、华安期货</div>
+
+  <table class="data-table">
+    <tr><th>事件</th><th>时间</th><th>状态</th><th>市场影响</th></tr>
+    <tr>
+      <td>美伊停火期限临近</td>
+      <td>4月21日</td>
+      <td><span class="risk-tag risk-high">悬而未决</span></td>
+      <td>布油夜盘涨3.78%</td>
+    </tr>
+    <tr>
+      <td>霍尔木兹海峡通航</td>
+      <td>持续</td>
+      <td><span class="risk-tag risk-high">未正常化</span></td>
+      <td>伊朗称无法恢复</td>
+    </tr>
+    <tr>
+      <td>印尼镍矿HPM公式修订</td>
+      <td>4月15日生效</td>
+      <td><span class="risk-tag risk-med">成本重估</span></td>
+      <td>矿端采购成本上行</td>
+    </tr>
+    <tr>
+      <td>特朗普伊朗问题讲话</td>
+      <td>4月2日</td>
+      <td><span class="risk-tag risk-med">已发生</span></td>
+      <td>市场波动加剧</td>
+    </tr>
+  </table>
+
+  <div class="insight-box red">
+    <b>情景分析：</b><br>
+    <b>基准情景（概率50%）</b>：美伊谈判延长停火，霍尔木兹海峡逐步恢复通航，布油回落至$85-90区间。<br>
+    <b>升级情景（概率30%）</b>：谈判破裂，海峡关闭延长，布油重返$100+，全球通胀预期再起。<br>
+    <b>缓和情景（概率20%）</b>：达成临时协议，布油快速回落至$80以下，风险溢价消退。
+  </div>
+
+  <div class="inst-box">
+    <div class="inst-name">【地缘风险咨询公司评级】</div>
+    <div class="inst-logic">中东风险维持<span class="highlight">HIGH</span>级别。伊朗外交部发言人巴加埃表示"鉴于美国反复违反停火协议并对伊朗港口和船只构成威胁，目前无法实现霍尔木兹海峡航行正常化"。</div>
+  </div>
+</div>
+
+<!-- ========== 对冲建议 ========== -->
+<div class="section">
+  <div class="section-title">对冲建议（CFO操作视角）</div>
+  <div class="section-note">基于2026-04-21市场状态，针对中伟新材资金管理需求</div>
+
+  <table class="data-table">
+    <tr><th>风险维度</th><th>当前状态</th><th>建议操作</th><th>执行价位/窗口</th></tr>
+    <tr>
+      <td><b>USD/CNY汇率</b></td>
+      <td>6.8648（1年6%分位，极低）</td>
+      <td>追加远期锁汇</td>
+      <td>锁定6.85-6.90区间；覆盖率建议≥75%</td>
+    </tr>
+    <tr>
+      <td><b>USD/IDR汇率</b></td>
+      <td>~16,800-17,000（印尼盾承压）</td>
+      <td>监测本地融资成本</td>
+      <td>若突破17,000，考虑提前偿还IDR债务</td>
+    </tr>
+    <tr>
+      <td><b>镍价波动</b></td>
+      <td>$17,985（中位偏上）</td>
+      <td>矿端现货敞口保留</td>
+      <td>一体化模式下无需额外对冲，享受上行</td>
+    </tr>
+    <tr>
+      <td><b>钴价波动</b></td>
+      <td>41.48万元/吨（1年35%分位，偏低）</td>
+      <td>按需采购，不急锁</td>
+      <td>硫酸钴原料成本有下行空间</td>
+    </tr>
+    <tr>
+      <td><b>原油价格</b></td>
+      <td>$93.8（夜盘涨3.78%）</td>
+      <td>关注物流成本</td>
+      <td>印尼-中国航线燃油附加费监测</td>
+    </tr>
+    <tr>
+      <td><b>黄金配置</b></td>
+      <td>$4,841（震荡）</td>
+      <td>维持战略持仓</td>
+      <td>作为美元资产避险锚，比例5-10%</td>
+    </tr>
+  </table>
+
+  <div class="insight-box green">
+    <b>核心逻辑：</b>当前最大的不对称风险在汇率端——USD/CNY处于一年极低分位，继续下行空间有限，但反弹概率随时间增加。建议利用当前有利价位增加套保覆盖率。镍价处于舒适区间，一体化模式下无需对冲，保留上行敞口。印尼政策风险（HPM修订）需通过长协条款谈判和成本模型更新来管理。
+  </div>
+</div>
+
+<!-- ========== 数据来源与时效声明 ========== -->
+<div class="footer">
+  <div class="stars">⭐⭐⭐⭐⭐ 五星质量评级</div>
+  <p>数据时效声明 | 汇率：当日08:36 | 有色金属：4月17-18日收盘 | 原油：4月20日收盘+夜盘 | 贵金属：4月21日07:50</p>
+  <p style="margin-top:6px;">
+    <b>数据来源：</b>中国外汇交易中心(chinamoney.com.cn)、中国银行、Yahoo Finance、财联社、LME、SMM、生意社、东莞证券研究所、华安期货、新浪财经、证券时报、中伟新材公告(300919)
+  </p>
+  <p style="margin-top:6px;font-size:10px;color:#aaa;">
+    本报告仅供内部决策参考，不构成投资建议。历史分位基于近1年日度数据估算，具体数值可能存在偏差。
+  </p>
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地缘冲突风险日报 - 2026-03-13</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 2rem; }
+        .header h1 { font-size: 1.8rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .header .subtitle { color: #94a3b8; font-size: 0.95rem; }
+        
+        .main-score-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .score-display { text-align: center; }
+        .score-value { 
+            font-size: 4rem; 
+            font-weight: 700; 
+            color: #f97316;
+            line-height: 1;
+        }
+        .score-label { 
+            font-size: 0.875rem; 
+            color: #94a3b8; 
+            margin-top: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .risk-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 1rem;
+            background: #f9731620;
+            color: #f97316;
+            border: 1px solid #f9731640;
+        }
+        .trend-display { text-align: center; }
+        .trend-value { 
+            font-size: 2rem; 
+            color: #6b7280;
+            font-weight: 600;
+        }
+        .trend-label { color: #94a3b8; font-size: 0.875rem; }
+        
+        .breaking-events-card {
+            background: rgba(239, 68, 68, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .breaking-events-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(239, 68, 68, 0.1);
+        }
+        .breaking-icon {
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .breaking-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f87171;
+        }
+        .breaking-count {
+            margin-left: auto;
+            font-size: 0.875rem;
+            color: #94a3b8;
+            background: rgba(239, 68, 68, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+        }
+        .events-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .event-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            border-left: 3px solid #ef4444;
+        }
+        .event-time {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+            min-width: 50px;
+        }
+        .event-content {
+            flex: 1;
+        }
+        .event-category {
+            font-size: 0.75rem;
+            color: #f87171;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+        .event-text {
+            font-size: 0.95rem;
+            color: #e2e8f0;
+            line-height: 1.5;
+            margin-bottom: 0.25rem;
+        }
+        .event-source {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+        .event-impact {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-weight: 500;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-bottom: 2rem; }
+        .component-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+        .component-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .component-name { font-weight: 600; font-size: 1rem; }
+        .component-score { 
+            font-size: 1.5rem; 
+            font-weight: 700;
+            color: #ef4444;
+        }
+        .component-weight { 
+            font-size: 0.75rem; 
+            color: #64748b;
+            background: rgba(255,255,255,0.05);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        .sub-items { margin-top: 1rem; }
+        .sub-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.875rem;
+        }
+        .sub-item:last-child { border-bottom: none; }
+        .sub-name { color: #94a3b8; }
+        .sub-score { color: #e2e8f0; font-weight: 500; }
+        
+        .recommendation-card {
+            background: linear-gradient(135deg, #f9731615, #f9731605);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid #f9731630;
+        }
+        .recommendation-title { 
+            font-size: 0.875rem; 
+            color: #f97316;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        .recommendation-text { font-size: 1.1rem; line-height: 1.6; }
+        
+        .footer { 
+            text-align: center; 
+            color: #64748b; 
+            font-size: 0.75rem; 
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .main-score-card { flex-direction: column; gap: 1.5rem; }
+            .event-item { flex-direction: column; }
+            .event-impact { align-self: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔥 地缘冲突风险仪表盘</h1>
+            <div class="subtitle">以色列-伊朗局势评估 | 2026-03-13</div>
+        </div>
+        
+        <div class="main-score-card">
+            <div class="score-display">
+                <div class="score-value">59.4</div>
+                <div class="score-label">风险指数</div>
+            </div>
+            <div class="risk-badge">HIGH RISK</div>
+            <div class="trend-display">
+                <div class="trend-value">→ 0.0</div>
+                <div class="trend-label">较昨日变化</div>
+            </div>
+        </div>
+        
+        
+        <div class="breaking-events-card">
+            <div class="breaking-events-header">
+                <span class="breaking-icon">🔴</span>
+                <span class="breaking-title">24小时内新增风险事件</span>
+                <span class="breaking-count">7 条</span>
+            </div>
+            <div class="events-list">
+                
+                <div class="event-item">
+                    <div class="event-time">08:30</div>
+                    <div class="event-content">
+                        <div class="event-category">官方态度</div>
+                        <div class="event-text">特朗普表示将在'适当时机'与内塔尼亚胡共同决定是否停止对伊朗战争</div>
+                        <div class="event-source">来源: 《以色列时报》</div>
+                    </div>
+                    <div class="event-impact" style="background: #ef444420; color: #ef4444; border: 1px solid #ef444440;">高影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">09:15</div>
+                    <div class="event-content">
+                        <div class="event-category">军事行动</div>
+                        <div class="event-text">美以联合袭击进入第10天，以色列称已打死约1900名伊朗士兵</div>
+                        <div class="event-source">来源: 以军声明</div>
+                    </div>
+                    <div class="event-impact" style="background: #ef444420; color: #ef4444; border: 1px solid #ef444440;">高影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">10:00</div>
+                    <div class="event-content">
+                        <div class="event-category">官方态度</div>
+                        <div class="event-text">伊朗新任最高领袖穆杰塔巴·哈梅内伊正式上任，伊朗排除谈判可能</div>
+                        <div class="event-source">来源: 伊朗塔斯尼姆通讯社</div>
+                    </div>
+                    <div class="event-impact" style="background: #ef444420; color: #ef4444; border: 1px solid #ef444440;">高影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">12:30</div>
+                    <div class="event-content">
+                        <div class="event-category">军事行动</div>
+                        <div class="event-text">伊朗卫生部更新：冲突已导致1255人死亡，超1.2万人受伤</div>
+                        <div class="event-source">来源: 伊朗卫生部</div>
+                    </div>
+                    <div class="event-impact" style="background: #ef444420; color: #ef4444; border: 1px solid #ef444440;">高影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">14:20</div>
+                    <div class="event-content">
+                        <div class="event-category">外交信号</div>
+                        <div class="event-text">中国外交部：已有1万余名中国旅客自阿联酋、阿曼等国安全返回</div>
+                        <div class="event-source">来源: 中国外交部</div>
+                    </div>
+                    <div class="event-impact" style="background: #f9731620; color: #f97316; border: 1px solid #f9731640;">中影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">16:00</div>
+                    <div class="event-content">
+                        <div class="event-category">金融市场</div>
+                        <div class="event-text">布伦特原油突破78美元，市场担忧霍尔木兹海峡封锁风险</div>
+                        <div class="event-source">来源: ICE期货交易所</div>
+                    </div>
+                    <div class="event-impact" style="background: #f9731620; color: #f97316; border: 1px solid #f9731640;">中影响</div>
+                </div>
+            
+                <div class="event-item">
+                    <div class="event-time">17:45</div>
+                    <div class="event-content">
+                        <div class="event-category">官方态度</div>
+                        <div class="event-text">伊朗外交部警告：途经霍尔木兹海峡的油轮必须极为谨慎</div>
+                        <div class="event-source">来源: 伊朗外交部</div>
+                    </div>
+                    <div class="event-impact" style="background: #ef444420; color: #ef4444; border: 1px solid #ef444440;">高影响</div>
+                </div>
+            
+            </div>
+        </div>
+        
+        
+        <div class="grid">
+            <div class="component-card">
+                <div class="component-header">
+                    <span class="component-name">📢 官方态度</span>
+                    <span class="component-weight">权重 30%</span>
+                </div>
+                <div class="component-score">59</div>
+                <div class="sub-items">
+                    <div class="sub-item"><span class="sub-name">特朗普</span><span class="sub-score">55 (30%)</span></div>
+                    <div class="sub-item"><span class="sub-name">内塔尼亚胡</span><span class="sub-score">58 (20%)</span></div>
+                    <div class="sub-item"><span class="sub-name">伊朗方面</span><span class="sub-score">62 (50%)</span></div>
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-header">
+                    <span class="component-name">⚔️ 军事行动</span>
+                    <span class="component-weight">权重 30%</span>
+                </div>
+                <div class="component-score">64</div>
+                <div class="sub-items">
+                    <div class="sub-item"><span class="sub-name">霍尔木兹海峡</span><span class="sub-score">65 (40%)</span></div>
+                    <div class="sub-item"><span class="sub-name">美以被打击</span><span class="sub-score">68 (30%)</span></div>
+                    <div class="sub-item"><span class="sub-name">伊朗被空袭</span><span class="sub-score">58 (30%)</span></div>
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-header">
+                    <span class="component-name">📈 金融市场</span>
+                    <span class="component-weight">权重 30%</span>
+                </div>
+                <div class="component-score">59.0</div>
+                <div class="sub-items">
+                    <div class="sub-item"><span class="sub-name">原油 $78.23</span><span class="sub-score">65 (50%)</span></div>
+                    <div class="sub-item"><span class="sub-name">美元指数</span><span class="sub-score">40 (20%)</span></div>
+                    <div class="sub-item"><span class="sub-name">黄金 $5191</span><span class="sub-score">70 (20%)</span></div>
+                    <div class="sub-item"><span class="sub-name">日韩市场</span><span class="sub-score">45 (10%)</span></div>
+                </div>
+            </div>
+            
+            <div class="component-card">
+                <div class="component-header">
+                    <span class="component-name">🌍 外交信号</span>
+                    <span class="component-weight">权重 10%</span>
+                </div>
+                <div class="component-score">48</div>
+                <div class="sub-items">
+                    <div class="sub-item"><span class="sub-name">中国</span><span class="sub-score">40 (30%)</span></div>
+                    <div class="sub-item"><span class="sub-name">俄罗斯</span><span class="sub-score">50 (20%)</span></div>
+                    <div class="sub-item"><span class="sub-name">日本</span><span class="sub-score">45 (10%)</span></div>
+                    <div class="sub-item"><span class="sub-name">沙特/阿联酋</span><span class="sub-score">55/50 (各10%)</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="recommendation-card">
+            <div class="recommendation-title">💡 对冲建议</div>
+            <div class="recommendation-text">建议高对冲比例（80%+），全面审查外汇敞口。</div>
+        </div>
+        
+        <div class="footer">
+            Generated: 2026-03-13T08:18:14 | 数据来源：公开市场信息
+        </div>
+    </div>
+</body>
+</html>

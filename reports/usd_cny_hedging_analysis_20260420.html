@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USD/CNY 套期保值量化分析报告</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #0f3460 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .header .subtitle {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .header .date {
+            font-size: 12px;
+            margin-top: 10px;
+            opacity: 0.7;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 4px solid #e94560;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .data-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .data-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 3px solid #e94560;
+        }
+        
+        .data-card .label {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .data-card .value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a2e;
+        }
+        
+        .data-card .unit {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .methodology {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .methodology h3 {
+            font-size: 16px;
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .formula {
+            background: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid #0f3460;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .formula-title {
+            font-weight: 600;
+            color: #0f3460;
+            margin-bottom: 8px;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .recommendation {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+            border: 1px solid #ffe082;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .recommendation h3 {
+            color: #b8860b;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .recommendation .main-advice {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a2e;
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 2px solid #e94560;
+        }
+        
+        .recommendation .rationale {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #555;
+            margin-top: 15px;
+        }
+        
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        
+        .data-table th {
+            background: #1a1a2e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .data-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .data-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .positive { color: #27ae60; font-weight: 600; }
+        .negative { color: #e94560; font-weight: 600; }
+        .neutral { color: #666; }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 20px 30px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+        
+        .highlight-box {
+            background: #e94560;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .highlight-box .big-number {
+            font-size: 36px;
+            font-weight: 700;
+        }
+        
+        .highlight-box .label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>USD/CNY 套期保值量化分析报告</h1>
+            <div class="subtitle">基于掉期点与历史年化升值率的套保比例建议</div>
+            <div class="date">报告日期：2026年4月20日 | 数据来源：中国货币网 / Investing.com / CEIC</div>
+        </div>
+        
+        <div class="content">
+            <!-- 核心指标摘要 -->
+            <div class="section">
+                <div class="section-title">核心指标摘要</div>
+                <div class="data-summary">
+                    <div class="data-card">
+                        <div class="label">USD/CNY 现汇汇率</div>
+                        <div class="value">6.8200</div>
+                        <div class="unit">2026-04-17</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="label">3个月掉期点</div>
+                        <div class="value">-406</div>
+                        <div class="unit">Pips</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="label">套保成本（年化）</div>
+                        <div class="value" style="color: #e94560;">-2.38%</div>
+                        <div class="unit">负成本=收益</div>
+                    </div>
+                    <div class="data-card">
+                        <div class="label">近1年升值率</div>
+                        <div class="value" style="color: #27ae60;">-4.43%</div>
+                        <div class="unit">人民币升4.43%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 柱状图 -->
+            <div class="section">
+                <div class="section-title">USD/CNY 套保成本与历史年化升值率对比</div>
+                <div class="chart-container">
+                    <canvas id="hedgingChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 详细数据表 -->
+            <div class="section">
+                <div class="section-title">详细数据与计算过程</div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>时间维度</th>
+                            <th>起始汇率</th>
+                            <th>结束汇率</th>
+                            <th>ln(收益率)</th>
+                            <th>年化升值率</th>
+                            <th>趋势判断</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background: #fff3cd;">
+                            <td><strong>3个月掉期成本</strong></td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td class="negative"><strong>-2.38%</strong></td>
+                            <td>套保有收益</td>
+                        </tr>
+                        <tr>
+                            <td>近1年（2025.04→2026.04）</td>
+                            <td>7.1290</td>
+                            <td>6.8200</td>
+                            <td>-0.0443</td>
+                            <td class="positive">-4.43%</td>
+                            <td>人民币升值</td>
+                        </tr>
+                        <tr>
+                            <td>近3年（2023.04→2026.04）</td>
+                            <td>7.0750</td>
+                            <td>6.8200</td>
+                            <td>-0.0367</td>
+                            <td class="positive">-1.22%</td>
+                            <td>人民币升值</td>
+                        </tr>
+                        <tr>
+                            <td>近5年（2021.04→2026.04）</td>
+                            <td>6.4520</td>
+                            <td>6.8200</td>
+                            <td>+0.0555</td>
+                            <td class="negative">+1.11%</td>
+                            <td>人民币贬值</td>
+                        </tr>
+                        <tr>
+                            <td>近7年（2019.04→2026.04）</td>
+                            <td>6.8985</td>
+                            <td>6.8200</td>
+                            <td>-0.0116</td>
+                            <td class="neutral">-0.17%</td>
+                            <td>基本持平</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <!-- 计算方法 -->
+            <div class="section">
+                <div class="section-title">计算方法说明</div>
+                <div class="methodology">
+                    <h3>1. 套保成本年化计算公式</h3>
+                    <div class="formula">
+                        <div class="formula-title">套保成本(年化) = (掉期点 / 10000) / 即期汇率 × (12 / 期限月数) × 100%</div>
+                        代入数据：(-406 / 10000) / 6.82 × 4 × 100% = <strong>-2.38%</strong><br>
+                        <span style="color: #27ae60;">负值表示套保产生正收益（远期结汇价格优于即期）</span>
+                    </div>
+                    
+                    <h3>2. 年化升值率计算公式（对数收益率法）</h3>
+                    <div class="formula">
+                        <div class="formula-title">年化升值率 = ln(期末汇率 / 期初汇率) / 年数 × 100%</div>
+                        其中 ln 为自然对数，采用连续复利计算方式<br>
+                        示例（近1年）：ln(6.82 / 7.129) / 1 = -0.0443 = <strong>-4.43%</strong>
+                    </div>
+                    
+                    <h3>3. 数据说明</h3>
+                    <div style="font-size: 13px; line-height: 1.8; color: #666;">
+                        • <strong>掉期点</strong>：2026年3月中国人民银行公布数据，-406点表示3个月远期美元贴水<br>
+                        • <strong>历史汇率</strong>：采用IRS年度平均汇率及Investing.com日度数据<br>
+                        • <strong>交易日</strong>：年度按252个交易日计算（金融市场惯例）<br>
+                        • <strong>计算基准日</strong>：2026年4月17日 USD/CNY = 6.8200
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 套期保值建议 -->
+            <div class="section">
+                <div class="section-title">套期保值比例建议</div>
+                <div class="recommendation">
+                    <h3>🎯 核心建议</h3>
+                    <div class="main-advice">
+                        推荐套期保值比例：<span style="color: #e94560;">20% - 30%</span>
+                    </div>
+                    <div class="rationale">
+                        <strong>理由分析：</strong><br><br>
+                        
+                        <strong>1. 套保成本视角（积极因素）</strong><br>
+                        当前3个月掉期点为-406点，折算年化成本为<span style="color: #27ae60;">-2.38%</span>。
+                        这意味着进行远期结汇套保不仅不产生成本，反而能获得约2.38%的年化额外收益。
+                        负成本环境是非常难得的套保窗口期。<br><br>
+                        
+                        <strong>2. 汇率趋势视角（谨慎因素）</strong><br>
+                        • 近1年人民币升值<span style="color: #27ae60;">4.43%</span>，趋势强劲<br>
+                        • 近3年年均升值<span style="color: #27ae60;">1.22%</span>，中期维度人民币强势<br>
+                        • 近5年数据显示美元年均升值<span style="color: #e94560;">1.11%</span>，长期存在均值回归压力<br>
+                        • 近7年基本持平，显示汇率围绕6.80-7.00中枢波动<br><br>
+                        
+                        <strong>3. 策略建议</strong><br>
+                        虽然套保有负成本优势，但近1-3年数据显示人民币升值趋势明显。
+                        过度套保可能错失人民币升值带来的汇兑收益。
+                        建议采取<span style="color: #b8860b;">"轻套保、留敞口"</span>策略：<br>
+                        • <strong>基础套保比例</strong>：20%（锁定最低汇率风险）<br>
+                        • <strong>适度套保区间</strong>：可提升至30%（若担心地缘风险等突发因素）<br>
+                        • <strong>不建议超过</strong>：50%（当前人民币升值趋势下，过高套保比例机会成本较大）<br><br>
+                        
+                        <strong>4. 操作建议</strong><br>
+                        • 利用当前负掉期点环境，优先通过远期结汇锁定部分头寸<br>
+                        • 关注人民币一旦贬至6.90-7.00区间的加仓套保机会<br>
+                        • 保持对美元多头敞口的动态监控，设置止损线
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 风险提示 -->
+            <div class="section">
+                <div class="section-title">风险提示</div>
+                <div style="background: #ffe6e6; border-left: 4px solid #e94560; padding: 15px; border-radius: 4px; font-size: 13px; line-height: 1.6;">
+                    <strong>⚠️ 重要声明：</strong><br>
+                    1. 本报告基于历史数据计算，不构成投资建议<br>
+                    2. 汇率波动受地缘政治、央行政策等多重因素影响，历史趋势不代表未来表现<br>
+                    3. 套期保值应根据企业实际外汇敞口、现金流需求综合决策<br>
+                    4. 建议在专业财资顾问指导下制定套保策略
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            本报告由 OpenClaw AI 生成 | 数据截止日期：2026年4月17日<br>
+            数据来源：中国货币网(chinamoney.com.cn)、CEIC、Investing.com、IRS年度汇率
+        </div>
+    </div>
+    
+    <script>
+        // 柱状图配置
+        const ctx = document.getElementById('hedgingChart').getContext('2d');
+        
+        const data = {
+            labels: ['3个月套保成本\n(年化)', '近1年\n年化升值率', '近3年\n年化升值率', '近5年\n年化升值率', '近7年\n年化升值率'],
+            datasets: [{
+                label: '年化百分比 (%)',
+                data: [-2.38, -4.43, -1.22, 1.11, -0.17],
+                backgroundColor: [
+                    'rgba(233, 69, 96, 0.8)',    // 套保成本 - 红色
+                    'rgba(39, 174, 96, 0.8)',    // 近1年 - 绿色（升值）
+                    'rgba(39, 174, 96, 0.8)',    // 近3年 - 绿色
+                    'rgba(233, 69, 96, 0.6)',    // 近5年 - 浅红（贬值）
+                    'rgba(108, 117, 125, 0.6)'   // 近7年 - 灰色
+                ],
+                borderColor: [
+                    '#e94560',
+                    '#27ae60',
+                    '#27ae60',
+                    '#e94560',
+                    '#6c757d'
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+            }]
+        };
+        
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.parsed.y > 0 ? '美元升值 +' : '人民币升值 ';
+                                if (context.dataIndex === 0) label = '套保成本 ';
+                                return label + context.parsed.y.toFixed(2) + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        min: -6,
+                        max: 4,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            },
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0,0,0,0.1)'
+                        },
+                        title: {
+                            display: true,
+                            text: '年化百分比 (%)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    x: {
+                        ticks: {
+                            font: {
+                                size: 12
+                            }
+                        },
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                animation: {
+                    duration: 1500,
+                    easing: 'easeOutQuart'
+                }
+            }
+        };
+        
+        new Chart(ctx, config);
+    </script>
+</body>
+</html>

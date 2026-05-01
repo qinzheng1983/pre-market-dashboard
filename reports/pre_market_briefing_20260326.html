@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盘前市场简报 - 2026年3月26日</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #1a1a2e; line-height: 1.6; }
+.container { max-width: 700px; margin: 0 auto; background: #fff; }
+.header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 30px 25px; text-align: center; }
+.header h1 { font-size: 24px; margin-bottom: 10px; }
+.header .date { color: #a0aec0; font-size: 14px; }
+.header .highlight { color: #e94560; font-size: 14px; margin-top: 12px; font-weight: 500; }
+.section { padding: 20px 25px; border-bottom: 1px solid #edf2f7; }
+.section-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table th { background: #f7fafc; color: #4a5568; font-weight: 600; padding: 12px 8px; text-align: left; border-bottom: 2px solid #e2e8f0; }
+.table td { padding: 10px 8px; border-bottom: 1px solid #edf2f7; }
+.table tr:last-child td { border-bottom: none; }
+.up { color: #e53e3e; font-weight: 600; }
+.down { color: #38a169; font-weight: 600; }
+.neutral { color: #718096; }
+.event-item { margin-bottom: 15px; padding-left: 20px; position: relative; }
+.event-item::before { content: ''; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; border-radius: 50%; }
+.event-item.high::before { background: #e53e3e; }
+.event-item.medium::before { background: #d69e2e; }
+.event-item.low::before { background: #38a169; }
+.event-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.event-desc { color: #4a5568; font-size: 13px; }
+.warning-box { background: #fff5f5; border-left: 4px solid #e53e3e; padding: 15px; margin-bottom: 12px; border-radius: 0 8px 8px 0; }
+.warning-box.caution { background: #fffff0; border-left-color: #d69e2e; }
+.warning-title { font-weight: 600; color: #c53030; margin-bottom: 6px; }
+.warning-box.caution .warning-title { color: #b7791f; }
+.advice-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+.advice-table th { background: #1a1a2e; color: #fff; padding: 12px; text-align: left; font-weight: 500; }
+.advice-table td { padding: 12px; border-bottom: 1px solid #e2e8f0; background: #f7fafc; }
+.highlight-box { background: #ebf8ff; border: 1px solid #90cdf4; border-radius: 8px; padding: 15px; text-align: center; margin: 15px 0; }
+.highlight-value { font-size: 28px; font-weight: 700; color: #2b6cb0; }
+.highlight-label { font-size: 12px; color: #4a5568; margin-top: 4px; }
+.footer { padding: 20px 25px; background: #f7fafc; font-size: 11px; color: #718096; text-align: center; }
+.source { margin-bottom: 8px; }
+.disclaimer { color: #a0aec0; }
+</style>
+</head>
+<body>
+<div class="container">
+    <!-- 头部 -->
+    <div class="header">
+        <h1>📊 盘前市场简报</h1>
+        <div class="date">2026年3月26日（周四）· 数据截止 07:37 CST</div>
+        <div class="highlight">🔴 今日重点关注：美伊五天谈判期限过半，霍尔木兹海峡控制权博弈加剧</div>
+    </div>
+
+    <!-- 全球市场概览 -->
+    <div class="section">
+        <div class="section-title">🌍 全球市场概览</div>
+        <table class="table">
+            <tr>
+                <th>市场/资产</th>
+                <th>价格/点位</th>
+                <th>变化</th>
+                <th>状态</th>
+            </tr>
+            <tr>
+                <td>🔴 地缘风险</td>
+                <td colspan="3"><span class="up">极高 (9/10)</span> · 霍尔木兹海峡通航量降95%</td>
+            </tr>
+            <tr>
+                <td>📉 道琼斯</td>
+                <td>46,124</td>
+                <td class="down">-0.18%</td>
+                <td>美股收跌</td>
+            </tr>
+            <tr>
+                <td>📉 标普500</td>
+                <td>6,556</td>
+                <td class="down">-0.37%</td>
+                <td>连续调整</td>
+            </tr>
+            <tr>
+                <td>📉 纳斯达克</td>
+                <td>21,762</td>
+                <td class="down">-0.84%</td>
+                <td>科技股承压</td>
+            </tr>
+            <tr>
+                <td>🛢️ 布伦特原油</td>
+                <td>$102-107</td>
+                <td class="up">高位震荡</td>
+                <td>中东局势主导</td>
+            </tr>
+            <tr>
+                <td>🥇 黄金</td>
+                <td>$4,560-4,650</td>
+                <td class="up">+2.3%</td>
+                <td>避险情绪推升</td>
+            </tr>
+            <tr>
+                <td>💵 USD/CNY中间价</td>
+                <td>6.8911</td>
+                <td class="up">+32bp</td>
+                <td>美元偏强</td>
+            </tr>
+            <tr>
+                <td>📈 上证综指</td>
+                <td>3,932</td>
+                <td class="up">+1.30%</td>
+                <td>A股反弹</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 重点关注事件 -->
+    <div class="section">
+        <div class="section-title">🔥 重点关注事件</div>
+        
+        <div class="event-item high">
+            <div class="event-title">🔴 霍尔木兹海峡局势：伊朗宣布掌控通行权</div>
+            <div class="event-desc">伊朗军方25日声明，海峡局势"不会回到从前"，敌对势力及其盟友不得通行。3月以来商船通过量同比下降95%，全球能源运输"命门"基本瘫痪。</div>
+        </div>
+        
+        <div class="event-item high">
+            <div class="event-title">🔴 美伊谈判僵局：伊朗拒绝美方15点提议</div>
+            <div class="event-desc">伊朗提出五项停火条件：①停止侵略 ②战争保证 ③战争赔款 ④结束所有战线 ⑤承认伊朗对霍尔木兹海峡主权。美方五天谈判期限(3/28)过半，进展缓慢。</div>
+        </div>
+        
+        <div class="event-item high">
+            <div class="event-title">🔴 美军增兵中东：82空降师部署</div>
+            <div class="event-desc">美军第82空降师部分部队及两支海军陆战队远征部队(~5000人)将部署中东。伊朗警告若遭挑衅可能开启曼德海峡新战线。</div>
+        </div>
+        
+        <div class="event-item medium">
+            <div class="event-title">🟡 美联储政策预期：降息时点推迟</div>
+            <div class="event-desc">理事古尔斯比称能源冲击打乱美联储计划，市场普遍预期首次降息推迟至9月。伊朗战争对通胀和增长构成双重威胁。</div>
+        </div>
+        
+        <div class="event-item medium">
+            <div class="event-title">🟡 A股强势反弹：成交额突破2.1万亿</div>
+            <div class="event-desc">3月25日A股全线收涨，上证综指+1.30%，深证成指+1.95%，两市成交额超2.1万亿元，创近期新高。</div>
+        </div>
+    </div>
+
+    <!-- 关键资产价格 -->
+    <div class="section">
+        <div class="section-title">💱 关键资产价格</div>
+        
+        <div class="highlight-box">
+            <div class="highlight-value">6.8911</div>
+            <div class="highlight-label">USD/CNY 中间价 | +32bp</div>
+        </div>
+        
+        <table class="table">
+            <tr>
+                <th>资产</th>
+                <th>当前价格</th>
+                <th>24h变化</th>
+                <th>备注</th>
+            </tr>
+            <tr>
+                <td>USD/CNY 中间价</td>
+                <td><strong>6.8911</strong></td>
+                <td class="up">+0.05%</td>
+                <td>3/25公布</td>
+            </tr>
+            <tr>
+                <td>USD/CNH 离岸</td>
+                <td>6.9023</td>
+                <td class="up">+0.14%</td>
+                <td>3/25收盘</td>
+            </tr>
+            <tr>
+                <td>布伦特原油</td>
+                <td>$102-107</td>
+                <td class="neutral">震荡</td>
+                <td>地缘溢价</td>
+            </tr>
+            <tr>
+                <td>WTI原油</td>
+                <td>$88-91</td>
+                <td class="up">+0.30%</td>
+                <td>美战略储备释放</td>
+            </tr>
+            <tr>
+                <td>现货黄金</td>
+                <td>$4,560-4,650</td>
+                <td class="up">+2.3%</td>
+                <td>避险需求</td>
+            </tr>
+            <tr>
+                <td>美元指数</td>
+                <td>~100.36</td>
+                <td class="up">+3.55%</td>
+                <td>冲突以来累计</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 机构观点摘要 -->
+    <div class="section">
+        <div class="section-title">💡 机构观点摘要</div>
+        <div class="event-item">
+            <div class="event-title"><strong>美联储理事古尔斯比</strong></div>
+            <div class="event-desc">"能源价格冲击对美联储双重使命构成风险，新的冲击无疑打乱了计划。各国央行在应对地缘政治风险和通胀压力交织局面时，缺乏清晰历史经验可循。"</div>
+        </div>
+        <div class="event-item">
+            <div class="event-title"><strong>高盛</strong></div>
+            <div class="event-desc">石油供应中断是几十年来最大冲击，预计4月四周内运输恢复正常，但霍尔木兹海峡持续关闭风险仍存。</div>
+        </div>
+        <div class="event-item">
+            <div class="event-title"><strong>全美银行资管</strong></div>
+            <div class="event-desc">首席策略师Terry Sandven："伊朗局势存在较大不确定性，在前景清晰前市场大概率维持横盘震荡。若标普500跌破6500点，可能进一步下行。"</div>
+        </div>
+    </div>
+
+    <!-- 今日风险预警 -->
+    <div class="section">
+        <div class="section-title">⚠️ 今日风险预警</div>
+        
+        <div class="warning-box">
+            <div class="warning-title">🔴 高度警惕</div>
+            <div style="font-size: 13px; color: #4a5568;">
+                • <strong>美伊谈判期限(3/28)</strong>：特朗普设定的五天期限将至，目前双方分歧巨大<br>
+                • <strong>霍尔木兹海峡封锁</strong>：伊朗完全掌控通行权，敌对势力船只禁止通行<br>
+                • <strong>曼德海峡风险</strong>：伊朗警告可能开辟新战线，威胁红海航线
+            </div>
+        </div>
+        
+        <div class="warning-box caution">
+            <div class="warning-title">🟡 密切关注</div>
+            <div style="font-size: 13px; color: #4a5568;">
+                • 美国副总统万斯周末可能赴巴基斯坦参与谈判<br>
+                • 德国3月IFO商业景气指数公布<br>
+                • 美联储官员讲话及利率预期变化
+            </div>
+        </div>
+    </div>
+
+    <!-- 对冲建议 -->
+    <div class="section">
+        <div class="section-title">🛡️ 对冲建议</div>
+        <table class="advice-table">
+            <tr>
+                <th>维度</th>
+                <th>建议</th>
+                <th>具体数值</th>
+            </tr>
+            <tr>
+                <td>USD/CNY对冲比例</td>
+                <td>维持高位</td>
+                <td><strong>80-90%</strong></td>
+            </tr>
+            <tr>
+                <td>关键监控区间</td>
+                <td>关注突破</td>
+                <td><strong>6.90-6.95</strong></td>
+            </tr>
+            <tr>
+                <td>期权策略</td>
+                <td>买入看涨保护</td>
+                <td>执行价6.95-7.00</td>
+            </tr>
+            <tr>
+                <td>能源敞口</td>
+                <td>评估供应链</td>
+                <td>监控原油$/€成本</td>
+            </tr>
+            <tr>
+                <td>先行指标</td>
+                <td>每日追踪</td>
+                <td>霍尔木兹海峡通航量</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 数据来源 -->
+    <div class="section" style="border-bottom: none;">
+        <div class="section-title">📋 数据来源</div>
+        <div style="font-size: 12px; color: #718096; line-height: 1.8;">
+            • 汇率数据：中国外汇交易中心、中国银行外汇牌价<br>
+            • 股市数据：财联社、金十数据、东方财富<br>
+            • 大宗商品：新浪财经、Investing.com<br>
+            • 地缘风险：央视新闻、财联社、新华社<br>
+            • 机构观点：美联储官员讲话、公开研报
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="source">本简报由 OpenClaw 自动生成 · 数据截止时间: 2026-03-26 07:37 CST</div>
+        <div class="disclaimer">免责声明：以上信息基于公开渠道获取，仅供参考，不构成投资建议。</div>
+    </div>
+</div>
+</body>
+</html>

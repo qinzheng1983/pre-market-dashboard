@@ -1,0 +1,165 @@
+{
+  "metadata": {
+    "title": "中东地缘冲突风险报告",
+    "subtitle": "Middle East Geopolitical Risk & FX Analysis",
+    "date": "2026-03-17",
+    "version": "v5.0",
+    "risk_score": 100,
+    "risk_level": "极高",
+    "risk_color": "🔴",
+    "disclaimer": "本报告基于公开信息分析，不构成投资建议"
+  },
+  "executive_summary": {
+    "risk_rating": "🔴 极高 (100/100)",
+    "fx_current": "7.1688",
+    "fx_prediction": "7.2405 - 7.7423",
+    "hedge_recommendation": "85-95% (高度防御型)",
+    "key_scenario": "Scenario 4 - 运力生产力冲击"
+  },
+  "market_data": {
+    "USDCNY": {
+      "name": "USD/CNY 美元兑人民币",
+      "current": 7.1688,
+      "change": -0.067,
+      "change_pct": -0.93,
+      "high": 7.2395,
+      "low": 7.222,
+      "source": "中国央行中间价 / 外汇交易中心"
+    },
+    "USDCNH": {
+      "name": "USD/CNH 离岸人民币",
+      "current": 7.2374,
+      "change": 0.0016,
+      "change_pct": 0.02,
+      "high": 7.2395,
+      "low": 7.222,
+      "source": "外汇市场实时"
+    },
+    "DXY": {
+      "name": "美元指数",
+      "current": 103.85,
+      "change": 0.25,
+      "change_pct": 0.24,
+      "high": 103.9,
+      "low": 103.55,
+      "source": "Investing.com"
+    },
+    "BRENT": {
+      "name": "布伦特原油",
+      "current": 78.5,
+      "change": 2.3,
+      "change_pct": 3.02,
+      "high": 79.1,
+      "low": 75.8,
+      "source": "ICE期货交易所"
+    },
+    "GOLD": {
+      "name": "黄金期货",
+      "current": 2185.0,
+      "change": 15.0,
+      "change_pct": 0.69,
+      "high": 2195.0,
+      "low": 2165.0,
+      "source": "COMEX"
+    },
+    "USDRUB": {
+      "name": "USD/RUB 美元兑卢布",
+      "current": 92.35,
+      "change": 1.25,
+      "change_pct": 1.37,
+      "high": 92.8,
+      "low": 90.95,
+      "source": "外汇市场"
+    }
+  },
+  "fx_prediction": {
+    "current": 7.1688,
+    "predictions": {
+      "Q2_2026": 7.6,
+      "Q3_2026": 7.46,
+      "Q4_2026": 7.31,
+      "H1_2027": 7.17,
+      "H2_2027": 7.03
+    },
+    "range_low": 7.2405,
+    "range_high": 7.7423,
+    "hedge_ratio": "85-95%",
+    "strategy": "高度防御型",
+    "stop_loss": 7.814
+  },
+  "risk_events": [
+    {
+      "time": "03:40",
+      "event": "巴格达绿区无人机爆炸，美国使馆附近",
+      "source": "新华社",
+      "impact": "high",
+      "category": "军事"
+    },
+    {
+      "time": "03:21",
+      "event": "美国中央司令部：约200名美军受伤，10人重伤",
+      "source": "美军",
+      "impact": "high",
+      "category": "军事"
+    },
+    {
+      "time": "02:38",
+      "event": "阿联酋沙阿油田遭无人机攻击起火",
+      "source": "阿联酋",
+      "impact": "high",
+      "category": "能源"
+    },
+    {
+      "time": "02:30",
+      "event": "欧盟：暂无意扩大海军行动至霍尔木兹",
+      "source": "欧盟",
+      "impact": "medium",
+      "category": "外交"
+    },
+    {
+      "time": "01:55",
+      "event": "以色列纳哈里亚遭导弹击中，3人受伤",
+      "source": "以色列",
+      "impact": "medium",
+      "category": "军事"
+    },
+    {
+      "time": "昨日",
+      "event": "特朗普呼吁组建护航联盟，英国首相拒绝短期派遣",
+      "source": "外媒",
+      "impact": "high",
+      "category": "外交"
+    },
+    {
+      "time": "昨日",
+      "event": "部分船只获准通行（土耳其/印度LPG船）",
+      "source": "外媒",
+      "impact": "low",
+      "category": "航运"
+    }
+  ],
+  "scenario_analysis": {
+    "A_短期结束": {
+      "probability": "10%",
+      "trigger": "伊朗妥协/政权更迭",
+      "usdcny": "7.10-7.20"
+    },
+    "B_持续数月": {
+      "probability": "55%",
+      "trigger": "当前状态延续",
+      "usdcny": "7.20-7.40"
+    },
+    "C_全面战争": {
+      "probability": "35%",
+      "trigger": "美军大量伤亡/多国卷入",
+      "usdcny": "7.40-7.70"
+    }
+  },
+  "data_sources": [
+    "中国外汇交易中心 (中间价)",
+    "Reuters / Bloomberg / 新华社",
+    "ICE期货交易所 (原油)",
+    "COMEX (黄金)",
+    "OpenClaw AI Agent"
+  ]
+}

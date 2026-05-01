@@ -1,0 +1,118 @@
+# 地缘风险报告数据源配置
+# 更新时间: 2026-03-16 14:35
+# 使用真实市场数据，非模拟数据
+
+[principles]
+# 风险监控底线原则 - 2026-03-16 确立
+absolute_rules = [
+    "禁止使用模拟数据 - 任何情况下都不允许使用demo_mode或模拟生成的数据",
+    "禁止使用过时的数据 - 新闻和市场数据必须是当日的，不能是几天前的"
+]
+
+required_actions = [
+    "最新新闻: 每次生成报告前必须通过Tavily搜索获取最新新闻",
+    "实时数据: 市场数据必须从Investing.com等实时源获取",
+    "时效验证: 报告必须标注数据获取时间和新闻更新时间",
+    "数据源透明: 每份报告必须明确标注数据来源"
+]
+
+quality_checklist = [
+    "新闻是当日或前一日的",
+    "市场数据是前一交易日收盘后的",
+    "所有数据来源已明确标注",
+    "没有使用任何模拟/占位数据"
+]
+
+[api_keys]
+# 已配置的API密钥
+TAVILY_API_KEY = "已配置"
+BAIDU_API_KEY = "已配置 (2026-03-16)"
+# 主要数据源
+primary = "Investing.com"
+backup = "Yahoo Finance via yfinance"
+news = "Tavily Web Search + Kimi Search"
+update_frequency = "每日收盘后"
+news_frequency = "每次生成报告前实时搜索"
+
+[assets]
+# 各资产数据源配置
+
+[assets.dxy]
+name = "美元指数"
+ticker = "DXY"
+source = "Investing.com"
+url = "https://cn.investing.com/indices/usdollar-historical-data"
+period = "2026-02-16 至 2026-03-13"
+start_value = 96.92
+end_value = 100.36
+change_pct = 3.55
+high = 100.36
+low = 96.92
+
+[assets.gold]
+name = "黄金期货"
+ticker = "COMEX Micro Gold Futures"
+source = "Investing.com"
+url = "https://cn.investing.com/commodities/comex-micro-gold-c1-futures-historical-data"
+period = "2026-02-16 至 2026-03-13"
+start_value = 4993.20
+end_value = 5061.70
+change_pct = 1.37
+high = 5311.60
+low = 4882.90
+unit = "USD/oz"
+
+[assets.oil]
+name = "布伦特原油"
+ticker = "Brent Oil Futures"
+source = "Investing.com"
+url = "https://cn.investing.com/commodities/brent-oil-historical-data"
+# 价格数据每日更新，以下是关键时间节点参考
+period = "2026-02-16 至 2026-03-25"
+start_value = 67.97
+# 3月25日收盘价 (修正)
+end_value = 96.36
+change_pct = 41.77
+# 3月9日冲突爆发初期峰值
+high = 119.50
+low = 66.87
+unit = "USD/barrel"
+# 最新数据获取方式
+latest_data_source = "Investing.com历史数据 + 实时搜索验证"
+last_verified = "2026-03-26"
+
+[assets.oil.history]
+# 近期关键价格记录
+2026-03-09 = 119.50
+2026-03-13 = 103.14
+2026-03-25 = 96.36
+2026-03-26 = 96.36
+
+[assets.usdcny]
+name = "USD/CNH 离岸汇率"
+ticker = "USD/CNH"
+source = "Investing.com"
+url = "https://cn.investing.com/currencies/usd-cnh-historical-data"
+period = "2026-02-16 至 2026-03-13"
+start_value = 6.8836
+end_value = 6.9053
+change_pct = 0.32
+high = 6.9179
+low = 6.8445
+
+[report]
+# 报告配置
+version = "v3.1"
+last_updated = "2026-03-16 14:35"
+conflict_date = "2026-02-28"
+report_period = "近1个月 (Feb 16 - Mar 13, 2026)"
+
+[notes]
+# 重要提醒
+warning = """
+1. 必须使用真实市场数据，禁止使用模拟数据
+2. 黄金价格在5000美元区间，不是3000美元
+3. 原油价格波动剧烈，最高涨幅超50%
+4. 数据更新频率: 每日收盘后
+5. 数据源优先级: Investing.com > Yahoo Finance > 其他
+"""

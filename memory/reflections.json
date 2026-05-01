@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2026-03-16T09:51:36.325909",
+    "context": "生成汇率报告",
+    "action": "手动搜索数据",
+    "outcome": "耗时较长，数据不够全面",
+    "lesson": "应该使用自动化的数据获取工具",
+    "improvement": "集成 market-data-fetch 和 multi-search-engine"
+  }
+]

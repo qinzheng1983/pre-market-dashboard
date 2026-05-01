@@ -1,0 +1,19 @@
+{
+  "skills_learned": [
+    {
+      "name": "地缘风险分析",
+      "proficiency": 8,
+      "learned_at": "2026-03-16T09:51:36.326018",
+      "notes": "能够综合分析地缘风险对汇率的影响"
+    },
+    {
+      "name": "kalshi-trader",
+      "proficiency": 6,
+      "learned_at": "2026-03-16T09:51:36.326112",
+      "notes": "了解预测市场数据的使用方法"
+    }
+  ],
+  "mistakes_avoided": [],
+  "best_practices": [],
+  "user_preferences": {}
+}

@@ -1,0 +1,100 @@
+{
+  "date": "2026-03-18",
+  "total_score": 90,
+  "risk_level": "极高",
+  "risk_level_en": "CRITICAL",
+  "day_change": 15,
+  "day_change_pct": 20,
+  "trend": "up",
+  "breaking_events": [
+    {
+      "time": "03:00",
+      "category": "军事打击",
+      "event": "美军使用5000磅深穿透弹药打击霍尔木兹海峡沿岸伊朗导弹阵地",
+      "source": "美国中央司令部/央视新闻",
+      "impact": "high"
+    },
+    {
+      "time": "02:30",
+      "category": "领导人遇刺",
+      "event": "伊朗最高国家安全委员会秘书阿里·拉里贾尼在以色列空袭中身亡",
+      "source": "伊朗最高国家安全委员会/以色列国防军",
+      "impact": "high"
+    },
+    {
+      "time": "00:00",
+      "category": "海峡封锁",
+      "event": "伊朗议长卡利巴夫：霍尔木兹海峡不会恢复到战前状态",
+      "source": "新华社",
+      "impact": "high"
+    },
+    {
+      "time": "昨日",
+      "category": "军事部署",
+      "event": "美国"的黎波里"号两栖攻击舰从日本驶向中东",
+      "source": "央视新闻/五角大楼",
+      "impact": "medium"
+    }
+  ],
+  "components": {
+    "official": {
+      "component_score": 85,
+      "trump": {"score": 80, "weight": 0.35, "note": "对北约失望，称'不久后将离开'"},
+      "netanyahu": {"score": 90, "weight": 0.25, "note": "军事行动延长至少三周"},
+      "iran": {"score": 85, "weight": 0.40, "note": "誓言复仇，继续封锁海峡"}
+    },
+    "military": {
+      "component_score": 95,
+      "hormuz": {"score": 98, "weight": 0.25, "note": "3月仅77艘船通过，同比降94%"},
+      "us_attacked": {"score": 70, "weight": 0.20, "note": "美军首次直接打击伊朗本土"},
+      "iran_attacked": {"score": 95, "weight": 0.20, "note": "核心领导人遇刺"},
+      "cyber": {"score": 60, "weight": 0.15, "note": "网络战持续"},
+      "troop_movement": {"score": 85, "weight": 0.12, "note": "美军增派兵力"},
+      "civilian": {"score": 75, "weight": 0.08, "note": "平民伤亡增加"}
+    },
+    "financial": {
+      "component_score": 88,
+      "oil": {"score": 95, "weight": 0.50, "note": "布伦特原油$103.14，冲突以来+51.7%"},
+      "dxy": {"score": 80, "weight": 0.20, "note": "美元指数100.36，避险需求上升"},
+      "gold": {"score": 85, "weight": 0.20, "note": "黄金$5061.70，突破$5000"},
+      "asia_markets": {"score": 70, "weight": 0.10, "note": "亚洲股市承压"}
+    },
+    "diplomatic": {
+      "component_score": 75,
+      "china": {"score": 60, "weight": 0.25, "note": "呼吁克制"},
+      "russia": {"score": 70, "weight": 0.15, "note": "谴责美以行动"},
+      "eu": {"score": 65, "weight": 0.15, "note": "马克龙：局势平静后参与护航"},
+      "saudi": {"score": 80, "weight": 0.10, "note": "担忧地区稳定"},
+      "uae": {"score": 80, "weight": 0.10, "note": "经济受影响"},
+      "unverified": {"score": 85, "weight": 0.25, "note": "多国准备撤侨"}
+    }
+  },
+  "recommendation": {
+    "level": "critical",
+    "title": "极高风险预警",
+    "hedge_ratio": "80-90%",
+    "actions": [
+      "立即提升对冲比例至80-90%",
+      "设置USD/CNY止损线7.50",
+      "优先使用美元看涨期权",
+      "每日监控美军地面部队动向"
+    ]
+  },
+  "market_data": {
+    "usdcny": {"value": 6.8961, "change": 45, "change_pct": 0.065},
+    "usdcnh": {"value": 6.9053, "change": 32, "change_pct": 0.046},
+    "brent_oil": {"value": 103.14, "change": 35.17, "change_pct": 51.7},
+    "gold": {"value": 5061.70, "change": 68.5, "change_pct": 1.37},
+    "dxy": {"value": 100.36, "change": 3.44, "change_pct": 3.55}
+  },
+  "scenarios": [
+    {"name": "短期缓和", "probability": 15, "usdcny_range": "7.20-7.25"},
+    {"name": "持续对峙", "probability": 50, "usdcny_range": "7.35-7.45"},
+    {"name": "全面战争", "probability": 35, "usdcny_range": "7.50-7.80"}
+  ],
+  "data_sources": [
+    "新华社", "央视新闻", "财联社", "新浪财经",
+    "Investing.com", "英国劳埃德船舶信息社"
+  ],
+  "generated_at": "2026-03-18T08:55:00+08:00"
+}
