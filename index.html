@@ -1,283 +1,524 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前简报 — 2026年5月5日（周二）</title>
-<style>
-body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; background: #f5f5f5; margin: 0; padding: 20px; color: #333; }
-.container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; }
-.header { border-bottom: 3px solid #1a1a2e; padding-bottom: 15px; margin-bottom: 20px; }
-.header h1 { color: #1a1a2e; font-size: 22px; margin: 0; }
-.header .meta { color: #666; font-size: 13px; margin-top: 8px; }
-.header .highlight { background: #e94560; color: #fff; padding: 2px 8px; font-size: 12px; margin-left: 5px; }
-.section { margin-bottom: 25px; }
-.section-title { color: #1a1a2e; font-size: 16px; font-weight: bold; border-left: 4px solid #e94560; padding-left: 10px; margin-bottom: 12px; }
-.section-sub { color: #666; font-size: 12px; margin-bottom: 10px; }
-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 15px; }
-th { background: #1a1a2e; color: #fff; padding: 8px; text-align: left; }
-td { padding: 8px; border-bottom: 1px solid #eee; }
-tr:nth-child(even) { background: #f9f9f9; }
-.td-num { font-weight: bold; }
-.td-up { color: #c0392b; }
-.td-down { color: #27ae60; }
-.td-neutral { color: #666; }
-.risk-high { background: #fee; border-left: 4px solid #e94560; padding: 10px 15px; margin-bottom: 10px; }
-.risk-med { background: #ffeaa7; border-left: 4px solid #f39c12; padding: 10px 15px; margin-bottom: 10px; }
-.risk-label { font-weight: bold; font-size: 13px; }
-.risk-high .risk-label { color: #e94560; }
-.risk-med .risk-label { color: #d35400; }
-.risk-desc { font-size: 12px; color: #333; margin-top: 4px; }
-.action-box { background: #f0f4f8; border-left: 4px solid #1a1a2e; padding: 12px 15px; margin-bottom: 12px; }
-.action-title { font-weight: bold; font-size: 13px; color: #1a1a2e; }
-.action-priority { background: #e94560; color: #fff; font-size: 11px; padding: 1px 6px; margin-left: 5px; }
-.action-priority-med { background: #f39c12; color: #fff; font-size: 11px; padding: 1px 6px; margin-left: 5px; }
-.action-desc { font-size: 12px; color: #333; margin-top: 6px; line-height: 1.6; }
-.action-steps { font-size: 12px; color: #555; margin-top: 6px; padding-left: 15px; }
-.action-steps li { margin-bottom: 3px; }
-.action-deadline { font-size: 11px; color: #e94560; margin-top: 6px; }
-.news-item { font-size: 12px; padding: 6px 0; border-bottom: 1px dashed #eee; }
-.news-tag { background: #1a1a2e; color: #fff; font-size: 10px; padding: 1px 5px; margin-right: 5px; }
-.footer { border-top: 1px solid #eee; padding-top: 15px; margin-top: 20px; font-size: 11px; color: #999; }
-.data-table { font-size: 11px; }
-.data-table th { background: #f0f0f0; color: #333; font-size: 11px; }
-.data-table td { padding: 5px 8px; }
-.holiday-note { background: #fff3cd; border: 1px solid #ffc107; padding: 8px 12px; font-size: 12px; color: #856404; margin-bottom: 15px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盘前简报 — 2026年5月6日（周三）</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f5f6fa;
+            color: #1a1a2e;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .header {
+            border-bottom: 3px solid #1a1a2e;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0 0 8px 0;
+            color: #1a1a2e;
+        }
+        .header .meta {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        .header .tagline {
+            font-size: 15px;
+            color: #e94560;
+            font-weight: 600;
+            margin: 12px 0;
+            padding: 10px 14px;
+            background: #fff5f5;
+            border-left: 4px solid #e94560;
+        }
+        .header .read-time {
+            font-size: 12px;
+            color: #888;
+        }
+        h2 {
+            font-size: 18px;
+            color: #1a1a2e;
+            margin: 28px 0 14px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e94560;
+        }
+        h3 {
+            font-size: 15px;
+            color: #333;
+            margin: 20px 0 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        th {
+            background: #1a1a2e;
+            color: #fff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background: #fafbfc;
+        }
+        .alert-high {
+            background: #fff5f5;
+            border-left: 4px solid #e94560;
+            padding: 12px 14px;
+            margin: 10px 0;
+        }
+        .alert-med {
+            background: #fffbe6;
+            border-left: 4px solid #faad14;
+            padding: 12px 14px;
+            margin: 10px 0;
+        }
+        .alert-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .alert-high .alert-label { color: #e94560; }
+        .alert-med .alert-label { color: #d48806; }
+        .action-item {
+            background: #f0f5ff;
+            border-left: 4px solid #1a1a2e;
+            padding: 14px 16px;
+            margin: 12px 0;
+        }
+        .action-header {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #1a1a2e;
+        }
+        .action-tag {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+        .tag-urgent {
+            background: #e94560;
+            color: #fff;
+        }
+        .tag-monitor {
+            background: #1a1a2e;
+            color: #fff;
+        }
+        .tag-strategic {
+            background: #666;
+            color: #fff;
+        }
+        .action-desc {
+            font-size: 13px;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .action-steps {
+            font-size: 12px;
+            color: #555;
+            padding-left: 16px;
+            margin: 6px 0;
+        }
+        .action-steps li {
+            margin: 4px 0;
+        }
+        .deadline {
+            font-size: 11px;
+            color: #e94560;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+        .source-table {
+            font-size: 12px;
+        }
+        .source-table th {
+            background: #f0f0f0;
+            color: #333;
+            font-weight: 600;
+        }
+        .source-table td {
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .highlight-red {
+            color: #e94560;
+            font-weight: 600;
+        }
+        .highlight-green {
+            color: #52c41a;
+            font-weight: 600;
+        }
+        .note {
+            font-size: 12px;
+            color: #888;
+            font-style: italic;
+            margin: 8px 0;
+        }
+        .disclaimer {
+            font-size: 11px;
+            color: #999;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #eee;
+        }
+        .news-list {
+            font-size: 13px;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .news-list li {
+            margin: 6px 0;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
 
-<div class="header">
-<h1>盘前简报 — 2026年5月5日（周二）</h1>
-<div class="meta">
-数据覆盖：2026年4月30日收盘 — 2026年5月5日 09:20（跨五一假期汇总）<br>
-预计阅读时间：5分钟 | <span class="highlight">行动导向v3.0</span> | 五一假期特别版
-</div>
-</div>
+    <!-- 头部 -->
+    <div class="header">
+        <h1>盘前简报 — 2026年5月6日（周三）</h1>
+        <div class="meta">
+            数据时段：2026年5月5日 北京时间09:00 至 5月6日 09:20 | 节后首个交易日
+        </div>
+        <div class="tagline">
+            一句话重点：镍价连涨三日破$19,600创近一年新高，USD/CNY中间价待央行9:15发布，霍尔木兹局势与伊朗外长访华是今日两大变量。
+        </div>
+        <div class="read-time">预计阅读时间：5-7分钟</div>
+    </div>
 
-<div class="holiday-note">
-<strong>假期提示：</strong>今日为五一假期最后一天（5月1日-5日放假），A股休市，央行不发布USD/CNY中间价，LME休市。以下为假期期间全球市场overnight动态汇总。5月6日（周三）恢复正常交易。
-</div>
+    <!-- 1. 隔夜市场速览 -->
+    <h2>1. 隔夜市场速览（1分钟）</h2>
+    <table>
+        <tr>
+            <th style="width:18%">资产</th>
+            <th style="width:22%">收盘/最新</th>
+            <th style="width:15%">变化</th>
+            <th>核心结论</th>
+        </tr>
+        <tr>
+            <td><strong>美股三大指数</strong></td>
+            <td>Dow 49,298.25<br>S&P 7,259.22<br>Nasdaq 25,326.13</td>
+            <td class="highlight-green">+0.73%<br>+0.81%<br>+1.03%</td>
+            <td>5月5日全线收涨，科技板块领跑，地缘避险情绪阶段性缓解</td>
+        </tr>
+        <tr>
+            <td><strong>USD/CNY中间价</strong></td>
+            <td><span class="highlight-red">待更新</span></td>
+            <td>—</td>
+            <td>央行尚未发布5月6日中间价（发布时间9:15）。五一假期（5月1-5日）休市，今日为节后首日。</td>
+        </tr>
+        <tr>
+            <td><strong>USD/CNH离岸</strong></td>
+            <td>6.8227</td>
+            <td class="highlight-green">-0.07%</td>
+            <td>Investing.com 5月6日早盘；较5月5日6.8275小幅走低</td>
+        </tr>
+        <tr>
+            <td><strong>DXY美元指数</strong></td>
+            <td>98.4960（东方财富）<br>98.2738（新浪财经）</td>
+            <td class="highlight-green">+0.03%<br><span class="highlight-red">-0.225%</span></td>
+            <td>数据源存在差异，东方财富显示微涨，新浪财经显示微跌；建议以 Bloomberg/Reuters 终端为准</td>
+        </tr>
+        <tr>
+            <td><strong>布伦特原油</strong></td>
+            <td>$108.52（5月6日早盘）<br>$109.87（5月5日收盘）</td>
+            <td class="highlight-red">-1.23%（日内）<br>-3.99%（5月5日）</td>
+            <td>5月5日大跌近4%，霍尔木兹局势未升级但市场仍紧绷；早盘延续跌势</td>
+        </tr>
+        <tr>
+            <td><strong>WTI原油</strong></td>
+            <td>$102.50</td>
+            <td>—</td>
+            <td>东方财富5月6日数据；同步跟随Brent下行</td>
+        </tr>
+        <tr>
+            <td><strong>现货黄金</strong></td>
+            <td>$4,549.59</td>
+            <td class="highlight-red">-0.17%</td>
+            <td>高位小幅回调；地缘避险溢价未完全消退</td>
+        </tr>
+        <tr>
+            <td><strong>LME镍</strong></td>
+            <td><span class="highlight-red">$19,635</span></td>
+            <td class="highlight-green">+1.16%</td>
+            <td><strong>连涨三日，创2024年5月底以来最高位</strong>（新浪财经5月6日）；<span class="highlight-red">较我司预算$16,000/吨高22.7%</span></td>
+        </tr>
+        <tr>
+            <td><strong>LME铜</strong></td>
+            <td>$13,100.50</td>
+            <td class="highlight-green">+1.17%</td>
+            <td>同步反弹；宏观情绪回暖带动</td>
+        </tr>
+        <tr>
+            <td><strong>LME铝</strong></td>
+            <td>$3,574</td>
+            <td class="highlight-green">+2.00%</td>
+            <td>涨幅领先；供应端预期支撑</td>
+        </tr>
+        <tr>
+            <td><strong>碳酸锂</strong></td>
+            <td><span class="highlight-red">数据待更新</span></td>
+            <td>—</td>
+            <td>五一假期（5月1-5日）国内市场休市，无5月6日数据；末次参考价约17.45万元/吨（4月底）</td>
+        </tr>
+        <tr>
+            <td><strong>恒生指数（早盘）</strong></td>
+            <td>—</td>
+            <td>—</td>
+            <td>港股5月6日正常开市，数据待盘中更新</td>
+        </tr>
+    </table>
 
-<!-- 一句话今日重点 -->
-<div style="background:#1a1a2e; color:#fff; padding:12px 15px; font-size:14px; font-weight:bold; margin-bottom:20px;">
-今日重点：霍尔木兹海峡局势骤升 — 伊朗导弹袭击美舰，美军启动大规模护航行动，布伦特原油跳涨5%突破113美元。我司净Short USD敞口在美元走强+油价飙升双重压力下风险上升。假期归来首日，优先确认敞口对冲覆盖率与到期合约状态。
-</div>
+    <h3>隔夜要闻一句话</h3>
+    <ul class="news-list">
+        <li><strong>霍尔木兹海峡</strong>：局势持续紧绷，伊朗5月5日宣布新海上管理机制，美军"自由行动"（Operation Freedom）5月4日启动，航道通行风险未解除。</li>
+        <li><strong>伊朗外长访华</strong>：伊朗外交部长今日（5月6日）抵达中国，双边会谈预期聚焦地区安全与经贸合作，可能影响中方对伊政策表态。</li>
+        <li><strong>美股反弹</strong>：5月5日三大指数齐涨，科技股领涨，市场对地缘升级的担忧边际降温，但原油仍承压。</li>
+        <li><strong>五一假期结束</strong>：中国市场今日恢复交易，节前积压订单与信息将在开盘后集中释放。</li>
+    </ul>
 
-<!-- 1. 隔夜市场速览 -->
-<div class="section">
-<div class="section-title">1. 隔夜市场速览（1分钟）</div>
-<div class="section-sub">数据截止：2026年5月5日 09:20 CST | 关键结论先行</div>
+    <!-- 2. 今日风险预警 -->
+    <h2>2. 今日风险预警</h2>
 
-<table>
-<tr><th>资产</th><th>收盘/最新</th><th>变化</th><th>核心结论</th></tr>
-<tr>
-<td>USD/CNY中间价</td>
-<td class="td-num td-neutral">—</td>
-<td class="td-neutral">五一假期无发布</td>
-<td>前一交易日4月30日为6.8628（+20bp）。今日无中间价。</td>
-</tr>
-<tr>
-<td>USD/CNH离岸</td>
-<td class="td-num">6.8310</td>
-<td class="td-down">+10点</td>
-<td>离岸小幅走强，反映假期期间美元偏强。来源：财联社，5月1日</td>
-</tr>
-<tr>
-<td>美元指数DXY</td>
-<td class="td-num">98.47</td>
-<td class="td-down">-0.35%</td>
-<td>美元指数延续跌势，但地缘避险支撑美元信用。来源：Investing.com</td>
-</tr>
-<tr>
-<td>美股-道指</td>
-<td class="td-num">48,941.90</td>
-<td class="td-up">-557.37 (-1.13%)</td>
-<td>道指跌超500点，霍尔木兹局势削弱财报乐观情绪。来源：第一财经，5月4日收盘</td>
-</tr>
-<tr>
-<td>美股-标普500</td>
-<td class="td-num">7,200.75</td>
-<td class="td-up">-0.41%</td>
-<td>险守7200点，科技股相对抗跌。来源：第一财经，5月4日收盘</td>
-</tr>
-<tr>
-<td>美股-纳指</td>
-<td class="td-num">25,067.80</td>
-<td class="td-up">-0.19%</td>
-<td>纳指跌幅最小，AI投资逻辑仍支撑。来源：第一财经，5月4日收盘</td>
-</tr>
-<tr>
-<td>特斯拉</td>
-<td class="td-num">—</td>
-<td class="td-down">+0.43%</td>
-<td>特斯拉逆势上涨，与我司北美出口业务正相关。来源：证券时报，5月4日</td>
-</tr>
-<tr>
-<td>布伦特原油</td>
-<td class="td-num td-up">~113.68</td>
-<td class="td-up">+5%+</td>
-<td>霍尔木兹局势紧张推升油价，布油大涨超5%。来源：每日经济新闻，5月4日</td>
-</tr>
-<tr>
-<td>WTI原油</td>
-<td class="td-num td-up">~106.41</td>
-<td class="td-up">+4%+</td>
-<td>WTI同步跳涨，能源通胀预期升温。来源：每日经济新闻，5月4日</td>
-</tr>
-<tr>
-<td>现货黄金</td>
-<td class="td-num td-down">—</td>
-<td class="td-up">-2%+</td>
-<td>地缘避险需求被美元走强压制，黄金不升反跌。来源：证券时报，5月4日</td>
-</tr>
-<tr>
-<td>现货白银</td>
-<td class="td-num td-down">—</td>
-<td class="td-up">-3%+</td>
-<td>白银跌幅更大，工业需求预期走弱。来源：证券时报，5月4日</td>
-</tr>
-<tr>
-<td>欧洲股指</td>
-<td class="td-num">—</td>
-<td class="td-up">普跌1-2%</td>
-<td>CAC40 -1.71%，DAX -1.24%，斯托克50 -2%。来源：证券时报，5月4日</td>
-</tr>
-<tr>
-<td>纳斯达克中国金龙</td>
-<td class="td-num">—</td>
-<td class="td-up">-0.09%</td>
-<td>中概股微跌，相对抗跌。来源：证券时报，5月4日</td>
-</tr>
-<tr>
-<td>LME镍</td>
-<td class="td-num td-neutral">—</td>
-<td class="td-neutral">LME休市</td>
-<td>五一假期LME休市，无镍价数据。5月6日恢复交易。</td>
-</tr>
-<tr>
-<td>碳酸锂</td>
-<td class="td-num td-neutral">—</td>
-<td class="td-neutral">假期无更新</td>
-<td>国内期货市场休市，无碳酸锂最新价格。5月6日恢复。</td>
-</tr>
-</table>
+    <div class="alert-high">
+        <div class="alert-label">HIGH — 最高优先级</div>
+        <strong>镍价突破$19,600创一年新高，较预算高22.7%</strong><br>
+        LME镍连涨三日至$19,635，距我司硫酸镍成本预算$16,000/吨溢价显著扩大。若维持高位，Q2原材料成本压力将直接冲击毛利率。触发升级条件：单日涨>3%或突破$20,000。<br>
+        <em>来源：新浪财经 2026-05-06 09:20 | LME官方</em>
+    </div>
 
-<div class="section-sub">隔夜要闻一句话（3-5条核心事件）</div>
-<div class="news-item"><span class="news-tag">地缘</span>霍尔木兹海峡局势骤升：伊朗导弹袭击试图进入海峡的美军舰艇，美军否认被击中但承认海峡紧张。英国海上贸易行动办公室将安全威胁等级维持在"极高"。</div>
-<div class="news-item"><span class="news-tag">地缘</span>美军启动"自由计划"大规模护航行动：部署驱逐舰+100架飞机+1.5万军人协助商船通过霍尔木兹海峡。伊朗警告：任何外国军事力量进入将遭攻击。</div>
-<div class="news-item"><span class="news-tag">地缘</span>伊朗议会即将批准《霍尔木兹海峡管理法》：永久禁止以色列船只通行，敌对国家船只须支付"战争赔偿金"。</div>
-<div class="news-item"><span class="news-tag">宏观</span>美国3月工厂订单环比+1.5%，创去年11月以来最大增幅，AI投资推动电子产品需求激增。但中东冲突导致油价暴涨近50%，推高企业原材料成本。</div>
-<div class="news-item"><span class="news-tag">宏观</span>中长期美债收益率上升，2年期美债逼近4%。来源：第一财经，5月4日</div>
-</div>
+    <div class="alert-high">
+        <div class="alert-label">HIGH — 最高优先级</div>
+        <strong>USD/CNY中间价今日9:15发布，假期后首日报价具有方向指引意义</strong><br>
+        五一假期（5月1-5日）央行未发布中间价，今日9:15报价将释放节后汇率政策信号。当前离岸6.8227，关注中间价与市场价偏离度。触发升级条件：中间价偏离离岸>100点或突破6.90。<br>
+        <em>来源：央行待发布 | 当前离岸 Investing.com 2026-05-06</em>
+    </div>
 
-<!-- 2. 今日风险预警 -->
-<div class="section">
-<div class="section-title">2. 今日风险预警</div>
+    <div class="alert-med">
+        <div class="alert-label">MED — 中等优先级</div>
+        <strong>霍尔木兹海峡通航风险未解除，原油波动率维持高位</strong><br>
+        Brent 5月5日大跌3.99%后早盘续跌1.23%，市场仍在评估伊朗新海上管理机制与美军行动的博弈。若航道通行受阻，油价可能快速反弹并推高全球通胀预期。触发升级条件：Brent单日反弹>5%或霍尔木兹船只通行中断报道。<br>
+        <em>来源：Investing.com 2026-05-06 | 路透社</em>
+    </div>
 
-<div class="risk-high">
-<div class="risk-label">HIGH | 霍尔木兹海峡通航中断风险</div>
-<div class="risk-desc">伊朗导弹袭击美舰+美军大规模护航行动，海峡军事对峙升级。全球约1/3海运石油经此通行，若冲突扩大导致航道完全关闭，油价可能进一步飙升至120+美元。对我司：油价上涨→全球通胀预期升温→美元走强压力→净Short USD敞口购汇成本增加。</div>
-</div>
+    <div class="alert-med">
+        <div class="alert-label">MED — 中等优先级</div>
+        <strong>伊朗外长访华，关注中方外交表态对市场情绪的潜在影响</strong><br>
+        5月6日伊朗外长访华，若中方释放缓和信号或明确反对军事升级，可能降低地缘溢价；反之若立场强硬，避险情绪可能重燃。触发升级条件：联合声明措辞超预期强硬或美方追加制裁。<br>
+        <em>来源：新华社/外交部 2026-05-06</em>
+    </div>
 
-<div class="risk-high">
-<div class="risk-label">HIGH | 美元走强压制净Short敞口</div>
-<div class="risk-desc">地缘避险+油价通胀双重因素支撑美元，USD/CNH离岸维持6.83上方。我司净Short USD $6,000万/月，美元每升值1% ≈ 月度购汇成本增加$60万+负债账面价值膨胀。假期归来首日敞口重估优先级最高。</div>
-</div>
+    <!-- 3. 今日行动清单 -->
+    <h2>3. 今日行动清单（核心）</h2>
 
-<div class="risk-med">
-<div class="risk-label">MED | 假期归来数据真空</div>
-<div class="risk-desc">5月6日A股、LME、国内期货市场同时恢复交易，首日可能出现集中波动。LME镍、碳酸锂、国内债市在假期期间积压的定价需求可能在首日释放，需警惕跳空高开/低开。</div>
-</div>
-</div>
+    <div class="action-item">
+        <div class="action-header">
+            ACTION-1：确认USD/CNY中间价与敞口净效应
+            <span class="action-tag tag-urgent">本周必须做</span>
+        </div>
+        <div class="action-desc">
+            <strong>问题</strong>：今日9:15央行发布节后首日报价，我司净Short USD敞口-$6,000万/月（北美出口$3,000万 Long vs 香港购汇$5,000万 Short + 子公司美元负债$4,000万 Short）。中间价方向决定今日购汇成本与负债折算基调。
+        </div>
+        <ol class="action-steps">
+            <li>09:15 刷新 pbc.gov.cn 或 chinamoney.com.cn 获取中间价，记录并对比节前最后一个交易日（4月30日）报价</li>
+            <li>对比中间价 vs 离岸6.8227偏离度：若偏离>50点，评估央行汇率政策意图（贬值引导/维稳/升值引导）</li>
+            <li>根据中间价方向，更新今日香港购汇$5,000万的预算成本，同步核算子公司$4,000万美元负债的人民币账面折算</li>
+            <li>若中间价>6.88（升值引导），触发对冲预案评估：当前美元看涨期权/远期覆盖率是否充足</li>
+        </ol>
+        <div class="deadline">决策时限：今日10:00前完成中间价采集与初步判断</div>
+    </div>
 
-<!-- 3. 今日行动清单 -->
-<div class="section">
-<div class="section-title">3. 今日行动清单（核心）</div>
-<div class="section-sub">结合中伟新材敞口结构 — 净Short USD $6,000万/月</div>
+    <div class="action-item">
+        <div class="action-header">
+            ACTION-2：镍价$19,635监控与成本压力预警
+            <span class="action-tag tag-urgent">本周必须做</span>
+        </div>
+        <div class="action-desc">
+            <strong>问题</strong>：LME镍连涨三日达$19,635，较我司硫酸镍成本预算$16,000/吨高22.7%。硫酸镍是前驱体核心原料，镍价每上涨$1,000/吨，对我司原材料成本影响约数百万元/月（按印尼基地硫酸镍用量估算）。
+        </div>
+        <ol class="action-steps">
+            <li>确认今日LME镍电子盘开盘走势，若开盘即突破$20,000，立即向采购与生产部门发送成本预警</li>
+            <li>查询印尼HPM（矿产基准价）最新调整与RKAB配额状态，确认镍矿采购端是否有额外成本缓冲</li>
+            <li>评估镍价持续上涨情景下，是否需要调整Q2-Q3硫酸镍库存策略（提前锁量或增加安全库存）</li>
+            <li>若镍价维持$19,000+超过5个交易日，启动与特斯拉等核心客户的成本传导沟通预备</li>
+        </ol>
+        <div class="deadline">决策时限：今日盘中持续监控，收盘前完成LME镍走势记录</div>
+    </div>
 
-<div class="action-box">
-<div class="action-title">ACTION-1：假期归来首日敞口重估<span class="action-priority">本周必须做</span></div>
-<div class="action-desc">
-五一假期5天期间，全球市场波动剧烈（道指-1.13%、布油+5%、地缘升级）。我司净Short USD敞口在此期间处于"裸奔"状态，无中间价指引、无LME镍价锚定。假期归来首日必须立即重估敞口。
-</div>
-<div class="action-steps">
-<li>联系香港财务团队，确认5月1日-5日期间实际购汇金额与计划偏差</li>
-<li>核对印尼子公司美元负债余额（$4,000万）受USD/CNY波动影响</li>
-<li>重新计算净敞口：北美出口应收($3,000万) - 香港购汇($5,000万) - 子公司负债($4,000万) = -$6,000万/月</li>
-<li>对比4月30日汇率(6.8628)与当前离岸价(6.8310)，估算假期期间敞口损益</li>
-</div>
-<div class="action-deadline">决策时限：今日（5月5日）14:00前完成初估，明日（5月6日）开盘前完成精确计算</div>
-</div>
+    <div class="action-item">
+        <div class="action-header">
+            ACTION-3：霍尔木兹局势与特斯拉供应链关联监控
+            <span class="action-tag tag-monitor">持续监控</span>
+        </div>
+        <div class="action-desc">
+            <strong>问题</strong>：霍尔木兹海峡是我司欧洲/中东物流航线的潜在瓶颈，若通航受阻，欧洲基地（德国、摩洛哥）原材料运输与产品交付可能延误。同时特斯拉（我司北美核心客户）对供应链稳定性要求极高。
+        </div>
+        <ol class="action-steps">
+            <li>今日12:00前确认伊朗外长访华联合声明内容，摘录涉及霍尔木兹/地区安全的措辞</li>
+            <li>检查欧洲基地（德国、摩洛哥）当前原材料库存覆盖天数，确认是否受航运延误影响</li>
+            <li>若联合声明释放缓和信号且Brent企稳，维持当前物流计划；若升级信号，启动备用航线评估</li>
+            <li>收盘前确认美股特斯拉（TSLA）隔夜走势与订单传闻，记录任何影响我司北美出口敞口的信息</li>
+        </ol>
+        <div class="deadline">决策时限：今日14:00前完成联合声明解读与库存检查</div>
+    </div>
 
-<div class="action-box">
-<div class="action-title">ACTION-2：监控霍尔木兹海峡局势对油价/汇率的传导<span class="action-priority">本周必须做</span></div>
-<div class="action-desc">
-霍尔木兹海峡局势是我司当前最大的外部风险变量。油价飙升→通胀预期→美元走强→净Short敞口承压。需建立每日跟踪机制。
-</div>
-<div class="action-steps">
-<li>确认是否有布伦特原油相关敞口（物流成本、能源采购）受油价直接影响</li>
-<li>跟踪美军护航行动进展：若商船成功通过→油价回落；若冲突扩大→油价继续上涨</li>
-<li>关注Kalshi预测平台数据：海峡恢复正常通航概率时间线（当前预测：至少8月或更晚）</li>
-<li>评估是否需要调整USD/CNY对冲覆盖率（当前建议60-75%）</li>
-</div>
-<div class="action-deadline">决策时限：持续监控，明日开盘前提交首份局势评估简报</div>
-</div>
+    <div class="action-item">
+        <div class="action-header">
+            ACTION-4：碳酸锂假期数据缺口补齐与新能源板块复盘
+            <span class="action-tag tag-monitor">持续监控</span>
+        </div>
+        <div class="action-desc">
+            <strong>问题</strong>：五一假期（5月1-5日）碳酸锂期货市场休市，无5月6日开盘前数据。末次参考价约17.45万元/吨（4月底），今日开盘后需确认假期期间海外锂价与澳洲锂矿拍卖动态。
+        </div>
+        <ol class="action-steps">
+            <li>今日09:30后刷新上海钢联/SMM获取碳酸锂现货开盘价，对比节前17.45万元/吨</li>
+            <li>检查假期期间澳洲Pilbara锂矿拍卖结果或南美盐湖产出新闻，确认全球锂供需边际变化</li>
+            <li>若碳酸锂开盘涨/跌>3%，同步更新新能源板块风险评估（我司磷矿项目与钠电战略的对冲逻辑）</li>
+        </ol>
+        <div class="deadline">决策时限：今日10:00前获取碳酸锂开盘数据</div>
+    </div>
 
-<div class="action-box">
-<div class="action-title">ACTION-3：检查套保合约到期/展期状态<span class="action-priority-med">下周预备</span></div>
-<div class="action-desc">
-五一假期期间可能有套保合约到期或需要展期。假期归来首日需逐一核对。
-</div>
-<div class="action-steps">
-<li>列出5月1日-7日期间到期的远期/期权合约清单</li>
-<li>确认各合约执行价与当前市场价的偏离程度</li>
-<li>对偏离较大的合约评估展期或提前平仓策略</li>
-<li>特别关注美元看涨期权（保护购汇成本+负债）的到期情况</li>
-</div>
-<div class="action-deadline">决策时限：本周五（5月9日）前完成全部到期合约处置</div>
-</div>
+    <div class="action-item">
+        <div class="action-header">
+            ACTION-5：美元负债与套保合约到期检查
+            <span class="action-tag tag-strategic">战略评估</span>
+        </div>
+        <div class="action-desc">
+            <strong>问题</strong>：印尼子公司美元负债余额$4,000万（Short USD敞口），叠加香港购汇$5,000万/月，净Short $6,000万/月。需确认当前对冲工具（远期/期权/领子）的到期日分布与覆盖率是否匹配敞口节奏。
+        </div>
+        <ol class="action-steps">
+            <li>今日15:00前拉取对冲台账，确认本周及本月到期合约金额与行权价</li>
+            <li>核对当前对冲覆盖率（目标60-75%），若偏离目标区间>10个百分点，启动展期或补仓评估</li>
+            <li>检查买入美元看涨期权（保护购汇+负债端）的Gamma敞口，评估节前波动率飙升对期权费的影响</li>
+            <li>若中间价今日偏升值引导，评估是否需要追加短期购汇锁汇（7-30天远期）</li>
+        </ol>
+        <div class="deadline">决策时限：本周五（5月8日）前完成套保台账全面复盘</div>
+    </div>
 
-<div class="action-box">
-<div class="action-title">ACTION-4：印尼IDR敞口假期影响评估<span class="action-priority-med">下周预备</span></div>
-<div class="action-desc">
-印尼基地运营在假期期间持续，USD/IDR和IDR/CNY交叉汇率波动直接影响内部贸易定价。需确认假期期间是否有重大汇率波动。
-</div>
-<div class="action-steps">
-<li>获取5月1日-5日期间USD/IDR汇率波动数据</li>
-<li>确认印尼本地运营成本（IDR计价）是否有显著变化</li>
-<li>评估内部贸易定价是否需要因汇率波动而调整</li>
-</div>
-<div class="action-deadline">决策时限：本周内完成评估</div>
-</div>
-</div>
+    <!-- 4. 数据来源与时效声明 -->
+    <h2>4. 数据来源与时效声明</h2>
+    <table class="source-table">
+        <tr>
+            <th style="width:22%">数据</th>
+            <th style="width:28%">来源</th>
+            <th style="width:22%">时间</th>
+            <th>状态</th>
+        </tr>
+        <tr>
+            <td>USD/CNY中间价</td>
+            <td>中国外汇交易中心 / 央行</td>
+            <td>2026-05-06 09:15（待发布）</td>
+            <td><span class="highlight-red">待更新</span></td>
+        </tr>
+        <tr>
+            <td>USD/CNH离岸</td>
+            <td>Investing.com</td>
+            <td>2026-05-06 09:20</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>DXY美元指数</td>
+            <td>东方财富 / 新浪财经</td>
+            <td>2026-05-06</td>
+            <td>⚠️ 双源差异，待确认</td>
+        </tr>
+        <tr>
+            <td>美股三大指数</td>
+            <td>Investing.com / 新浪财经</td>
+            <td>2026-05-05收盘</td>
+            <td>✅ 收盘数据</td>
+        </tr>
+        <tr>
+            <td>布伦特原油</td>
+            <td>Investing.com</td>
+            <td>2026-05-06早盘 / 05-05收盘</td>
+            <td>✅ 实时+收盘</td>
+        </tr>
+        <tr>
+            <td>WTI原油</td>
+            <td>东方财富</td>
+            <td>2026-05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>现货黄金</td>
+            <td>Investing.com</td>
+            <td>2026-05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>LME镍</td>
+            <td>新浪财经 / LME官方</td>
+            <td>2026-05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>LME铜</td>
+            <td>Investing.com / LME官方</td>
+            <td>2026-05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>LME铝</td>
+            <td>Investing.com / LME官方</td>
+            <td>2026-05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+        <tr>
+            <td>碳酸锂</td>
+            <td>上海钢联 / SMM（待更新）</td>
+            <td>2026-05-06（休市后首日）</td>
+            <td><span class="highlight-red">假期休市，数据待补</span></td>
+        </tr>
+        <tr>
+            <td>地缘/外交动态</td>
+            <td>新华社 / 路透社 / 外交部</td>
+            <td>2026-05-05至05-06</td>
+            <td>✅ 实时</td>
+        </tr>
+    </table>
 
-<!-- 4. 数据来源与时效声明 -->
-<div class="section">
-<div class="section-title">4. 数据来源与时效声明</div>
+    <p class="note">
+        <strong>中间价待更新说明</strong>：五一假期（5月1-5日）中国外汇市场休市，央行未发布中间价。今日（5月6日）为节后首个交易日，中间价将于09:15由中国外汇交易中心公布。当前离岸汇率6.8227可作为市场预期的参考锚点。若09:20后仍未获取中间价，本报告将在后续版本中自动补录。
+    </p>
 
-<table class="data-table">
-<tr><th>数据</th><th>来源</th><th>时间</th><th>状态</th></tr>
-<tr><td>USD/CNY中间价</td><td>央行授权公告</td><td>4月30日 9:15</td><td>假期无更新</td></tr>
-<tr><td>美股三大指数</td><td>第一财经/证券时报</td><td>5月4日收盘</td><td>最新</td></tr>
-<tr><td>布伦特原油/WTI</td><td>每日经济新闻</td><td>5月4日盘中</td><td>实时</td></tr>
-<tr><td>现货黄金/白银</td><td>证券时报</td><td>5月4日盘中</td><td>实时</td></tr>
-<tr><td>美元指数DXY</td><td>Investing.com</td><td>5月5日实时</td><td>最新</td></tr>
-<tr><td>USD/CNH离岸</td><td>财联社</td><td>5月1日</td><td>假期最新</td></tr>
-<tr><td>地缘动态</td><td>央视/新华社/财联社</td><td>5月4日</td><td>最新</td></tr>
-<tr><td>LME镍/碳酸锂</td><td>—</td><td>—</td><td>假期休市</td></tr>
-</table>
+    <p class="note">
+        <strong>碳酸锂数据缺口说明</strong>：五一假期期间国内期货市场休市，上海钢联/SMM碳酸锂现货报价暂停更新。今日开盘后需等待09:30市场恢复交易后的首笔报价。末次参考数据为4月底约17.45万元/吨。
+    </p>
 
-<div style="font-size:11px; color:#999; margin-top:10px;">
-<strong>免责说明：</strong>本简报仅供内部决策参考，不构成投资建议。数据来源于公开市场信息，假期期间部分数据存在滞后，请以官方发布为准。<br>
-<strong>质量评级：</strong>假期特别版 | 中间价/LME/碳酸锂数据缺失 | 全球市场数据完整
-</div>
-</div>
+    <p class="note">
+        <strong>DXY数据源差异说明</strong>：东方财富显示98.4960（+0.03%），新浪财经显示98.2738（-0.225%）。两平台数据采样时点与数据源不同，建议以Bloomberg/Reuters终端为准。
+    </p>
 
-<div class="footer">
-盘前简报 — 2026年5月5日 | 生成时间：09:20 CST | 下次更新：5月6日 08:30（恢复正常工作节奏）
-</div>
+    <div class="disclaimer">
+        <strong>免责声明</strong>：本简报仅供内部决策参考，不构成投资建议。数据来源于公开市场信息与第三方平台，时效性以标注为准。中间价待央行发布后补录，镍价等大宗商品价格盘中波动较大，行动清单需结合实时数据动态调整。我司敞口结构及对冲策略详见COMPANY.md。
+    </div>
 
 </div>
 </body>
