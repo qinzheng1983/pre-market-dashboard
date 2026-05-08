@@ -8,9 +8,12 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: #0d1b2a;
+            background: #1a1a2e;
             color: white;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 40px 20px;
         }
         .header {
@@ -26,23 +29,15 @@
             font-size: 16px;
             opacity: 0.7;
         }
-        .category {
-            max-width: 900px;
-            margin: 0 auto 40px auto;
-        }
-        .category-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            padding-left: 12px;
-            border-left: 4px solid #e94560;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
         }
         .report-card {
             background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 12px;
             padding: 25px;
@@ -61,9 +56,6 @@
             color: #e94560;
             font-weight: 600;
             margin-bottom: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
         .report-card .title {
             font-size: 20px;
@@ -75,6 +67,12 @@
             opacity: 0.7;
             line-height: 1.6;
         }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
         .badge {
             display: inline-block;
             background: #27ae60;
@@ -82,94 +80,41 @@
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 12px;
-        }
-        .badge-cfo {
-            display: inline-block;
-            background: #4a90d9;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .badge-weekly {
-            display: inline-block;
-            background: #9b59b6;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.5;
-        }
-        .divider {
-            max-width: 900px;
-            margin: 30px auto;
-            height: 1px;
-            background: rgba(255,255,255,0.1);
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>财资报告中心</h1>
-        <p>跨国企业资金管理决策参考 | 中伟新材 CFO视角</p>
+        <p>跨国企业资金管理决策参考</p>
     </div>
-
-    <div class="category">
-        <div class="category-title">
-            <span style="font-size:24px">&#128200;</span>
-            盘前市场简报
-        </div>
+    
+    <div class="report-grid">
+        <!-- 盘前简报 -->
         <a href="index.html" class="report-card">
-            <div class="date">
-                <span>2026年5月7日（周四）13:33 更新 | 行动导向版</span>
-                <span class="badge">最新</span>
-            </div>
-            <div class="title">盘前市场简报 v3.0（行动导向版）</div>
-            <div class="desc">美伊接近达成停战谅解备忘录，特朗普称取得"巨大进展" | 中间价6.8487确认人民币升值窗口（较预算6.90偏有利513点）| 原油暴跌7.83%至$101.27 | 黄金暴涨近3%突破$4,690 | LME镍盘中触及$20,000后回落至$19,199 | 碳酸锂期货暴涨7.31%逼近20万 | 6项行动清单</div>
+            <div class="date">2026年05月08日 <span class="badge">最新</span></div>
+            <div class="title">盘前市场简报</div>
+            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>碳酸锂突破19万+USD/CNY调贬15点+美伊缓和</div>
+        </a>
+        
+        <!-- 财资日报 -->
+        <a href="finance-daily/20260424.html" class="report-card">
+            <div class="date">点击查看 <span class="badge">最新</span></div>
+            <div class="title">财资日报</div>
+            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>当日完整收盘数据与深度分析</div>
+        </a>
+        
+        <!-- 财资周报 -->
+        <a href="finance-weekly/2026w17.html" class="report-card">
+            <div class="date">点击查看 <span class="badge">最新</span></div>
+            <div class="title">财资周报</div>
+            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>本周走势汇总+下周前瞻+CFO视角策略</div>
         </a>
     </div>
-
-    <div class="divider"></div>
-
-    <div class="category">
-        <div class="category-title">
-            <span style="font-size:24px">&#128202;</span>
-            财资日报
-        </div>
-        <a href="finance-daily/20260507.html" class="report-card">
-            <div class="date">
-                <span>2026年5月7日（周四）16:06 更新 | CFO结构版 v4.1</span>
-                <span class="badge-cfo">最新</span>
-            </div>
-            <div class="title">财资日报 — CFO结构版</div>
-            <div class="desc">核心风险仪表盘（6项红黄绿灯） | 对我司影响与行动建议（ACTION分组） | 货币政策/汇率/新能源/有色/贵金属/地缘/对冲建议<br><br>LME镍$19,200 HIGH（超预算20%，盘中触及$20,000）| USD/CNY 6.8487 人民币升值75bp（较预算偏有利513点）| 碳酸锂187,500 HIGH（超预算25%，期货逼近20万）| 原油暴跌7.83%至$101.27 GREEN | 美伊48小时关键窗口 YELLOW</div>
-        </a>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="category">
-        <div class="category-title">
-            <span style="font-size:24px">&#128203;</span>
-            财资周报
-        </div>
-        <a href="finance-weekly/2026w19.html" class="report-card">
-            <div class="date">
-                <span>2026年第19周（4/27-4/30）| CFO结构版</span>
-                <span class="badge-weekly">周报</span>
-            </div>
-            <div class="title">财资周报 — 第19周</div>
-            <div class="desc">本周核心风险仪表盘 | 各板块周度汇总（逐日数据+周变化） | 周度洞察层（驱动因素拆解+趋势判断） | 下周前瞻 | CFO操作视角<br><br>镍价连涨五日至$19,430 | 碳酸锂177,000元/吨 | USD/CNY四连贬至6.8628 | 原油$105→$118（+12.3%）| UAE退出OPEC+</div>
-        </a>
-    </div>
-
+    
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 盘前简报 5月7日 13:33已更新 | 财资日报 5月7日 16:06已更新 | 数据仅供参考 | 更新时间：2026-05-07 16:06 CST
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-05-08 09:26
     </div>
 </body>
 </html>
