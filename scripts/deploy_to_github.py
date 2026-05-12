@@ -13,7 +13,12 @@ from datetime import datetime
 
 # 配置
 REPO = "qinzheng1983/pre-market-dashboard"
-TOKEN = "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"
+TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+if not TOKEN:
+    print("❌ 错误: 未设置 GITHUB_TOKEN 环境变量")
+    print("   请执行: export GITHUB_TOKEN='ghp_xxx'")
+    sys.exit(1)
 REPORTS_DIR = "/root/.openclaw/workspace/reports"
 GITHUB_API = f"https://api.github.com/repos/{REPO}/contents"
 

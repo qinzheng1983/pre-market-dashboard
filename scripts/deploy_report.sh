@@ -7,11 +7,15 @@
 set -e
 
 REPO="qinzheng1983/pre-market-dashboard"
-TOKEN="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"
+TOKEN="${GITHUB_TOKEN:-}"
 REPORTS_DIR="/root/.openclaw/workspace/reports"
 DASHBOARD_FILE="/root/.openclaw/workspace/dashboard.html"
 
-# 检查参数
+if [ -z "$TOKEN" ]; then
+    echo "错误: 未设置 GITHUB_TOKEN 环境变量"
+    echo "请执行: export GITHUB_TOKEN='ghp_xxx'"
+    exit 1
+fi
 if [ $# -ne 2 ]; then
     echo "用法: $0 <pre-market|finance-daily> <YYYYMMDD>"
     exit 1
