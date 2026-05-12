@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盘前简报 — YYYY年M月D日（周X）</title>
+<style>
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  color: #1a1a2e;
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.header {
+  background: #1a1a2e;
+  color: #ffffff;
+  padding: 24px 20px;
+}
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.header-meta {
+  font-size: 13px;
+  color: #a0a0b0;
+  line-height: 1.6;
+}
+.header-highlight {
+  background: #e94560;
+  color: #ffffff;
+  padding: 12px 16px;
+  margin: 16px -20px -24px -20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.section {
+  padding: 20px;
+  border-bottom: 1px solid #e8e8f0;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e94560;
+  display: inline-block;
+}
+.section-subtitle {
+  font-size: 12px;
+  color: #8888a0;
+  margin-bottom: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+th {
+  background: #f4f4f8;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+.asset-name {
+  font-weight: 600;
+  color: #1a1a2e;
+}
+.change-up {
+  color: #d32f2f;
+}
+.change-down {
+  color: #388e3c;
+}
+.conclusion {
+  color: #666;
+  font-size: 12px;
+}
+.risk-high {
+  background: #fff0f0;
+  border-left: 3px solid #e94560;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.risk-med {
+  background: #fff8e0;
+  border-left: 3px solid #f9a825;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.risk-label {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.risk-high .risk-label {
+  color: #e94560;
+}
+.risk-med .risk-label {
+  color: #f9a825;
+}
+.action-item {
+  background: #f8f9fa;
+  border-left: 3px solid #1a1a2e;
+  padding: 12px;
+  margin: 10px 0;
+}
+.action-header {
+  font-weight: 600;
+  font-size: 13px;
+  color: #1a1a2e;
+  margin-bottom: 6px;
+}
+.action-desc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.action-steps {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.8;
+  padding-left: 16px;
+}
+.action-steps li {
+  margin-bottom: 2px;
+}
+.deadline {
+  font-size: 11px;
+  color: #e94560;
+  font-weight: 600;
+  margin-top: 6px;
+}
+.news-list {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #555;
+  padding-left: 16px;
+  margin: 0;
+}
+.news-list li {
+  margin-bottom: 4px;
+}
+.source-table {
+  font-size: 11px;
+  color: #777;
+}
+.source-table td, .source-table th {
+  padding: 6px 8px;
+}
+.footer {
+  padding: 16px 20px;
+  font-size: 11px;
+  color: #999;
+  background: #f8f9fa;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER: 更新日期、数据范围、今日重点 -->
+<div class="header">
+  <h1>盘前简报 — YYYY年M月D日（周X）</h1>
+  <div class="header-meta">
+    数据时间范围：M月D日 09:00（北京时间）— M月D日 HH:MM<br>
+    预计阅读时间：5分钟
+  </div>
+  <div class="header-highlight">
+    今日重点：【一句话概括 overnight 核心叙事 + 对我司影响】
+  </div>
+</div>
+
+<!-- SECTION 1: 隔夜市场速览 -->
+<div class="section">
+  <div class="section-title">隔夜市场速览（1分钟）</div>
+  <div class="section-subtitle">只给结论，不展开分析</div>
+  <table>
+    <tr>
+      <th style="width:20%">资产</th>
+      <th style="width:22%">收盘/最新</th>
+      <th style="width:18%">变化</th>
+      <th style="width:40%">核心结论</th>
+    </tr>
+    <!-- 填充数据行，最多12行 -->
+    <tr>
+      <td class="asset-name">美股·道指</td>
+      <td>--</td>
+      <td class="change-up">--</td>
+      <td class="conclusion">--</td>
+    </tr>
+    <tr>
+      <td class="asset-name">USD/CNY中间价</td>
+      <td>-- <span style="color:#999;font-size:11px">(M/D)</span></td>
+      <td class="change-down">--</td>
+      <td class="conclusion">较预算6.90偏有利/不利</td>
+    </tr>
+  </table>
+
+  <div class="section-title" style="border-bottom-color:#1a1a2e;margin-top:16px;">隔夜要闻一句话</div>
+  <ol class="news-list">
+    <li><strong>主题1：</strong>一句话描述</li>
+    <li><strong>主题2：</strong>一句话描述</li>
+  </ol>
+</div>
+
+<!-- SECTION 2: 今日风险预警 -->
+<div class="section">
+  <div class="section-title">今日风险预警</div>
+  <div class="section-subtitle">精简至HIGH/MED两级</div>
+
+  <div class="risk-high">
+    <div class="risk-label">HIGH — 标题</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      描述...<strong>对我司影响：</strong>...
+    </div>
+  </div>
+
+  <div class="risk-med">
+    <div class="risk-label">MED — 标题</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      描述...<strong>对我司影响：</strong>...
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 3: 今日行动清单（核心） -->
+<div class="section">
+  <div class="section-title">今日行动清单（核心）</div>
+  <div class="section-subtitle">结合我司敞口结构，给出可执行步骤</div>
+
+  <div class="action-item">
+    <div class="action-header">ACTION-1 | 标题</div>
+    <div class="action-desc">
+      敞口影响描述...
+    </div>
+    <ol class="action-steps">
+      <li>步骤1</li>
+      <li>步骤2</li>
+    </ol>
+    <div class="deadline">决策时限：今日HH:MM前</div>
+  </div>
+</div>
+
+<!-- SECTION 4: 数据来源 -->
+<div class="section" style="border-bottom:none;">
+  <div class="section-title">数据来源与时效声明</div>
+  <table class="source-table">
+    <tr>
+      <th>数据</th>
+      <th>来源</th>
+      <th>时间</th>
+    </tr>
+    <tr>
+      <td>USD/CNY中间价</td>
+      <td>央行授权公告 / chinamoney.com.cn</td>
+      <td>YYYY-MM-DD 09:15</td>
+    </tr>
+  </table>
+  <p style="font-size:11px;color:#999;margin-top:8px;">
+    免责声明：本简报仅供内部决策参考，不构成投资建议。数据来源于公开渠道，时效性以标注为准。盘前简报侧重前瞻与行动，详细分析见当日16:00财资日报。
+  </p>
+</div>
+
+<div class="footer">
+  盘前简报 v3.0 行动导向版 | 生成时间：YYYY-MM-DD HH:MM CST
+</div>
+
+</div>
+</body>
+</html>
