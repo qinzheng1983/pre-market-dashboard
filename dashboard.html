@@ -8,12 +8,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: #1a1a2e;
+            background: #0d1b2a;
             color: white;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             padding: 40px 20px;
         }
         .header {
@@ -29,15 +26,23 @@
             font-size: 16px;
             opacity: 0.7;
         }
-        .report-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            width: 100%;
+        .category {
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+        }
+        .category-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-left: 12px;
+            border-left: 4px solid #e94560;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         .report-card {
             background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
             border-radius: 12px;
             padding: 25px;
@@ -56,6 +61,9 @@
             color: #e94560;
             font-weight: 600;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .report-card .title {
             font-size: 20px;
@@ -67,12 +75,6 @@
             opacity: 0.7;
             line-height: 1.6;
         }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.5;
-        }
         .badge {
             display: inline-block;
             background: #27ae60;
@@ -80,41 +82,94 @@
             padding: 2px 8px;
             border-radius: 4px;
             font-size: 12px;
-            margin-left: 8px;
+        }
+        .badge-cfo {
+            display: inline-block;
+            background: #4a90d9;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .badge-weekly {
+            display: inline-block;
+            background: #9b59b6;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        .divider {
+            max-width: 900px;
+            margin: 30px auto;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
         }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>财资报告中心</h1>
-        <p>跨国企业资金管理决策参考</p>
+        <p>跨国企业资金管理决策参考 | 中伟新材 CFO视角</p>
     </div>
-    
-    <div class="report-grid">
-        <!-- 盘前简报 -->
+
+    <div class="category">
+        <div class="category-title">
+            <span style="font-size:24px">&#128200;</span>
+            盘前市场简报
+        </div>
         <a href="index.html" class="report-card">
-            <div class="date">2026年05月12日 <span class="badge">最新</span></div>
-            <div class="title">盘前市场简报</div>
-            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br></div>
-        </a>
-        
-        <!-- 财资日报 -->
-        <a href="finance-daily/20260424.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
-            <div class="title">财资日报</div>
-            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>当日完整收盘数据与深度分析</div>
-        </a>
-        
-        <!-- 财资周报 -->
-        <a href="finance-weekly/2026w17.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
-            <div class="title">财资周报</div>
-            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>本周走势汇总+下周前瞻+CFO视角策略</div>
+            <div class="date">
+                <span>2026年5月12日（周二）08:30 更新</span>
+                <span class="badge">最新</span>
+            </div>
+            <div class="title">盘前市场简报 v3.0（行动导向版）</div>
+            <div class="desc">特朗普访华在即（5/13-15） | 美伊停火濒临破裂 | 布油$104-106 | 沪指+0.33% | USD/CNY 6.8426 | LME镍$19,255 | 今日5项行动清单</div>
         </a>
     </div>
-    
+
+    <div class="divider"></div>
+
+    <div class="category">
+        <div class="category-title">
+            <span style="font-size:24px">&#128202;</span>
+            财资日报
+        </div>
+        <a href="finance-daily/20260512.html" class="report-card">
+            <div class="date">
+                <span>2026年5月12日（周二）16:06 更新 | CFO结构版 v4.1</span>
+                <span class="badge-cfo">CFO视角</span>
+            </div>
+            <div class="title">财资日报 — CFO结构版</div>
+            <div class="desc">核心风险仪表盘（6项红黄绿灯） | 对我司影响与行动建议（ACTION分组） | 货币政策/汇率/新能源/有色/贵金属/地缘/对冲建议<br><br>USD/CNY 6.8426（央行授权）| LME镍$19,255（超预算20.3%）| 碳酸锂195,250元/吨（超预算30.2%）| 布油$104-106（美伊停火濒临破裂）| 央行地量操作</div>
+        </a>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="category">
+        <div class="category-title">
+            <span style="font-size:24px">&#128203;</span>
+            财资周报
+        </div>
+        <a href="finance-weekly/2026w19.html" class="report-card">
+            <div class="date">
+                <span>2026年第19周（4/27-4/30）| CFO结构版</span>
+                <span class="badge-weekly">周报</span>
+            </div>
+            <div class="title">财资周报 — 第19周</div>
+            <div class="desc">本周核心风险仪表盘 | 各板块周度汇总（逐日数据+周变化） | 周度洞察层（驱动因素拆解+趋势判断） | 下周前瞻 | CFO操作视角<br><br>镍价连涨五日至$19,430 | 碳酸锂177,000元/吨 | USD/CNY四连贬至6.8628 | 原油$105→$118（+12.3%）| UAE退出OPEC+</div>
+        </a>
+    </div>
+
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-05-12 09:27
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新时间：2026-05-01 10:43 CST
     </div>
 </body>
 </html>

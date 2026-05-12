@@ -1,0 +1,45 @@
+# 工作文件 - 禁止推送到 main（Pages 构建会失败）
+# 参考: config/deploy_workflow.md v1.1
+
+# 工作目录
+.kimi/
+.openclaw/
+memory/
+scripts/
+skills/
+templates/
+venv/
+
+# 代码文件
+*.py
+__pycache__/
+*.pyc
+
+# 文档文件（保留 config/ 下的 deploy_workflow.md）
+*.md
+!config/deploy_workflow.md
+
+# 数据文件
+*.xlsx
+*.csv
+*.json
+
+# 媒体文件
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.gif
+*.svg
+
+# 报告目录（旧报告不推送到 Pages）
+reports/
+finance-reports/
+geopol-risk-reports/
+fx_analysis/
+web-optimization/
+vercel-dashboard/
+
+# 其他
+EOF
+*.pptx
