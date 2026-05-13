@@ -3,236 +3,147 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前简报 — 2026年5月12日（周一）</title>
+<title>盘前简报 — 2026年5月13日（周三）</title>
 <style>
-  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
-  .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-  h1 { font-size: 22px; color: #1a1a2e; margin: 0 0 8px 0; border-bottom: 2px solid #e94560; padding-bottom: 10px; }
-  .subtitle { font-size: 13px; color: #666; margin-bottom: 20px; }
-  .star-rating { font-size: 14px; color: #e94560; margin-bottom: 15px; }
-  .section { margin-bottom: 25px; }
-  .section-title { font-size: 16px; font-weight: bold; color: #1a1a2e; background: #f0f0f5; padding: 8px 12px; border-left: 4px solid #e94560; margin-bottom: 12px; }
-  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
-  th { background: #1a1a2e; color: #fff; padding: 8px; text-align: left; font-weight: normal; }
-  td { padding: 8px; border-bottom: 1px solid #eee; }
-  tr:nth-child(even) { background: #fafafa; }
-  .highlight { color: #e94560; font-weight: bold; }
-  .green { color: #2ecc71; font-weight: bold; }
-  .red { color: #e94560; font-weight: bold; }
-  .yellow { color: #f39c12; font-weight: bold; }
-  .news-item { font-size: 13px; margin-bottom: 6px; padding-left: 12px; border-left: 2px solid #ddd; }
-  .action-box { background: #fff8f0; border: 1px solid #ffe0b2; border-radius: 6px; padding: 12px; margin-bottom: 10px; }
-  .action-title { font-weight: bold; color: #e94560; font-size: 13px; margin-bottom: 6px; }
-  .action-body { font-size: 13px; line-height: 1.6; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; margin-right: 6px; }
-  .tag-high { background: #ffebee; color: #c62828; }
-  .tag-med { background: #fff3e0; color: #ef6c00; }
-  .tag-week { background: #e3f2fd; color: #1565c0; }
-  .footer { font-size: 11px; color: #999; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px; }
-  .risk-high { background: #ffebee; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; border-left: 3px solid #c62828; }
-  .risk-med { background: #fff8e1; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; border-left: 3px solid #f9a825; }
+  body { font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; background: #f5f5f7; color: #1a1a2e; margin: 0; padding: 20px; }
+  .container { max-width: 680px; margin: 0 auto; background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; }
+  .header { background: #1a1a2e; color: #ffffff; padding: 24px 28px; }
+  .header h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: 0.5px; }
+  .header .meta { margin-top: 8px; font-size: 13px; color: #a0a0b0; }
+  .section { padding: 20px 28px; border-bottom: 1px solid #f0f0f2; }
+  .section:last-child { border-bottom: none; }
+  .section-title { font-size: 15px; font-weight: 700; color: #1a1a2e; margin-bottom: 14px; display: table; width: 100%; }
+  .section-title .badge { display: inline-block; background: #e94560; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+  .section-title .badge-green { background: #27ae60; }
+  .section-title .badge-amber { background: #f39c12; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { background: #f8f8fa; color: #6b6b7b; font-weight: 600; text-align: left; padding: 10px 8px; border-bottom: 1px solid #e8e8ec; }
+  td { padding: 10px 8px; border-bottom: 1px solid #f0f0f2; vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .num { font-family: 'SF Mono', 'Consolas', monospace; font-weight: 600; }
+  .up { color: #27ae60; }
+  .down { color: #e94560; }
+  .muted { color: #8e8e9e; font-size: 12px; }
+  .risk-high { color: #e94560; font-weight: 700; }
+  .risk-med { color: #f39c12; font-weight: 700; }
+  .risk-low { color: #27ae60; font-weight: 700; }
+  .action-box { background: #f8f9fa; border-left: 3px solid #e94560; padding: 12px 16px; margin: 8px 0; border-radius: 0 6px 6px 0; }
+  .action-box.good { border-left-color: #27ae60; }
+  .action-box.warn { border-left-color: #f39c12; }
+  .action-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #e94560; }
+  .action-tag.good { color: #27ae60; }
+  .action-tag.warn { color: #f39c12; }
+  .footer { padding: 16px 28px; background: #fafafc; font-size: 11px; color: #8e8e9e; }
+  .tight { line-height: 1.5; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<h1>盘前简报 — 2026年5月12日（周一）</h1>
-<div class="subtitle">
-  数据时间：5月11日 09:00 — 5月12日 09:20（北京时间） | 预计阅读：5-7分钟<br>
-  今日核心判断：央行连续两日大幅调升中间价（累计+76bp），人民币被动升值加速；美伊谈判"极其脆弱"推升油价突破104美元
-</div>
-<div class="star-rating">质量评级：★★★★★（全部数据当日+交叉验证通过）</div>
-
-<!-- ========== 1. 隔夜市场速览 ========== -->
-<div class="section">
-  <div class="section-title">1. 隔夜市场速览（1分钟）</div>
-  <table>
-    <tr><th>资产</th><th>收盘/最新</th><th>变化</th><th>核心结论</th></tr>
-    <tr>
-      <td>USD/CNY中间价（5/12）</td>
-      <td>6.8426</td>
-      <td class="green">+41bp</td>
-      <td>央行连续两日大幅调升，累计+76bp，引导升值意图明确</td>
-    </tr>
-    <tr>
-      <td>USD/CNY在岸（5/11）</td>
-      <td>6.7953</td>
-      <td class="green">-42bp</td>
-      <td>中间价6.8426 vs 在岸6.7953，价差474点，政策引导强于市场</td>
-    </tr>
-    <tr>
-      <td>USD/CNY离岸（5/11）</td>
-      <td>6.7919</td>
-      <td class="green">-52bp</td>
-      <td>离岸与在岸价差仅34点，两岸联动紧密</td>
-    </tr>
-    <tr>
-      <td>美元指数DXY</td>
-      <td>97.91</td>
-      <td class="green">+0.07%</td>
-      <td>美元微涨但人民币更强，呈现独立升值逻辑</td>
-    </tr>
-    <tr>
-      <td>布伦特原油</td>
-      <td>104.21美元/桶</td>
-      <td class="red">+2.88%</td>
-      <td>美伊谈判"极其脆弱"，霍尔木兹封锁未解除，油价突破104</td>
-    </tr>
-    <tr>
-      <td>WTI原油</td>
-      <td>98.07美元/桶</td>
-      <td class="red">+2.78%</td>
-      <td>摩根大通：即使霍尔木兹6月重开，布油仍将维持100美元附近</td>
-    </tr>
-    <tr>
-      <td>现货黄金</td>
-      <td>4,742美元/盎司</td>
-      <td class="green">+0.15%</td>
-      <td>地缘避险需求支撑金价，盘中一度升至4,750</td>
-    </tr>
-    <tr>
-      <td>美股三大指数</td>
-      <td>道指49,704 / 标普7,413 / 纳指26,274</td>
-      <td class="green">+0.19% / +0.19% / +0.10%</td>
-      <td>小幅收涨，标普纳指续创新高；存储芯片股爆发</td>
-    </tr>
-    <tr>
-      <td>A股三大指数</td>
-      <td>沪指4,225 / 深成指15,899 / 创业板3,929</td>
-      <td class="green">+1.08% / +2.16% / +3.50%</td>
-      <td>大阳线，创业板大涨3.5%；半导体/新能源领涨</td>
-    </tr>
-    <tr>
-      <td>恒生指数</td>
-      <td>26,406.84</td>
-      <td class="green">+0.05%</td>
-      <td>跟随A股但涨幅受限，港股通资金流向待观察</td>
-    </tr>
-    <tr>
-      <td>LME铜</td>
-      <td>13,621美元/吨</td>
-      <td class="green">+0.63%</td>
-      <td>工业金属普涨，中国需求预期回暖支撑</td>
-    </tr>
-    <tr>
-      <td>LME镍</td>
-      <td>19,190美元/吨</td>
-      <td class="red">+1.29%</td>
-      <td>镍价反弹但库存仍高（277,788吨）；印尼MHP价格下滑</td>
-    </tr>
-    <tr>
-      <td>碳酸锂（5/8）</td>
-      <td>优质191,500-196,500元/吨</td>
-      <td class="red">+2,200元</td>
-      <td>锂盐价格持续上行，供应偏紧+需求强劲</td>
-    </tr>
-  </table>
-
-  <div class="section-title" style="border-left-color:#666; margin-top:15px;">隔夜要闻一句话</div>
-  <div class="news-item">① 特朗普称美伊停火协议仍有效但"极其脆弱"，伊朗回复"完全不可接受"；封锁霍尔木兹海峡美军舰艇已达20艘</div>
-  <div class="news-item">② 特斯拉Q1财报：订单积压创两年多新高，汽车毛利率提升至19.2%，2026年资本开支将超250亿美元</div>
-  <div class="news-item">③ 韩国KOSPI暴涨4.32%，半导体/AI产业链领涨；日经225微跌0.47%</div>
-  <div class="news-item">④ 中国4月社融/M2数据待公布（本周关注）；市场对降准预期升温</div>
-</div>
-
-<!-- ========== 2. 今日风险预警 ========== -->
-<div class="section">
-  <div class="section-title">2. 今日风险预警</div>
-
-  <div class="risk-high">
-    <span class="tag tag-high">HIGH</span> <b>美伊谈判破裂风险 → 霍尔木兹长期封锁</b><br>
-    特朗普称伊朗回复"完全不可接受"，谈判陷入僵局。若封锁持续至6月，布油可能冲击110-120美元区间，直接推高硫酸镍冶炼成本。
-    <br><i>触发条件：特朗普宣布终止谈判 / 伊朗军事升级</i>
+  <div class="header">
+    <h1>盘前简报 — 2026年5月13日（周三）</h1>
+    <div class="meta">数据日期：2026-05-12（T-1） | 简报时间：08:47 CST | 阅读时间：约5分钟 | 质量：★★★★★</div>
   </div>
 
-  <div class="risk-high">
-    <span class="tag tag-high">HIGH</span> <b>人民币被动升值加速 → 北美出口收入承压</b><br>
-    央行连续两日大幅调升中间价（累计+76bp），中间价6.8426 vs 在岸6.7953，价差474点。若中间价继续调升而市场汇率跟进，USD/CNY可能快速向6.75靠拢。
-    <br><i>触发条件：中间价单日调升>50bp / USD/CNY在岸跌破6.78</i>
+  <!-- 1. 隔夜市场速览 -->
+  <div class="section">
+    <div class="section-title">隔夜市场速览（1分钟）</div>
+    <table>
+      <tr><th style="width:28%">指标</th><th style="width:24%">数值</th><th style="width:20%">涨跌</th><th>一句话</th></tr>
+      <tr><td>USD/CNY中间价<br><span class="muted">央行 9:15</span></td><td class="num">6.8426</td><td class="up">+41点</td><td>上调41点，中间价继续引导升值</td></tr>
+      <tr><td>USD/CNY在岸<br><span class="muted">5/12收盘</span></td><td class="num">6.7956</td><td class="up">—</td><td>在岸显著强于中间价，价差约470点</td></tr>
+      <tr><td>USD/CNH离岸<br><span class="muted">5/12最新</span></td><td class="num">6.7935</td><td class="up">—</td><td>离岸与在岸价差约21点，正常区间</td></tr>
+      <tr><td>DXY美元指数</td><td class="num">98.29</td><td class="up">+0.47%</td><td>美元走强，美伊僵局+通胀数据前避险</td></tr>
+      <tr><td>布伦特原油<br><span class="muted">7月合约</span></td><td class="num">$107.77</td><td class="up">+3.42%</td><td>美伊僵局推高油价，站上107美元</td></tr>
+      <tr><td>现货黄金</td><td class="num">$4,723</td><td class="down">-0.48%</td><td>美元走强+美伊缓和预期削弱避险</td></tr>
+      <tr><td>LME镍</td><td class="num">$19,255</td><td class="up">+1.64%</td><td>华迪停产+硫磺短缺，镍价连涨</td></tr>
+      <tr><td>碳酸锂现货<br><span class="muted">SMM电池级</span></td><td class="num">200,000</td><td class="up">+4,750</td><td>突破20万大关，超预算33%</td></tr>
+      <tr><td>美股三大指数<br><span class="muted">当地时间5/12</span></td><td class="num">道指+0.19%<br>标普+0.19%<br>纳指+0.10%</td><td class="up">全线新高</td><td>标普首破7400，纳指续创新高</td></tr>
+      <tr><td>恒生指数</td><td class="num">26,348</td><td class="down">-0.22%</td><td>港股震荡，石油股逆势上扬</td></tr>
+    </table>
   </div>
 
-  <div class="risk-med">
-    <span class="tag tag-med">MED</span> <b>特斯拉电池包产能瓶颈 → 订单转化延迟</b><br>
-    特斯拉Q1明确最大制约因素是电池包产能（而非电芯），Cybercab/Semi初期爬坡平缓。若电池产能释放不及预期，可能影响下半年对我司前驱体需求节奏。
-    <br><i>触发条件：特斯拉下调全年交付指引 / 柏林工厂扩产延迟</i>
-  </div>
-</div>
+  <!-- 2. 今日风险预警 -->
+  <div class="section">
+    <div class="section-title">今日风险预警</div>
 
-<!-- ========== 3. 今日行动清单 ========== -->
-<div class="section">
-  <div class="section-title">3. 今日行动清单（核心）</div>
+    <div class="action-box">
+      <span class="action-tag risk-high">HIGH</span> <b>碳酸锂突破20万，超预算33%</b><br>
+      SMM电池级碳酸锂现货200,000元/吨（预算150,000），已超预算33%。锂辉石精矿CIF涨至2900美元/吨（+12%月内），成本端全面传导。我司电池级碳酸锂采购成本面临显著上升。ACTION：今日召开Q2采购策略紧急评估，长单锁价窗口正在收窄。
+    </div>
 
-  <div class="action-box">
-    <div class="action-title">ACTION-1 <span class="tag tag-high">紧急</span> 评估人民币升值对净敞口的叠加效应</div>
-    <div class="action-body">
-      <b>问题</b>：央行连续两日大幅调升中间价（5/11 +35bp, 5/12 +41bp），USD/CNY中间价6.8426 vs 在岸6.7953，价差474点。我司净Short USD $6,000万/月，人民币升值理论上对净敞口有利（购汇成本降低+负债缩水），但北美出口收入同步缩水。<br><br>
-      <b>今日必须做</b>：<br>
-      1. 核对昨日中间价6.8467 → 今日6.8426，两日累计升值76bp。按净Short $6,000万计算，两日账面汇兑收益约45.6万人民币（6,000万×0.0076÷100≈456万…更正：$6,000万×0.00076≈4.56万人民币）→ 实际影响约4.56万人民币，但趋势意义大于单日金额。<br>
-      2. <b>关键判断</b>：中间价>在岸价474点，说明央行引导升值的意愿强于市场自发力量。关注今日在岸开盘是否向中间价收敛。若在岸突破6.80向上（即人民币升值），确认趋势形成。<br>
-      3. 检查现有美元看涨期权/远期合约的触发价格：若已买入美元看涨期权，当前汇率远离行权价，评估是否需要追加保护。<br>
-      <b>决策时限</b>：今日14:00前完成敞口重估
+    <div class="action-box">
+      <span class="action-tag risk-high">HIGH</span> <b>USD/CNY中间价与市场价差470点，政策意图明显</b><br>
+      央行5/12中间价6.8426（+41点），但在岸收盘6.7956，价差约470点。中间价持续强于市场汇率，引导升值意图明确。对我司净Short USD敞口（-$6,000万/月）而言，人民币升值=净有利，但需警惕政策转向风险。ACTION：检查当前对冲仓位是否过度保护Short端，若美元继续升值需补锁购汇成本。
+    </div>
+
+    <div class="action-box warn">
+      <span class="action-tag warn">MED</span> <b>美伊停火协议命悬一线，油价冲高107美元</b><br>
+      特朗普拒绝伊朗和平提议，称"完全不可接受"；停火协议"命悬一线"。布伦特原油5/12大涨3.42%至107.77美元。EIA预计霍尔木兹关闭至5月底。对我司间接影响：油价→通胀→汇率→套保成本。ACTION：监控今晚美国CPI数据（北京时间20:30），若通胀超预期将强化美元、压制人民币升值空间。
+    </div>
+
+    <div class="action-box warn">
+      <span class="action-tag warn">MED</span> <b>LME镍连涨，华迪停产+硫磺短缺推升成本</b><br>
+      伦镍5/11收盘19,255（+1.64%），华迪印尼镍厂停产+中东硫磺断供冲击湿法冶炼。我司镍预算$16,000/吨，当前超预算20%。ACTION：本周评估Q3镍长单锁价，优先锁定印尼MHP直供渠道。
+    </div>
+
+    <div class="action-box good">
+      <span class="action-tag good">LOW</span> <b>特斯拉Model S/X停产，产线改产机器人</b><br>
+      特斯拉正式停产Model S/X，弗里蒙特工厂将改造为Optimus机器人产线（年产目标100万台）。2025年特斯拉交付163.6万辆（-8.6%），比亚迪超越其成为全球纯电冠军。对我司影响：特斯拉高端车型订单消失，但Model 3/Y仍是主力，需关注其电池技术路线是否调整。ACTION：持续监控特斯拉Q2订单及技术路线公告。
     </div>
   </div>
 
-  <div class="action-box">
-    <div class="action-title">ACTION-2 <span class="tag tag-high">紧急</span> 监控油价突破对硫酸镍成本的影响</div>
-    <div class="action-body">
-      <b>问题</b>：布伦特突破104美元（+2.88%），摩根大通预测即使霍尔木兹6月重开，全年均价仍约96美元。硫酸镍冶炼是能源密集型环节，油价上涨直接推高电力/燃料成本。<br><br>
-      <b>今日必须做</b>：<br>
-      1. 联系印尼基地，确认当前硫酸镍生产成本中能源占比及近期成本变化<br>
-      2. 评估油价若维持100+美元，对印尼基地毛利率的挤压幅度（模型测算：油价每涨10美元→硫酸镍成本上升约X%）<br>
-      3. 关注印尼HPM/RKAB是否有新政策出台对冲成本压力<br>
-      <b>决策时限</b>：今日16:00前提交成本敏感性测算
+  <!-- 3. 今日行动清单 -->
+  <div class="section">
+    <div class="section-title">今日行动清单 <span style="font-size:12px;font-weight:400;color:#8e8e9e;">（结合我司敞口结构）</span></div>
+
+    <table>
+      <tr><th style="width:14%">优先级</th><th style="width:30%">事项</th><th>问题描述</th><th style="width:22%">建议行动</th></tr>
+      <tr><td><b style="color:#e94560;">P0</b></td><td>碳酸锂采购</td><td>现货突破20万，超预算33%。锂辉石精矿涨至2900美元/吨，成本端全面传导。</td><td><b>今日</b>召开Q2采购紧急评估，长单锁价窗口收窄。</td></tr>
+      <tr><td><b style="color:#e94560;">P0</b></td><td>USD/CNY对冲</td><td>中间价6.8426 vs 市场6.7956，价差470点。净Short敞口-$6,000万/月，人民币升值=净有利。</td><td><b>今日</b>检查对冲仓位是否过度保护Short端，评估政策转向风险。</td></tr>
+      <tr><td><b style="color:#f39c12;">P1</b></td><td>美国CPI监控</td><td>今晚20:30公布4月CPI，通胀超预期将强化美元、压制人民币升值空间。</td><td><b>今晚</b>跟踪CPI数据，若>3.5%考虑追加美元看涨期权保护购汇成本。</td></tr>
+      <tr><td><b style="color:#f39c12;">P1</b></td><td>LME镍锁价</td><td>伦镍19,255，超预算20%。华迪停产+硫磺短缺短期难缓解。</td><td><b>本周</b>评估Q3镍长单锁价，优先锁定印尼MHP直供。</td></tr>
+      <tr><td><b style="color:#f39c12;">P1</b></td><td>钴供应监控</td><td>刚果金Q1出口仅4.88万吨（同比-60%），配额严格执行。Buenassa拟建2万吨电钴项目。</td><td><b>持续</b>监控洛阳钼业出港节奏，Q2原料到港量决定冶炼开工。</td></tr>
+      <tr><td><b style="color:#27ae60;">P2</b></td><td>港股IPO窗口</td><td>恒指26,348震荡，剂泰科技-P明日挂牌。港股流动性改善。</td><td><b>关注</b>港股IPO窗口，若年内有融资计划可启动准备。</td></tr>
+      <tr><td><b style="color:#27ae60;">P2</b></td><td>特斯拉动态</td><td>Model S/X停产，产线改产机器人。2025年交付下滑8.6%。</td><td><b>持续</b>监控特斯拉Q2订单及技术路线调整，评估对我司高镍前驱体需求影响。</td></tr>
+    </table>
+  </div>
+
+  <!-- 4. 隔夜要闻 -->
+  <div class="section">
+    <div class="section-title">隔夜要闻 <span style="font-size:12px;font-weight:400;color:#8e8e9e;">（只保留与我司直接相关）</span></div>
+    <div class="tight" style="font-size:13px;line-height:1.8;color:#4a4a5a;">
+      <b>宏观：</b>中国4月外汇储备今日10:00公布；美国4月CPI今晚20:30公布（市场预期3.4%）。<br>
+      <b>汇率：</b>美元指数走强至98.29（+0.47%）；中间价6.8426 vs 在岸6.7956，价差470点，政策引导升值意图明确。<br>
+      <b>有色：</b>伦铜+3%创1月29日以来新高；伦镍19,255（+1.64%），华迪停产+硫磺短缺；伦锡+1.8%。<br>
+      <b>新能源：</b>碳酸锂现货突破20万，SMM电池级200,000元/吨。5月储能排产全线超预期，国务院通过锂矿保护性开采条例。<br>
+      <b>特斯拉：</b>Model S/X正式停产，产线改产Optimus机器人（年产目标100万台）。2025年交付163.6万辆，被比亚迪超越。<br>
+      <b>地缘：</b>特朗普拒绝伊朗和平提议，停火协议"命悬一线"。霍尔木兹海峡通航受限，EIA预计关闭至5月底。<br>
+      <b>刚果金：</b>Q1钴出口4.88万吨（同比-60%），配额管制严格执行。Buenassa拟建2万吨电钴项目配合美刚矿产协议。<br>
     </div>
   </div>
 
-  <div class="action-box">
-    <div class="action-title">ACTION-3 <span class="tag tag-med">重要</span> 跟踪特斯拉订单与产能释放节奏</div>
-    <div class="action-body">
-      <b>问题</b>：特斯拉Q1订单积压创两年多新高（积极），但最大瓶颈是电池包产能而非需求。我司作为特斯拉高镍前驱体核心供应商，需确认下半年订单可见度。<br><br>
-      <b>今日必须做</b>：<br>
-      1. 与销售团队确认特斯拉Q2订单排产情况及下半年长单签订进度<br>
-      2. 关注柏林工厂产量（Q1创纪录61,000辆）及4680/LFP扩产计划<br>
-      3. 评估Optimus V3（7-8月量产）是否可能分流电池产能资源<br>
-      <b>决策时限</b>：本周五前完成客户沟通纪要
+  <!-- 5. 数据来源 -->
+  <div class="section">
+    <div class="section-title">数据来源与免责声明</div>
+    <div class="tight" style="font-size:12px;line-height:1.7;color:#8e8e9e;">
+      USD/CNY中间价：中国人民银行授权中国外汇交易中心（pbc.gov.cn / chinamoney.com.cn），2026-05-12 09:15发布。<br>
+      USD/CNY在岸：金投外汇网（forex.cngold.org），2026-05-12收盘。<br>
+      USD/CNH离岸：金投外汇网（forex.cngold.org），2026-05-12最新。<br>
+      美元指数：Investing.com历史数据表（cn.investing.com），2026-05-12收盘。<br>
+      布伦特原油：新华财经（finance.sina.cn），2026-05-12 20:30发布。<br>
+      LME镍：长江有色金属网 / 曲合期货，2026-05-11收盘。<br>
+      碳酸锂：上海有色网（SMM）hq.smm.cn，2026-05-12 10:30发布。<br>
+      美股：新浪财经（finance.sina.com.cn），当地时间2026-05-12收盘。<br>
+      恒生指数：Investing.com / 新浪财经，2026-05-12收盘。<br>
+      本简报仅供参考，不构成投资建议。数据截至简报生成时点，市场实时波动请以交易所行情为准。
     </div>
   </div>
 
-  <div class="action-box">
-    <div class="action-title">ACTION-4 <span class="tag tag-week">本周</span> 关注国内4月金融数据与降准预期</div>
-    <div class="action-body">
-      <b>问题</b>：中国4月社融/M2数据本周公布，市场对降准预期升温。若央行降准释放流动性，可能进一步支撑人民币汇率偏强。<br><br>
-      <b>本周预备</b>：<br>
-      1. 社融数据公布后，评估国内流动性环境对汇率的边际影响<br>
-      2. 若降准落地，预判USD/CNY短期走势（通常降准→流动性宽松→汇率承压，但当前人民币呈独立升值逻辑，需具体分析）<br>
-      3. 更新对冲策略中的利率平价假设<br>
-      <b>决策时限</b>：数据公布后24小时内完成评估
-    </div>
-  </div>
-</div>
-
-<!-- ========== 4. 数据来源与时效声明 ========== -->
-<div class="section">
-  <div class="section-title">4. 数据来源与时效声明</div>
-  <table>
-    <tr><th>数据项</th><th>来源</th><th>时间</th><th>状态</th></tr>
-    <tr><td>USD/CNY中间价</td><td>央行授权公告（证券时报转载）</td><td>5月12日 09:16</td><td class="green">当日</td></tr>
-    <tr><td>USD/CNY在岸</td><td>Investing.com</td><td>5月11日收盘</td><td class="green">当日</td></tr>
-    <tr><td>USD/CNY离岸</td><td>新浪财经国际要情</td><td>5月11日</td><td class="green">当日</td></tr>
-    <tr><td>美元指数DXY</td><td>新浪财经国际要情</td><td>5月11日</td><td class="green">当日</td></tr>
-    <tr><td>布伦特原油</td><td>新浪财经/新华社</td><td>5月11日收盘</td><td class="green">当日</td></tr>
-    <tr><td>现货黄金</td><td>新浪财经国际要情</td><td>5月11日收盘</td><td class="green">当日</td></tr>
-    <tr><td>美股三大指数</td><td>新浪财经/大河财立方</td><td>5月11日收盘</td><td class="green">当日</td></tr>
-    <tr><td>A股三大指数</td><td>新浪财经国际要情</td><td>5月11日收盘</td><td class="green">当日</td></tr>
-    <tr><td>LME镍</td><td>SMM上海有色网</td><td>5月11日 13:02/15:32</td><td class="green">当日</td></tr>
-    <tr><td>LME铜</td><td>SMM上海有色网</td><td>5月11日 17:32</td><td class="green">当日</td></tr>
-    <tr><td>碳酸锂</td><td>Mysteel上海钢联</td><td>5月8日</td><td class="yellow">T-3（最新可得）</td></tr>
-    <tr><td>特斯拉动态</td><td>华尔街见闻/华盛通</td><td>4月22日财报</td><td class="yellow">财报季数据</td></tr>
-  </table>
   <div class="footer">
-    免责声明：本简报仅供内部决策参考，不构成投资建议。数据来源于公开市场信息，作者不对数据的准确性和完整性承担法律责任。汇率、大宗商品价格波动存在不确定性，请结合内部风控体系独立判断。
+    盘前简报 v3.0 行动导向版 | 发送时间：2026-05-13 08:47 CST | 数据日期：T-1（2026-05-12收盘）<br>
+    如有延迟，系数据源时效限制，请以财资日报（16:00）为准。
   </div>
-</div>
 
 </div>
 </body>
