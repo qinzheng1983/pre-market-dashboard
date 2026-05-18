@@ -1,5 +1,338 @@
- Continuing from previous content...
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>财资日报 — 2026年5月18日（周一） CFO结构版 v4.1</title>
+    <style>
+        body { font-family: 'Microsoft YaHei', 'PingFang SC', Arial, sans-serif; margin: 0; padding: 0; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; font-size: 13px; }
+        td, th { padding: 8px 10px; border: 1px solid #d5d8dc; text-align: left; vertical-align: top; }
+        th { background: #1a252f; color: #fff; font-weight: 600; }
+        a { color: #2980b9; text-decoration: none; }
+        .header { background: #0d1b2a; color: #fff; padding: 24px 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .header h1 { margin: 0; font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+        .header .subtitle { margin-top: 8px; font-size: 13px; color: #bdc3c7; }
+        .header .meta { margin-top: 12px; font-size: 12px; color: #95a5a6; }
+        .header .quality-rating { margin-top: 8px; font-size: 14px; color: #f1c40f; }
+        .section-title { background: #1a252f; color: #fff; padding: 10px 14px; font-size: 14px; font-weight: 700; margin-top: 24px; border-radius: 4px; }
+        .section-title .badge { font-size: 11px; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+        .badge-red { background: #c0392b; }
+        .badge-orange { background: #e67e22; }
+        .badge-blue { background: #2980b9; }
+        .action-group { background: #1a3a5c; color: #fff; font-weight: 600; font-size: 12px; }
+        .action-group .priority-tag { display: inline-block; padding: 1px 6px; border-radius: 3px; font-size: 11px; margin-right: 6px; }
+        .priority-emergency { background: #e74c3c; }
+        .priority-high { background: #e67e22; }
+        .priority-medium { background: #3498db; }
+        .risk-h { background: #f8d7da; color: #721c24; }
+        .risk-m { background: #fff3cd; color: #856404; }
+        .risk-l { background: #d4edda; color: #155724; }
+        .budget-good { background: #d4edda; color: #155724; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+        .budget-bad { background: #f8d7da; color: #721c24; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+        .budget-none { background: #e9ecef; color: #6c757d; padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+        .trend { font-size: 11px; color: #5d6d7e; margin-top: 2px; }
+        .trend-up { color: #27ae60; }
+        .trend-down { color: #c0392b; }
+        .total-row { background: #eaf2f8; font-weight: 600; }
+        .insight-row { background: #f8f9fa; font-size: 12px; color: #5d6d7e; }
+        .footer { background: #ecf0f1; padding: 16px; margin-top: 24px; border-radius: 0 0 8px 8px; font-size: 11px; color: #7f8c8d; }
+        .footer table { font-size: 11px; }
+        .footer th { background: #7f8c8d; font-size: 11px; }
+    </style>
+</head>
+<body>
+<div class="container">
 
+<div class="header">
+    <h1>财资日报</h1>
+    <div class="subtitle">中伟新材 CFO视角 | 跨国企业资金管理决策参考</div>
+    <div class="meta">2026年5月18日（周一）16:45 CST | 数据截止：北京时间16:45</div>
+    <div class="quality-rating">质量评级：★★★★☆（中间价当日+LME当日收盘+碳酸锂期货收盘，布伦特/黄金欧洲/纽约收盘待更新）</div>
+</div>
+
+<!-- 1. 核心风险仪表盘 -->
+<div class="section-title">1. 核心风险仪表盘 <span class="badge badge-red">6项固定监控</span></div>
+<table>
+    <tr>
+        <th style="width:22%">风险项</th>
+        <th style="width:12%">等级</th>
+        <th style="width:28%">今日状态</th>
+        <th style="width:20%">vs预算/趋势</th>
+        <th style="width:18%">监控阈值</th>
+    </tr>
+    <tr>
+        <td><b>LME镍价</b></td>
+        <td class="risk-h">高</td>
+        <td>$18,580/吨 <span class="trend trend-down">↳ -360美元 (-1.90%)</span></td>
+        <td><span class="budget-bad">超预算$2,580 (+16.1%)</span></td>
+        <td>单日&gt;3%或突破$20,000</td>
+    </tr>
+    <tr>
+        <td><b>碳酸锂</b></td>
+        <td class="risk-h">高</td>
+        <td>现货~191,000元/吨 <span class="trend trend-up">↳ LC2606收盘188,140（今开185,440，最高190,260）</span></td>
+        <td><span class="budget-bad">超预算41,000元 (+27.3%)</span></td>
+        <td>现货突破200,000或跌破170,000</td>
+    </tr>
+    <tr>
+        <td><b>USD/CNY净敞口</b></td>
+        <td class="risk-h">高</td>
+        <td>中间价6.8435 <span class="trend trend-up">↳ +20bp调贬</span></td>
+        <td><span class="budget-good">偏有利565点 (vs 6.90)</span></td>
+        <td>单日&gt;50点或突破6.90/6.75</td>
+    </tr>
+    <tr>
+        <td><b>地缘风险(霍尔木兹)</b></td>
+        <td class="risk-h">高</td>
+        <td>今日驶出2艘，通航量极低 <span class="trend trend-down">↳ 美伊谈判无实质进展</span></td>
+        <td><span class="budget-none">无预算</span></td>
+        <td>通航量&lt;10艘/日或军事冲突升级</td>
+    </tr>
+    <tr>
+        <td><b>布伦特原油</b></td>
+        <td class="risk-m">中</td>
+        <td>盘中$111.34 <span class="trend trend-up">↳ +1.87美元 (+1.71%，cngold 14:56)</span></td>
+        <td><span class="budget-none">无预算</span></td>
+        <td>突破$115或跌破$95</td>
+    </tr>
+    <tr>
+        <td><b>央行流动性</b></td>
+        <td class="risk-m">中</td>
+        <td>逆回购10亿，买断式到期8000亿 <span class="trend">↳ 余额将降至5.7万亿</span></td>
+        <td><span class="budget-none">无预算</span></td>
+        <td>DR001突破1.5%或跌破1.0%</td>
+    </tr>
+</table>
+
+<!-- 2. 对我司影响与行动 -->
+<div class="section-title">2. 对我司影响与行动 <span class="badge badge-red">ACTION分组</span></div>
+<table>
+    <tr>
+        <th style="width:20%">维度</th>
+        <th style="width:18%">敞口</th>
+        <th style="width:26%">关键数据</th>
+        <th style="width:22%">影响判断</th>
+        <th style="width:14%">vs预算</th>
+    </tr>
+    <tr class="action-group">
+        <td colspan="5"><span class="priority-tag priority-emergency">紧急</span> [1] 汇率敞口 — 净Long $9.5亿/月</td>
+    </tr>
+    <tr>
+        <td>印尼人民币借款</td>
+        <td>Long USD $10亿</td>
+        <td>USD/CNY 6.8435 <span class="trend trend-up">↳ +20bp调贬，美元走强</span></td>
+        <td><b>有利</b>：人民币贬值→美元计价负债缩水</td>
+        <td><span class="budget-good">有利</span></td>
+    </tr>
+    <tr>
+        <td>香港购汇</td>
+        <td>Short USD $5,000万/月</td>
+        <td>中间价6.8435 <span class="trend">↳ 购汇成本微升</span></td>
+        <td><b>轻微不利</b>：人民币贬值→购汇成本增加</td>
+        <td><span class="budget-bad">微不利</span></td>
+    </tr>
+    <tr class="total-row">
+        <td><b>净敞口效应</b></td>
+        <td><b>净Long $9.5亿/月</b></td>
+        <td>6.8435 vs 6.90 = 偏有利565点</td>
+        <td><b>净有利</b>：Long敞口主导，美元走强=利好</td>
+        <td><span class="budget-good">净有利</span></td>
+    </tr>
+    <tr class="action-group">
+        <td colspan="5"><span class="priority-tag priority-high">高</span> [2] 镍价成本 — 硫酸镍核心原料</td>
+    </tr>
+    <tr>
+        <td>LME镍价</td>
+        <td>年用约10万吨</td>
+        <td>$18,580 <span class="trend trend-down">↳ -360美元，跌破$19,000</span></td>
+        <td><b>成本压力缓解</b>：镍价回落但仍超预算16%</td>
+        <td><span class="budget-bad">超支16%</span></td>
+    </tr>
+    <tr>
+        <td>印尼HMA基准价</td>
+        <td>5月下半期</td>
+        <td>$18,849.3 <span class="trend trend-up">↳ +1,047美元 (+5.88%)</span></td>
+        <td><b>成本上行</b>：HMA上涨直接推高镍矿采购成本</td>
+        <td><span class="budget-bad">超预算</span></td>
+    </tr>
+    <tr class="action-group">
+        <td colspan="5"><span class="priority-tag priority-high">高</span> [3] 碳酸锂 — 新能源成本线</td>
+    </tr>
+    <tr>
+        <td>电池级碳酸锂</td>
+        <td>年用约5万吨</td>
+        <td>现货~191,000 <span class="trend">↳ LC2606收盘188,140（昨收185,940，持仓1.90万手）</span></td>
+        <td><b>成本超预算27%</b>：锂价高企侵蚀毛利率</td>
+        <td><span class="budget-bad">超27%</span></td>
+    </tr>
+    <tr class="action-group">
+        <td colspan="5"><span class="priority-tag priority-medium">中</span> [4] 地缘风险 — 霍尔木兹/供应链</td>
+    </tr>
+    <tr>
+        <td>霍尔木兹通航</td>
+        <td>原油/硫磺运输</td>
+        <td>今日驶出2艘 <span class="trend trend-down">↳ 通航量极低，硫磺供应受阻</span></td>
+        <td><b>供应链风险</b>：印尼湿法冶炼产能已出现不同程度减产</td>
+        <td><span class="budget-none">无预算</span></td>
+    </tr>
+    <tr class="action-group">
+        <td colspan="5"><span class="priority-tag priority-medium">中</span> [5] 美联储/利率风险</td>
+    </tr>
+    <tr>
+        <td>美联储加息概率</td>
+        <td>印尼美元融资成本</td>
+        <td>CME FedWatch 30.6% <span class="trend trend-up">↳ 10Y美债4.596%冲一年高位</span></td>
+        <td><b>融资成本上行</b>：若加息→美元借款利率上升</td>
+        <td><span class="budget-none">无预算</span></td>
+    </tr>
+</table>
+
+<!-- 3. 货币政策 -->
+<div class="section-title">3. 货币政策 <span class="badge badge-blue">央行操作</span></div>
+<table>
+    <tr>
+        <th style="width:25%">指标</th>
+        <th style="width:20%">数值</th>
+        <th style="width:15%">变化</th>
+        <th style="width:25%">趋势</th>
+        <th style="width:15%">来源</th>
+    </tr>
+    <tr>
+        <td>7天逆回购(今日)</td>
+        <td>10亿元</td>
+        <td>利率1.40%持平</td>
+        <td>地量操作，资金面宽松<span class="trend">↳ DR001均值约1.25%</span></td>
+        <td>央行公告 09:23</td>
+    </tr>
+    <tr>
+        <td>买断式逆回购到期</td>
+        <td>8,000亿元</td>
+        <td>6个月期到期</td>
+        <td>余额将降至5.7万亿<span class="trend">↳ 连续净回笼引导利率回归</span></td>
+        <td>每日经济新闻</td>
+    </tr>
+    <tr>
+        <td>MLF到期(5/25)</td>
+        <td>5,000亿元</td>
+        <td>待观察</td>
+        <td>市场预期缩量续做<span class="trend">↳ 4月已缩量净回笼2000亿</span></td>
+        <td>市场资讯</td>
+    </tr>
+    <tr>
+        <td>明日LPR报价</td>
+        <td>5/19 09:15</td>
+        <td>1Y/5Y待公布</td>
+        <td>市场预期维持不变<span class="trend">↳ 当前1Y=3.0%, 5Y=3.5%</span></td>
+        <td>预期</td>
+    </tr>
+    <tr class="insight-row">
+        <td colspan="5"><b>政策意图</b>：央行3月以来持续"收水"操作（OMO地量+买断式逆回购缩量），引导过低的市场利率向政策利率1.40%回归。5月特别国债开闸后，政府债券净融资增加，银行体系流动性内生性趋紧，DR001有望从1.25%向1.40%靠拢。货币政策支持性立场未变，但避免过度宽松。</td>
+    </tr>
+</table>
+
+<!-- 4. 汇率动态 -->
+<div class="section-title">4. 汇率动态 <span class="badge badge-blue">多币种监控</span></div>
+<table>
+    <tr>
+        <th style="width:22%">指标</th>
+        <th style="width:18%">数值</th>
+        <th style="width:15%">变化</th>
+        <th style="width:30%">vs预算/趋势</th>
+        <th style="width:15%">来源</th>
+    </tr>
+    <tr>
+        <td>USD/CNY中间价</td>
+        <td>6.8435</td>
+        <td>+20bp调贬</td>
+        <td><span class="budget-good">偏有利565点</span> (vs 6.90预算)<span class="trend">↳ 央行授权公告，当日9:15发布</span></td>
+        <td>中国货币网</td>
+    </tr>
+    <tr>
+        <td>USD/CNH离岸</td>
+        <td>6.8140-6.8170</td>
+        <td>—</td>
+        <td>较中间价贴水265-295点<span class="trend">↳ 日内交投6.8112-6.8176（Investing.com）</span></td>
+        <td>cngold/Investing.com</td>
+    </tr>
+    <tr>
+        <td>美元指数DXY</td>
+        <td>99.28</td>
+        <td>+0.42%</td>
+        <td>五连涨突破99关口<span class="trend trend-up">↳ 美联储鹰派+通胀数据超预期</span></td>
+        <td>金十数据 05-16</td>
+    </tr>
+    <tr>
+        <td>EUR/CNY</td>
+        <td>7.9157</td>
+        <td>EUR/USD 1.1623</td>
+        <td>欧元走弱<span class="trend">↳ 欧洲制造业PMI疲软，欧央行偏鸽</span></td>
+        <td>cngold 05-18</td>
+    </tr>
+    <tr>
+        <td>JPY/CNY</td>
+        <td>0.0429</td>
+        <td>USD/JPY 158.73</td>
+        <td>日元持续贬值<span class="trend trend-down">↳ 日央行鸽派，套利交易盛行</span></td>
+        <td>cngold 05-18</td>
+    </tr>
+    <tr class="insight-row">
+        <td colspan="5"><b>对我司影响</b>：USD/CNY 6.8435较预算6.90偏有利565点，对净Long $9.5亿/月敞口为有利方向。但需注意：① 离岸6.8140与中间价差295点，显示市场仍预期人民币升值压力；② 美元指数五连涨，若突破100可能加速人民币被动贬值；③ 明日LPR报价若下调，将释放稳增长信号，可能缓和人民币下行压力。</td>
+    </tr>
+</table>
+
+<!-- 5. 新能源 -->
+<div class="section-title">5. 新能源 <span class="badge badge-blue">碳酸锂/电池</span></div>
+<table>
+    <tr>
+        <th style="width:22%">指标</th>
+        <th style="width:20%">数值</th>
+        <th style="width:15%">变化</th>
+        <th style="width:30%">vs预算/趋势</th>
+        <th style="width:13%">来源</th>
+    </tr>
+    <tr>
+        <td>碳酸锂现货(电池级)</td>
+        <td>~191,000元/吨</td>
+        <td>—</td>
+        <td><span class="budget-bad">超预算27%</span><span class="trend">↳ 5/17生意社数据，今日预计持平</span></td>
+        <td>生意社/100ppi</td>
+    </tr>
+    <tr>
+        <td>碳酸锂期货LC2606</td>
+        <td>188,140(收盘)</td>
+        <td>今开185,440</td>
+        <td>盘中最高190,260/最低184,480<span class="trend trend-up">↳ 持仓1.90万手(-640)，成交4301手，成交额8.07亿</span></td>
+        <td>东方财富 15:01</td>
+    </tr>
+    <tr>
+        <td>碳酸锂期货LC2607</td>
+        <td>—</td>
+        <td>—</td>
+        <td>LC2606将于6月第10个交易日到期<span class="trend">↳ 下月需关注换月至LC2607/2609</span></td>
+        <td>广期所规则</td>
+    </tr>
+    <tr>
+        <td>瑞银锂价预测</td>
+        <td>2026年均20万/吨</td>
+        <td>上调18%</td>
+        <td>预期5-6月现货可达25万<span class="trend trend-up">↳ BESS需求+中东冲突推升油价→电动车需求↑</span></td>
+        <td>瑞银研报 05-08</td>
+    </tr>
+    <tr>
+        <td>氢氧化镍钴(MHP)</td>
+        <td>镍金属价$16,919-17,287</td>
+        <td>-488美元</td>
+        <td>折扣系数92-94折<span class="trend trend-down">↳ 随LME镍同步下跌</span></td>
+        <td>Mysteel 05-18</td>
+    </tr>
+    <tr class="insight-row">
+        <td colspan="5"><b>供需分析</b>：① 供应端：印尼RKAB配额收紧+中资企业联名抗议，湿法冶炼产能因硫磺短缺减产，电池级氢氧化镍钴出现区域性供应缺口；② 需求端：瑞银上调2026年全球锂需求至197万吨LCE（+16%YoY），储能电池需求同比+60%；③ 期货数据：LC2606收盘188,140，持仓减少640手，成交量仅4301手，显示市场情绪趋于谨慎；④ 价格判断：短期供应扰动+需求向好支撑锂价高位，但产业链利润结构畸形（下游亏损补贴上游），价格存在回调风险。</td>
+    </tr>
+</table>
+
+<!-- 6. 有色金属 -->
 <div class="section-title">6. 有色金属 <span class="badge badge-blue">铜铝镍锌铅</span></div>
 <table>
     <tr>
@@ -56,7 +389,7 @@
     </tr>
 </table>
 
-<!-- ========== 7. 贵金属 ========== -->
+<!-- 7. 贵金属 -->
 <div class="section-title">7. 贵金属 <span class="badge badge-blue">黄金/白银</span></div>
 <table>
     <tr>
@@ -99,7 +432,7 @@
     </tr>
 </table>
 
-<!-- ========== 8. 地缘风险 ========== -->
+<!-- 8. 地缘风险 -->
 <div class="section-title">8. 地缘风险 <span class="badge badge-red">美伊/霍尔木兹</span></div>
 <table>
     <tr>
@@ -143,7 +476,7 @@
     </tr>
 </table>
 
-<!-- ========== 9. 对冲建议 ========== -->
+<!-- 9. 对冲建议 -->
 <div class="section-title">9. 对冲建议 (CFO操作视角) <span class="badge badge-orange">优先级+时限</span></div>
 <table>
     <tr>
@@ -200,7 +533,7 @@
     </tr>
 </table>
 
-<!-- ========== 10. 数据来源与免责声明 ========== -->
+<!-- 10. 数据来源与免责声明 -->
 <div class="section-title">10. 数据来源与免责声明</div>
 <table>
     <tr>
@@ -221,8 +554,8 @@
         <td>USD/CNH离岸</td>
         <td>2026-05-18</td>
         <td>实时</td>
-        <td>⚠️</td>
-        <td>cngold.org.cn（上一交易日收盘）</td>
+        <td>✅</td>
+        <td>cngold/Investing.com（日内交投区间）</td>
     </tr>
     <tr>
         <td>LME镍</td>
@@ -239,25 +572,25 @@
         <td>生意社/100ppi（滞后1日）</td>
     </tr>
     <tr>
-        <td>碳酸锂期货</td>
+        <td>碳酸锂期货LC2606</td>
         <td>2026-05-18</td>
-        <td>实时（交易日）</td>
+        <td>日度（15:00收盘）</td>
         <td>✅</td>
-        <td>东方财富/曲合期货（盘中）</td>
+        <td>东方财富（15:01收盘数据）</td>
     </tr>
     <tr>
         <td>布伦特原油</td>
-        <td>2026-05-15</td>
-        <td>日度（欧洲收盘）</td>
+        <td>2026-05-18</td>
+        <td>实时（欧洲收盘约23:00）</td>
         <td>⚠️</td>
-        <td>金十数据（上周五收盘，今日盘中未收盘）</td>
+        <td>cngold 14:56（盘中$111.34，欧洲收盘后更新）</td>
     </tr>
     <tr>
         <td>黄金</td>
         <td>2026-05-15</td>
         <td>日度（纽约收盘）</td>
         <td>⚠️</td>
-        <td>金十数据（上周五收盘）</td>
+        <td>金十数据（上周五收盘，今日收盘约次日2:00）</td>
     </tr>
     <tr>
         <td>央行操作</td>
@@ -279,7 +612,7 @@
     <p><b>免责声明</b>：本报告由OpenClaw AI基于公开信息自动生成，仅供参考，不构成投资建议。数据力求准确但可能存在延迟或误差，关键决策请交叉验证原始数据源。报告中的"我司"指中伟新材料股份有限公司（CNGR）。</p>
     <p><b>预算基准</b>：USD/CNY 6.90 | LME镍 $16,000/吨 | 碳酸锂 150,000元/吨 | 钴暂无 | 原油/黄金无预算</p>
     <p><b>敞口结构</b>：印尼人民币借款Long USD $10亿 + 香港购汇Short USD $5,000万/月 = 净Long $9.5亿/月 | 印尼经常项目Long IDR ~$2亿</p>
-    <p>生成时间：2026-05-18 16:06 CST | 下次更新：2026-05-19 16:00</p>
+    <p>生成时间：2026-05-18 16:45 CST | 下次更新：2026-05-19 16:00</p>
 </div>
 
 </div>
