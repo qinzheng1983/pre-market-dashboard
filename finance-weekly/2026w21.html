@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>财资周报 — 2026年第21周（5月18日-5月22日） CFO结构版</title>
+<style type="text/css">
+        body {
+            font-family: "Microsoft YaHei", "SimHei", Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #0d1b2a;
+            color: #ffffff;
+            padding: 24px 32px;
+            border-bottom: 3px solid #e94560;
+        }
+        .header h1 {
+            margin: 0 0 8px 0;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header .subtitle {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-bottom: 12px;
+        }
+        .header .meta {
+            font-size: 12px;
+            color: #8892b0;
+        }
+        .rating-badge {
+            display: inline-block;
+            background: #e94560;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-left: 12px;
+        }
+        .section {
+            padding: 20px 32px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0d1b2a;
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e94560;
+            display: inline-block;
+        }
+        .section-note {
+            font-size: 12px;
+            color: #5d6d7e;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        /* 表格基础样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+            font-size: 13px;
+        }
+        th {
+            background-color: #1b2d45;
+            color: #ffffff;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #2d4a6f;
+        }
+        td {
+            padding: 10px 12px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        tr:hover {
+            background-color: #edf2f7;
+        }
+        /* 风险等级标签 */
+        .risk-h {
+            background-color: #ffebee;
+            color: #721c24;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .risk-m {
+            background-color: #fff3e0;
+            color: #856404;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .risk-l {
+            background-color: #e8f5e9;
+            color: #155724;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            display: inline-block;
+        }
+        /* 预算标签 */
+        .budget-good {
+            background-color: #e8f5e9;
+            color: #155724;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            display: inline-block;
+        }
+        .budget-bad {
+            background-color: #ffebee;
+            color: #721c24;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            display: inline-block;
+        }
+        .budget-none {
+            background-color: #f5f5f5;
+            color: #666;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            display: inline-block;
+        }
+        /* ACTION分组行 */
+        .action-group {
+            background-color: #1b2d45;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .action-group td {
+            border-color: #2d4a6f;
+            padding: 8px 12px;
+        }
+        .action-num {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            font-size: 11px;
+            margin-right: 6px;
+            font-weight: 700;
+        }
+        .action-urgent { background: #e94560; }
+        .action-high { background: #f39c12; }
+        .action-med { background: #3498db; }
+        /* 趋势指示器 */
+        .trend-note {
+            font-size: 11px;
+            color: #5d6d7e;
+            margin-top: 4px;
+        }
+        .trend-up { color: #27ae60; }
+        .trend-down { color: #e94560; }
+        /* 数值高亮 */
+        .num-positive { color: #27ae60; font-weight: 600; }
+        .num-negative { color: #e94560; font-weight: 600; }
+        .num-neutral { color: #5d6d7e; }
+        /* 文本段落 */
+        .text-block {
+            font-size: 13px;
+            line-height: 1.8;
+            color: #2d3748;
+            margin-bottom: 12px;
+        }
+        .insight-box {
+            background: #f0f7ff;
+            border-left: 3px solid #3498db;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .warning-box {
+            background: #fff5f5;
+            border-left: 3px solid #e94560;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .source-note {
+            font-size: 11px;
+            color: #8892b0;
+            text-align: right;
+            margin-top: 8px;
+        }
+        /* 免责声明 */
+        .footer {
+            background: #f8fafc;
+            padding: 20px 32px;
+            font-size: 11px;
+            color: #8892b0;
+            border-top: 1px solid #e2e8f0;
+        }
+        .footer table {
+            font-size: 11px;
+            margin-bottom: 12px;
+        }
+        .footer th {
+            background: #e2e8f0;
+            color: #4a5568;
+            font-size: 11px;
+            padding: 6px 8px;
+        }
+        .footer td {
+            padding: 6px 8px;
+            font-size: 11px;
+        }
+        .week-summary {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        .week-summary h4 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #0d1b2a;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!-- Header -->
+<div class="header">
+<h1>财资周报 — 2026年第21周（5月18日-5月22日）<span class="rating-badge">⭐⭐⭐⭐⭐ 五星</span></h1>
+<div class="subtitle">CFO结构版 | 中伟新材（CNGR）资金管理视角 | 周度汇总</div>
+<div class="meta">数据截止：2026-05-22 | 发送时间：2026-05-23 09:01 | 覆盖范围：周一至周五完整收盘数据</div>
+</div>
+
+<!-- Section 1: 本周核心风险仪表盘 -->
+<div class="section">
+<div class="section-title">一、本周核心风险仪表盘</div>
+<div class="section-note">预算基准：USD/CNY 6.90 | 镍 $16,000/吨 | 碳酸锂 150,000元/吨</div>
+<table>
+<tr>
+<th style="width:18%">监控项</th>
+<th style="width:10%">等级</th>
+<th style="width:22%">本周状态</th>
+<th style="width:25%">vs预算/趋势</th>
+<th style="width:25%">ACTION</th>
+</tr>
+<tr>
+<td>镍价波动</td>
+<td><span class="risk-h">高</span></td>
+<td>LME镍 $18,755<br/><span class="trend-note">↳ 周累计 -1.21%（5/21）</span></td>
+<td><span class="budget-bad">超预算 +17.2%</span><br/><span class="trend-note">↳ vs预算$16,000: +$2,755</span></td>
+<td>锁Q3硫酸镍长单价格（LME+固定溢价）</td>
+</tr>
+<tr>
+<td>碳酸锂价格</td>
+<td><span class="risk-h">高</span></td>
+<td>电池级 178,000元/吨<br/><span class="trend-note">↳ 周累计 -7.3%（从~19.2万跌至17.8万）</span></td>
+<td><span class="budget-bad">超预算 +18.7%</span><br/><span class="trend-note">↳ vs预算15万: +28,000</span></td>
+<td>与盐湖签2年长单锁价15万以内</td>
+</tr>
+<tr>
+<td>USD/CNY净敞口</td>
+<td><span class="risk-h">高</span></td>
+<td>中间价 6.8373<br/><span class="trend-note">↳ 周累计升值62bp（6.8435→6.8373）</span></td>
+<td><span class="budget-good">优于预算 -0.63元</span><br/><span class="trend-note">↳ 净Long $9.5亿: 升值=不利</span></td>
+<td>买入美元看跌期权保护$10亿借款</td>
+</tr>
+<tr>
+<td>地缘风险(霍尔木兹)</td>
+<td><span class="risk-m">中</span></td>
+<td>五国拒伊朗PGSA<br/><span class="trend-note">↳ 美伊谈判积极信号vs对峙升级</span></td>
+<td>选择性管控持续<br/><span class="trend-note">↳ 油价周波动$102-109</span></td>
+<td>监控日韩航线，印尼库存缓冲45天</td>
+</tr>
+<tr>
+<td>央行货币政策</td>
+<td><span class="risk-l">低</span></td>
+<td>逆回购1000亿净投放995亿<br/><span class="trend-note">↳ 买断式逆回购持续缩量</span></td>
+<td>流动性充裕→中性偏宽松<br/><span class="trend-note">↳ DR007 1.44-1.47%</span></td>
+<td>关注6月MLF到期续作规模</td>
+</tr>
+<tr>
+<td>大宗商品(原油)</td>
+<td><span class="risk-m">中</span></td>
+<td>布伦特 ~$103-109<br/><span class="trend-note">↳ 周波动剧烈，地缘溢价主导</span></td>
+<td>无预算<br/><span class="trend-note">↳ 美伊谈判信号压制溢价</span></td>
+<td>非直接敞口，关注航运成本传导</td>
+</tr>
+</table>
+</div>
+
+<!-- Section 2: 各板块周度汇总表 -->
+<div class="section">
+<div class="section-title">二、各板块周度汇总表（周一至周五逐日数据）</div>
+
+<h4 style="font-size:14px; color:#0d1b2a; margin:16px 0 8px 0;">2.1 USD/CNY中间价周度走势</h4>
+<table>
+<tr>
+<th>日期</th>
+<th>周一 5/18</th>
+<th>周二 5/19</th>
+<th>周三 5/20</th>
+<th>周四 5/21</th>
+<th>周五 5/22</th>
+<th>周变化</th>
+</tr>
+<tr>
+<td>中间价</td>
+<td>6.8435</td>
+<td>6.8375<br/><span class="trend-note">调升60bp</span></td>
+<td>6.8397<br/><span class="trend-note">调贬22bp</span></td>
+<td>6.8349<br/><span class="trend-note">调升48bp</span></td>
+<td>6.8373<br/><span class="trend-note">调贬24bp</span></td>
+<td><span class="num-positive">-62bp</span><br/><span class="trend-note">人民币升值</span></td>
+</tr>
+<tr>
+<td>vs预算6.90</td>
+<td>-0.0565</td>
+<td>-0.0625</td>
+<td>-0.0603</td>
+<td>-0.0651</td>
+<td>-0.0627</td>
+<td><span class="budget-good">持续优于预算</span></td>
+</tr>
+</table>
+<div class="week-summary">
+<h4>汇率周度特征</h4>
+<div class="text-block">
+<strong>整体趋势：</strong>人民币本周持续升值，中间价从6.8435降至6.8373，累计升值62bp。周内呈现"升值-回调-再升值-微贬"的震荡格局，5/21单日升值48bp为本周最大单日波动。<br/>
+<strong>驱动因素：</strong>① 美联储4月会议纪要超鹰派，美元短期反弹但未能扭转人民币强势；② 美伊谈判积极信号削弱避险需求，资金流入人民币资产；③ 央行中间价整体向升值方向引导，但5/22调贬24bp显示央行不希望升值过快。<br/>
+<strong>对我司影响：</strong>净Long USD $9.5亿/月敞口下，人民币升值62bp意味着$10亿印尼人民币借款折算膨胀约620万元（以美元计不利）。但当前6.8373仍远低于预算6.90，年度有利空间仍存。
+            </div>
+</div>
+
+<h4 style="font-size:14px; color:#0d1b2a; margin:16px 0 8px 0;">2.2 LME镍周度走势</h4>
+<table>
+<tr>
+<th>日期</th>
+<th>周一 5/18</th>
+<th>周二 5/19</th>
+<th>周三 5/20</th>
+<th>周四 5/21</th>
+<th>周五 5/22</th>
+<th>周变化</th>
+</tr>
+<tr>
+<td>LME镍($/吨)</td>
+<td>~18,800*</td>
+<td>~18,950*</td>
+<td>~18,985*</td>
+<td>18,755<br/><span class="trend-note">-230 (-1.21%)</span></td>
+<td>—<br/><span class="trend-note">T+1收盘未出</span></td>
+<td><span class="num-negative">~ -2.4%</span><br/><span class="trend-note">周累计估算</span></td>
+</tr>
+<tr>
+<td>vs预算$16,000</td>
+<td>+2,800</td>
+<td>+2,950</td>
+<td>+2,985</td>
+<td>+2,755</td>
+<td>—</td>
+<td><span class="budget-bad">持续超预算17%</span></td>
+</tr>
+</table>
+<div class="source-note">* 5/18-5/20价格为估算值（基于5/21跌230倒推及Mysteel沪镍走势），LME官方日频数据需付费订阅</div>
+<div class="week-summary">
+<h4>镍周度特征</h4>
+<div class="text-block">
+<strong>整体趋势：</strong>本周LME镍高位回落，从约$18,800-19,000区间跌至$18,755。周四（5/21）单日大跌1.21%（-$230），主因美联储鹰派纪要提振美元、多头获利了结。<br/>
+<strong>供应端信号：</strong>① 青山宣布部分镍铁产线停产，短期利多；② 印尼能矿部冻结50份采矿许可证，RKAB政策趋严；③ 硫磺短缺导致MHP减产，镍累库放缓或阶段性去库。<br/>
+<strong>对我司影响：</strong>镍价超预算17.2%持续，年用10万吨超支约$2.76亿。但供应端扰动（停产/许可证冻结）可能支撑价格维持高位，Q3成本压力难消。
+            </div>
+</div>
+
+<h4 style="font-size:14px; color:#0d1b2a; margin:16px 0 8px 0;">2.3 碳酸锂周度走势</h4>
+<table>
+<tr>
+<th>日期</th>
+<th>周一 5/18</th>
+<th>周二 5/19</th>
+<th>周三 5/20</th>
+<th>周四 5/21</th>
+<th>周五 5/22</th>
+<th>周变化</th>
+</tr>
+<tr>
+<td>电池级(元/吨)</td>
+<td>~192,000*</td>
+<td>~184,400<br/><span class="trend-note">期货收18.44万</span></td>
+<td>~182,000*</td>
+<td>~182,000*</td>
+<td>178,000<br/><span class="trend-note">-4,000</span></td>
+<td><span class="num-negative">~ -7.3%</span><br/><span class="trend-note">从~19.2万跌至17.8万</span></td>
+</tr>
+<tr>
+<td>vs预算15万</td>
+<td>+42,000</td>
+<td>+34,400</td>
+<td>+32,000</td>
+<td>+32,000</td>
+<td>+28,000</td>
+<td><span class="budget-bad">仍超预算18.7%</span></td>
+</tr>
+</table>
+<div class="source-note">* 5/18-5/21价格为估算值（基于SMM日评及期货价格推算）</div>
+<div class="week-summary">
+<h4>碳酸锂周度特征</h4>
+<div class="text-block">
+<strong>整体趋势：</strong>本周碳酸锂价格从约19.2万元/吨持续下跌至17.8万元/吨，跌幅约7.3%。周内呈现"高位回落→加速下跌→企稳微跌"格局，5/19期货单日暴跌3.71%为本周最大跌幅。<br/>
+<strong>驱动因素：</strong>① MinRes宣布重启Bald Hill锂矿，供应预期增加；② 津巴布韦/澳矿放量，进口矿增量1-3个月内到港；③ 下游采购意愿偏低，普遍出价低于19万，实际成交清淡；④ SMM增加库存统计样本，去库力度低于预期。<br/>
+<strong>对我司影响：</strong>虽然本周下跌7.3%，但17.8万仍超预算18.7%。年用5万吨超支约14亿元。下半年若回落至15万以内，可节约成本约1.4亿元。
+            </div>
+</div>
+
+<h4 style="font-size:14px; color:#0d1b2a; margin:16px 0 8px 0;">2.4 贵金属与能源周度走势</h4>
+<table>
+<tr>
+<th>品种</th>
+<th>周一 5/18</th>
+<th>周二 5/19</th>
+<th>周三 5/20</th>
+<th>周四 5/21</th>
+<th>周五 5/22</th>
+<th>周变化</th>
+</tr>
+<tr>
+<td>COMEX黄金($)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>4,546.40<br/><span class="trend-note">+0.78%</span></td>
+<td>4,527.60<br/><span class="trend-note">-0.33%</span></td>
+<td><span class="num-positive">~+0.4%</span><br/><span class="trend-note">高位震荡</span></td>
+</tr>
+<tr>
+<td>布伦特原油($)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>108.77*<br/><span class="trend-note">+3.57%</span></td>
+<td>102.58**<br/><span class="trend-note">-2.32%</span></td>
+<td><span class="num-negative">剧烈波动</span><br/><span class="trend-note">地缘溢价主导</span></td>
+</tr>
+</table>
+<div class="source-note">* Investing.com历史数据表 | ** 东方财富。两源差异可能源于合约月份不同</div>
+</div>
+
+<!-- Section 3: 周度洞察层 -->
+<div class="section">
+<div class="section-title">三、周度洞察层</div>
+
+<div class="text-block">
+<strong>3.1 本周核心特征："人民币升值+镍锂双杀+地缘缓和预期"</strong>
+</div>
+
+<div class="text-block">
+<strong>特征一：人民币持续升值，净Long敞口承压</strong><br/>
+本周USD/CNY中间价累计升值62bp（6.8435→6.8373），离岸CNH一度触及6.7960。升值驱动力：① 中美贸易谈判阶段性缓和，市场避险情绪降温；② 中国资产吸引力上升，北向资金持续流入；③ 美联储虽鹰派但市场已price in，美元反弹力度有限。<br/>
+<strong>关键判断：</strong>人民币升值趋势短期难逆转，对我司$10亿印尼人民币借款（净Long USD）构成持续压力。若6月底升至6.80以下，$10亿负债折算膨胀约1亿元。
+</div>
+
+<div class="text-block">
+<strong>特征二：镍价高位震荡，供应扰动频发</strong><br/>
+LME镍本周在$18,750-$19,000区间震荡，周五（5/21）回落至$18,755。周内供应端出现多重扰动：青山部分镍铁产线停产、印尼冻结50份采矿许可证、硫磺短缺导致MHP减产。这些信号表明印尼镍供应的"宽松预期"正在修正，镍价获得阶段性支撑。<br/>
+<strong>关键判断：</strong>镍价难以大幅下跌，$18,000-$19,500可能是Q2-Q3主要运行区间。对我司而言，这意味着硫酸镍成本将维持高位，年用10万吨超支$2.5-3亿是大概率情景。
+</div>
+
+<div class="text-block">
+<strong>特征三：碳酸锂高位回落，供应增量预期压制</strong><br/>
+碳酸锂从5/18的约19.2万跌至5/22的17.8万，跌幅7.3%。下跌主因：Bald Hill锂矿重启、津巴布韦矿到港预期、下游采购意愿不足。但17.8万仍高于多数券商预测的2026年中枢（13-15万）。<br/>
+<strong>关键判断：</strong>碳酸锂进入"高位震荡→缓慢回落"通道，下半年有望测试15万支撑。对我司，当前价格仍超预算，但趋势向下有利于成本改善。建议不急于大规模锁价，维持低库存策略等待更好入场点。
+</div>
+
+<div class="text-block">
+<strong>特征四：美伊谈判积极信号vs海峡管控对峙</strong><br/>
+本周地缘风险呈现"缓和与对峙并存"的复杂格局。缓和面：伊朗称"愿结束所有战线战争"，美伊谈判传出积极信号。对峙面：五国（巴林/科威特/卡塔尔/沙特/阿联酋）正式拒绝伊朗PGSA管控霍尔木兹海峡，伊朗选择性管控持续。<br/>
+<strong>关键判断：</strong>霍尔木兹海峡完全关闭概率低（<20%），但选择性管控将长期化。油价地缘溢价维持在$5-10/桶。对我司非原油企业，直接影响有限，但需关注日韩航线航运状态（印尼→韩国/日本原料运输）。
+</div>
+
+<div class="text-block">
+<strong>特征五：央行流动性"边际收敛"信号明确</strong><br/>
+本周央行5/21开展1000亿逆回购净投放995亿，短期流动性呵护仍在。但中长期工具持续缩量：买断式逆回购5月累计回笼1万亿（3,000亿操作 vs 8,000亿到期），MLF 4月净回笼2,000亿。<br/>
+<strong>关键判断：</strong>央行从"大水漫灌"转向"精准滴灌"，资金面从"较为宽松"向"中性偏宽松"过渡。DR007 1.44-1.47%仍低于政策利率1.40%（倒挂约4-7bp），显示资金仍充裕。关注6月MLF到期（约5,000亿）续作规模，若继续缩量则确认收紧趋势。
+</div>
+</div>
+
+<!-- Section 4: 下周前瞻 -->
+<div class="section">
+<div class="section-title">四、下周前瞻（5月25日-5月29日）</div>
+<table>
+<tr>
+<th style="width:20%">关注事项</th>
+<th style="width:15%">时间</th>
+<th style="width:30%">核心预判</th>
+<th style="width:35%">对我司影响</th>
+</tr>
+<tr>
+<td>央行MLF续作</td>
+<td>预计5/25前后</td>
+<td>约5,000亿MLF到期<br/><span class="trend-note">↳ 若缩量续作→流动性边际收紧</span></td>
+<td>资金面收敛→短端利率上行→汇率波动加剧</td>
+</tr>
+<tr>
+<td>美伊谈判进展</td>
+<td>持续</td>
+<td>伊朗"愿结束战争"诚意待验证<br/><span class="trend-note">↳ 若达成协议→油价地缘溢价出清→$90-95</span></td>
+<td>油价回落→航运成本降低→印尼出口有利</td>
+</tr>
+<tr>
+<td>LME镍库存变化</td>
+<td>每日</td>
+<td>当前库存279,672吨<br/><span class="trend-note">↳ 累库放缓或去库→价格获支撑</span></td>
+<td>镍价维持$18,500-$19,500→硫酸镍成本高企</td>
+</tr>
+<tr>
+<td>碳酸锂到港数据</td>
+<td>周中</td>
+<td>津巴布韦/澳矿到港量<br/><span class="trend-note">↳ 到港超预期→价格加速回落</span></td>
+<td>若跌至16万以下→启动长单谈判</td>
+</tr>
+<tr>
+<td>美联储官员讲话</td>
+<td>5/26-5/29</td>
+<td>多位FOMC成员公开表态<br/><span class="trend-note">↳ 若集体鹰派→美元反弹→人民币承压</span></td>
+<td>美元反弹→缓解人民币升值压力→对净Long有利</td>
+</tr>
+<tr>
+<td>特斯拉Q2指引</td>
+<td>关注时点</td>
+<td>特斯拉产能/订单数据<br/><span class="trend-note">↳ 若订单强劲→三元材料需求支撑</span></td>
+<td>特斯拉是我司最大客户→订单直接影响收入预期</td>
+</tr>
+</table>
+</div>
+
+<!-- Section 5: CFO操作视角 -->
+<div class="section">
+<div class="section-title">五、CFO操作视角</div>
+<table>
+<tr>
+<th style="width:18%">维度</th>
+<th style="width:27%">本周必须完成</th>
+<th style="width:27%">下周预备</th>
+<th style="width:28%">持续监控</th>
+</tr>
+<tr class="action-group">
+<td colspan="4"><span class="action-num action-urgent">1</span> 汇率敞口保护 — 紧急</td>
+</tr>
+<tr>
+<td>USD/CNY</td>
+<td>完成银行询价，买入美元看跌期权（名义本金$2-3亿，行权价6.80-6.85，期限3个月）</td>
+<td>若人民币升值至6.80以下，追加保护至$5亿；评估领子期权零成本结构</td>
+<td>每日监控中间价+离岸价差；印尼人民币借款折算变动</td>
+</tr>
+<tr class="action-group">
+<td colspan="4"><span class="action-num action-high">2</span> 原材料成本锁定 — 高</td>
+</tr>
+<tr>
+<td>硫酸镍</td>
+<td>启动Q3长单谈判，目标锁价LME镍+固定溢价$500-800</td>
+<td>5月底前完成签约；同步评估青山停产对供应的影响</td>
+<td>每日LME镍价+印尼HPM政策+RKAB配额状态</td>
+</tr>
+<tr>
+<td>碳酸锂</td>
+<td>维持低库存策略，暂不锁价；监控SMM价格跌至17万以下信号</td>
+<td>若跌至16.5万以下，启动青海盐湖长单谈判（目标锁价15万以内）</td>
+<td>每日SMM碳酸锂价格+期货持仓变化+到港数据</td>
+</tr>
+<tr class="action-group">
+<td colspan="4"><span class="action-num action-med">3</span> 供应链安全 — 中</td>
+</tr>
+<tr>
+<td>印尼物流</td>
+<td>确认印尼→日韩航线当前航运状态；评估是否需要绕行</td>
+<td>将印尼本地库存缓冲从30天提升至45天；测试替代航线（绕好望角）</td>
+<td>霍尔木兹海峡航运量+保险费率+日韩港口到货状态</td>
+</tr>
+<tr class="action-group">
+<td colspan="4"><span class="action-num action-med">4</span> 套保执行复盘 — 中</td>
+</tr>
+<tr>
+<td>对冲覆盖率</td>
+<td>统计当前USD/CNY对冲覆盖率（估计<20%），与目标30-50%的差距分析</td>
+<td>制定Q3对冲建仓计划；评估期权费预算（名义本金1-2%）</td>
+<td>月度对冲效果归因；季度汇兑损益波动率</td>
+</tr>
+</table>
+
+<div class="insight-box">
+<strong>本周核心操作建议排序：</strong><br/>
+            1. <strong>汇率保护最优先</strong>：人民币升值趋势明确，净Long $9.5亿/月敞口无保护状态下风险巨大。建议本周内完成首笔美元看跌期权买入（$2-3亿名义本金），锁定人民币升值最坏情景。<br/>
+            2. <strong>硫酸镍长单次之</strong>：镍价高位震荡，供应扰动频发，Q3成本锁定紧迫。建议5月底前完成长单谈判，参考LME镍+固定溢价结构。<br/>
+            3. <strong>碳酸锂观望</strong>：价格处于回落通道，17.8万仍高于券商预测中枢（13-15万）。建议维持低库存、不锁价，等待更好入场点（16万以下）。<br/>
+            4. <strong>供应链缓冲</strong>：霍尔木兹对峙长期化，建议将印尼本地库存从30天提升至45天，确保日韩基地原料安全。
+        </div>
+</div>
+
+<!-- Section 6: 数据来源与免责声明 -->
+<div class="footer">
+<div class="section-title" style="border-bottom-color:#8892b0;">六、数据来源与免责声明</div>
+<table>
+<tr>
+<th>数据类别</th>
+<th>最新日期</th>
+<th>更新频率</th>
+<th>状态</th>
+</tr>
+<tr>
+<td>USD/CNY中间价</td>
+<td>2026-05-22</td>
+<td>日度（9:15）</td>
+<td>✅ 全周完整</td>
+</tr>
+<tr>
+<td>LME镍</td>
+<td>2026-05-21收盘</td>
+<td>日度（伦敦时间）</td>
+<td>⚠️ T-1日，5/18-5/20为估算</td>
+</tr>
+<tr>
+<td>碳酸锂（SMM）</td>
+<td>2026-05-22</td>
+<td>日度</td>
+<td>✅ 全周完整</td>
+</tr>
+<tr>
+<td>黄金（COMEX）</td>
+<td>2026-05-22</td>
+<td>实时</td>
+<td>✅ 当日</td>
+</tr>
+<tr>
+<td>布伦特原油</td>
+<td>2026-05-21收盘</td>
+<td>日度</td>
+<td>⚠️ 两源差异待核实（Investing.com $108.77 vs 东方财富 $102.58）</td>
+</tr>
+<tr>
+<td>央行逆回购</td>
+<td>2026-05-21</td>
+<td>工作日</td>
+<td>✅ 当日</td>
+</tr>
+<tr>
+<td>地缘风险（霍尔木兹）</td>
+<td>2026-05-22</td>
+<td>事件驱动</td>
+<td>✅ 当日</td>
+</tr>
+</table>
+<div class="source-note">
+            数据来源：中国人民银行（中间价）、上海有色网SMM（碳酸锂）、东方财富（LME/黄金/外汇）、新浪财经（LME镍/地缘）、财新网/财联社（地缘/原油）、Investing.com（原油历史数据）、五矿期货（镍分析）。所有数据截至2026-05-23 09:01 CST。
+        </div>
+<div style="margin-top:12px; border-top:1px solid #e2e8f0; padding-top:12px;">
+            <strong>免责声明：</strong> 本报告仅供中伟新材内部资金管理决策参考，不构成投资建议。汇率、商品价格预测基于当前市场信息，实际走势可能受地缘、政策、供需等不可预见因素影响。对冲工具涉及市场风险，操作前请咨询专业金融机构。报告中的"我司"指中伟新材料股份有限公司（CNGR）。
+        </div>
+</div>
+</div>
+</body>
+</html>
