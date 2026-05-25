@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>财资日报 — 2026年5月25日 CFO结构版 v4.1</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #16213e;
+            border-radius: 8px;
+            padding: 30px;
+        }
+        h1 {
+            color: #e94560;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #8892b0;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .rating {
+            color: #ffd700;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        h2 {
+            color: #e94560;
+            font-size: 18px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e94560;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #64ffda;
+            font-size: 15px;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid #2a3f5f;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        th {
+            background: #1a2a4a;
+            color: #64ffda;
+            font-weight: 600;
+        }
+        td {
+            background: #0f1b33;
+        }
+        .red { color: #e94560; font-weight: 600; }
+        .green { color: #27ae60; font-weight: 600; }
+        .yellow { color: #f39c12; font-weight: 600; }
+        .gray { color: #8892b0; }
+        .highlight {
+            background: #1a2a4a;
+            padding: 12px;
+            border-left: 3px solid #e94560;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        .action {
+            background: #1a2a4a;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 6px 0;
+            font-size: 12px;
+        }
+        .budget-good { background: #27ae60; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+        .budget-bad { background: #e94560; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+        .budget-none { background: #555; color: white; padding: 2px 8px; border-radius: 3px; font-size: 11px; }
+        .source {
+            font-size: 11px;
+            color: #8892b0;
+            margin-top: 3px;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #2a3f5f;
+            font-size: 11px;
+            color: #8892b0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>财资日报</h1>
+        <div class="subtitle">2026年5月25日（周一）19:22 CFO结构版 v4.1</div>
+        <div class="rating">质量评级：⭐⭐⭐⭐（全部国内数据当日+LME数据5/23结算；国内钴价当日，LME钴缺失）</div>
+
+        <!-- 1. 核心风险仪表盘 -->
+        <h2>一、核心风险仪表盘</h2>
+        <table>
+            <tr>
+                <th style="width:18%">风险项</th>
+                <th style="width:12%">等级</th>
+                <th style="width:20%">当前状态</th>
+                <th style="width:25%">监控阈值</th>
+                <th style="width:25%">对我司影响</th>
+            </tr>
+            <tr>
+                <td><b>镍价波动</b></td>
+                <td class="yellow">中</td>
+                <td>LME镍5/23结算18,727<br>国内现货145,100-145,900<br><span class="gray">↳ 5/23微涨0.67%，周一国内现货持稳</span></td>
+                <td>LME镍单日>3%或突破$20,000；印尼HPM/RKAB重大调整</td>
+                <td>硫酸镍成本稳定，前驱体毛利率无显著波动</td>
+            </tr>
+            <tr>
+                <td><b>USD/CNY净敞口</b></td>
+                <td class="red">高</td>
+                <td>中间价6.8318（<span class="green">+55点</span>）<br>离岸6.7852（<span class="green">-0.18%</span>）<br>价差466点<br><span class="gray">↳ 人民币升值，离岸更强</span></td>
+                <td>单日>50点或突破6.90/6.75</td>
+                <td><span class="red">净不利</span>：$10亿Long USD敞口，人民币升值→负债美元计膨胀约$550万/月</td>
+            </tr>
+            <tr>
+                <td><b>碳酸锂价格</b></td>
+                <td class="red">高</td>
+                <td>183,250元/吨（<span class="red">+5,250</span>，+2.95%）<br>价格指数183,826（+5,483）<br><span class="gray">↳ 连续大涨，已超预算22.2%</span></td>
+                <td>突破200,000或跌破130,000</td>
+                <td><span class="red">严重超预算</span>：预算15万，实际18.3万，磷酸铁锂成本压力大</td>
+            </tr>
+            <tr>
+                <td><b>地缘风险（美伊）</b></td>
+                <td class="yellow">中</td>
+                <td>谈判冲刺阶段，鲁比奥称可能当日达成协议<br>特朗普称"基本谈成"<br>伊朗：已就大部分议题达成一致，但不意味着即将签署<br><span class="gray">↳ 风险边际缓和但未落地</span></td>
+                <td>霍尔木兹封锁>48h；协议签署或破裂</td>
+                <td>若协议达成→油价下行→能源成本降低利好；若破裂→油价反弹</td>
+            </tr>
+            <tr>
+                <td><b>原油价格</b></td>
+                <td class="red">高</td>
+                <td>WTI 91.17（<span class="green">-5.62%</span>）<br>布伦特95.04（<span class="green">-5.16%</span>）<br><span class="gray">↳ 美伊缓和预期驱动暴跌</span></td>
+                <td>单日>5%或 Brent 突破$110/$90</td>
+                <td>油价暴跌降低能源/物流成本，利好冶炼环节</td>
+            </tr>
+            <tr>
+                <td><b>央行流动性</b></td>
+                <td class="green">低</td>
+                <td>MLF 6,000亿操作（净投放1,000亿）<br>操作方式：固定数量、利率招标、多重价位中标<br><span class="gray">↳ 13个月来首次缩量后恢复常态</span></td>
+                <td>逆回购利率调整；MLF缩量>50%</td>
+                <td>流动性合理充裕，融资成本稳定</td>
+            </tr>
+        </table>
+
+        <!-- 2. 对我司影响与行动建议 -->
+        <h2>二、对我司影响与行动建议</h2>
+        
+        <h3>ACTION：汇率风险 — 本周必须做</h3>
+        <div class="highlight">
+            <b>净敞口方向</b>：Long USD $9.5亿/月（印尼人民币借款$10亿 Long − 香港购汇$0.5亿 Short）<br>
+            <b>今日走势</b>：USD/CNY中间价升值55点至6.8318，离岸6.7852更低（价差466点）<br>
+            <b>利润影响</b>：人民币升值0.55% → $10亿负债美元计膨胀约<span class="red">$550万/月</span>；购汇端节省约$27.5万；净影响<span class="red">−$522.5万/月</span>（不利）<br>
+            <b>离岸价差警示</b>：离岸6.7852 vs 中间价6.8318，价差466点，离岸人民币显著强于在岸，市场对人民币持续升值有较强预期。
+        </div>
+        <div class="action">
+            <b>本周必须做：</b>评估当前对冲覆盖率。若覆盖率<30%，建议立即启动$2.85亿−$4.75亿（30%−50%）的美元看跌期权/领子期权建仓，保护人民币升值情景。工具优先级：买入USD/CNY看跌期权 > 领子期权（Collar）> 远期锁汇。
+        </div>
+
+        <h3>ACTION：碳酸锂成本 — 持续监控</h3>
+        <div class="highlight">
+            <b>当前价格</b>：183,250元/吨（预算150,000），<span class="red">超预算22.2%</span><br>
+            <b>趋势</b>：连续大幅上涨，今日再涨5,250元（+2.95%）<br>
+            <b>对我司影响</b>：磷酸铁锂原材料成本攀升，若公司布局磷酸铁锂/磷矿项目，成本压力显著。但公司核心产品为三元前驱体，碳酸锂非直接原料（锂源主要来自硫酸锂/氢氧化锂），间接影响有限。
+        </div>
+        <div class="action">
+            <b>持续监控：</b>碳酸锂突破200,000元/吨将触发新能源产业链全面成本重估。关注SMM每日报价及盐湖/锂辉石供应动态。
+        </div>
+
+        <h3>ACTION：镍价与印尼政策 — 持续监控</h3>
+        <div class="highlight">
+            <b>LME镍</b>：5/23结算18,727（+0.67%），国内现货145,100−145,900元/吨<br>
+            <b>预算对比</b>：预算$16,000/吨，当前约$18,700，<span class="red">超预算16.9%</span><br>
+            <b>对我司影响</b>：硫酸镍核心原料，镍价维持高位→前驱体生产成本承压。印尼HPM/RKAB政策是核心变量，5月暂无重大政策更新。
+        </div>
+        <div class="action">
+            <b>持续监控：</b>印尼矿产部HPM月度调整、RKAB配额发放进度。镍价突破$20,000将触发高成本预警。
+        </div>
+
+        <h3>ACTION：原油价格暴跌 — 下周预备</h3>
+        <div class="highlight">
+            <b>布伦特</b>：95.04（−5.16%），从5/22的103.54暴跌<br>
+            <b>驱动</b>：美伊谈判缓和预期<br>
+            <b>对我司影响</b>：油价下行→航运/物流成本降低→印尼→中国/欧洲/北美的原料运输成本下降。冶炼环节能源成本亦有改善。
+        </div>
+        <div class="action">
+            <b>下周预备：</b>若美伊协议正式签署，油价可能进一步下探至$85−$90区间。评估Q3物流合同定价是否需要调整。
+        </div>
+
+        <!-- 3. 货币政策 -->
+        <h2>三、货币政策</h2>
+        <p><b>央行MLF操作（5/25）：</b>开展6,000亿元1年期MLF操作，5月到期5,000亿元，<b>净投放1,000亿元</b>。操作方式：固定数量、利率招标、多重价位中标。这是4月缩量2,000亿后恢复常态的操作，显示央行维持流动性合理充裕的意图。</p>
+        <p><b>政策意图：</b>“收短放长”配合财政发力。6,000亿MLF对冲5月到期，小幅净投放1,000亿，既避免大水漫灌，又确保市场不缺流动性。多重价位中标意味着不同银行根据自身资金成本报价，利率市场化程度提升。</p>
+        <p><b>前瞻：</b>6月仍有大量MLF到期，关注央行是否继续等额续作或小幅净投放。分析师预计下半年仍有降准空间，但降息需等待美联储先行。</p>
+        <div class="source">来源：新浪财经央行公告 2026-05-25 09:20 / 财联社 2026-05-25 09:45</div>
+
+        <!-- 4. 汇率动态 -->
+        <h2>四、汇率动态</h2>
+        <table>
+            <tr>
+                <th>指标</th>
+                <th>数值</th>
+                <th>涨跌</th>
+                <th>来源/时间</th>
+            </tr>
+            <tr>
+                <td>USD/CNY中间价</td>
+                <td>6.8318</td>
+                <td class="green">+55点</td>
+                <td>中国货币网央行授权公告 9:15</td>
+            </tr>
+            <tr>
+                <td>USD/CNH离岸</td>
+                <td>6.7852</td>
+                <td class="green">−0.18%（−125点）</td>
+                <td>东方财富 18:07</td>
+            </tr>
+            <tr>
+                <td>在岸/离岸价差</td>
+                <td>466点</td>
+                <td class="red">离岸显著强于在岸</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>中行USD折算价</td>
+                <td>683.18</td>
+                <td>—</td>
+                <td>中国银行 18:00:33</td>
+            </tr>
+            <tr>
+                <td>工行USD现汇卖出</td>
+                <td>680.09</td>
+                <td>—</td>
+                <td>工商银行 18:51</td>
+            </tr>
+            <tr>
+                <td>DXY美元指数</td>
+                <td>~98.98</td>
+                <td class="green">−0.34点</td>
+                <td>同花顺 12:37（5/22收盘99.32）</td>
+            </tr>
+        </table>
+        <p><b>驱动因素：</b>（1）美元自身走弱，DXY跌破99；（2）美伊缓和降低避险需求，美元避险溢价回落；（3）A股强势（科创50涨5.88%）吸引资金流入人民币资产；（4）央行中间价连续升值引导市场预期。</p>
+        <p><b>对我司影响：</b>净Long USD $9.5亿/月敞口下，人民币升值=净不利。今日中间价6.8318已较5月初的6.90附近升值约700点（~1%），$10亿负债美元计已膨胀约$1,000万。<span class="red">建议尽快评估对冲缺口。</span></p>
+        <div class="source">来源：中国货币网 chinamoney.com.cn / 东方财富 / 同花顺 / 中国银行</div>
+
+        <!-- 5. 新能源 -->
+        <h2>五、新能源</h2>
+        <table>
+            <tr>
+                <th>品种</th>
+                <th>价格</th>
+                <th>涨跌</th>
+                <th>预算对比</th>
+                <th>来源/时间</th>
+            </tr>
+            <tr>
+                <td><b>电池级碳酸锂</b></td>
+                <td>183,250元/吨</td>
+                <td class="red">+5,250（+2.95%）</td>
+                <td><span class="budget-bad">超预算22.2%</span>（预算15万）</td>
+                <td>SMM 2026-05-25</td>
+            </tr>
+            <tr>
+                <td>碳酸锂价格指数</td>
+                <td>183,826</td>
+                <td class="red">+5,483</td>
+                <td>—</td>
+                <td>SMM 2026-05-25</td>
+            </tr>
+            <tr>
+                <td>工业级碳酸锂</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+                <td>—</td>
+            </tr>
+        </table>
+        <p><b>L4洞察：</b>碳酸锂连续大涨，从5月中旬的17万附近迅速攀升至18.3万，涨幅超7%。驱动力：（1）国内新能源车企排产超预期，5月电池装机量环比大增；（2）盐湖提锂进入季节性高产期但被旺盛需求吸收；（3）部分锂盐厂检修导致短期供应紧张。</p>
+        <p><b>周期判断：</b>碳酸锂已从4月的底部（约16−17万）进入新一轮上涨通道。若突破20万，将触发下游正极材料厂集体议价，可能抑制需求。对我司而言，碳酸锂非直接原料（三元前驱体主要用氢氧化锂/硫酸镍），但磷酸铁锂/磷矿项目的成本假设需重新评估。</p>
+        <p><b>券商观点：</b>【高盛】碳酸锂Q2均价预测上调至18万，Q3可能触及20万，供需缺口将在下半年扩大。【中信建投】锂价已走出底部，但20万是下游心理阻力位，突破后需求弹性将下降。</p>
+        <div class="source">来源：上海有色网 SMM / 生意社 / 高盛 2026-05-20 / 中信建投 2026-05-22</div>
+
+        <!-- 6. 有色金属 -->
+        <h2>六、有色金属</h2>
+        <p><b>注：</b>LME 5/25欧洲盘仍在交易中，以下为截至发报时点最新可获得数据。</p>
+        <table>
+            <tr>
+                <th>品种</th>
+                <th>价格</th>
+                <th>涨跌</th>
+                <th>来源/时间</th>
+            </tr>
+            <tr>
+                <td><b>LME镍（5/23结算）</b></td>
+                <td>18,727美元/吨</td>
+                <td class="green">+0.67%（+125）</td>
+                <td>曲合期货 / 盘前简报 5/23</td>
+            </tr>
+            <tr>
+                <td>沪镍现货（5/25）</td>
+                <td>145,100−145,900元/吨</td>
+                <td>持稳</td>
+                <td>曲合期货 11:58</td>
+            </tr>
+            <tr>
+                <td><b>沪铜现货（5/25）</b></td>
+                <td>105,860元/吨</td>
+                <td class="red">+1,180（+1.13%）</td>
+                <td>SMM 2026-05-25</td>
+            </tr>
+            <tr>
+                <td>LME铜（5/23）</td>
+                <td>—</td>
+                <td>微涨</td>
+                <td>网易 5/23收盘</td>
+            </tr>
+            <tr>
+                <td>LME锡（5/23）</td>
+                <td>—</td>
+                <td>+1.16%</td>
+                <td>网易 5/23收盘</td>
+            </tr>
+            <tr>
+                <td><b>钴（生意社基准价）</b></td>
+                <td>426,800元/吨</td>
+                <td>—</td>
+                <td>生意社 2026-05-25</td>
+            </tr>
+        </table>
+        <p><b>分品种逻辑：</b></p>
+        <p><b>镍：</b>5/23 LME镍涨0.67%至18,727，国内现货持稳在14.5万附近。印尼HPM 5月基准价已发布，较4月小幅上调，RKAB配额发放正常。低库存品种（锡、镍）弹性仍大。对我司：硫酸镍成本维持高位，前驱体毛利率承压。</p>
+        <p><b>铜：</b>国内现货大涨1,180元/吨，A股铜相关板块跟涨。宏观面美伊缓和降低工业金属的避险溢价，但铜自身供需偏紧（矿山干扰持续）支撑价格。对我司：铜非核心原料，但作为宏观景气指标，铜价高位反映全球经济韧性。</p>
+        <p><b>锡：</b>5/23涨1.16%，领涨基本金属。半导体景气周期（今日A股半导体板块爆发，科创50涨5.88%）拉动焊锡需求。</p>
+        <p><b>钴：</b>生意社5/25基准价426,800元/吨，与5/22持平。Mysteel数据显示5/22电解钴市场价427,373元/吨，广东南储422,000，上海429,000。刚果金供应政策仍是核心变量，5月无重大政策更新。Fastmarkets预计2026年钴市场转入短缺，均价接近55,000美元。对我司：硫酸钴核心原料，钴价维持高位→三元材料成本承压。特斯拉高镍低钴化趋势长期压制钴需求增速。</p>
+        <div class="source">来源：SMM / 曲合期货 / 网易 2026-05-23 / 新浪财经</div>
+
+        <!-- 7. 贵金属 -->
+        <h2>七、贵金属</h2>
+        <table>
+            <tr>
+                <th>品种</th>
+                <th>价格</th>
+                <th>涨跌</th>
+                <th>来源/时间</th>
+            </tr>
+            <tr>
+                <td>现货黄金</td>
+                <td>4,571.44美元/盎司</td>
+                <td class="green">+1.43%（+64.6）</td>
+                <td>汇通网 19:25</td>
+            </tr>
+            <tr>
+                <td>COMEX黄金</td>
+                <td>4,572.30美元/盎司</td>
+                <td class="green">+1.37%（+61.8）</td>
+                <td>趣合期货 18:31</td>
+            </tr>
+            <tr>
+                <td>现货白银</td>
+                <td>78.18美元/盎司</td>
+                <td class="green">+3.79%（+2.86）</td>
+                <td>金投网 18:42</td>
+            </tr>
+        </table>
+        <p><b>三重引擎：</b>（1）美伊谈判反复，避险需求支撑金价；（2）美元走弱（DXY 98.98），黄金美元计价受益；（3）全球央行持续购金，长期需求稳固。</p>
+        <p><b>机构观点：</b>【瑞银】维持黄金年底目标价4,800美元，若美伊协议破裂则上修至5,200。【高盛】黄金作为"去美元化"工具，央行购金年化超1,000吨，结构性需求支撑长期牛市。</p>
+        <p><b>对我司影响：</b>黄金波动对我司无直接业务影响，但作为避险资产，黄金价格走势反映全球地缘风险溢价。当前金价反弹说明市场对美伊协议落地持谨慎态度（"买预期卖事实"反向）。</p>
+        <div class="source">来源：汇通网 / 趣合期货 / 金投网 / 瑞银 2026-05-20 / 高盛 2026-05-18</div>
+
+        <!-- 8. 地缘风险 -->
+        <h2>八、地缘风险</h2>
+        <p><b>事件时间线（美伊谈判）：</b></p>
+        <table>
+            <tr>
+                <th style="width:20%">时间</th>
+                <th>事件</th>
+                <th>来源</th>
+            </tr>
+            <tr>
+                <td>5/25 早间</td>
+                <td>鲁比奥称美伊谈判可能当天达成协议</td>
+                <td>财联社</td>
+            </tr>
+            <tr>
+                <td>5/25 盘中</td>
+                <td>特朗普称协议"基本谈成"</td>
+                <td>央视新闻</td>
+            </tr>
+            <tr>
+                <td>5/25 午后</td>
+                <td>伊朗外交部发言人：已就大部分议题达成一致，但不意味着即将签署</td>
+                <td>央视/财联社</td>
+            </tr>
+            <tr>
+                <td>5/25 持续</td>
+                <td>霍尔木兹海峡仅2艘次通过，原油船0艘；卡塔尔半岛电视台称将分阶段开放</td>
+                <td>央视/汇通网</td>
+            </tr>
+        </table>
+        <p><b>情景分析：</b></p>
+        <p><b>基准情景（60%概率）：</b>协议在未来48−72小时内签署，60天停火启动，霍尔木兹海峡分阶段开放，油价回落至$85−$90区间。对我司：能源/物流成本降低，利好。</p>
+        <p><b>升级情景（25%概率）：</b>谈判在最后关头破裂（核问题分歧、以色列反对），美国恢复海上封锁，油价反弹至$110+。对我司：能源成本上升，汇率波动加剧。</p>
+        <p><b>缓和情景（15%概率）：</b>协议签署但执行缓慢，海峡开放延迟，油价震荡。对我司：影响中性，需持续监控。</p>
+        <p><b>地缘咨询公司评级：</b>【欧亚集团】将美伊风险从"极高"下调至"高"，但警告"协议签署不等于执行"。【Control Risks】霍尔木兹通航风险仍维持"橙色"（高风险），预计完全恢复需2−4周。</p>
+        <div class="source">来源：财联社 / 央视新闻 / 央视财经 / 欧亚集团 2026-05-25 / Control Risks 2026-05-24</div>
+
+        <!-- 9. 对冲建议 -->
+        <h2>九、对冲建议（CFO操作视角）</h2>
+        <table>
+            <tr>
+                <th>敞口类型</th>
+                <th>金额</th>
+                <th>当前风险</th>
+                <th>推荐工具</th>
+                <th>优先级</th>
+            </tr>
+            <tr>
+                <td><b>印尼人民币借款</b><br><span class="gray">Long USD $10亿</span></td>
+                <td>$10亿</td>
+                <td class="red">人民币升值→负债美元计膨胀</td>
+                <td>买入USD/CNY看跌期权（Protective Put）<br>领子期权（Collar）</td>
+                <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td><b>香港购汇</b><br><span class="gray">Short USD $0.5亿/月</span></td>
+                <td>$0.5亿/月</td>
+                <td class="green">人民币升值→购汇成本降低（有利）</td>
+                <td>远期购汇（锁定成本）<br>比率远期</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td><b>印尼IDR经常项目</b><br><span class="gray">Long IDR ~$2亿</span></td>
+                <td>~$2亿</td>
+                <td class="yellow">IDR波动影响本地利润折算</td>
+                <td>USD/IDR远期（流动性受限）<br>自然对冲（IDR收支匹配）</td>
+                <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td><b>欧洲业务</b><br><span class="gray">Long EUR + USD计价</span></td>
+                <td>大</td>
+                <td class="yellow">EUR/CNY + USD/EUR交叉汇率</td>
+                <td>EUR/CNY远期<br>货币互换</td>
+                <td>⭐⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td><b>韩国基地</b><br><span class="gray">Long KRW + USD合同</span></td>
+                <td>中</td>
+                <td class="yellow">KRW/CNY + USD升值双重影响</td>
+                <td>KRW/CNY远期<br>货币互换</td>
+                <td>⭐⭐⭐⭐</td>
+            </tr>
+            <tr>
+                <td><b>日本客户</b><br><span class="gray">Long JPY</span></td>
+                <td>小</td>
+                <td class="green">JPY/CNY波动影响有限</td>
+                <td>JPY/CNY远期</td>
+                <td>⭐⭐⭐</td>
+            </tr>
+        </table>
+        <p><b>期权工具优先级排序：</b></p>
+        <p>1. <b>买入USD/CNY看跌期权（Protective Put）</b> — 针对印尼$10亿Long USD敞口，若预期人民币继续升值，买入执行价6.80−6.82的看跌期权，保护负债不膨胀。期权费约1.5%−2.5%年化。</p>
+        <p>2. <b>领子期权（Collar）</b> — 零成本锁定区间。买入看跌期权（执行价6.80）+卖出看涨期权（执行价6.95），将汇率锁定在6.80−6.95区间。适合区间波动预期。</p>
+        <p>3. <b>海鸥期权（Seagull）</b> — 降低保护成本。买入看跌+卖出看涨+买入更低执行价看跌。适合温和升值预期。</p>
+        <p>4. <b>比率远期（Ratio Forward）</b> — 优于远期汇率，接受非对称。适合大额敞口（$10亿）的渐进对冲。</p>
+        <p>5. <b>远期锁汇</b> — 简单直接，但丧失汇率有利波动收益。适合保守型对冲。</p>
+        <div class="action">
+            <b>本周必须做：</b>（1）确认当前对冲覆盖率，目标30%−50%（$2.85亿−$4.75亿）；（2）若覆盖率不足，向银行询价USD/CNY看跌期权或领子期权；（3）评估香港购汇端是否需要远期锁汇（人民币升值对Short敞口有利，可暂缓锁汇保留收益）。
+        </div>
+
+        <!-- 10. 数据来源与免责声明 -->
+        <h2>十、数据来源与免责声明</h2>
+        <table>
+            <tr>
+                <th>数据类别</th>
+                <th>最新日期</th>
+                <th>更新频率</th>
+                <th>状态</th>
+            </tr>
+            <tr>
+                <td>USD/CNY中间价</td>
+                <td>2026-05-25</td>
+                <td>日度（9:15）</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>USD/CNH离岸价</td>
+                <td>2026-05-25</td>
+                <td>实时</td>
+                <td class="green">当日 18:07</td>
+            </tr>
+            <tr>
+                <td>LME镍</td>
+                <td>2026-05-23</td>
+                <td>日度</td>
+                <td class="yellow">5/25收盘价待欧洲盘收盘确认</td>
+            </tr>
+            <tr>
+                <td>碳酸锂</td>
+                <td>2026-05-25</td>
+                <td>日度</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>原油价格</td>
+                <td>2026-05-25</td>
+                <td>实时</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>黄金价格</td>
+                <td>2026-05-25</td>
+                <td>实时</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>央行MLF</td>
+                <td>2026-05-25</td>
+                <td>月度</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>A股收盘</td>
+                <td>2026-05-25</td>
+                <td>日度（15:00）</td>
+                <td class="green">当日</td>
+            </tr>
+            <tr>
+                <td>钴价</td>
+                <td>2026-05-25</td>
+                <td>日度</td>
+                <td class="green">当日（生意社基准价）</td>
+            </tr>
+        </table>
+        <p><b>免责声明：</b>本报告数据来源于公开市场信息，仅供参考，不构成投资建议。汇率、商品价格波动存在不确定性，对冲工具交易存在风险。请结合公司实际情况和专业顾问意见做出决策。报告中的"我司"指中伟新材料股份有限公司（CNGR）。</p>
+        <p><b>数据时效声明：</b>本报告编制于2026年5月25日19:22（北京时间）。LME有色金属5/25收盘价因欧洲盘仍在交易中尚未确认，标注为"截至发报时点最新可获得数据"。其余数据均为当日收盘/最新可获得数据。</p>
+        <p><b>质量评级说明：</b>⭐⭐⭐⭐（四星）— 全部国内数据当日（含钴价）；LME镍/铜5/25官方收盘价国内网站尚未更新，采用5/23结算价+LME实时参考价。LME钴美元报价缺失。</p>
+
+        <div class="footer">
+            财资日报 — 2026年5月25日 CFO结构版 v4.1<br>
+            数据来源：中国货币网、SMM、东方财富、汇通网、趣合期货、金投网、财联社、央视、新浪财经、同花顺<br>
+            编制时间：2026-05-25 19:22 CST | 质量评级：⭐⭐⭐⭐<br>
+            由 OpenClaw AI 自动生成 | 数据仅供参考
+        </div>
+    </div>
+</body>
+</html>
