@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-12T00:14:33.542Z",
+  "entries": {
+    "memory:memory/2026-05-10.md:217:243": {
+      "key": "memory:memory/2026-05-10.md:217:243",
+      "path": "memory/2026-05-10.md",
+      "startLine": 217,
+      "endLine": 243,
+      "source": "memory",
+      "snippet": "1. **IDR长期贬值完全吞噬利差** — 10年USD/IDR从13,160升至17,453（+32.6%），累计利息仅26.12%，净收益-0.78% 2. **近3年/5年是最差区间** — IDR加速贬值（2019→2025），汇率损失达18~20%，远超同期微薄利差 3. **与USD/CNY carry trade形成鲜明对比** — USD/CNY近10年年化+0.47%有效；USD/IDR年化-0.08%完全失效 4. **印尼盾不是好的carry trade融资/投资货币** — 利差薄、汇率波动大、长期贬值趋势明确 ### 技术备忘 - 脚本路径：`/tmp/usdidr_carry_trade.py` - 印尼BI Rate年度数据：`bi_rate_annual = {2016:4.75, 2017:4.25, 2018:6.00, 2019:5.00, 2020:3.75, 2021:3.50, 2022:5.50, 2023:6.00, 2024:6.00, 2025:4.75}` - FRED FEDFUNDS 月度数据下载后通过 `.ffill()` 前向填充至日频 - matplotlib中文字体沿用 WenQuanYi Micro Hei 统一设置 --- ## 印尼盾回测验证与用户质疑（2026-05-10 傍晚） ### 用户质疑 用户要求确认三项： 1. 趋势行情（单边走势）下回测结果是否准确？ 2. 加权平均成本计算是否正确？ 3. 无法平仓时每日外币头寸是否确实在增加？ ### 验证过程 编写验证脚本 `/tmp/",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.5186656385660171,
+      "maxScore": 0.5186656385660171,
+      "firstRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "queryHashes": [
+        "668f15ad58d3"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "10年usd/idr从13",
+        "32.6",
+        "累计利息仅26.12",
+        "净收益-0.78",
+        "近3年/5年是最差区间",
+        "与usd/cny",
+        "usd/cny近10年年化",
+        "0.47"
+      ]
+    },
+    "memory:memory/2026-05-10.md:197:219": {
+      "key": "memory:memory/2026-05-10.md:197:219",
+      "path": "memory/2026-05-10.md",
+      "startLine": 197,
+      "endLine": 219,
+      "source": "memory",
+      "snippet": "| 时间线 | `reports/usdidr_carry_trade_timeline.png` | 2016~2026年USD/IDR汇率 vs 美印尼利差走势 | | 时间线矢量版 | `reports/usdidr_carry_trade_timeline.pdf` | PDF格式 | ### 数据源 - **USD/IDR汇率**：BIS (国际清算银行) 日频数据，`/tmp/usdidr_bis_daily_clean.csv` - **美国利率**：FRED FEDFUNDS（有效联邦基金利率，月度，前向填充至日频） - **印尼利率**：Bank Indonesia BI Rate（年度年末值，月度前向填充至日频） ### 计算结果（累计） | 区间 | 总收益 | 利息收益 | 汇兑损益 | 平均利差 | USD/IDR变动 | |------|--------|---------|---------|---------|------------| | 近1年 (2025/5→2026/5) | **-3.60%** | +0.77% | **-4.37%** | +0.84% | +4.37% | | 近3年 (2023/5→2026/5) | **-15.95%** | +2.27% | **-18.22%** | +0.84% | +18.22% | | 近5年 (2021/5→2026/5) | **-11.45%** | +8.83% | **-20.28%** | +1.99% | +20.28% | | 近10年 (2016/5→202",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.49025243818759917,
+      "maxScore": 0.49025243818759917,
+      "firstRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "queryHashes": [
+        "668f15ad58d3"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "2026年usd/idr汇率",
+        "usd/idr汇率",
+        "tmp/usdidr-bis-daily-clean.csv",
+        "usd/idr变动",
+        "2025/5",
+        "2026/5",
+        "3.60",
+        "0.77"
+      ]
+    },
+    "memory:memory/2026-05-10.md:137:158": {
+      "key": "memory:memory/2026-05-10.md:137:158",
+      "path": "memory/2026-05-10.md",
+      "startLine": 137,
+      "endLine": 158,
+      "source": "memory",
+      "snippet": "用户要求按照USD/CNY回测的相同逻辑，回测USD/IDR汇率，敞口方向为**多头IDR / 空头USD**（即每日买入印尼盾，USD/IDR跌破加权平均入场价则清仓）。 ### 回测设定 - **数据源**：BIS (国际清算银行) 日频USD/IDR汇率（2016/05 ~ 2026/05） - **数据量**：约2,560个交易日 - **策略规则**：每日花费1 USD买入IDR；次日USD/IDR < 加权平均入场汇率（IDR升值）则清仓全部累积头寸；否则继续持有，新增头寸与累积头寸合并加权平均成本 ### 回测结果（2,561笔交易） | 持仓区间 | 笔数 | 占比 | 平均收益率 | 胜率 | |---------|------|------|-----------|------| | 1周以内 | 2,277 | 88.9% | 0.26% | 99.8% | | 1周~1个月 | 222 | 8.7% | 0.26% | 99.5% | | 1个月~3个月 | 50 | 2.0% | 0.46% | 100% | | 3个月~1年 | 12 | 0.5% | 0.56% | 100% | | 1年~2年 | 0 | 0.0% | — | — | | 2年以上 | 0 | 0.0% | — | — | ### 关键发现 1. **比USD/CNY更短、更集中** — 近90%交易在1周内平仓，无超1年持仓（USD/CNY有0.4%持仓超1年，最长超2年） 2. **胜率同样极高** — 99.8%，但原因不同：USD/IDR十年间IDR总体贬值32",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.49022327363491053,
+      "maxScore": 0.49022327363491053,
+      "firstRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "queryHashes": [
+        "668f15ad58d3"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "用户要求按照usd/cny回测的相同逻辑",
+        "回测usd/idr汇率",
+        "usd/idr跌破加权平均入场价则清仓",
+        "日频usd/idr汇率",
+        "2016/05",
+        "2026/05",
+        "次日usd/idr",
+        "88.9"
+      ]
+    },
+    "memory:memory/2026-05-10.md:172:203": {
+      "key": "memory:memory/2026-05-10.md:172:203",
+      "path": "memory/2026-05-10.md",
+      "startLine": 172,
+      "endLine": 203,
+      "source": "memory",
+      "snippet": "| 文件 | 路径 | |------|------| | PNG | `reports/usdidr_hold_days_dist.png` | | PDF | `reports/usdidr_hold_days_dist.pdf` | ### 技术备忘 - 数据源：BIS日频USD/IDR（通过investing.com历史数据表获取月度值后线性插值至日频） - 回测脚本：`/tmp/usdidr_backtest_plot.py` - 脚本自动下载FRED月度DEXIDUS数据后使用pandas插值生成日频序列 --- ## USD/IDR Carry Trade 效益分析图（用户委托，2026-05-10 下午 ~ 傍晚） **需求**：基于USD/CNY carry trade分析图的同一模板，将标的换成USD/IDR，制作carry-trade效益分解图。 **策略定义**：借入USD（支付美国利率），买入IDR（赚取印尼利率），赚取美印尼利差并承担汇率波动。即 **Long IDR / Short USD carry trade**。 ### 交付物 | 文件 | 路径 | 说明 | |------|------|------| | 主分解图 | `reports/usdidr_carry_trade.png` | 堆叠柱状图，累计利息收益 + 汇兑损益 | | 矢量版 | `reports/usdidr_carry_trade.pdf` | PDF格式 | | 时间线 | `reports/usdidr_carry_trade_timeline.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4592433422803878,
+      "maxScore": 0.4592433422803878,
+      "firstRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "queryHashes": [
+        "668f15ad58d3"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "bis日频usd/idr",
+        "tmp/usdidr-backtest-plot.py",
+        "usd/idr",
+        "基于usd/cny",
+        "将标的换成usd/idr",
+        "制作carry-trade效益分解图",
+        "reports/usdidr-carry-trade.png",
+        "reports/usdidr-carry-trade.pdf"
+      ]
+    },
+    "memory:memory/2026-04-21.md:203:225": {
+      "key": "memory:memory/2026-04-21.md:203:225",
+      "path": "memory/2026-04-21.md",
+      "startLine": 203,
+      "endLine": 225,
+      "source": "memory",
+      "snippet": "2. 印尼、阿根廷外汇风险敞口及套期保值有效性 3. 海外借款（印尼恒生1800万美元）外币融资成本风险 4. 净利润增速低于营收增速的盈利质量问题 5. 印尼政策与行业变局下的成本结构与资金链压力 6. 硫酸钴、硫酸镍价格波动对生产成本影响 7. 磷酸铁锂赛道：从\"三元为王\"到\"铁锂主导\"的行业变局 8. 磷矿项目（9844万吨资源量）资金投入节奏与现金流影响 **格式改版要点**： 1. 顶部\"今日核心风险仪表盘\" — 红黄绿灯 + 优先级排序 + 风险方向 2. \"对我司的影响简述\" — 风险/机会量化影响 + 行动建议（带ACTION标签） 3. 历史分位数据 — 价格旁标注1年分位（如\"USD/CNY 6.8648，约6%分位（偏低）\"） ### 生成报告 **报告文件**: `reports/finance_daily_20260421_cfo.html` **发送时间**: 2026-04-21 09:20 CST **邮件主题**: 财资日报 — 2026年4月21日 | CFO视角版（风险仪表盘+历史分位+行动建议） **质量评级**: ⭐⭐⭐⭐⭐ **报告亮点**： - 风险仪表盘：6项风险（2红2黄2绿），含对我司具体影响 - 历史分位：USD/CNY约6%分位（极低）、镍约55%分位、钴约35%分位（偏低）",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4467759549617767,
+      "maxScore": 0.4467759549617767,
+      "firstRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "queryHashes": [
+        "668f15ad58d3"
+      ],
+      "recallDays": [
+        "2026-05-12"
+      ],
+      "conceptTags": [
+        "风险/机会量化影响",
+        "usd/cny",
+        "6.8648",
+        "usd/cny约6",
+        "印尼",
+        "阿根廷",
+        "外汇",
+        "风险"
+      ]
+    }
+  }
+}

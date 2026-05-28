@@ -16,7 +16,7 @@ pre-market-dashboard/
 ```
 
 **Pages URL**: https://qinzheng1983.github.io/pre-market-dashboard/
-**Token**: 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
+**Token**: 请设置环境变量 `GITHUB_TOKEN`（不再硬编码于文件中，避免被GitHub Secret Scanning检测并revoke）
 
 ---
 
