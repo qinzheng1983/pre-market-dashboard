@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>海外子公司全生命周期 — 资金与外汇管理视角</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #fff;
+}
+.container { max-width: 1200px; margin: 0 auto; }
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  background: linear-gradient(90deg, #e94560, #ff6b6b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.header .subtitle {
+  font-size: 16px;
+  color: #a0a0a0;
+  margin-bottom: 8px;
+}
+.header .principle {
+  font-size: 13px;
+  color: #8892b0;
+  background: rgba(255,255,255,0.08);
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-top: 8px;
+}
+.chart-wrapper {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 40px;
+}
+.chart-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #e94560;
+}
+.chart-desc {
+  font-size: 14px;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+}
+.lifecycle {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+}
+.lifecycle::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, #e94560, #f39c12, #27ae60, #3498db, #9b59b6);
+  border-radius: 2px;
+  z-index: 0;
+}
+.stage {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.stage-dot {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.stage-dot::after {
+  content: attr(data-stage);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+.stage-content {
+  margin-top: 45px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: left;
+}
+.stage-content h4 {
+  font-size: 13px;
+  color: #e94560;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+.management-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ccd6f6;
+}
+.management-item .icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.smart-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  font-weight: 500;
+}
+.tag-s { background: #e94560; color: #fff; }
+.tag-m { background: #f39c12; color: #fff; }
+.tag-a { background: #27ae60; color: #fff; }
+.tag-r { background: #3498db; color: #fff; }
+.tag-t { background: #9b59b6; color: #fff; }
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #a0a0a0;
+}
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 12px;
+  color: #8892b0;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>海外子公司全生命周期 — 资金与外汇管理</h1>
+  <div class="subtitle">基于 5W2H + SMART 原则的流程示意图</div>
+  <div class="principle">5W2H: What · Why · Who · When · Where · How · How much | SMART: Specific · Measurable · Achievable · Relevant · Time-bound</div>
+</div>
+
+<!-- 图1: 管理什么 -->
+<div class="chart-wrapper">
+  <div class="chart-title">图1：管理什么？（Management Perspective）</div>
+  <div class="chart-desc">从资金与外汇角度，全生命周期需要<strong>管控</strong>的核心要素 —— 以合规、风险、效率为纲</div>
+  
+  <div class="lifecycle">
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #e94560, #c0392b);" data-stage="阶段一">1</div>
+      <div class="stage-content">
+        <h4>调查研究</h4>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>资金需求评估</strong><br>投资总额、资本金比例、融资结构<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>汇率风险识别</strong><br>目标国货币波动率、结算币种<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128196;</span>
+          <div><strong>合规审查</strong><br>ODI核准/备案、外汇登记前置条件<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128178;</span>
+          <div><strong>资金来源规划</strong><br>自有资金 vs 跨境融资 vs 内保外贷<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #f39c12, #e67e22);" data-stage="阶段二">2</div>
+      <div class="stage-content">
+        <h4>投资建设</h4>
+        <div class="management-item">
+          <span class="icon">&#128176;</span>
+          <div><strong>资本金汇出管理</strong><br>分批汇出节奏、用途凭证审核<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128220;</span>
+          <div><strong>外汇登记</strong><br>FDI登记、资本金账户开立、结汇核准<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128371;</span>
+          <div><strong>投资路径合规</strong><br>SPV架构、反避税、CRS申报<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128202;</span>
+          <div><strong>资金拨付监控</strong><br>工程进度匹配、预算控制、审计跟踪<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #27ae60, #2ecc71);" data-stage="阶段三">3</div>
+      <div class="stage-content">
+        <h4>建设初期</h4>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>运营资金调配</strong><br>流动资金贷款、跨境调拨审批<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>汇率对冲</strong><br>远期/期权套保、自然对冲匹配<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128187;</span>
+          <div><strong>现金池管理</strong><br>全球资金归集、余缺调剂、利息优化<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128223;</span>
+          <div><strong>税务筹划</strong><br>转让定价、预提税、税收协定适用<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #3498db, #2980b9);" data-stage="阶段四">4</div>
+      <div class="stage-content">
+        <h4>成熟运营</h4>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>利润分配管理</strong><br>分红政策、汇回节奏、留存比例<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>跨境资金调拨</strong><br>股东借款、关联往来、资本金减资<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>汇率风险管理</strong><br>滚动对冲、敞口监控、压力测试<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128176;</span>
+          <div><strong>再融资</strong><br>项目贷款、债券发行、股权融资<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);" data-stage="阶段五">5</div>
+      <div class="stage-content">
+        <h4>清算退出</h4>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>资金回流路径</strong><br>清算所得、股权转让款、减资回款<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128220;</span>
+          <div><strong>外汇注销</strong><br>直接投资注销登记、账户关闭<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128223;</span>
+          <div><strong>税务清算</strong><br>资本利得税、清算所得税、退税<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>汇率锁定</strong><br>大额汇回时点选择、分批锁汇<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background: #e94560;"></div>Specific 具体</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #f39c12;"></div>Measurable 可衡量</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #27ae60;"></div>Achievable 可实现</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #3498db;"></div>Relevant 相关</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #9b59b6;"></div>Time-bound 有时限</div>
+  </div>
+</div>
+
+<!-- 图2: 服务什么 -->
+<div class="chart-wrapper">
+  <div class="chart-title">图2：服务什么？（Service Perspective）</div>
+  <div class="chart-desc">从资金与外汇角度，全生命周期需要提供<strong>支持</strong>的核心服务 —— 以业务赋能、价值创造为纲</div>
+  
+  <div class="lifecycle">
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #e94560, #c0392b);" data-stage="阶段一">1</div>
+      <div class="stage-content">
+        <h4>调查研究</h4>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>可行性研究资金测算</strong><br>NPV/IRR资金模型、敏感性分析<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>汇率情景分析</strong><br>多币种压力测试、汇率假设设定<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128176;</span>
+          <div><strong>融资方案设计</strong><br>最优资本结构、融资工具选择<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128196;</span>
+          <div><strong>ODI路径咨询</strong><br>核准制 vs 备案制、时间线规划<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #f39c12, #e67e22);" data-stage="阶段二">2</div>
+      <div class="stage-content">
+        <h4>投资建设</h4>
+        <div class="management-item">
+          <span class="icon">&#128176;</span>
+          <div><strong>跨境支付通道</strong><br>swift/人民币跨境支付、快速到账<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>资本金快速到位</strong><br>前置审核、绿色通道、大额预约<span class="smart-tag tag-s">S</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128196;</span>
+          <div><strong>外汇政策咨询</strong><br>资本金意愿结汇、支付便利化<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>工程融资配套</strong><br>项目贷款、出口买方信贷<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #27ae60, #2ecc71);" data-stage="阶段三">3</div>
+      <div class="stage-content">
+        <h4>建设初期</h4>
+        <div class="management-item">
+          <span class="icon">&#128187;</span>
+          <div><strong>银企直连</strong><br>全球账户可视、指令直通、对账自动化<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>全球现金池</strong><br>资金归集、虚拟头寸、利息优化<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>贸易融资</strong><br>信用证、保理、福费廷、供应链金融<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>汇率套保</strong><br>远期、期权、货币互换、结构性产品<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #3498db, #2980b9);" data-stage="阶段四">4</div>
+      <div class="stage-content">
+        <h4>成熟运营</h4>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>利润汇回通道</strong><br>分红、股东借款、特许权使用费<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128187;</span>
+          <div><strong>跨境资金池</strong><br>集中运营、余缺调剂、降低财务成本<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>供应链金融</strong><br>应收账款融资、存货质押、反向保理<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>外汇增值服务</strong><br>汇率预测、套期会计、组合优化<span class="smart-tag tag-s">S</span><span class="smart-tag tag-m">M</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="stage">
+      <div class="stage-dot" style="background: linear-gradient(135deg, #9b59b6, #8e44ad);" data-stage="阶段五">5</div>
+      <div class="stage-content">
+        <h4>清算退出</h4>
+        <div class="management-item">
+          <span class="icon">&#128260;</span>
+          <div><strong>资金回流方案</strong><br>清算所得汇回、股权转让资金通道<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128737;</span>
+          <div><strong>汇率保值</strong><br>大额汇回时点择时、分批锁汇策略<span class="smart-tag tag-m">M</span><span class="smart-tag tag-t">T</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128223;</span>
+          <div><strong>税务优化</strong><br>资本利得筹划、税收协定、退税服务<span class="smart-tag tag-s">S</span><span class="smart-tag tag-r">R</span></div>
+        </div>
+        <div class="management-item">
+          <span class="icon">&#128200;</span>
+          <div><strong>并购融资</strong><br>买方融资、杠杆收购、过桥贷款<span class="smart-tag tag-s">S</span><span class="smart-tag tag-a">A</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background: #e94560;"></div>Specific 具体</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #f39c12;"></div>Measurable 可衡量</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #27ae60;"></div>Achievable 可实现</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #3498db;"></div>Relevant 相关</div>
+    <div class="legend-item"><div class="legend-dot" style="background: #9b59b6;"></div>Time-bound 有时限</div>
+  </div>
+</div>
+
+<div class="footer">
+  全球顶级投行视角 | 5W2H + SMART 原则 | 资金与外汇全生命周期管理与服务
+</div>
+
+</div>
+</body>
+</html>

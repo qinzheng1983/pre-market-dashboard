@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼子公司虚拟资金池架构图 — 税务优化版</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    background: #f4f6f9;
+    color: #1a1a2e;
+    padding: 30px 20px;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    overflow: hidden;
+  }
+  .header {
+    background: #0d1b2a;
+    color: #fff;
+    padding: 28px 36px;
+    text-align: center;
+  }
+  .header h1 { font-size: 22px; font-weight: 600; margin-bottom: 6px; }
+  .header p { font-size: 13px; opacity: 0.75; }
+  .content { padding: 32px 36px; }
+  .section { margin-bottom: 36px; }
+  .section-title {
+    font-size: 16px; font-weight: 600; color: #0d1b2a;
+    margin-bottom: 16px; padding-bottom: 8px;
+    border-bottom: 2px solid #e94560;
+    display: inline-block;
+  }
+
+  /* ===== 架构图 ===== */
+  .diagram-wrap { background: #f8fafc; border-radius: 10px; padding: 28px; margin-bottom: 24px; }
+  .diagram { display: table; width: 100%; border-collapse: collapse; }
+  .diagram-row { display: table-row; }
+  .diagram-cell {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 12px;
+    text-align: center;
+  }
+  .entity-box {
+    display: inline-block;
+    padding: 16px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 160px;
+    position: relative;
+  }
+  .entity-a { background: #e8f4fd; color: #1565c0; border: 2px solid #1565c0; }
+  .entity-b { background: #e8f5e9; color: #2e7d32; border: 2px solid #2e7d32; }
+  .entity-bank { background: #fff3e0; color: #e65100; border: 2px solid #e65100; }
+  .entity-supplier { background: #fce4ec; color: #c62828; border: 2px solid #c62828; }
+  .entity-label {
+    font-size: 11px; color: #64748b; font-weight: 400;
+    margin-top: 6px; line-height: 1.5;
+  }
+
+  /* 箭头与金额 */
+  .arrow-box {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    position: relative;
+    margin: 4px 0;
+  }
+  .arrow-green { background: #c8e6c9; color: #2e7d32; }
+  .arrow-red { background: #ffcdd2; color: #c62828; }
+  .arrow-blue { background: #bbdefb; color: #1565c0; }
+  .arrow-orange { background: #ffe0b2; color: #e65100; }
+
+  .arrow-label {
+    font-size: 10px; color: #78909c; margin-top: 2px;
+  }
+
+  /* ===== 税务标注 ===== */
+  .tax-note {
+    background: #fff8e1;
+    border-left: 4px solid #f59e0b;
+    padding: 14px 18px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .tax-note strong { color: #e65100; }
+
+  /* ===== 测算表 ===== */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  th, td {
+    padding: 12px 14px;
+    text-align: left;
+    border: 1px solid #e2e8f0;
+  }
+  th {
+    background: #0d1b2a;
+    color: #64ffda;
+    font-weight: 600;
+  }
+  td { background: #fff; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  .num { font-family: "SF Mono",monospace; text-align: right; }
+  .highlight { background: #e8f5e9; font-weight: 600; }
+  .highlight-red { background: #ffebee; font-weight: 600; }
+
+  .formula-box {
+    background: #f1f5f9;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+  .formula-box code {
+    display: block;
+    background: #0d1b2a;
+    color: #64ffda;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-family: "SF Mono",monospace;
+    font-size: 12px;
+    margin: 8px 0;
+    line-height: 1.8;
+  }
+
+  .footer {
+    padding: 20px 36px;
+    background: #f8fafc;
+    font-size: 11px;
+    color: #64748b;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>印尼子公司虚拟资金池架构图</h1>
+    <p>税务优化视角 | 银行虚拟账户资金池 | PPh 23 预扣税规则</p>
+  </div>
+
+  <div class="content">
+
+    <!-- ===== 架构图 ===== -->
+    <div class="section">
+      <div class="section-title">1. 虚拟资金池架构示意</div>
+      <div class="diagram-wrap">
+        <div class="diagram">
+          <!-- 第一行：实体 -->
+          <div class="diagram-row">
+            <div class="diagram-cell" style="width:22%">
+              <div class="entity-box entity-b">
+                子公司B
+                <div class="entity-label">贸易公司<br>印尼盾铺底资金充裕</div>
+              </div>
+            </div>
+            <div class="diagram-cell" style="width:6%"></div>
+            <div class="diagram-cell" style="width:22%">
+              <div class="entity-box entity-bank">
+                银行
+                <div class="entity-label">虚拟资金池<br>Notional Pooling</div>
+              </div>
+            </div>
+            <div class="diagram-cell" style="width:6%"></div>
+            <div class="diagram-cell" style="width:22%">
+              <div class="entity-box entity-a">
+                子公司A
+                <div class="entity-label">冶炼厂<br>印尼盾采购支付需求</div>
+              </div>
+            </div>
+            <div class="diagram-cell" style="width:22%">
+              <div class="entity-box entity-supplier">
+                供应商
+                <div class="entity-label">本地采购<br>印尼盾结算</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 第二行：资金流 -->
+          <div class="diagram-row">
+            <div class="diagram-cell">
+              <div class="arrow-box arrow-green">
+                资金上存 4.25%
+                <div class="arrow-label">存款利息收入</div>
+              </div>
+            </div>
+            <div class="diagram-cell">→</div>
+            <div class="diagram-cell">
+              <div class="arrow-box arrow-orange">
+                银行统筹调配
+                <div class="arrow-label">虚拟账户归集<br>净头寸管理</div>
+              </div>
+            </div>
+            <div class="diagram-cell">→</div>
+            <div class="diagram-cell">
+              <div class="arrow-box arrow-red">
+                透支提款 5.45%
+                <div class="arrow-label">透支利息支出<br>可税前扣除</div>
+              </div>
+            </div>
+            <div class="diagram-cell">
+              <div class="arrow-box arrow-blue">
+                采购支付
+                <div class="arrow-label">印尼盾结算</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tax-note">
+          <strong>印尼税务规则（PPh 23 预扣税）：</strong><br>
+          • 子公司B上存银行获得存款利息 4.25%，银行代扣 <strong>PPh 23 预扣税 15%</strong> → B实得利息 = 4.25% × (1 − 15%) = <strong>3.61%</strong><br>
+          • 子公司A透支支付利息 5.45%，该利息支出属于A的经营成本，<strong>可在企业所得税前列支</strong>（抵税效应约 5.45% × 22% = 1.20%），有效资金成本 ≈ <strong>4.25%</strong><br>
+          • <strong>关键优势：</strong>B的闲置资金从"零收益"变为"3.61%税后收益"；A无需外部贷款，避免更高利率 + 额外抵押
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 税务详解 ===== -->
+    <div class="section">
+      <div class="section-title">2. 印尼虚拟资金池税务处理逻辑</div>
+      <div class="formula-box">
+        <strong>PPh 23 适用规则（印尼所得税法第23条）：</strong><br><br>
+        <code>
+子公司B（资金盈余方）：<br>
+  存款利息收入 = 铺底资金余额 × 4.25%<br>
+  PPh 23 预扣税 = 存款利息 × 15%（银行代扣代缴）<br>
+  B 实得利息 = 存款利息 × 85%<br>
+  B 税后收益率 = 4.25% × 0.85 = 3.6125%<br><br>
+子公司A（资金需求方）：<br>
+  透支利息支出 = 透支金额 × 5.45%<br>
+  企业所得税抵扣 = 透支利息 × 22%（假设税率）<br>
+  A 有效资金成本 = 5.45% × (1 − 22%) = 4.251%<br><br>
+集团净资金成本 = A 有效成本 − B 税后收益<br>
+  = 4.251% − 3.613% = <strong>0.638%</strong>（仅支付给银行的利差）
+        </code>
+      </div>
+      <div class="tax-note">
+        <strong>特别说明：</strong><br>
+        • 若B的存款期限≥6个月，印尼盾存款利息可享受 <strong>0% 最终预扣税</strong>（PPh Final），则B税后收益率可达 <strong>4.25%</strong>，集团净成本进一步降至 <strong>0.001%</strong>（几乎零成本内部融通）<br>
+        • 虚拟资金池模式下，A与B之间不直接发生借贷关系，所有利息收支均通过银行虚拟账户结算，<strong>避免关联企业直接借贷的转让定价审查风险</strong><br>
+        • 银行作为独立第三方金融机构，其利率报价（4.25% / 5.45%）符合市场公允水平，税务调整风险低
+      </div>
+    </div>
+
+    <!-- ===== 测算表 ===== -->
+    <div class="section">
+      <div class="section-title">3. 资金成本测算表（假设情景）</div>
+      <table>
+        <tr>
+          <th>测算项目</th>
+          <th>情景一：无资金池<br>（A外部融资 + B资金闲置）</th>
+          <th>情景二：虚拟资金池<br>（A透支 + B存款）</th>
+          <th>差异/优化</th>
+        </tr>
+        <tr>
+          <td><strong>假设参数</strong></td>
+          <td colspan="3" style="text-align:center; font-size:12px; color:#64748b;">
+            A月均透支需求 50亿印尼盾 | B月均铺底资金 80亿印尼盾 | 企业所得税率 22% | PPh 23 预扣税 15%
+          </td>
+        </tr>
+        <tr>
+          <td>A 资金成本</td>
+          <td class="num">外部贷款利率 8.50%</td>
+          <td class="num">透支利率 5.45%<br><span style="font-size:11px;color:#78909c;">税前扣除后有效 4.25%</span></td>
+          <td class="num highlight">↓ 节省 4.25%</td>
+        </tr>
+        <tr>
+          <td>B 资金收益</td>
+          <td class="num">0%（活期/闲置）</td>
+          <td class="num">存款利息 4.25%<br><span style="font-size:11px;color:#78909c;">扣PPh23后 3.61%</span></td>
+          <td class="num highlight">↑ 新增 3.61%</td>
+        </tr>
+        <tr>
+          <td>集团利息支出总额</td>
+          <td class="num">50亿 × 8.50% = <strong>4.25亿/年</strong></td>
+          <td class="num">50亿 × 5.45% = <strong>2.725亿/年</strong></td>
+          <td class="num highlight">↓ 节省 1.525亿/年</td>
+        </tr>
+        <tr>
+          <td>集团利息收入总额</td>
+          <td class="num">0</td>
+          <td class="num">50亿 × 3.61% = <strong>1.805亿/年</strong></td>
+          <td class="num highlight">↑ 新增 1.805亿/年</td>
+        </tr>
+        <tr>
+          <td><strong>集团净资金成本</strong></td>
+          <td class="num highlight-red">4.25亿/年</td>
+          <td class="num highlight">0.92亿/年<br><span style="font-size:11px;color:#78909c;">(2.725 − 1.805)</span></td>
+          <td class="num highlight">↓ 优化 3.33亿/年<br><span style="font-size:11px;color:#78909c;">(节省 78.4%)</span></td>
+        </tr>
+        <tr>
+          <td>税务影响</td>
+          <td class="num">A利息支出抵税 0.935亿<br>B无收益无税</td>
+          <td class="num">A利息支出抵税 0.600亿<br>B缴纳PPh23 0.319亿</td>
+          <td class="num">集团税负净减少 0.254亿</td>
+        </tr>
+        <tr>
+          <td><strong>综合财务影响</strong></td>
+          <td class="num highlight-red">净现金流出 3.315亿/年</td>
+          <td class="num highlight">净现金流出 0.639亿/年</td>
+          <td class="num highlight">↓ 优化 2.676亿/年<br><span style="font-size:11px;color:#78909c;">(ROI: 80.7%)</span></td>
+        </tr>
+      </table>
+
+      <div class="formula-box" style="margin-top:20px;">
+        <strong>敏感性分析：存款期限与预扣税优惠</strong><br><br>
+        <code>
+若B将铺底资金锁定为 6个月定期存款结构（通过资金池分层定价）：<br>
+  印尼盾存款利息预扣税 = 0%（PPh Final 优惠税率）<br>
+  B 税后收益率 = 4.25%（全额保留）<br>
+  集团净资金成本 = 4.251% − 4.25% = <strong>0.001%</strong>（趋近于零）<br>
+  年净现金流出 ≈ 50亿 × 0.001% = <strong>50万印尼盾/年</strong><br>
+  vs 无资金池：4.25亿/年 → <strong>优化率 99.99%</strong>
+        </code>
+      </div>
+    </div>
+
+    <!-- ===== 实施要点 ===== -->
+    <div class="section">
+      <div class="section-title">4. 实施要点与合规 checklist</div>
+      <table>
+        <tr>
+          <th style="width:20%">维度</th>
+          <th style="width:40%">关键事项</th>
+          <th style="width:40%">操作建议</th>
+        </tr>
+        <tr>
+          <td><strong>银行协议</strong></td>
+          <td>签署虚拟资金池主协议，明确利率、额度、净额结算规则</td>
+          <td>议定存款分层利率（4.25%为基准，大额可上浮）+ 透支额度上限</td>
+        </tr>
+        <tr>
+          <td><strong>税务合规</strong></td>
+          <td>PPh 23 预扣税申报（月度 e-Bupot）；存款利息 PPh Final 优惠申请</td>
+          <td>确保银行按月出具预扣税凭证；B公司保留完税凭证用于年度汇算清缴抵扣</td>
+        </tr>
+        <tr>
+          <td><strong>转让定价</strong></td>
+          <td>虚拟资金池利率需符合独立交易原则（Arm's Length）</td>
+          <td>留存银行报价单作为公允性证据；利率区间参考印尼央行基准利率 + 信用利差</td>
+        </tr>
+        <tr>
+          <td><strong>资金监控</strong></td>
+          <td>实时跟踪A公司透支余额、B公司存款余额、净头寸</td>
+          <td>接入银行企业网银/银企直联；设置透支预警线（如额度80%触发）</td>
+        </tr>
+        <tr>
+          <td><strong>报表折算</strong></td>
+          <td>功能货币为印尼盾，无需外汇折算；但集团合并报表需关注</td>
+          <td>A、B均以印尼盾为功能货币，内部往来无汇兑损益</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    制图：OpenClaw AI | 参考：PwC Indonesia Pocket Tax Book 2024、印尼所得税法第23条、印尼央行存款基准利率 | 数据日期：2026-05-27<br>
+    本示意图仅供内部资金管理讨论使用，具体实施前请咨询印尼当地税务及法律顾问。
+  </div>
+</div>
+</body>
+</html>

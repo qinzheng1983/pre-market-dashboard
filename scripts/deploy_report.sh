@@ -7,7 +7,7 @@
 set -e
 
 REPO="qinzheng1983/pre-market-dashboard"
-TOKEN="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"
+TOKEN="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"
 REPORTS_DIR="/root/.openclaw/workspace/reports"
 DASHBOARD_FILE="/root/.openclaw/workspace/dashboard.html"
 

@@ -1,0 +1,440 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-19T22:00:53.884Z",
+  "entries": {
+    "memory:memory/2026-04-24.md:1:24": {
+      "key": "memory:memory/2026-04-24.md:1:24",
+      "path": "memory/2026-04-24.md",
+      "startLine": 1,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "# 2026-04-24 Daily Notes ## 16:05 - Cron任务迁移到主会话 - 用户要求将两个cron任务从`isolated`切换到`main`会话绑定 - 删除旧cron： - 盘前简报 `0e0f79e7-7ccd-42df-b460-84e5abba2028`（原8:27，孤立会话） - 财资日报 `eb8dfbb4-bd08-4749-ab22-df38b60f9a5f`（原16:06，孤立会话） - 新建主会话绑定cron： - 盘前简报 `df160f9d-d9d4-4f62-b4a5-a2876b538e00` — `20 9 * * 1-5`（9:20 CST） - 财资日报 `df058492-5295-4ea9-9c23-6bf4ffe97579` — `6 16 * * 1-5`（16:06 CST） - 更新HEARTBEAT.md：将定时任务配置中的`sessionTarget`从`isolated`改为`main` ## 16:25 - 财资日报生成与部署（2026-04-24） - 由cron定时触发：`生成并发送今日财资日报` - 数据截止：2026-04-24 16:00 CST - 核心数据：USD/CNY中间价6.8674（+24点），央行50亿逆回购净投放45亿，伦镍18,775美元（+1.68%），原油布伦特105.10美元（+3.10%） - 地缘：美伊谈判僵局→特朗普下令对伊朗船只开火，以色列准备重启战争 - 三件任务全部完成： 1. ✅ 生成报告 `finance_daily_202",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44739387631416316,
+      "maxScore": 0.44739387631416316,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "1-5",
+        "更新heartbeat.md",
+        "usd/cny中间价6.8674",
+        "1.68",
+        "原油布伦特105.10美元",
+        "3.10",
+        "finance-daily-202",
+        "cron"
+      ]
+    },
+    "memory:memory/2026-04-23.md:1:29": {
+      "key": "memory:memory/2026-04-23.md:1:29",
+      "path": "memory/2026-04-23.md",
+      "startLine": 1,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "--- ## 17:26 - 对话要点记录 ### cron 时间调整（用户同意） - 盘前简报 cron 从 8:27 → **9:20**（新 ID: 90fca617-8412-4590-b33d-65b3ec4ae67d） - 原因：USD/CNY 中间价 9:15 发布，9:20 确保获取当日最新数据 - 已同步更新 HEARTBEAT.md 和 MEMORY.md ### 用户确认：洞察所在位置 - 用户问\"在哪个材料里面比较喜欢洞察\" - 答案：**财资日报（CFO 视角版）的 L4 洞察层** - 盘前简报是冲锋号（5-7 分钟，不给洞察），财资日报是战报（L1 数据 + L4 洞察 + L5 机构观点三层） ### cron 财资日报任务失败诊断 - 用户发现约 16:10 \"自动触发\"内容与 15:40 手动内容不一致 - 调查结论：**cron 财资日报任务实际失败了（status=error），未生成完整报告** - 只有一份财资日报：finance_daily_20260423.html（15:45 手动生成） - 隔离会话（bbe6e96d-4a7c-4eef-955c-9a18fb51107b）可能未正确加载 CFO 视角模板上下文 - 建议方案：将 `sessionTarget` 从 `isolated` 改为 `main`，复用主会话完整上下文 ### Edit 工具失误复盘 - 用户质问\"为什么总是提示 Edit....failed\" - 原因：前两次漏传 `new_string` 参数；第三次 MEMORY.md 文本匹配失败",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4383285403251648,
+      "maxScore": 0.4383285403251648,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "usd/cny",
+        "heartbeat.md",
+        "memory.md",
+        "5-7",
+        "finance-daily-20260423.html",
+        "new-string",
+        "对话",
+        "要点"
+      ]
+    },
+    "memory:memory/2026-04-03.md:53:84": {
+      "key": "memory:memory/2026-04-03.md:53:84",
+      "path": "memory/2026-04-03.md",
+      "startLine": 53,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "- `reports/finance_daily_20260403_complete.html` ## Data Sources Used - 中国货币网 (USD/CNY中间价) - Investing.com (原油价格历史数据) - 财新网、新浪财经 (地缘动态) - SMM、LME (有色金属数据) - 央行官网 (LPR利率) --- ## Work Reflection — Data Timeliness Strategy ### 13:49 — User Question on Report Timing **User concern**: Are pre-market briefing and finance daily report using basically the same data timestamp? Does this meet timeliness requirements when instructions are given at different times? **My assessment**: - Yes, there was a problem. Both reports used April 2 closing data, generated within 30 minutes of each other (9:16 and 9:45) - This is acceptable for morning pre-market briefing, but finance daily report should diffe",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41129831969738007,
+      "maxScore": 0.41129831969738007,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "usd/cny中间价",
+        "investing.com",
+        "pre-market",
+        "reports",
+        "data",
+        "sources",
+        "used",
+        "中国"
+      ]
+    },
+    "memory:memory/2026-04-03.md:79:109": {
+      "key": "memory:memory/2026-04-03.md:79:109",
+      "path": "memory/2026-04-03.md",
+      "startLine": 79,
+      "endLine": 109,
+      "source": "memory",
+      "snippet": "| Afternoon/After close | Previous close (outdated) | Full T-day closing data | **Key Distinction**: - **Pre-Market Briefing** = Overnight data (US stocks, oil, FX), fixed send before 08:30, data cutoff at T-1 close - **Finance Daily** = Latest available T-day data: - Morning: Include same-day USD/CNY midpoint (post 09:15), morning base metals prices - Afternoon/After close: Complete T-day closing data **Action Items**: - [ ] Verify USD/CNY midpoint publish time (09:15 Beijing time) - [ ] For morning finance daily: explicitly check if 09:15 data is available - [ ] Add data timestamp labels to clearly distinguish \"previous close\" vs \"intraday\" vs \"T-day close\" --- ## 13:52 — User Pref",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3966458648443222,
+      "maxScore": 0.3966458648443222,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "afternoon/after",
+        "t-day",
+        "pre-market",
+        "t-1",
+        "same-day",
+        "usd/cny",
+        "afternoon",
+        "close"
+      ]
+    },
+    "memory:memory/2026-05-01.md:1:38": {
+      "key": "memory:memory/2026-05-01.md:1:38",
+      "path": "memory/2026-05-01.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# Memory Log - 2026-05-01 ## 财资周报生成与部署（第19周：4/27-4/30） **触发**: 用户指令 \"更新周报，部署\" **时间**: 2026-05-01 10:43 CST（劳动节假期，非交易日） ### 本周交易情况 - 本周实际交易日：周一至周四（4/27-4/30），周五5/1劳动节休市 - 周报覆盖4个交易日的逐日数据汇总 ### 周报核心数据 | 指标 | 周初(4/27) | 周末(4/30) | 周变化 | |------|-----------|-----------|--------| | LME镍 | $19,015 | $19,272 | +$257 (+1.4%) | | 碳酸锂 | ~172,500 | 177,000 | +4,500 (+2.6%) | | USD/CNY中间价 | 6.8579 | 6.8628 | -49点 | | 布伦特原油 | $105.10 | $118.03 | +$12.93 (+12.3%) | | 现货黄金 | $4,695 | $4,544 | -$151 (-3.2%) | ### 报告结构（11大板块） 1. 本周核心风险仪表盘（6项） 2. 各板块周度汇总表（逐日数据+周变化） - USD/CNY中间价逐日走势 - LME有色金属逐日收盘 - 碳酸锂与新能源 - 原油与贵金属 3. 对我司影响与行动（ACTION分组行） 4. 周度洞察层（5大特征+驱动因素拆解+趋势判断） 5. 货币政策周度汇总 6. 汇率动态周度汇总 7. 地缘风",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3899006754159927,
+      "maxScore": 0.3899006754159927,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "4/27-4/30",
+        "周五5/1劳动节休市",
+        "4/27",
+        "4/30",
+        "1.4",
+        "2.6",
+        "usd/cny中间价",
+        "6.8579"
+      ]
+    },
+    "memory:memory/2026-04-20.md:1:28": {
+      "key": "memory:memory/2026-04-20.md:1:28",
+      "path": "memory/2026-04-20.md",
+      "startLine": 1,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "## 2026-04-20 Session Log ### GitHub Deployment Configuration Established - **Repository**: https://github.com/qinzheng1983/pre-market-dashboard - **Token**: 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 - **GitHub Pages**: Enabled at https://qinzheng1983.github.io/pre-market-dashboard/ - **File Structure**: - `index.html` — 盘前市场简报 - `dashboard.html` — 导航入口页 - `finance-daily/YYYYMMDD.html` — 财资日报归档 ### User Requirements Confirmed (2026-04-20 ~15:00) 1. Morning pre-market briefings → deploy to `index.html` after generation 2. Afternoon finance daily reports → deploy to `finance-daily/YYYYMMDD.html` after generation 3. Navigation page must clearly separate \"盘前市场简报\" and \"财资日报\" categories 4.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.3856135070323944,
+      "maxScore": 0.3856135070323944,
+      "firstRecalledAt": "2026-05-15T08:27:51.220Z",
+      "lastRecalledAt": "2026-05-15T08:27:51.220Z",
+      "queryHashes": [
+        "72ef383b3db7"
+      ],
+      "recallDays": [
+        "2026-05-15"
+      ],
+      "conceptTags": [
+        "index.html",
+        "dashboard.html",
+        "finance-daily/yyyymmdd.html",
+        "pre-market",
+        "log",
+        "github",
+        "deployment",
+        "configuration"
+      ]
+    },
+    "memory:memory/2026-04-21.md:180:206": {
+      "key": "memory:memory/2026-04-21.md:180:206",
+      "path": "memory/2026-04-21.md",
+      "startLine": 180,
+      "endLine": 206,
+      "source": "memory",
+      "snippet": "| 汇率/原油/黄金 | 0天 | 必须当日，否则报告延迟发布 | | 美股三大指数 | 0天 | T-1收盘数据，盘前简报使用 | | LME有色金属 | 1-2天 | 周末/节假日顺延 | | 碳酸锂 | 3-5天 | 价格波动较慢 | | 新能源装机 | 15-30天 | 月度数据本身滞后 | | LPR/央行操作 | 0-1天 | 按月发布，发布后当日获取 | ### 执行计划（2026-04-22） - [ ] 创建 `data/cache/` 目录，建立市场数据缓存结构 - [ ] 配置tavily-web-search作为备用搜索工具 - [ ] 编写USD/CNY中间价直接抓取脚本（基于kimi_fetch或curl） - [ ] 编写LME数据直接抓取脚本 - [ ] 更新报告生成流程，加入缓存降级逻辑 - [ ] 测试容灾机制（模拟搜索不可用场景） ### 需求记录（用户新需求） **角色锚定**： - \"我\" = 中伟新材（CNGR Advanced Material）财务总监 - 管理资金、利率和汇率风险，考虑经营效率 **\"我司\"关注清单**（已固化到USER.md和MEMORY.md）： 1. USD/CNY波动对海外项目收益折算影响 2. 印尼、阿根廷外汇风险敞口及套期保值有效性 3. 海外借款（印尼恒生1800万美元）外币融资成本风险 4. 净利润增速低于营收增速的盈利质量问题 5. 印尼政策与行业变局下的成本结构与资金链压力",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44490629434585566,
+      "maxScore": 0.44490629434585566,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "汇率/原油/黄金",
+        "t-1收盘数据",
+        "1-2天",
+        "周末/节假日顺延",
+        "3-5天",
+        "15-30天",
+        "lpr/央行操作",
+        "0-1天"
+      ]
+    },
+    "memory:memory/2026-05-18.md:24:47": {
+      "key": "memory:memory/2026-05-18.md:24:47",
+      "path": "memory/2026-05-18.md",
+      "startLine": 24,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "| 霍尔木兹通航 | 2艘驶出 | 通航量极低 | 财新数据 | ### 敞口状态确认 净Long $9.5亿/月（印尼人民币借款$10亿 - 香港购汇$5,000万/月） - 中间价6.8435 vs 预算6.90 = 偏有利565点 - 方向：Long USD敞口 → 美元走强=利好 ### 对冲建议更新 1. **紧急（本周内）**：买入美元看跌期权 Protective Put，名义本金$2-4亿，行权价6.80-6.85 2. **高（下周）**：领子期权锁定6.75-6.95区间，名义本金$3亿零成本结构 3. **高（本周启动）**：LME镍远期卖出保值，覆盖年用量30-50% 4. **高（换月前）**：广期所LC2610卖出保值，覆盖年用量20-30% ### 部署状态 - 邮件已发送至13911658378@139.com ✅ - GitHub导航页已更新，finance-daily/20260518.html ✅ - 导航页：https://qinzheng1983.github.io/pre-market-dashboard/ ### 明日关注 1. 5/19 09:15 LPR报价（市场预期维持1Y=3.0%, 5Y=3.5%不变） 2. 碳酸锂现货最新报价（生意社/100ppi每日更新） 3. LME镍夜盘走势（关注是否守住$18,400-18,600支撑区间） 4. 霍尔木兹通航量变化",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.43137967884540557,
+      "maxScore": 0.43137967884540557,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "9.5亿/月",
+        "000万/月",
+        "中间价6.8435",
+        "预算6.90",
+        "2-4亿",
+        "行权价6.80-6.85",
+        "领子期权锁定6.75-6.95区间",
+        "覆盖年用量30-50"
+      ]
+    },
+    "memory:memory/2026-04-28.md:1:34": {
+      "key": "memory:memory/2026-04-28.md:1:34",
+      "path": "memory/2026-04-28.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# 2026-04-28 记忆日志 --- ## 盘前简报已生成并发送 - **时间**：09:20 cron触发，09:42完成 - **中间价**：6.8589（4/28 9:15发布，调贬10点） - **邮件已发送**：13911658378@139.com - **GitHub已部署**：https://qinzheng1983.github.io/pre-market-dashboard/index.html - **核心数据**：布伦特$108.23(+2.75%)，美股分化，美伊谈判第60天罗生门 --- ## 敞口方向严重错误（用户纠正） **错误**：将印尼子公司美元负债判断为 Long USD，正确应为 Short USD。 **用户纠正原话**：\"印尼子公司的美元负债，应该也是美元的负敞口吧？是不是应该是short USD\" **最终确认的敞口数据（已固化到COMPANY.md）**： | 项目 | 金额 | 方向 | |------|------|------| | 北美出口应收 | $3,000万/月 | Long USD | | 香港购汇支出 | $5,000万/月 | Short USD | | 印尼美元负债 | $4,000万 | Short USD | | **净敞口** | **-$6,000万/月** | **净Short USD** | **结论**：USD/CNY升值 → 对我司净不利（Short敞口主导）。这解释了2025年汇兑损益激增45%。 **用户反馈**：\"你的财务基础有点薄弱，考虑到你是一个顶级的投行",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.425062882900238,
+      "maxScore": 0.425062882900238,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "6.8589",
+        "4/28",
+        "139.com",
+        "108.23",
+        "2.75",
+        "已固化到company.md",
+        "000万/月",
+        "usd/cny升值"
+      ]
+    },
+    "memory:memory/2026-05-14.md:53:75": {
+      "key": "memory:memory/2026-05-14.md:53:75",
+      "path": "memory/2026-05-14.md",
+      "startLine": 53,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "| LME镍库存 | **275,778吨**（-996） | Westmetall | 2026-05-13 | | 碳酸锂SMM | **200,500元/吨** | SMM | 2026-05-13 | | 碳酸锂期货主力 | **192,620元/吨** | 新浪财经 | 2026-05-14盘中 | | 碳酸锂期货涨跌 | **-4.57%** | 新浪财经 | 2026-05-14盘中 | | 现货黄金 | **$4,705/oz** | cngold.org / WikiFX | 2026-05-14 | | COMEX黄金期货 | **$4,698.2/oz** | cngold.org | 2026-05-14 | | 沪金主力 | **1,030.56元/克** | 东方财富 | 2026-05-14 | | 伦铅 | **$2,012.15/吨** | TradingEconomics | 2026-05-14 | | 央行LPR | **1Y 3.00%，5Y 3.50%** | 央行公告 | 2026-03-20 | | 买断式逆回购 | **8000亿（4月操作，净回笼3000亿）** | 央行公告 | 2026-04-07 | **敞口影响（已逐项确认方向正确）**： - 印尼人民币借款 $10亿 → **Long USD**（人民币升值→负债折算膨胀→不利） - 香港购汇 $5,000万/月 → **Short USD**（人民币升值→购汇成本降低→有利） - **净敞口 = Long $9.5亿/月** → 人民币升值主导 = 净不利 - 中",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4247190833091736,
+      "maxScore": 0.4247190833091736,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "500元/吨",
+        "620元/吨",
+        "2026-05-14盘中",
+        "4.57",
+        "705/oz",
+        "cngold.org",
+        "698.2/oz",
+        "030.56元/克"
+      ]
+    },
+    "memory:memory/2026-04-21.md:1:29": {
+      "key": "memory:memory/2026-04-21.md:1:29",
+      "path": "memory/2026-04-21.md",
+      "startLine": 1,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "# 2026-04-21 — 财资日报CFO视角重大改版 + 盘前简报更新 ## 任务1：财资日报改版 + 部署 ### 需求记录（用户新需求） **角色锚定**： - \"我\" = 中伟新材（CNGR Advanced Material）财务总监 - 管理资金、利率和汇率风险，考虑经营效率 **\"我司\"关注清单**（已固化到USER.md和MEMORY.md）： 1. USD/CNY波动对海外项目收益折算影响 2. 印尼、阿根廷外汇风险敞口及套期保值有效性 3. 海外借款（印尼恒生1800万美元）外币融资成本风险 4. 净利润增速低于营收增速的盈利质量问题 5. 印尼政策与行业变局下的成本结构与资金链压力 6. 硫酸钴、硫酸镍价格波动对生产成本影响 7. 磷酸铁锂赛道：从\"三元为王\"到\"铁锂主导\"的行业变局 8. 磷矿项目（9844万吨资源量）资金投入节奏与现金流影响 **格式改版要点**： 1. 顶部\"今日核心风险仪表盘\" — 红黄绿灯 + 优先级排序 + 风险方向 2. \"对我司的影响简述\" — 风险/机会量化影响 + 行动建议（带ACTION标签） 3. 历史分位数据 — 价格旁标注1年分位（如\"USD/CNY 6.8648，约6%分位（偏低）\"） ### 生成报告 **报告文件**: `reports/finance_daily_20260421_cfo.html` **发送时间**: 2026-04-21 09:20 CST",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4162572532892227,
+      "maxScore": 0.4162572532892227,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "已固化到user.md和memory.md",
+        "usd/cny波动对海外项目收益折算影响",
+        "风险/机会量化影响",
+        "usd/cny",
+        "6.8648",
+        "日报",
+        "cfo",
+        "视角"
+      ]
+    },
+    "memory:memory/2026-04-14.md:40:72": {
+      "key": "memory:memory/2026-04-14.md:40:72",
+      "path": "memory/2026-04-14.md",
+      "startLine": 40,
+      "endLine": 72,
+      "source": "memory",
+      "snippet": "- 4月维持不变概率: 99% - 中国M2: 353.86万亿元 (同比+8.5%) - 数据质量: ⭐⭐⭐⭐⭐ ### 地缘风险 - 霍尔木兹海峡: 封锁状态 - 美伊谈判: 未取得突破但对话继续 - 伊朗损失评估: 2700亿美元 - 数据质量: ⭐⭐⭐⭐⭐ ## 报告输出 - 格式: HTML (适配139邮箱) - 配色: 深蓝主色(#1a1a2e) + 红色强调(#e94560) - 数据时效声明: 已标注 - 五星质量评级: 已包含 - 文件路径: /root/.openclaw/workspace/finance_daily_report_20260414.html ## 邮件发送 - 收件人: 13911658378@139.com - 发送状态: ✅ 成功 - SMTP服务器: smtp.139.com:465 (SSL) ## 关键市场洞察 1. **汇率**: 美元指数六连跌创年内纪录，人民币偏强震荡 2. **有色**: 全线上涨，印尼镍矿政策调整推高成本 3. **贵金属**: 地缘避险支撑金价突破4760美元 4. **原油**: 霍尔木兹封锁致现货价创历史新高 5. **地缘风险**: 极高，关注4月16日下一轮谈判 ## 对冲建议摘要 - USD/CNY短期区间: 6.80-6.87 - 建议逢低分批对冲，关注6.80支撑位",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.41536464691162106,
+      "maxScore": 0.41536464691162106,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "353.86万亿元",
+        "8.5",
+        "139.com",
+        "smtp.139.com",
+        "usd/cny短期区间",
+        "6.80-6.87",
+        "关注6.80支撑位",
+        "维持"
+      ]
+    },
+    "memory:memory/2026-05-18.md:1:30": {
+      "key": "memory:memory/2026-05-18.md:1:30",
+      "path": "memory/2026-05-18.md",
+      "startLine": 1,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "## 16:06 — 财资日报2026-05-18生成完毕 **质量评级：★★★★☆** - ✅ 中间价6.8435当日数据（央行授权公告+中国货币网验证） - ✅ LME镍$18,580当日凌晨收盘 - ✅ 央行买断式逆回购到期8000亿当日操作 - ⚠️ 布伦特原油盘中未收盘（标注为盘中$110+） - ⚠️ 黄金、铜铝等上周五收盘数据（标注滞后） ### 关键数据当日快照 | 指标 | 数值 | vs前日 | 来源 | |------|------|--------|------| | USD/CNY中间价 | 6.8435 | +20bp调贬 | 中国货币网 9:15 | | LME镍 | $18,580 | -360(-1.90%) | 新浪财经 05-18 | | 碳酸锂现货 | ~191,000元/吨 | 持平 | 生意社/100ppi 5/17 | | LC2606期货 | 188,140(盘中) | — | 东方财富 15:01 | | 布伦特原油 | ~$110(盘中) | +2.36%上周五收盘 | 金十数据 | | 黄金 | $4,538.45 | -110(-2.41%) | 金十数据 5/15收盘 | | DXY | 99.28 | +0.42%五连涨 | 金十数据 5/15收盘 | | 央行7天逆回购 | 10亿 | 利率1.40%持平 | 央行公告 09:23 | | 买断式逆回购到期 | 8,000亿 | 余额降至5.7万亿 | 每日经济新闻 | | 霍尔木兹通航 | 2艘驶出 | 通航量极低 | 财新数据 | ### 敞口状态确认",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4115203291177749,
+      "maxScore": 0.4115203291177749,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "财资日报2026-05-18生成完毕",
+        "中间价6.8435当日数据",
+        "usd/cny中间价",
+        "6.8435",
+        "1.90",
+        "05-18",
+        "000元/吨",
+        "生意社/100ppi"
+      ]
+    },
+    "memory:memory/2026-04-09.md:82:97": {
+      "key": "memory:memory/2026-04-09.md:82:97",
+      "path": "memory/2026-04-09.md",
+      "startLine": 82,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "- 霍尔木兹海峡: 4月8日晚再次关闭 - 日均通行量降至8艘（-94%） - 美伊首轮会谈: 4月11日巴基斯坦伊斯兰堡 ### 对冲建议 - USD/CNY: 维持60-75%对冲比例，执行价6.85-6.90 - 油价敞口: 暂缓建仓，等待会谈结果 - 有色金属: 铜保持多头敞口 - 黄金: 维持配置，逢低加仓 ### 文件位置 - HTML报告: `reports/finance_daily_20260409.html` --- 数据来源: 中国货币网、中国银行、LME、SMM、COMEX、财联社",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4055796056985855,
+      "maxScore": 0.4055796056985855,
+      "firstRecalledAt": "2026-05-19T22:00:53.884Z",
+      "lastRecalledAt": "2026-05-19T22:00:53.884Z",
+      "queryHashes": [
+        "900751fc4309"
+      ],
+      "recallDays": [
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "usd/cny",
+        "维持60-75",
+        "执行价6.85-6.90",
+        "海峡",
+        "再次",
+        "关闭",
+        "通行",
+        "降至"
+      ]
+    }
+  }
+}
