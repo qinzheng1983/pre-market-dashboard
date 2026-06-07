@@ -1,54 +1,120 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>财资报告导航页</title>
-<style>
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; margin: 0; padding: 0; background: #f5f6fa; color: #1a1a2e; }
-  .container { max-width: 960px; margin: 0 auto; padding: 40px 20px; }
-  .header { text-align: center; margin-bottom: 40px; }
-  .header h1 { margin: 0; font-size: 26px; }
-  .header p { margin: 8px 0 0; color: #666; font-size: 14px; }
-  .grid { display: table; width: 100%; border-spacing: 20px; }
-  .card { display: table-cell; width: 33%; background: #fff; border-radius: 8px; padding: 24px; border-left: 4px solid #e94560; box-shadow: 0 2px 8px rgba(0,0,0,0.06); vertical-align: top; }
-  .card h2 { margin: 0 0 10px; font-size: 18px; }
-  .card p { margin: 0 0 16px; font-size: 13px; color: #555; line-height: 1.6; }
-  .card a { display: inline-block; padding: 8px 16px; background: #1a1a2e; color: #fff; text-decoration: none; border-radius: 4px; font-size: 13px; }
-  .card a:hover { background: #e94560; }
-  .meta { font-size: 12px; color: #888; margin-top: 12px; }
-  @media (max-width: 720px) {
-    .grid { display: block; }
-    .card { display: block; width: auto; margin-bottom: 20px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>财资报告中心</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: #1a1a2e;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.7;
+        }
+        .report-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .report-card {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .report-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+            border-color: #e94560;
+        }
+        .report-card .date {
+            font-size: 14px;
+            color: #e94560;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .report-card .title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .report-card .desc {
+            font-size: 14px;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+        .badge {
+            display: inline-block;
+            background: #27ae60;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <div class="header">
-    <h1>财资报告导航页</h1>
-    <p>最新一期报告快速入口 | 历史报告请通过直接 URL 访问</p>
-  </div>
-  <div class="grid">
-    <div class="card">
-      <h2>盘前简报</h2>
-      <p>每日 08:30 发布，覆盖 overnight 全球市场动态，开盘前行动清单。</p>
-      <a href="index.html">查看最新简报</a>
-      <div class="meta">最新：2026-06-05</div>
+    <div class="header">
+        <h1>财资报告中心</h1>
+        <p>跨国企业资金管理决策参考</p>
     </div>
-    <div class="card">
-      <h2>财资日报</h2>
-      <p>每日 16:00 发布，当日完整收盘数据，货币政策、汇率、有色、贵金属、地缘。</p>
-      <a href="finance-daily/20260424.html">查看最新日报</a>
-      <div class="meta">最新：2026-04-24</div>
+    
+    <div class="report-grid">
+        <!-- 盘前简报 -->
+        <a href="index.html" class="report-card">
+            <div class="date">点击查看 <span class="badge">最新</span></div>
+            <div class="title">盘前市场简报</div>
+            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>数据截止前一交易日收盘</div>
+        </a>
+        
+        <!-- 财资日报 -->
+        <a href="finance-daily/20260605.html" class="report-card">
+            <div class="date">2026年06月05日 <span class="badge">最新</span></div>
+            <div class="title">财资日报</div>
+            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br></div>
+        </a>
+        
+        <!-- 财资周报 -->
+        <a href="finance-weekly/2026w17.html" class="report-card">
+            <div class="date">点击查看 <span class="badge">最新</span></div>
+            <div class="title">财资周报</div>
+            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>本周走势汇总+下周前瞻+CFO视角策略</div>
+        </a>
     </div>
-    <div class="card">
-      <h2>财资周报</h2>
-      <p>每周五 16:00 发布，周一至周五数据汇总，周度洞察 + 下周前瞻。</p>
-      <a href="finance-weekly/2026w23.html">查看最新周报</a>
-      <div class="meta">最新：2026年第23周</div>
+    
+    <div class="footer">
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-06-05 16:18
     </div>
-  </div>
-</div>
 </body>
 </html>
