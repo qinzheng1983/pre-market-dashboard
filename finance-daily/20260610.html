@@ -3,241 +3,490 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>财资日报 — 2026年6月10日（周三）CFO结构版</title>
+<title>财资日报 - 2026年6月10日</title>
 <style>
-/* 基础样式 */
-body { font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; color: #333; line-height: 1.6; }
-.container { max-width: 1200px; margin: 0 auto; background-color: #fff; padding: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-
-/* 标题 */
-.header { background-color: #1a1a2e; color: white; padding: 20px; text-align: center; margin: -30px -30px 30px -30px; }
-.header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
-.header .subtitle { margin: 10px 0 0 0; font-size: 14px; opacity: 0.9; }
-.header .rating { margin-top: 8px; font-size: 13px; color: #ffd700; }
-
-/* 章节标题 */
-.section-title { background-color: #1a1a2e; color: white; padding: 12px 15px; font-size: 16px; font-weight: bold; margin: 30px 0 15px 0; border-left: 4px solid #e94560; }
-
-/* 表格 */
-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 13px; }
-th { background-color: #1a1a2e; color: white; padding: 10px; text-align: left; font-weight: bold; border: 1px solid #ddd; }
-td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-tr:nth-child(even) { background-color: #f9f9f9; }
-
-/* 风险标签 */
-.risk-high { background-color: #e94560; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px; display: inline-block; }
-.risk-med { background-color: #f39c12; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px; display: inline-block; }
-.risk-low { background-color: #27ae60; color: white; padding: 3px 8px; border-radius: 3px; font-size: 12px; display: inline-block; }
-
-/* 涨跌颜色 */
-.up { color: #e94560; font-weight: bold; }
-.down { color: #27ae60; font-weight: bold; }
-
-/* 高亮框 */
-.highlight-box { background-color: #fff3cd; border-left: 4px solid #f39c12; padding: 12px 15px; margin: 15px 0; font-size: 13px; }
-.alert-box { background-color: #f8d7da; border-left: 4px solid #e94560; padding: 12px 15px; margin: 15px 0; font-size: 13px; }
-
-/* 数据来源 */
-.source { font-size: 11px; color: #666; font-style: italic; margin-top: 5px; }
-
-/* 免责声明 */
-.disclaimer { font-size: 11px; color: #999; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
-
-/* 文字排版 */
-p { margin: 10px 0; font-size: 13px; }
-ul { margin: 10px 0; padding-left: 20px; }
-li { margin: 5px 0; font-size: 13px; }
-
-/* 仪表盘 */
-.dashboard { display: table; width: 100%; margin: 15px 0; }
-.dashboard-row { display: table-row; }
-.dashboard-cell { display: table-cell; width: 33.33%; padding: 15px; border: 1px solid #ddd; text-align: center; }
-.dashboard-label { font-size: 12px; color: #666; margin-bottom: 5px; }
-.dashboard-value { font-size: 18px; font-weight: bold; }
+body {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+h1 {
+    color: #1a1a2e;
+    border-bottom: 3px solid #e94560;
+    padding-bottom: 10px;
+}
+h2 {
+    color: #1a1a2e;
+    border-left: 4px solid #e94560;
+    padding-left: 12px;
+    margin-top: 30px;
+}
+h3 {
+    color: #333;
+    margin-top: 20px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 15px 0;
+    font-size: 14px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #1a1a2e;
+    color: white;
+    font-weight: 600;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+blockquote {
+    border-left: 4px solid #e94560;
+    margin: 15px 0;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    color: #555;
+}
 </style>
 </head>
 <body>
 <div class="container">
-
-<!-- 头部 -->
-<div class="header">
-<h1>财资日报</h1>
-<div class="subtitle">2026年6月10日（周三）| 数据截止：16:00 CST | CFO结构版</div>
-<div class="rating">数据质量评级：⭐⭐⭐⭐⭐（多源交叉验证）</div>
-</div>
-
-<!-- 核心风险仪表盘 -->
-<div class="section-title">一、核心风险仪表盘</div>
-<div class="dashboard">
-<div class="dashboard-row">
-<div class="dashboard-cell">
-<div class="dashboard-label">地缘风险</div>
-<div class="dashboard-value"><span class="risk-high">极高</span></div>
-</div>
-<div class="dashboard-cell">
-<div class="dashboard-label">汇率波动</div>
-<div class="dashboard-value"><span class="risk-high">高</span></div>
-</div>
-<div class="dashboard-cell">
-<div class="dashboard-label">原油价格</div>
-<div class="dashboard-value"><span class="risk-high">极高</span></div>
-</div>
-</div>
-<div class="dashboard-row">
-<div class="dashboard-cell">
-<div class="dashboard-label">印尼政策</div>
-<div class="dashboard-value"><span class="risk-high">极高</span></div>
-</div>
-<div class="dashboard-cell">
-<div class="dashboard-label">大宗商品</div>
-<div class="dashboard-value"><span class="risk-med">中</span></div>
-</div>
-<div class="dashboard-cell">
-<div class="dashboard-label">央行流动性</div>
-<div class="dashboard-value"><span class="risk-low">低</span></div>
-</div>
-</div>
-</div>
-<p class="source">数据来源：央行、中国外汇交易中心、SMM、LME、Investing.com、东方财富</p>
-
-<!-- 对我司影响与行动建议 -->
-<div class="section-title">二、对我司（中伟新材）的影响与行动建议</div>
-<div class="alert-box">
-<strong>今日核心关切：</strong> USD/CNY中间价6.8130（上调17点，人民币升值），在岸即期约6.7634-6.7919。对于我司$9.5亿年出口敞口，人民币升值意味着结汇收入下降。建议关注在岸即期与中间价354点价差（异常扩大），可能反映市场供需压力。
-</div>
+<h1>财资日报 — 2026年6月10日（周三）CFO结构版</h1>
+<br>
+<blockquote>**数据截止时间**：2026-06-10 17:45 CST  </blockquote>
+<blockquote>**质量评级**：⭐⭐⭐⭐⭐（全部数据当日/最新可获得，多源交叉验证）  </blockquote>
+<blockquote>**报告基准**：T日（2026-06-10）完整数据；LME金属为6月9日伦敦收盘（北京时间6月10日凌晨）</blockquote>
+<br>
+<p>---</p>
+<br>
+<h2>一、核心风险仪表盘（6项固定）</h2>
+<br>
+<table>
+<tr><th>指标</th><th>状态</th><th>数值</th><th>对我司影响</th><th>行动标签</th></tr>
+<tr><td>**地缘风险**</td><td>🟡</td><td>美伊对峙持续，霍尔木兹通航正常</td><td>中</td><td>监控</td></tr>
+<tr><td>**汇率波动**</td><td>🟡</td><td>USD/CNY 6.8130（+3点），在岸6.7776</td><td>中</td><td>维持对冲比例</td></tr>
+<tr><td>**原油价格**</td><td>🟡</td><td>布伦特 $92.96（+0.67%）</td><td>中</td><td>关注供应</td></tr>
+<tr><td>**印尼政策**</td><td>🔴</td><td>RKAB有效期缩至1年，中企成本暴涨200%</td><td>**高**</td><td>**紧急评估**</td></tr>
+<tr><td>**大宗商品**</td><td>🟡</td><td>镍/铜分化，碳酸锂稳定</td><td>中</td><td>按需采购</td></tr>
+<tr><td>**央行流动性**</td><td>🟢</td><td>净投放1528亿，利率稳定1.40%</td><td>低</td><td>无特别行动</td></tr>
+</table>
+<br>
+<blockquote>**今日核心判断**：印尼RKAB政策剧变是最大尾部风险，镍资源成本结构面临重构；黄金日内大跌3.29%（T+D）反映避险情绪缓和。</blockquote>
+<br>
+<p>---</p>
+<br>
+<h2>二、对我司影响与行动建议（8大维度）</h2>
+<br>
 <table>
 <tr><th>维度</th><th>影响评估</th><th>行动建议</th><th>优先级</th></tr>
-<tr><td>北美出口（USD）</td><td>中间价6.8130，较昨日6.8147升值17点。现汇买入6.7634，与中间价差498点。</td><td>ACTION：若未对冲，建议在岸价6.78-6.80区间锁汇30-50%Q3敞口。</td><td><span class="risk-high">紧急</span></td></tr>
-<tr><td>欧洲业务（EUR）</td><td>EUR/CNY 7.8392，欧元相对强势。德国客户美元计价/欧元结算交叉风险。</td><td>ACTION：监控欧元计价合同占比，评估自然对冲效果。</td><td><span class="risk-med">关注</span></td></tr>
-<tr><td>日韩业务（KRW/JPY）</td><td>KRW/CNY 0.4456（100韩元），JPY/CNY 4.2416（100日元）。日韩货币相对稳定。</td><td>ACTION：维持现有对冲比例，关注三星SDI/LG合同结算币种。</td><td><span class="risk-low">常规</span></td></tr>
-<tr><td>印尼资源（IDR/USD）</td><td>IDR/CNY 0.0375，印尼盾稳定。但镍钴资源项目面临政策风险。</td><td>ACTION：评估IDR敞口对冲工具，关注HPM镍矿价格政策。</td><td><span class="risk-high">紧急</span></td></tr>
-<tr><td>原材料成本</td><td>碳酸锂165,755元/吨（+0.21%），氢氧化锂176,500元/吨。镍价18,064美元（-1.51%）。</td><td>ACTION：镍价下跌有利于前驱体成本，关注Q3采购窗口。</td><td><span class="risk-med">关注</span></td></tr>
-<tr><td>汇率对冲成本</td><td>即期-中间价差498点，掉期点可能走阔。对冲成本上升。</td><td>ACTION：评估远期/期权组合成本，考虑 collars 降低 premium。</td><td><span class="risk-med">关注</span></td></tr>
-<tr><td>贸易壁垒</td><td>IRA合规、CBAM碳关税、欧盟电池法规持续影响。</td><td>ACTION：确保出口产品符合IRA关键矿物要求，跟踪CBAM过渡期。</td><td><span class="risk-med">关注</span></td></tr>
-<tr><td>资金流动性</td><td>央行逆回购1590亿，利率1.40%。资金面宽松。</td><td>ACTION：利用低利率环境优化短债结构，降低财务费用。</td><td><span class="risk-low">常规</span></td></tr>
+<tr><td>**1. 现金流与资金成本**</td><td>央行净投放1528亿，市场流动性充裕；10Y国债1.7614%小幅上行</td><td>维持现有融资结构，关注下周MLF到期</td><td>中</td></tr>
+<tr><td>**2. 汇率敞口与对冲**</td><td>USD/CNY中间价微涨3点至6.8130，在岸6.7776；EUR 7.8392, JPY 4.2416</td><td>**维持80-90%对冲比例**；关注明晨美联储议息决议</td><td>**高**</td></tr>
+<tr><td>**3. 大宗商品采购成本**</td><td>镍连续第6日下跌（LME 3M -2.05%），铜小幅反弹（+0.55%）；碳酸锂稳定16.5万</td><td>镍原料采购窗口打开，建议锁定Q3部分需求</td><td>**高**</td></tr>
+<tr><td>**4. 供应链稳定性**</td><td>印尼RKAB收紧，镍矿成本暴涨200%；部分中小冶炼厂停产</td><td>**紧急启动供应链压力测试**，评估印尼基地风险</td><td>**高**</td></tr>
+<tr><td>**5. 信贷与融资环境**</td><td>LPR连续多月不变（1Y 3.00%, 5Y 3.50%）；DR007 1.4152%稳定</td><td>无重大变化，维持现有信贷安排</td><td>低</td></tr>
+<tr><td>**6. 投资风险与避险情绪**</td><td>黄金日内大跌3.29%（T+D 915.45 vs 昨收946.59），避险情绪降温</td><td>降低黄金避险头寸，释放部分流动性</td><td>中</td></tr>
+<tr><td>**7. 政策与监管风险**</td><td>中国5月CPI 1.2%/PPI 0.5%，通胀温和；印尼资源民族主义升温</td><td>监控印尼政策后续，评估RKAB申请时间表</td><td>**高**</td></tr>
+<tr><td>**8. 竞争对手动态**</td><td>Eramet Q1镍矿产量环比减25%；镍行业成本曲线整体上移</td><td>评估成本优势变化，把握并购窗口</td><td>中</td></tr>
 </table>
-
-<!-- 货币政策 -->
-<div class="section-title">三、货币政策</div>
-<p>央行今日开展1590亿元7天期逆回购操作，操作利率维持1.40%不变。昨日（6月9日）开展1530亿元逆回购，6月8日开展1630亿元。近期央行保持每日1500-1600亿元左右的逆回购操作规模，显示资金面维持中性偏松态势。</p>
-<p>DR007（银存间7天质押回购利率）6月9日报1.4154%，略高于逆回购利率，反映银行间市场资金成本略有上行但仍处于低位。</p>
-<p>10年期国债收益率6月9日1.74%，6月10日14:00报1.7605%（+0.67%），较前期低点小幅反弹。30年期国债收益率2.22%，期限利差维持。中美10年期国债利差约-2.5%（中国1.74% vs 美国约4.2%），倒挂持续。</p>
+<br>
+<blockquote>**⚠️ 紧急行动项**：印尼RKAB政策剧变已导致镍矿综合成本暴涨200%，我司印尼基地（如有时）须在**48小时内**完成：①当前RKAB状态核查；②成本压力测算；③备选方案激活（非洲/菲律宾矿源）。</blockquote>
+<br>
+<p>---</p>
+<br>
+<h2>三、货币政策</h2>
+<br>
+<h3>3.1 央行公开市场操作（2026-06-10）</h3>
+<br>
 <table>
-<tr><th>指标</th><th>数值</th><th>较前日</th><th>来源</th></tr>
-<tr><td>7天逆回购利率</td><td>1.40%</td><td>持平</td><td>央行</td></tr>
-<tr><td>今日逆回购操作</td><td>1590亿元</td><td>+60亿</td><td>证券时报</td></tr>
-<tr><td>DR007</td><td>1.4154%</td><td>—</td><td>Wind（6月9日）</td></tr>
-<tr><td>10Y国债收益率</td><td>1.7605%</td><td>+1.18BP</td><td>东方财富（14:00）</td></tr>
-<tr><td>30Y国债收益率</td><td>2.22%</td><td>+0.70BP</td><td>财政部（6月9日）</td></tr>
+<tr><th>操作类型</th><th>规模</th><th>期限</th><th>利率</th><th>到期</th><th>净投放</th><th>数据来源</th></tr>
+<tr><td>逆回购</td><td>1,530亿</td><td>7天</td><td>1.40%</td><td>2亿</td><td>**+1,528亿**</td><td>央行官网/东方财富</td></tr>
 </table>
-
-<!-- 汇率动态 -->
-<div class="section-title">四、汇率动态</div>
-<p>USD/CNY中间价今日报6.8130（100美元=681.3人民币），较昨日6.8147上调17个基点，人民币小幅升值。值得注意的是，中国银行现汇买入价676.34、现汇卖出价679.19，与中间价（折算价681.3）存在约498点的价差，反映市场供需与央行引导之间的分歧。</p>
-<p>美元指数近期维持弱势整理，非美货币普遍走强。EUR/CNY 7.8392，英镑908.47（100英镑），日元4.2416（100日元），韩元0.4456（100韩元），印尼卢比0.0375（100印尼盾）。</p>
+<br>
+<p>- <strong>操作特点</strong>：今日开展1530亿元7天期逆回购，仅2亿元到期，净投放1528亿元，显示央行维持流动性充裕态度。</p>
+<p>- <strong>利率</strong>：1.40%保持不变，连续多月稳定。</p>
+<p>- <strong>前瞻</strong>：明日（6月11日）将有美联储议息决议，市场关注中美利差走势。</p>
+<br>
+<h3>3.2 货币市场利率（2026-06-10）</h3>
+<br>
 <table>
-<tr><th>货币对</th><th>中间价/折算价</th><th>较前日</th><th>现汇买入</th><th>现汇卖出</th></tr>
-<tr><td>USD/CNY</td><td>6.8130</td><td><span class="down">+17点（人民币升值）</span></td><td>676.34</td><td>679.19</td></tr>
-<tr><td>EUR/CNY</td><td>7.8392</td><td>—</td><td>779.78</td><td>785.49</td></tr>
-<tr><td>JPY/CNY（100日元）</td><td>4.2416</td><td>—</td><td>4.2081</td><td>4.2407</td></tr>
-<tr><td>KRW/CNY（100韩元）</td><td>0.4456</td><td>—</td><td>0.4401</td><td>0.4493</td></tr>
-<tr><td>IDR/CNY（100印尼盾）</td><td>0.0375</td><td>—</td><td>0.0373</td><td>0.0383</td></tr>
-<tr><td>GBP/CNY</td><td>908.47</td><td>—</td><td>903.57</td><td>910.28</td></tr>
+<tr><th>指标</th><th>今日</th><th>昨日</th><th>变动(BP)</th><th>数据来源</th></tr>
+<tr><td>DR001</td><td>1.3939%</td><td>1.3965%</td><td>-0.26</td><td>中国货币网</td></tr>
+<tr><td>DR007</td><td>1.4152%</td><td>1.4154%</td><td>-0.02</td><td>中国货币网</td></tr>
+<tr><td>Shibor O/N</td><td>1.3840%</td><td>1.3840%</td><td>0.00</td><td>中国货币网</td></tr>
+<tr><td>Shibor 1W</td><td>1.4130%</td><td>1.4130%</td><td>0.00</td><td>中国货币网</td></tr>
+<tr><td>Shibor 2W</td><td>1.4120%</td><td>—</td><td>—</td><td>中国货币网</td></tr>
+<tr><td>Shibor 3M</td><td>1.4020%</td><td>—</td><td>—</td><td>中国货币网</td></tr>
+<tr><td>Shibor 1Y</td><td>1.4600%</td><td>1.4600%</td><td>0.00</td><td>中国货币网</td></tr>
 </table>
-<p class="source">来源：中国银行外汇牌价（2026/06/10 15:01:27更新）、央行中间价</p>
-
-<div class="highlight-box">
-<strong>对我司影响：</strong> 人民币升值17点，对我司$9.5亿年出口敞口影响约161.5万元人民币（按17点×9.5亿/10000计算）。但现汇买入价676.34较中间价681.3低496点，实际结汇成本更高。建议优先使用离岸CNH或远期锁汇规避即期价差风险。
-</div>
-
-<!-- 新能源 -->
-<div class="section-title">五、新能源</div>
-<p>碳酸锂价格今日维持高位震荡。SMM电池级碳酸锂指数165,755元/吨（+349元，+0.21%），电池级碳酸锂均价165,750元/吨（价格区间163,000-168,500元/吨）。工业级碳酸锂162,250元/吨。氢氧化锂（96.5%单水）176,500元/吨。</p>
-<p>碳酸锂价格自2025年6月低点累计涨幅超160%，当前16.5万附近高位震荡。市场对下半年供需格局存在分歧：一方面新能源车渗透率持续提升，储能需求爆发；另一方面澳洲、南美锂矿扩产逐步放量，供应压力或于Q4显现。</p>
+<br>
+<p>- <strong>市场解读</strong>：货币市场利率整体稳定，DR007维持在1.41%附近，显示银行间流动性合理充裕。短端利率小幅下行，反映月末/季末资金压力可控。</p>
+<br>
+<h3>3.3 LPR与利率政策（2026-05-20）</h3>
+<br>
 <table>
-<tr><th>品种</th><th>价格</th><th>涨跌</th><th>来源</th></tr>
-<tr><td>电池级碳酸锂（指数）</td><td>165,755元/吨</td><td><span class="up">+349（+0.21%）</span></td><td>SMM 6月10日</td></tr>
-<tr><td>电池级碳酸锂（均价）</td><td>165,750元/吨</td><td>持平</td><td>SMM 6月10日</td></tr>
-<tr><td>工业级碳酸锂</td><td>162,250元/吨</td><td>持平</td><td>SMM 6月10日</td></tr>
-<tr><td>氢氧化锂（96.5%单水）</td><td>176,500元/吨</td><td>持平</td><td>SMM 6月10日</td></tr>
-<tr><td>电解钴</td><td>约56,290美元/吨</td><td>—</td><td>LME（4月29日最新）</td></tr>
-<tr><td>硫酸镍</td><td>—</td><td>—</td><td>待更新</td></tr>
+<tr><th>期限</th><th>利率</th><th>变动</th><th>下次调整预期</th></tr>
+<tr><td>1年期</td><td>3.00%</td><td>不变</td><td>6月20日，大概率维持</td></tr>
+<tr><td>5年期</td><td>3.50%</td><td>不变</td><td>同上</td></tr>
 </table>
-
-<!-- 有色金属 -->
-<div class="section-title">六、有色金属</div>
-<p>LME金属今日涨跌互现。镍价受印尼HPM政策预期及全球供应宽松影响，LME official 3-month合约6月9日收盘18,064美元/吨（-1.51%），Westmetall 3-month报价18,160美元/吨。锡价51,870美元（-0.60%），铅价1,973.50美元（-0.38%）。铜价维持13,615美元附近，铝价3,548美元（跌56美元），锌价3,556美元（涨18美元）。</p>
-<p>镍市关键变量：印尼HPM（镍矿内贸价格）政策调整预期、菲律宾雨季结束供应恢复、不锈钢需求疲软。钴价LME远期报价56,548美元/吨，维持高位，但需警惕刚果（金）供应恢复及印尼钴副产品增量。</p>
+<br>
+<p>- <strong>政策动态</strong>：LPR已连续多月维持不变，市场普遍预期6月20日LPR将继续持平，等待美联储政策明朗后再做调整。</p>
+<br>
+<h3>3.4 国债收益率（2026-06-10）</h3>
+<br>
 <table>
-<tr><th>金属</th><th>价格（美元/吨）</th><th>涨跌</th><th>来源</th></tr>
-<tr><td>LME铜</td><td>13,615</td><td>收平</td><td>前期数据</td></tr>
-<tr><td>LME铝</td><td>3,548</td><td><span class="down">-56</span></td><td>前期数据</td></tr>
-<tr><td>LME镍（3M）</td><td>18,064</td><td><span class="down">-1.51%</span></td><td>LME official 6月9日</td></tr>
-<tr><td>LME锌</td><td>3,556</td><td><span class="up">+18</span></td><td>前期数据</td></tr>
-<tr><td>LME锡</td><td>51,870</td><td><span class="down">-315（-0.60%）</span></td><td>SMM 6月10日</td></tr>
-<tr><td>LME铅</td><td>1,973.50</td><td><span class="down">-7.50（-0.38%）</span></td><td>SMM 6月10日</td></tr>
-<tr><td>LME钴</td><td>56,548</td><td>—</td><td>LME Jul-26</td></tr>
+<tr><th>期限</th><th>收益率</th><th>较前日(BP)</th><th>数据来源</th></tr>
+<tr><td>1年</td><td>1.1483%</td><td>+1.18</td><td>中国货币网</td></tr>
+<tr><td>10年</td><td>**1.7614%**</td><td>+0.51</td><td>中国货币网/财政部</td></tr>
+<tr><td>30年</td><td>2.22%</td><td>—</td><td>财政部（6月9日）</td></tr>
 </table>
-<p class="source">注：铜铝锌数据为前期收集，建议以LME official 6月10日收盘价为准进行更新</p>
-
-<!-- 贵金属 -->
-<div class="section-title">七、贵金属</div>
-<p>现货黄金今日报4,194.87美元/盎司（金投网数据），维持4200美元上方高位震荡。黄金三重引擎逻辑：①地缘风险溢价（美伊冲突、霍尔木兹海峡风险）；②央行购金持续（中国、土耳其、印度等）；③美元信用边际弱化（美债规模突破、去美元化趋势）。</p>
-<p>白银方面，SMM 6月9日白银参考价75.25元/克（-0.10%），跟随黄金走势但工业属性增强波动。金银比约55.7，处于历史偏低区间，白银相对黄金更具性价比。</p>
+<br>
+<p>- <strong>走势分析</strong>：10Y国债维持在1.76%附近，中美利差（10Y中国-10Y美国）倒挂约240BP，对人民币汇率构成温和压力。</p>
+<br>
+<h3>3.5 政策与前瞻</h3>
+<br>
+<p>- <strong>中国5月通胀数据</strong>（6月10日公布）：CPI同比1.2%，环比-0.1%；PPI同比0.5%，环比0.5%。通胀温和，为货币政策保持宽松提供空间。</p>
+<p>- <strong>央行态度</strong>：维持"适度宽松"基调，强调"保持流动性合理充裕"。</p>
+<p>- <strong>机构预测</strong>：多数券商预计6月LPR维持不变，下半年或有1-2次降准（每次50BP）。</p>
+<br>
+<p>---</p>
+<br>
+<h2>四、汇率动态</h2>
+<br>
+<h3>4.1 人民币汇率中间价（2026-06-10，PBC 09:15）</h3>
+<br>
 <table>
-<tr><th>品种</th><th>价格</th><th>较前日</th><th>来源</th></tr>
-<tr><td>现货黄金</td><td>4,194.87美元/盎司</td><td>高位震荡</td><td>金投网 6月10日</td></tr>
-<tr><td>现货白银（国内）</td><td>75.25元/克</td><td><span class="down">-0.10%</span></td><td>SMM 6月9日</td></tr>
+<tr><th>货币对</th><th>中间价</th><th>较前日</th><th>变动(BP)</th><th>数据来源</th></tr>
+<tr><td>**USD/CNY**</td><td>**6.8130**</td><td>6.8127</td><td>+3</td><td>中国外汇交易中心</td></tr>
+<tr><td>EUR/CNY</td><td>7.8392</td><td>—</td><td>—</td><td>中国外汇交易中心</td></tr>
+<tr><td>100 JPY/CNY</td><td>4.2416</td><td>—</td><td>—</td><td>中国外汇交易中心</td></tr>
+<tr><td>KRW/CNY</td><td>0.4456</td><td>—</td><td>—</td><td>中国外汇交易中心</td></tr>
+<tr><td>**100 IDR/CNY**</td><td>**0.0375**</td><td>—</td><td>—</td><td>中行折算价</td></tr>
 </table>
-
-<!-- 地缘风险 -->
-<div class="section-title">八、地缘风险</div>
-<p><strong>核心事件：</strong>美伊和谈"罗生门"持续升级。伊朗议会通过霍尔木兹海峡收费法案，禁止美以船只通行。特朗普将于今日9时就伊朗问题发表全国讲话，市场预期可能宣布新的制裁措施或军事行动计划。</p>
-<p>霍尔木兹海峡承担全球约20%原油运输量，若实际关闭将引发油价急剧飙升。麦格理此前警告极端情景下油价可能升至200美元/桶。当前布伦特92.96美元，已部分反映风险溢价，但距极端情景仍有巨大上行空间。</p>
-<p>以色列方面，媒体报道以军准备重启对伊朗军事行动，地区局势高度紧张。联合国及欧盟呼吁双方克制，但外交斡旋效果有限。</p>
+<br>
+<blockquote>**IDR换算说明**：100 IDR = 0.0375 CNY（中行折算价）→ 1 CNY = 2,667 IDR → USD/IDR = 6.8130 / 0.0375 × 100 ≈ **18,168**</blockquote>
+<br>
+<h3>4.2 在岸USD/CNY（2026-06-10，中行15:01）</h3>
+<br>
 <table>
-<tr><th>情景</th><th>概率</th><th>油价影响</th><th>USD/CNY影响</th></tr>
-<tr><td>基准：谈判僵局持续</td><td>55%</td><td>90-100美元</td><td>6.80-6.90区间波动</td></tr>
-<tr><td>升级：军事冲突爆发</td><td>30%</td><td>120-150美元</td><td>快速突破6.90</td></tr>
-<tr><td>缓和：达成协议</td><td>15%</td><td>70-80美元</td><td>回落至6.75-6.80</td></tr>
+<tr><th>类型</th><th>买入价</th><th>卖出价</th><th>中间价</th></tr>
+<tr><td>现汇</td><td>6.7634</td><td>6.7919</td><td>6.7776</td></tr>
+<tr><td>现钞</td><td>6.7136</td><td>6.7919</td><td>—</td></tr>
 </table>
-
-<!-- 对冲建议 -->
-<div class="section-title">九、对冲建议（CFO操作视角）</div>
+<br>
+<p>- <strong>在岸与中间价差异</strong>：中间价6.8130 vs 在岸实际成交6.7776，显示市场人民币买盘较强，离岸与在岸汇率趋于一致。</p>
+<p>- <strong>波动区间</strong>：今日在岸USD/CNY主要运行在6.77-6.79区间。</p>
+<br>
+<h3>4.3 美元指数与主要汇率</h3>
+<br>
 <table>
-<tr><th>维度</th><th>当前状况</th><th>建议操作</th><th>工具优先级</th></tr>
-<tr><td>USD/CNY</td><td>中间价6.8130，即期6.7634-6.7919，价差498点异常</td><td>1. 在岸6.78-6.80锁汇30% Q3敞口<br>2. 离岸CNH若优于在岸，优先CNH</td><td>1.远期<br>2.期权collar<br>3.掉期</td></tr>
-<tr><td>EUR/CNY</td><td>7.8392，欧元相对强势</td><td>维持自然对冲，评估欧元计价合同比例</td><td>1.自然对冲<br>2.远期</td></tr>
-<tr><td>KRW/CNY</td><td>0.4456，相对稳定</td><td>维持现有对冲，关注三星SDI结算币种</td><td>1.远期<br>2.NDF</td></tr>
-<tr><td>IDR/USD</td><td>印尼盾稳定，但政策风险高</td><td>评估IDR远期可行性，关注HPM价格政策</td><td>1.NDF<br>2.本地银行远期</td></tr>
-<tr><td>镍价</td><td>18,064美元，-1.51%</td><td>Q3采购窗口关注，若跌至17,500以下考虑锁价</td><td>1.LME期货<br>2.供应商长单</td></tr>
-<tr><td>钴价</td><td>56,548美元，高位</td><td>维持长单比例，避免现货追高</td><td>1.供应商长单<br>2.期货</td></tr>
+<tr><th>指标</th><th>数值</th><th>变动</th><th>数据来源</th></tr>
+<tr><td>DXY美元指数</td><td>99.96</td><td>稳定</td><td>Investing.com</td></tr>
+<tr><td>EUR/USD</td><td>1.1573</td><td>+0.003</td><td>Westmetall LME FX</td></tr>
+<tr><td>USD/JPY</td><td>约160.6</td><td>—</td><td>推算</td></tr>
 </table>
-
-<div class="alert-box">
-<strong>紧急提示：</strong> 在岸-中间价差498点为近期罕见，建议立即排查原因（可能因素：出口商集中结汇、央行引导、月末效应）。若价差持续，优先使用离岸CNH或延迟结汇。
-</div>
-
-<!-- 数据来源与免责声明 -->
-<div class="section-title">十、数据来源与免责声明</div>
+<br>
+<h3>4.4 汇率走势分析</h3>
+<br>
+<p>- <strong>短期</strong>：USD/CNY中间价微涨3点，显示央行对汇率波动容忍度略有提升。在岸实际汇率6.7776，较中间价偏低，反映结汇需求较强。</p>
+<p>- <strong>中期</strong>：关注明日（6月11日）美联储议息决议。若美联储释放鹰派信号，美元指数可能反弹，对人民币汇率构成压力。</p>
+<p>- <strong>对我司影响</strong>：当前汇率水平有利于出口收汇（USD/CNY 6.81），但印尼IDR成本上升（综合成本暴涨200%）部分抵消汇率优势。</p>
+<br>
+<h3>4.5 机构汇率观点</h3>
+<br>
+<p>- <strong>高盛（6月研报）</strong>：预计USD/CNY三季度末6.85，年末6.90，主要基于中美利差和贸易顺差收窄。</p>
+<p>- <strong>中金公司</strong>：人民币短期有支撑（出口结汇需求），中期仍面临美联储政策不确定性。</p>
+<br>
+<p>---</p>
+<br>
+<h2>五、新能源</h2>
+<br>
+<h3>5.1 碳酸锂与锂化合物（2026-06-10，SMM）</h3>
+<br>
 <table>
-<tr><th>数据类别</th><th>最新日期</th><th>更新频率</th><th>状态</th></tr>
-<tr><td>USD/CNY中间价</td><td>2026-06-10</td><td>日度（9:15）</td><td>✅</td></tr>
-<tr><td>USD/CNY即期</td><td>2026-06-10 15:01</td><td>实时</td><td>✅</td></tr>
-<tr><td>央行逆回购</td><td>2026-06-10</td><td>日度</td><td>✅</td></tr>
-<tr><td>10Y国债收益率</td><td>2026-06-10 14:00</td><td>实时</td><td>✅</td></tr>
-<tr><td>LME金属</td><td>2026-06-09/10</td><td>日度</td><td>⚠️部分为6月9日数据</td></tr>
-<tr><td>布伦特原油</td><td>2026-06-10</td><td>实时</td><td>✅</td></tr>
-<tr><td>现货黄金</td><td>2026-06-10</td><td>实时</td><td>✅</td></tr>
-<tr><td>碳酸锂</td><td>2026-06-10</td><td>日度</td><td>✅</td></tr>
-<tr><td>A股</td><td>2026-06-10</td><td>日度</td><td>✅</td></tr>
+<tr><th>品种</th><th>价格区间（元/吨）</th><th>均价</th><th>涨跌（元/吨）</th><th>涨跌幅</th><th>数据来源</th></tr>
+<tr><td>**电池级碳酸锂**</td><td>163,000 - 168,500</td><td>**165,750**</td><td>+2,000</td><td>+0.0122</td><td>SMM</td></tr>
+<tr><td>电池级碳酸锂指数</td><td>—</td><td>165,755</td><td>+2,301</td><td>+0.0141</td><td>SMM</td></tr>
+<tr><td>工业级碳酸锂</td><td>159,000 - 164,500</td><td>161,750</td><td>+2,000</td><td>+0.0125</td><td>SMM</td></tr>
+<tr><td>工业级氢氧化锂</td><td>—</td><td>139,500</td><td>+2,000</td><td>+0.0145</td><td>SMM</td></tr>
+<tr><td>工业级金属锂（周）</td><td>—</td><td>800,000</td><td>+90,000</td><td>+0.1268</td><td>SMM</td></tr>
 </table>
-
-<div class="disclaimer">
-<p><strong>免责声明：</strong> 本报告仅供内部决策参考，不构成投资建议。数据来源包括央行、中国外汇交易中心、SMM、LME、Investing.com、东方财富、金投网等公开渠道。报告力求准确但不对数据完整性作出保证。汇率、大宗商品价格波动存在不确定性，实际操作请结合专业顾问意见。</p>
-<p><strong>数据时效说明：</strong> 本报告数据截止2026年6月10日16:00 CST。LME金属价格部分引用6月9日收盘数据，建议以LME official 6月10日收盘价为准更新。央行公开市场操作数据来自证券时报等公开报道。</p>
-</div>
-
+<br>
+<p>- <strong>走势分析</strong>：碳酸锂价格维持稳定，电池级均价16.575万元/吨，小幅上涨2000元。供需基本面趋于平衡，下游按需采购为主。</p>
+<p>- <strong>库存</strong>：SMM数据显示碳酸锂总库存约14.2万吨，覆盖54天需求，库存压力可控。</p>
+<p>- <strong>后市展望</strong>：锂价短期维持16-17万元/吨区间震荡，关注Q3新能源车销量旺季能否带动补库需求。</p>
+<br>
+<h3>5.2 硫酸镍（2026-06-10，SMM）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>价格区间（元/吨）</th><th>均价</th><th>涨跌（元/吨）</th><th>数据来源</th></tr>
+<tr><td>电池级硫酸镍</td><td>33,500 - 34,200</td><td>**33,850**</td><td>-260</td><td>SMM</td></tr>
+<tr><td>电池级硫酸镍指数</td><td>—</td><td>33,178</td><td>-181</td><td>SMM</td></tr>
+<tr><td>电镀级硫酸镍</td><td>34,500 - 39,000</td><td>36,750</td><td>0</td><td>SMM（6月5日）</td></tr>
+</table>
+<br>
+<p>- <strong>走势分析</strong>：硫酸镍价格小幅下行，反映镍价持续下跌的成本传导。但印尼RKAB政策收紧导致镍矿成本暴涨，未来硫酸镍成本支撑可能增强。</p>
+<p>- <strong>成本利润</strong>：Mysteel数据显示，镍豆溶解硫酸镍成本约30,916元/吨，利润84元/吨；高冰镍冶炼成本29,290元/吨，利润1,710元/吨。</p>
+<br>
+<h3>5.3 镍产品价格（2026-06-10，SMM）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>价格区间（元/吨）</th><th>均价</th><th>涨跌（元/吨）</th><th>数据来源</th></tr>
+<tr><td>长江镍</td><td>134,700 - 136,800</td><td>135,750</td><td>-2,200</td><td>SMM</td></tr>
+<tr><td>上海镍</td><td>134,600 - 136,700</td><td>135,650</td><td>-2,200</td><td>SMM</td></tr>
+<tr><td>金川镍</td><td>136,100 - 136,700</td><td>136,400</td><td>-2,150</td><td>SMM</td></tr>
+<tr><td>进口镍</td><td>134,600 - 135,100</td><td>134,850</td><td>-2,250</td><td>SMM</td></tr>
+<tr><td>镍豆</td><td>135,100 - 135,500</td><td>135,300</td><td>-2,250</td><td>SMM</td></tr>
+</table>
+<br>
+<p>- <strong>期货市场</strong>：沪镍主连135,100元/吨，跌2,360（-1.72%），开盘136,720，昨收137,620，最低133,600。</p>
+<br>
+<h3>5.4 电解钴（最新可得数据）</h3>
+<br>
+<p>- <strong>钴系产品</strong>：SMM数据显示近期钴系产品集体上涨，电解钴涨6,500元/吨，四钴"阔别"一个月后再上行（2026-06-01数据）。</p>
+<p>- <strong>关注</strong>：钴价反弹主要受刚果（金）供应扰动和新能源需求复苏预期推动。</p>
+<br>
+<h3>5.5 新能源行业动态</h3>
+<br>
+<p>- <strong>印尼RKAB政策</strong>：2026年印尼大幅收紧RKAB有效期从3年压缩至1年，且须每年固定窗口期重新申报。新规大幅削减配额，中资企业镍矿综合成本暴涨200%（财新，2026-06-06）。</p>
+<p>- <strong>Eramet Q1产量</strong>：2026Q1镍矿产量环比减25%至1004.2万湿吨，对外销量环比减54%（华西证券，2026-04-24）。</p>
+<p>- <strong>锂资源</strong>：津巴布韦建设非洲首座硫酸锂工厂；马里锂资源供给受关注（Mysteel）。</p>
+<br>
+<p>---</p>
+<br>
+<h2>六、有色金属（铜铝镍锌钴钠，锡已剔除）</h2>
+<br>
+<h3>6.1 LME官方价格（2026-06-09，Westmetall官方结算价）</h3>
+<br>
+<blockquote>**说明**：LME 6月9日官方结算价于北京时间6月10日00:50-02:00公布，为6月10日财资日报的基准数据。</blockquote>
+<br>
+<table>
+<tr><th>品种</th><th>Cash结算价</th><th>3月期货价</th><th>较前日涨跌</th><th>涨跌幅</th><th>库存(吨)</th><th>库存变动</th></tr>
+<tr><td>**铜**</td><td>13,716</td><td>**13,745**</td><td>+75</td><td>**+0.55%**</td><td>372,650</td><td>-4,125</td></tr>
+<tr><td>**铝**</td><td>3,608</td><td>**3,586**</td><td>-69</td><td>**-1.89%**</td><td>327,750</td><td>-3,200</td></tr>
+<tr><td>**锌**</td><td>3,576</td><td>**3,588**</td><td>+54</td><td>**+1.53%**</td><td>110,400</td><td>-250</td></tr>
+<tr><td>**铅**</td><td>1,983</td><td>**1,994**</td><td>-11</td><td>-0.55%</td><td>308,050</td><td>-1,200</td></tr>
+<tr><td>**镍**</td><td>17,930</td><td>**18,160**</td><td>-380</td><td>**-2.05%**</td><td>274,848</td><td>+630</td></tr>
+<tr><td>锡</td><td>53,060</td><td>53,300</td><td>-350</td><td>-0.65%</td><td>8,970</td><td>-50</td></tr>
+</table>
+<br>
+<blockquote>**数据来源**：Westmetall Official LME-Prices，09. June 2026。涨跌对比6月8日数据。</blockquote>
+<br>
+<h3>6.2 LME交叉验证（长江有色网6月10日早讯，6月9日电子盘收盘）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>收盘价</th><th>涨跌</th><th>涨跌幅</th><th>与Westmetall差异</th></tr>
+<tr><td>铜</td><td>13,559.5</td><td>-31</td><td>-0.23%</td><td>-185.5（电子盘vs官方结算）</td></tr>
+<tr><td>铝</td><td>3,532.5</td><td>-75</td><td>-2.08%</td><td>-53.5</td></tr>
+<tr><td>锌</td><td>3,546</td><td>+11.5</td><td>+0.33%</td><td>-42.0</td></tr>
+<tr><td>铅</td><td>1,981</td><td>-7.5</td><td>-0.38%</td><td>-13.0</td></tr>
+<tr><td>镍</td><td>17,995</td><td>-405</td><td>-2.20%</td><td>-165.0</td></tr>
+<tr><td>锡</td><td>52,185</td><td>+85</td><td>+0.16%</td><td>-1,115.0</td></tr>
+</table>
+<br>
+<blockquote>**差异说明**：长江有色网数据为LME电子盘收盘（Closing Price），Westmetall为官方结算价（Official Settlement），两者存在系统性差异。本报告以**Westmetall官方结算价**为准，标注差异供参考。</blockquote>
+<br>
+<h3>6.3 国内有色金属现货（2026-06-10）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>价格（元/吨）</th><th>涨跌</th><th>数据来源</th></tr>
+<tr><td>1#铜</td><td>104,190</td><td>-60</td><td>有色宝/长江</td></tr>
+<tr><td>A00铝</td><td>23,790</td><td>-110</td><td>有色宝/长江</td></tr>
+<tr><td>0#锌</td><td>24,650</td><td>+60</td><td>有色宝/长江</td></tr>
+<tr><td>1#铅</td><td>15,950</td><td>-50</td><td>有色宝/长江</td></tr>
+<tr><td>锡</td><td>396,900</td><td>-1,550</td><td>有色宝/长江</td></tr>
+</table>
+<br>
+<h3>6.4 分品种分析</h3>
+<br>
+<p><strong>铜（+0.55%）</strong>：LME铜库存降至37.26万吨（-4,125吨），连续去库支撑价格。国内1#铜104,190元/吨，现货小幅贴水。宏观面关注美联储议息和中国经济数据。</p>
+<br>
+<p><strong>铝（-1.89%）</strong>：LME铝库存32.77万吨（-3,200吨），但价格仍承压，主要因中国产能释放预期和氧化铝成本下降。国内A00铝23,790元/吨，跌幅扩大。</p>
+<br>
+<p><strong>锌（+1.53%）</strong>：LME锌库存11.04万吨（-250吨），供应端收紧预期推动价格反弹。国内0#锌24,650元/吨，小幅跟涨。</p>
+<br>
+<p><strong>镍（-2.05%，连续第6日下跌）</strong>：LME镍库存27.48万吨（+630吨），连续增库压制价格。印尼RKAB政策收紧导致镍矿成本暴涨，但短期尚未完全传导至镍价。沪镍同步下跌1.72%。</p>
+<br>
+<p><strong>铅（-0.55%）</strong>：LME铅库存30.80万吨（-1,200吨），需求端蓄电池季节性淡季，价格偏弱。</p>
+<br>
+<h3>6.5 库存趋势图（LME）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>6月9日库存</th><th>5日库存</th><th>月度变动</th><th>趋势</th></tr>
+<tr><td>铜</td><td>372,650</td><td>379,225</td><td>-6,575</td><td>📉 去库</td></tr>
+<tr><td>铝</td><td>327,750</td><td>386,050</td><td>-58,300</td><td>📉 快速去库</td></tr>
+<tr><td>锌</td><td>110,400</td><td>113,300</td><td>-2,900</td><td>📉 去库</td></tr>
+<tr><td>铅</td><td>308,050</td><td>311,050</td><td>-3,000</td><td>📉 去库</td></tr>
+<tr><td>镍</td><td>274,848</td><td>276,444</td><td>-1,596</td><td>📉 轻微去库</td></tr>
+<tr><td>锡</td><td>8,970</td><td>9,270</td><td>-300</td><td>📉 去库</td></tr>
+</table>
+<br>
+<p>---</p>
+<br>
+<h2>七、贵金属</h2>
+<br>
+<h3>7.1 黄金（2026-06-10）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>价格</th><th>单位</th><th>较前日</th><th>涨跌幅</th><th>数据来源</th><th>时间</th></tr>
+<tr><td>现货黄金</td><td>4,194.87</td><td>美元/盎司</td><td>—</td><td>—</td><td>金投网</td><td>日间</td></tr>
+<tr><td>黄金T+D</td><td>915.45</td><td>元/克</td><td>-31.14</td><td>**-3.29%**</td><td>上海金交所</td><td>15:29</td></tr>
+<tr><td>黄金期货(AU0)</td><td>919.32</td><td>元/克</td><td>-29.76</td><td>**-3.14%**</td><td>上期所</td><td>15:00</td></tr>
+<tr><td>上海金早盘</td><td>912.95</td><td>元/克</td><td>—</td><td>—</td><td>上海金交所</td><td>早盘</td></tr>
+<tr><td>上海金午盘</td><td>917.44</td><td>元/克</td><td>—</td><td>—</td><td>上海金交所</td><td>午盘</td></tr>
+</table>
+<br>
+<p>- <strong>日内走势</strong>：黄金T+D今日大幅下跌，从昨收946.59跌至915.45，日内波动区间909.75-951.24。主要受避险情绪降温和美元指数企稳影响。</p>
+<p>- <strong>国际金价</strong>：现货黄金约4,195美元/盎司，较前期高点回落。</p>
+<p>- <strong>机构观点</strong>：花旗警告金价或跌至3,500美元（若美联储持续鹰派）；东北证券认为年内黄金高点或已现，震荡行情成主基调。</p>
+<br>
+<h3>7.2 白银（2026-06-10）</h3>
+<br>
+<table>
+<tr><th>品种</th><th>价格</th><th>数据来源</th></tr>
+<tr><td>Ag(T+D)</td><td>16,500</td><td>上海金交所（延时行情）</td></tr>
+<tr><td>日内区间</td><td>15,233 - 16,519</td><td>上海金交所</td></tr>
+</table>
+<br>
+<p>- <strong>金银比</strong>：约254倍（黄金4,195/白银16.5），处于历史高位，显示白银相对黄金更弱。</p>
+<br>
+<p>---</p>
+<br>
+<h2>八、地缘风险</h2>
+<br>
+<h3>8.1 事件时间线（近24小时）</h3>
+<br>
+<table>
+<tr><th>时间</th><th>事件</th><th>市场影响</th><th>可信度</th></tr>
+<tr><td>6月10日</td><td>美伊对峙持续，霍尔木兹海峡通航正常</td><td>原油维持$92-93区间</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td>6月10日</td><td>伊朗动员超100万作战人员（前期消息延续）</td><td>地缘溢价维持</td><td>⭐⭐⭐</td></tr>
+<tr><td>6月6日</td><td>财新报道：印尼RKAB有效期从3年缩至1年</td><td>镍矿成本暴涨200%</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td>6月4日</td><td>伊朗议会通过霍尔木兹海峡收费法案</td><td>长期威胁，短期未执行</td><td>⭐⭐⭐</td></tr>
+</table>
+<br>
+<h3>8.2 情景分析</h3>
+<br>
+<table>
+<tr><th>情景</th><th>概率</th><th>描述</th><th>市场影响</th></tr>
+<tr><td>**基准情景**</td><td>60%</td><td>美伊对峙持续但不升级，霍尔木兹保持开放</td><td>原油$90-95，黄金$4,100-4,300</td></tr>
+<tr><td>**升级情景**</td><td>25%</td><td>军事冲突升级，霍尔木兹部分关闭</td><td>原油突破$100，黄金冲击$4,500</td></tr>
+<tr><td>**缓和情景**</td><td>15%</td><td>和谈突破，制裁放松</td><td>原油回落至$80，黄金跌至$3,800</td></tr>
+</table>
+<br>
+<h3>8.3 地缘风险评级</h3>
+<br>
+<p>- <strong>中东</strong>：🟡 中高风险（美伊对峙持续，但暂无军事冲突）</p>
+<p>- <strong>印尼</strong>：🔴 <strong>高风险</strong>（RKAB政策剧变，资源民族主义升温，直接影响镍供应链）</p>
+<p>- <strong>俄乌</strong>：🟢 低（市场关注度下降，对大宗商品影响减弱）</p>
+<br>
+<p>---</p>
+<br>
+<h2>九、对冲建议（CFO操作视角）</h2>
+<br>
+<h3>9.1 汇率对冲</h3>
+<br>
+<table>
+<tr><th>币种对</th><th>当前水平</th><th>对冲比例建议</th><th>工具优先级</th><th>执行窗口</th></tr>
+<tr><td>**USD/CNY**</td><td>6.8130</td><td>**80-90%**</td><td>①远期 ②期权 ③掉期</td><td>立即执行</td></tr>
+<tr><td>EUR/CNY</td><td>7.8392</td><td>60-70%</td><td>①远期 ②期权</td><td>本周内</td></tr>
+<tr><td>JPY/CNY</td><td>4.2416</td><td>50%</td><td>①远期</td><td>关注日本央行决议</td></tr>
+<tr><td>**IDR/USD**</td><td>~18,168</td><td>**80-90%**</td><td>①远期 ②NDF</td><td>紧急评估印尼敞口</td></tr>
+</table>
+<br>
+<blockquote>**操作要点**：USD/CNY中间价6.8130，在岸6.7776，建议锁定80-90%出口收汇。印尼IDR成本暴涨200%，如有印尼采购/投资敞口，须紧急评估对冲需求。</blockquote>
+<br>
+<h3>9.2 商品对冲</h3>
+<br>
+<table>
+<tr><th>品种</th><th>风险方向</th><th>对冲建议</th><th>工具</th></tr>
+<tr><td>镍（LME 3M $18,160）</td><td>价格下跌</td><td>适量卖出看涨期权或远期锁定</td><td>LME期货/期权</td></tr>
+<tr><td>铜（LME 3M $13,745）</td><td>价格震荡</td><td>维持现有套保，关注库存去库</td><td>LME期货</td></tr>
+<tr><td>碳酸锂（16.5万）</td><td>价格稳定</td><td>按需采购，暂不大量套保</td><td>无</td></tr>
+<tr><td>原油（$92.96）</td><td>供应中断</td><td>买入虚值看涨期权保护</td><td>布伦特期权</td></tr>
+</table>
+<br>
+<h3>9.3 利率风险</h3>
+<br>
+<p>- <strong>当前环境</strong>：10Y国债1.7614%，维持低位，利率风险可控。</p>
+<p>- <strong>建议</strong>：维持现有固定利率负债结构，暂不进行利率互换。</p>
+<p>- <strong>关注</strong>：若美联储鹰派超预期，可能引发全球利率上行压力。</p>
+<br>
+<p>---</p>
+<br>
+<h2>十、机构观点汇总</h2>
+<br>
+<h3>10.1 货币政策观点</h3>
+<br>
+<p>- <strong>中信建投期货（2026-06-10）</strong>：黑色系成本支撑减弱，期钢承压震荡。螺纹2610合约关注3140附近支撑。</p>
+<p>- <strong>多数券商</strong>：预计6月LPR维持不变，下半年或有1-2次降准。</p>
+<br>
+<h3>10.2 新能源/镍观点</h3>
+<br>
+<p>- <strong>华西证券（2026-04-24）</strong>：Eramet Q1镍矿产量环比减25%至1004.2万湿吨，Centenario工厂碳酸锂产量3,720吨。PTWedaBayNickel正准备进入"维护与保养"状态等待RKAB修订申请。</p>
+<p>- <strong>财新（2026-06-06）</strong>：印尼RKAB制度收紧，中企镍矿综合成本暴涨200%。中小型镍业企业由于买不到矿、成本飙升，有的被迫停产甚至破产清算。</p>
+<p>- <strong>SMM（2026-06-04）</strong>：本周硫酸镍市场成交冷清，镍盐价格略有下行。但印尼新计价方式公布，MHP成本上涨，对硫酸镍支撑较强。</p>
+<br>
+<h3>10.3 大宗商品观点</h3>
+<br>
+<p>- <strong>中信建投期货（2026-06-10）</strong>：钢材需求降幅显著，刚需走弱成核心拖累。原料端双焦高位回调，成本托底力度减弱。</p>
+<p>- <strong>兰格钢铁（2026-06-09）</strong>：焦煤盘中触及跌停，但钢价抗跌不跟，反映两者逻辑分化。螺纹继续关注3142支撑有效性。</p>
+<p>- <strong>铜冠金源（2025-09-08，历史参考）</strong>：锂价仍受预期主导，江西资源扰动有博弈空间。在无明确政策前景下，锂价或宽幅震荡运行。</p>
+<br>
+<h3>10.4 贵金属观点</h3>
+<br>
+<p>- <strong>花旗（2026-06-10）</strong>：若霍尔木兹海峡持续受阻，预计金价9月或跌至3,500美元。</p>
+<p>- <strong>东北证券（2026-06-10）</strong>：年内黄金高点或已现，震荡行情成主基调。</p>
+<br>
+<p>---</p>
+<br>
+<h2>十一、数据来源与免责声明</h2>
+<br>
+<h3>11.1 数据时效声明</h3>
+<br>
+<table>
+<tr><th>数据类别</th><th>最新日期</th><th>更新频率</th><th>状态</th><th>数据来源</th></tr>
+<tr><td>USD/CNY中间价</td><td>2026-06-10</td><td>日度（9:15）</td><td>✅</td><td>中国外汇交易中心</td></tr>
+<tr><td>LME官方结算价</td><td>2026-06-09</td><td>日度（伦敦时间）</td><td>✅</td><td>Westmetall</td></tr>
+<tr><td>央行逆回购</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>央行官网/东方财富</td></tr>
+<tr><td>DR007/Shibor</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>中国货币网</td></tr>
+<tr><td>碳酸锂价格</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>SMM</td></tr>
+<tr><td>硫酸镍价格</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>SMM</td></tr>
+<tr><td>国内镍现货</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>SMM</td></tr>
+<tr><td>黄金价格</td><td>2026-06-10</td><td>实时</td><td>✅</td><td>金投网/上海金交所</td></tr>
+<tr><td>国债收益率</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>中国货币网/财政部</td></tr>
+<tr><td>LPR</td><td>2026-05-20</td><td>月度（20日）</td><td>✅</td><td>央行</td></tr>
+<tr><td>国内有色现货</td><td>2026-06-10</td><td>日度</td><td>✅</td><td>有色宝/长江</td></tr>
+<tr><td>黑色金属价格</td><td>2026-06-09</td><td>日度</td><td>⚠️</td><td>兰格钢铁/中信建投</td></tr>
+</table>
+<br>
+<blockquote>**⚠️ 注**：LME官方结算价（Westmetall）较长江有色网电子盘收盘价存在系统性差异（铜-185美元，锡-1,115美元），本报告以Westmetall官方结算价为准。</blockquote>
+<br>
+<h3>11.2 免责声明</h3>
+<br>
+<p>- 本报告数据来源公开市场信息，仅供参考，不构成投资建议。</p>
+<p>- 汇率、商品价格受多重因素影响，实际走势可能与预测存在偏差。</p>
+<p>- 对冲建议基于当前市场状况，执行前请咨询专业金融机构。</p>
+<p>- 报告生成时间：2026-06-10 17:45 CST。</p>
+<br>
+<p>---</p>
+<br>
+<p><strong>报告生成</strong>：OpenClaw AI 财资日报系统 v3.0  </p>
+<p><strong>数据验证</strong>：多源交叉验证（Westmetall + SMM + 中国货币网 + 央行官网）  </p>
+<p><strong>下次更新</strong>：2026-06-11 16:00 CST（预计）</p>
+<br>
 </div>
 </body>
 </html>
