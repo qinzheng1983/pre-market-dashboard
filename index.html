@@ -1,261 +1,167 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>盘前简报 — 2026年6月10日（周三）</title>
-    <style>
-        body { font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif; margin: 0; padding: 20px; background-color: #f5f5f5; color: #333; }
-        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header { background-color: #1a1a2e; color: white; padding: 20px; border-radius: 6px; margin-bottom: 25px; }
-        .header h1 { margin: 0; font-size: 24px; }
-        .header .subtitle { margin: 8px 0 0 0; font-size: 14px; opacity: 0.9; }
-        .header .highlight { color: #e94560; font-weight: bold; }
-        .section { margin-bottom: 25px; border-left: 3px solid #e94560; padding-left: 15px; }
-        .section-title { font-size: 18px; font-weight: bold; color: #1a1a2e; margin-bottom: 12px; }
-        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
-        th { background-color: #1a1a2e; color: white; padding: 10px; text-align: left; }
-        td { padding: 10px; border-bottom: 1px solid #eee; }
-        .risk-high { background-color: #ffe6e6; color: #e94560; font-weight: bold; padding: 2px 8px; border-radius: 3px; }
-        .risk-med { background-color: #fff9e6; color: #b8860b; font-weight: bold; padding: 2px 8px; border-radius: 3px; }
-        .up { color: #e94560; }
-        .down { color: #27ae60; }
-        .action-box { background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin: 10px 0; border-left: 4px solid #e94560; }
-        .action-title { font-weight: bold; color: #1a1a2e; margin-bottom: 8px; }
-        .news-item { margin: 8px 0; padding: 8px; background: #f8f9fa; border-radius: 4px; }
-        .footer { font-size: 12px; color: #666; margin-top: 30px; padding-top: 15px; border-top: 1px solid #eee; }
-        .footer table { font-size: 12px; }
-        .footer th { background-color: #666; padding: 6px; }
-        .footer td { padding: 6px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>盘前简报 — 2026年6月11日（周四）</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; line-height: 1.6; }
+  .container { max-width: 700px; margin: 0 auto; background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .header { background: #1a1a2e; color: #fff; padding: 20px; border-radius: 6px; margin-bottom: 20px; }
+  .header h1 { margin: 0; font-size: 20px; font-weight: 600; }
+  .header .meta { margin-top: 8px; font-size: 13px; opacity: 0.85; }
+  .header .highlight { margin-top: 10px; font-size: 14px; background: rgba(233,69,96,0.15); padding: 8px 12px; border-radius: 4px; border-left: 3px solid #e94560; }
+  .section { margin-bottom: 20px; }
+  .section-title { font-size: 16px; font-weight: 600; color: #1a1a2e; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 2px solid #e94560; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  th { background: #1a1a2e; color: #fff; padding: 8px 10px; text-align: left; font-weight: 500; }
+  td { padding: 8px 10px; border-bottom: 1px solid #eee; }
+  tr:nth-child(even) { background: #fafafa; }
+  .up { color: #e94560; font-weight: 600; }
+  .down { color: #27ae60; font-weight: 600; }
+  .risk-high { background: #ffe6e6; padding: 10px 12px; border-radius: 4px; border-left: 4px solid #e94560; margin: 8px 0; }
+  .risk-med { background: #fff9e6; padding: 10px 12px; border-radius: 4px; border-left: 4px solid #f5a623; margin: 8px 0; }
+  .action-box { background: #f0f4ff; padding: 12px; border-radius: 4px; border-left: 4px solid #4a7bff; margin: 10px 0; }
+  .action-box .action-title { font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+  .action-box .action-steps { font-size: 13px; color: #555; }
+  .action-box .action-steps li { margin-bottom: 4px; }
+  .news-item { font-size: 13px; padding: 6px 0; border-bottom: 1px dashed #eee; }
+  .news-item:last-child { border-bottom: none; }
+  .footer { font-size: 12px; color: #888; margin-top: 20px; padding-top: 12px; border-top: 1px solid #eee; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; margin-right: 4px; }
+  .badge-red { background: #e94560; color: #fff; }
+  .badge-yellow { background: #f5a623; color: #fff; }
+  .badge-blue { background: #4a7bff; color: #fff; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>盘前简报 — 2026年6月10日（周三）</h1>
-            <p class="subtitle">数据截止：2026-06-09 24:00 | 覆盖时段：前一日北京时间9:00至统计时点</p>
-            <p class="subtitle">今日核心判断：<span class="highlight">美伊停火协议再次破裂，霍尔木兹海峡军事冲突升级，油价或重新测试95美元上方；USD/CNY中间价6.8147维持稳定，对北美出口有利。</span></p>
-        </div>
+<div class="container">
 
-        <div class="section">
-            <div class="section-title">1. 隔夜市场速览（1分钟）</div>
-            <table>
-                <tr>
-                    <th>资产</th>
-                    <th>收盘/最新</th>
-                    <th>变化</th>
-                    <th>核心结论</th>
-                </tr>
-                <tr>
-                    <td>美股</td>
-                    <td>道指50,786 / 纳指25,930 / 标普7,406</td>
-                    <td>道指-0.16% / 纳指+0.86% / 标普+0.30%</td>
-                    <td>芯片股反弹，道指连跌两日，中东局势压制大盘</td>
-                </tr>
-                <tr>
-                    <td>USD/CNY中间价</td>
-                    <td>6.8147</td>
-                    <td>持平</td>
-                    <td>央行维稳意图明确，对北美出口有利</td>
-                </tr>
-                <tr>
-                    <td>DXY美元指数</td>
-                    <td>99.96</td>
-                    <td>微跌</td>
-                    <td>美元弱势整理，非美货币承压</td>
-                </tr>
-                <tr>
-                    <td>布伦特原油</td>
-                    <td>$91.37</td>
-                    <td class="down">-3.06%</td>
-                    <td>美伊交火但暂未影响供应，OPEC+计划7月增产</td>
-                </tr>
-                <tr>
-                    <td>现货黄金</td>
-                    <td>$4,350/oz</td>
-                    <td>震荡</td>
-                    <td>避险需求支撑，但高位面临回调压力</td>
-                </tr>
-                <tr>
-                    <td>LME铜</td>
-                    <td>$13,614</td>
-                    <td>微跌</td>
-                    <td>需求端疲软，库存高位压制</td>
-                </tr>
-                <tr>
-                    <td>LME镍</td>
-                    <td>$18,176</td>
-                    <td>震荡</td>
-                    <td>印尼HPM政策支撑，沪镍跌1.14%</td>
-                </tr>
-                <tr>
-                    <td>碳酸锂（电池级）</td>
-                    <td>163,750 CNY/吨</td>
-                    <td>持平</td>
-                    <td>供需紧平衡，6月订单增长预期</td>
-                </tr>
-                <tr>
-                    <td>恒生（6/10早盘）</td>
-                    <td>待观察</td>
-                    <td>-</td>
-                    <td>亚洲市场料受中东局势拖累</td>
-                </tr>
-            </table>
+<div class="header">
+  <h1>盘前简报 — 2026年6月11日（周四）</h1>
+  <div class="meta">数据截止：2026-06-11 09:20 CST | 预计阅读时间：5分钟</div>
+  <div class="highlight">核心判断：美联储议息会议今日落地，黄金抹去年内涨幅，原油大跌近3%，美股全线重挫——今日开盘前确认敞口匹配度。</div>
+</div>
 
-            <div class="section-title" style="margin-top:15px;">隔夜要闻（一句话）</div>
-            <div class="news-item">
-                <strong>美伊冲突再升级：</strong>美军直升机在霍尔木兹海峡被伊朗击落，美军随即对伊朗实施"自卫性"打击，伊朗向中东美目标发射导弹。停火协议濒临破裂。
-            </div>
-            <div class="news-item">
-                <strong>原油大跌：</strong>布伦特原油跌3.06%至$91.37，OPEC+同意7月增产，叠加美伊交火未实质阻断供应，油价回吐涨幅。
-            </div>
-            <div class="news-item">
-                <strong>芯片股反弹：</strong>纳指+0.86%，美光涨10%，英伟达反弹。上周五纳指暴跌4.2%后短线企稳。
-            </div>
-            <div class="news-item">
-                <strong>中国货币市场：</strong>DR001 1.3965，DR007 1.4154，资金面舒适。LPR连续13个月维持不变（1Y 3.00%，5Y 3.50%）。
-            </div>
-        </div>
+<div class="section">
+  <div class="section-title">1. 隔夜市场速览</div>
+  <table>
+    <tr><th>资产</th><th>收盘/最新</th><th>变化</th><th>核心结论</th></tr>
+    <tr><td>标普500</td><td>7,266.99</td><td class="down">-1.62%</td><td>全线重挫，VIX跳升11.8%</td></tr>
+    <tr><td>道琼斯</td><td>49,918.78</td><td class="down">-1.87%</td><td>创近期最大单日跌幅</td></tr>
+    <tr><td>纳斯达克</td><td>25,169.50</td><td class="down">-1.98%</td><td>科技股领跌</td></tr>
+    <tr><td>USD/CNY中间价</td><td>6.8130*</td><td class="up">基本持平</td><td>中行折算价参考，央行中间价待9:15发布</td></tr>
+    <tr><td>布伦特原油</td><td>$91.45</td><td class="down">-2.97%</td><td>美伊和谈预期+美元走强，盘中跌破90</td></tr>
+    <tr><td>WTI原油</td><td>$88.20</td><td class="down">-3.40%</td><td>跌幅扩大，供应忧虑缓解</td></tr>
+    <tr><td>现货黄金</td><td>$4,188.70</td><td class="down">大跌</td><td>抹去2026年以来全部涨幅，非农超预期压制</td></tr>
+    <tr><td>COMEX黄金</td><td>$4,090.70</td><td class="down">-</td><td>期货合约同步下行</td></tr>
+    <tr><td>碳酸锂(电池级)</td><td>167,000元/吨</td><td class="up">+1.2%</td><td>连续两日小幅回升，需求边际改善</td></tr>
+    <tr><td>LME铜</td><td>数据待更新</td><td>-</td><td>6月10日收盘数据未获取</td></tr>
+    <tr><td>LME镍</td><td>数据待更新</td><td>-</td><td>6月10日收盘数据未获取</td></tr>
+    <tr><td>恒生指数(早盘)</td><td>24,407.96</td><td class="down">-0.64%</td><td>亚太股市承压</td></tr>
+    <tr><td>上证指数</td><td>3,993.23</td><td class="down">-0.42%</td><td>A股微跌，成交缩量</td></tr>
+  </table>
+  <p style="font-size:12px;color:#888;margin-top:4px;">* USD/CNY 6.8130为BOC折算价参考，非央行中间价。央行中间价每日9:15发布。</p>
+</div>
 
-        <div class="section">
-            <div class="section-title">2. 今日风险预警</div>
-            <table>
-                <tr>
-                    <th style="width:80px;">级别</th>
-                    <th>风险描述</th>
-                    <th>触发条件</th>
-                </tr>
-                <tr>
-                    <td><span class="risk-high">HIGH</span></td>
-                    <td>美伊军事冲突升级为全面战争，霍尔木兹海峡关闭风险骤升</td>
-                    <td>若美军发动大规模空袭或伊朗封锁海峡</td>
-                </tr>
-                <tr>
-                    <td><span class="risk-high">HIGH</span></td>
-                    <td>油价突破95美元并持续上行，推升全球通胀预期</td>
-                    <td>布伦特收盘>95美元且持续3日</td>
-                </tr>
-                <tr>
-                    <td><span class="risk-med">MED</span></td>
-                    <td>芯片股波动加剧，科技板块拖累大盘</td>
-                    <td>纳指单日跌幅>2%</td>
-                </tr>
-                <tr>
-                    <td><span class="risk-med">MED</span></td>
-                    <td>USD/CNY突破6.85，汇率波动加剧</td>
-                    <td>中间价连续3日上调>50点</td>
-                </tr>
-            </table>
-        </div>
+<div class="section">
+  <div class="section-title">隔夜要闻一句话</div>
+  <div class="news-item"><span class="badge badge-red">宏观</span> 中国5月CPI同比1.2%、PPI同比0.5%，通胀温和；前5月进出口总值20.68万亿元（+15.3%），外贸韧性强劲。</div>
+  <div class="news-item"><span class="badge badge-red">央行</span> 美联储6月议息会议今日（6月11日）公布结果，市场关注利率指引与缩表节奏。</div>
+  <div class="news-item"><span class="badge badge-red">地缘</span> 美伊对峙持续，但和谈窗口未完全关闭；原油大跌反映市场对冲突缓和的押注。</div>
+  <div class="news-item"><span class="badge badge-yellow">商品</span> 黄金大跌抹去年内涨幅，美国5月非农就业超预期，市场押注美联储下半年加息概率上升。</div>
+  <div class="news-item"><span class="badge badge-yellow">行业</span> 碳酸锂连续两日反弹至16.7万元/吨，下游材料厂补库意愿边际改善，但供应端仍宽松。</div>
+</div>
 
-        <div class="section">
-            <div class="section-title">3. 今日行动清单（CFO操作视角）</div>
-            
-            <div class="action-box">
-                <div class="action-title">ACTION-1 [HIGH] 确认北美出口敞口匹配度</div>
-                <p><strong>问题：</strong>USD/CNY 6.8147维持低位，北美出口（Long USD）应收折算减少，但香港购汇（Short USD）成本降低。净敞口效应取决于金额匹配度。</p>
-                <p><strong>今日必须做：</strong></p>
-                <ol>
-                    <li>核对北美应收美元余额 vs 香港购汇美元需求，确认净敞口方向</li>
-                    <li>若净敞口为Long USD，评估是否需要追加看跌期权保护</li>
-                    <li>若净敞口为Short USD，当前低位是降低购汇成本的机会窗口</li>
-                </ol>
-                <p><strong>决策时限：</strong>今日10:00前完成敞口核算</p>
-            </div>
+<div class="section">
+  <div class="section-title">2. 今日风险预警</div>
+  <div class="risk-high">
+    <strong>HIGH — 美联储议息会议结果（北京时间6月11日凌晨/盘中）</strong><br>
+    若美联储释放鹰派信号（暗示加息或推迟降息），USD/CNY可能快速上行，冲击6.85。触发条件：点阵图显示2026年加息1次以上。
+  </div>
+  <div class="risk-high">
+    <strong>HIGH — 黄金破位下行</strong><br>
+    现货黄金已抹去2026年全部涨幅，若跌破4,100美元，可能触发程序化止损，加速跌至4,000。触发条件：COMEX收盘低于4,050。
+  </div>
+  <div class="risk-med">
+    <strong>MED — 原油跌破90美元后情绪逆转</strong><br>
+    布伦特盘中跌破90，若收盘确认，可能打开下行空间至85。触发条件：WTI收盘低于85。
+  </div>
+  <div class="risk-med">
+    <strong>MED — 美股连续重挫后的流动性风险</strong><br>
+    道指-1.87%、纳指-1.98%，若今日亚太跟跌，可能传导至A股情绪。触发条件：日经跌幅超1.5%。
+  </div>
+</div>
 
-            <div class="action-box">
-                <div class="action-title">ACTION-2 [HIGH] 监控霍尔木兹海峡动态</div>
-                <p><strong>问题：</strong>美伊再次交火，海峡通航量已极低（1-2艘/日）。若全面关闭，油价或飙升至100+美元，直接推升全球通胀和物流成本。</p>
-                <p><strong>今日必须做：</strong></p>
-                <ol>
-                    <li>跟踪财新/彭博霍尔木兹海峡通航数据（今日午间更新）</li>
-                    <li>评估布伦特突破95美元的对冲预案（我司原油敞口敏感性）</li>
-                    <li>若海峡关闭，启动紧急供应链会议（物流/采购/财务）</li>
-                </ol>
-                <p><strong>决策时限：</strong>持续监控，15:00前完成当日评估</p>
-            </div>
+<div class="section">
+  <div class="section-title">3. 今日行动清单</div>
 
-            <div class="action-box">
-                <div class="action-title">ACTION-3 [MED] 检查镍价波动对成本影响</div>
-                <p><strong>问题：</strong>LME镍$18,176，沪镍跌1.14%至137,620。印尼HPM政策支撑镍价，但需求端疲软。硫酸镍成本直接影响前驱体毛利率。</p>
-                <p><strong>今日必须做：</strong></p>
-                <ol>
-                    <li>核对Q2硫酸镍采购成本 vs 预算，评估镍价波动影响</li>
-                    <li>跟踪印尼RKAB配额最新动态（影响原料供应稳定性）</li>
-                    <li>若镍价突破19,000，启动采购节奏调整讨论</li>
-                </ol>
-                <p><strong>决策时限：</strong>本周五前完成Q2成本复盘</p>
-            </div>
-
-            <div class="action-box">
-                <div class="action-title">ACTION-4 [MED] 跟进碳酸锂价格与库存</div>
-                <p><strong>问题：</strong>电池级碳酸锂163,750元/吨，6月订单增长预期。但隐性库存显性化压制价格，需关注仓单拐点。</p>
-                <p><strong>今日必须做：</strong></p>
-                <ol>
-                    <li>确认6月碳酸锂采购长协执行情况</li>
-                    <li>跟踪SMM/Mysteel价格差异（定价权争议可能影响结算）</li>
-                    <li>评估锂价对Q2毛利率的影响</li>
-                </ol>
-                <p><strong>决策时限：</strong>本周内完成采购策略评估</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <div class="section-title">4. 数据来源与时效声明</div>
-            <table>
-                <tr>
-                    <th>数据</th>
-                    <th>来源</th>
-                    <th>时间</th>
-                </tr>
-                <tr>
-                    <td>USD/CNY中间价</td>
-                    <td>中国货币网（PBC）</td>
-                    <td>2026-06-09 09:25:42</td>
-                </tr>
-                <tr>
-                    <td>美股</td>
-                    <td>新浪财经/ChainCatcher</td>
-                    <td>2026-06-09 04:00</td>
-                </tr>
-                <tr>
-                    <td>布伦特原油</td>
-                    <td>Investing.com/新浪财经</td>
-                    <td>2026-06-09 收盘</td>
-                </tr>
-                <tr>
-                    <td>黄金</td>
-                    <td>金投网/财联社/上海黄金交易所</td>
-                    <td>2026-06-09</td>
-                </tr>
-                <tr>
-                    <td>LME镍/铜</td>
-                    <td>SMM/Macromicro</td>
-                    <td>2026-06-09</td>
-                </tr>
-                <tr>
-                    <td>碳酸锂</td>
-                    <td>SMM/Mysteel</td>
-                    <td>2026-06-09</td>
-                </tr>
-                <tr>
-                    <td>美伊冲突</td>
-                    <td>财新网/央视新闻</td>
-                    <td>2026-06-09-10</td>
-                </tr>
-                <tr>
-                    <td>中国货币市场</td>
-                    <td>中国货币网</td>
-                    <td>2026-06-09 17:00</td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="footer">
-            <p><strong>质量评级：</strong>⭐⭐⭐⭐⭐（全部数据当日收盘，多源交叉验证）</p>
-            <p><strong>免责声明：</strong>本简报基于公开市场信息整理，仅供内部决策参考，不构成投资建议。数据准确性以官方发布为准。</p>
-            <p>生成时间：2026-06-10 09:20 CST | 下次更新：2026-06-11 09:20</p>
-        </div>
+  <div class="action-box">
+    <div class="action-title"><span class="badge badge-red">P0</span> ACTION-1 — 确认USD/CNY敞口匹配度</div>
+    <div class="action-steps">
+      <ul>
+        <li>9:15后获取央行USD/CNY中间价，若突破6.82，评估是否需要追加对冲。</li>
+        <li>核对今日到期/需展期的远期合约，确认名义金额与敞口匹配。</li>
+        <li>若美联储鹰派，考虑启动40%额外Delta对冲（期权或远期）。</li>
+      </ul>
+      <strong>决策时限：今日10:30前</strong>
     </div>
+  </div>
+
+  <div class="action-box">
+    <div class="action-title"><span class="badge badge-red">P0</span> ACTION-2 — 监控黄金破位风险</div>
+    <div class="action-steps">
+      <ul>
+        <li>若黄金跌破4,100，确认公司是否有黄金相关敞口或避险仓位需要调整。</li>
+        <li>检查LME镍/铜价格（6月10日收盘数据），若镍跌破18,500，关注印尼政策动向。</li>
+      </ul>
+      <strong>决策时限：今日盘中持续监控</strong>
+    </div>
+  </div>
+
+  <div class="action-box">
+    <div class="action-title"><span class="badge badge-yellow">P1</span> ACTION-3 — 跟进美联储议息会议结果</div>
+    <div class="action-steps">
+      <ul>
+        <li>关注今日凌晨（美东6月10日）FOMC声明与鲍威尔发布会。</li>
+        <li>若加息或缩表加速，明日盘前简报更新汇率对冲建议。</li>
+      </ul>
+      <strong>决策时限：明日开盘前</strong>
+    </div>
+  </div>
+
+  <div class="action-box">
+    <div class="action-title"><span class="badge badge-yellow">P1</span> ACTION-4 — 检查原油库存与地缘动态</div>
+    <div class="action-steps">
+      <ul>
+        <li>原油大跌至91，若美伊和谈出现实质性进展，油价可能进一步回落。</li>
+        <li>关注EIA原油库存数据（今晚公布），若超预期累库，油价下行压力加大。</li>
+      </ul>
+      <strong>决策时限：今日22:00前</strong>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">4. 数据来源与时效声明</div>
+  <table>
+    <tr><th>数据</th><th>来源</th><th>时间</th></tr>
+    <tr><td>USD/CNY中间价</td><td>中国银行外汇牌价（参考）</td><td>2026-06-11 06:40</td></tr>
+    <tr><td>美股三大指数</td><td>Yahoo Finance</td><td>2026-06-10 收盘</td></tr>
+    <tr><td>原油</td><td>新华社 / 新浪财经</td><td>2026-06-10 收盘</td></tr>
+    <tr><td>黄金</td><td>Yahoo Finance / 新浪财经</td><td>2026-06-10 收盘</td></tr>
+    <tr><td>碳酸锂</td><td>91金属网</td><td>2026-06-10</td></tr>
+    <tr><td>CPI/PPI</td><td>国家统计局</td><td>2026-06-10发布</td></tr>
+    <tr><td>进出口</td><td>海关总署</td><td>2026-06-09发布</td></tr>
+    <tr><td>LME铜/镍</td><td>—</td><td>6月10日数据未获取</td></tr>
+  </table>
+  <p style="font-size:12px;color:#888;margin-top:8px;">免责声明：本简报仅供参考，不构成投资建议。数据时效以标注时间为准，部分数据可能存在延迟。</p>
+</div>
+
+<div class="footer">
+  盘前简报 v3.0 | 生成时间：2026-06-11 09:20 CST | 数据源：Yahoo Finance, 新华社, 新浪财经, 91金属网, 中国银行
+</div>
+
+</div>
 </body>
 </html>
