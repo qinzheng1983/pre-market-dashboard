@@ -3,534 +3,166 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前简报 — 2026年6月15日（周一）</title>
+<title>盘前市场简报 — 2026年6月29日（周一）</title>
 <style>
-  body {
-    margin: 0;
-    padding: 20px;
-    background-color: #f5f5f5;
-    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .header {
-    background-color: #1a1a2e;
-    color: #fff;
-    padding: 24px 28px;
-    text-align: center;
-  }
-  .header h1 {
-    margin: 0 0 8px 0;
-    font-size: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  .header .meta {
-    font-size: 13px;
-    color: #a0a0b0;
-    margin-bottom: 4px;
-  }
-  .header .highlight-line {
-    font-size: 15px;
-    color: #e94560;
-    font-weight: 600;
-    margin-top: 12px;
-    padding: 8px 16px;
-    background-color: rgba(233, 69, 96, 0.1);
-    border-radius: 4px;
-    display: inline-block;
-  }
-  .rating {
-    font-size: 13px;
-    color: #ffd700;
-    margin-top: 8px;
-    letter-spacing: 2px;
-  }
-  .section {
-    padding: 20px 28px;
-    border-bottom: 1px solid #eee;
-  }
-  .section:last-child {
-    border-bottom: none;
-  }
-  .section-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1a1a2e;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e94560;
-    display: inline-block;
-  }
-  .section-subtitle {
-    font-size: 12px;
-    color: #888;
-    margin-bottom: 12px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  table th {
-    background-color: #1a1a2e;
-    color: #fff;
-    padding: 10px 12px;
-    text-align: left;
-    font-weight: 500;
-  }
-  table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #eee;
-    vertical-align: top;
-  }
-  table tr:last-child td {
-    border-bottom: none;
-  }
-  table tr:nth-child(even) {
-    background-color: #fafafa;
-  }
-  .highlight-red {
-    background-color: #e94560;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-weight: 600;
-  }
-  .highlight-red-bg {
-    background-color: #fde8ec;
-  }
-  .highlight-red-bg td {
-    color: #c21833;
-    font-weight: 600;
-  }
-  .tag-high {
-    display: inline-block;
-    background-color: #e94560;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .tag-med {
-    display: inline-block;
-    background-color: #f5a623;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .tag-action {
-    display: inline-block;
-    background-color: #1a1a2e;
-    color: #fff;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 6px;
-  }
-  .risk-box {
-    padding: 12px 16px;
-    border-radius: 4px;
-    margin-bottom: 12px;
-  }
-  .risk-high {
-    background-color: #fde8ec;
-    border-left: 4px solid #e94560;
-  }
-  .risk-med {
-    background-color: #fff8e6;
-    border-left: 4px solid #f5a623;
-  }
-  .risk-title {
-    font-weight: 600;
-    margin-bottom: 6px;
-    font-size: 14px;
-  }
-  .risk-high .risk-title {
-    color: #c21833;
-  }
-  .risk-med .risk-title {
-    color: #b8860b;
-  }
-  .risk-desc {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.5;
-  }
-  .action-item {
-    padding: 14px 16px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
-    margin-bottom: 12px;
-    border-left: 4px solid #1a1a2e;
-  }
-  .action-header {
-    font-weight: 600;
-    font-size: 14px;
-    color: #1a1a2e;
-    margin-bottom: 6px;
-  }
-  .action-problem {
-    font-size: 13px;
-    color: #555;
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-  .action-steps {
-    font-size: 13px;
-    color: #333;
-    line-height: 1.6;
-    padding-left: 16px;
-  }
-  .action-steps li {
-    margin-bottom: 4px;
-  }
-  .deadline {
-    font-size: 12px;
-    color: #e94560;
-    font-weight: 600;
-    margin-top: 8px;
-  }
-  .news-list {
-    font-size: 13px;
-    color: #555;
-    line-height: 1.8;
-    padding-left: 20px;
-    margin: 0;
-  }
-  .news-list li {
-    margin-bottom: 6px;
-  }
-  .footer {
-    background-color: #f5f5f5;
-    padding: 16px 28px;
-    font-size: 12px;
-    color: #888;
-    text-align: center;
-    border-top: 1px solid #eee;
-  }
-  .positive {
-    color: #e94560;
-    font-weight: 600;
-  }
-  .negative {
-    color: #2e7d32;
-    font-weight: 600;
-  }
-  .neutral {
-    color: #666;
-  }
-  .source-table td {
-    font-size: 12px;
-    color: #666;
-  }
-  .source-table th {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-  .disclaimer {
-    font-size: 11px;
-    color: #999;
-    text-align: center;
-    margin-top: 12px;
-    padding: 0 28px;
-  }
+body { font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; line-height: 1.6; }
+.container { max-width: 900px; margin: 0 auto; background: #fff; border-radius: 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+.header { background: #1a1a2e; color: #fff; padding: 24px 30px; text-align: center; }
+.header h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: 1px; }
+.header .meta { margin-top: 10px; font-size: 13px; color: #b0b0b0; }
+.header .stars { color: #ffd700; font-size: 16px; margin-top: 6px; }
+.section { padding: 20px 30px; border-bottom: 1px solid #eee; }
+.section-title { font-size: 16px; font-weight: 700; color: #1a1a2e; margin-bottom: 12px; padding-left: 12px; border-left: 3px solid #e94560; }
+.info-bar { background: #f8f9fa; padding: 12px 16px; font-size: 12px; color: #666; margin-bottom: 16px; border-left: 3px solid #1a1a2e; }
+.info-bar b { color: #1a1a2e; }
+
+/* 表格 */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+th { background: #1a1a2e; color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+td { padding: 10px 12px; border-bottom: 1px solid #eee; }
+tr:nth-child(even) { background: #fafafa; }
+
+/* 颜色编码 */
+.up { color: #e94560; font-weight: 700; }
+.down { color: #27ae60; font-weight: 700; }
+.neutral { color: #666; }
+
+/* 风险标签 */
+.tag { display: inline-block; padding: 2px 8px; font-size: 11px; font-weight: 700; color: #fff; border-radius: 2px; margin-right: 4px; }
+.tag-high { background: #e94560; }
+.tag-med { background: #f39c12; }
+.tag-low { background: #27ae60; }
+
+/* 行动标签 */
+.action-box { background: #fff9f0; border-left: 3px solid #f39c12; padding: 12px 16px; margin: 8px 0; font-size: 13px; }
+.action-box strong { color: #e94560; }
+.action-label { display: inline-block; background: #1a1a2e; color: #fff; padding: 1px 6px; font-size: 11px; margin-right: 6px; border-radius: 2px; }
+
+/* 警示背景 */
+.alert-high { background: #ffe6e6; padding: 12px 16px; border-left: 3px solid #e94560; margin: 8px 0; font-size: 13px; }
+.alert-med { background: #fff9e6; padding: 12px 16px; border-left: 3px solid #f39c12; margin: 8px 0; font-size: 13px; }
+
+/* 数据来源 */
+.source { font-size: 11px; color: #999; text-align: center; padding: 16px 30px; }
+
+/* 兼容 */
+.container, .header, .section, table, td, th { display: block; }
+@media (min-width: 600px) {
+  .container, .header, .section { display: block; }
+  table { display: table; }
+  tr { display: table-row; }
+  td, th { display: table-cell; }
+}
 </style>
 </head>
 <body>
-
 <div class="container">
 
-  <!-- Header -->
-  <div class="header">
-    <h1>盘前简报</h1>
-    <div class="meta">2026年6月15日（周一）| 数据基准：2026年6月12日收盘 + 6月13-14日周末新闻</div>
-    <div class="meta">预计阅读时间：5-7分钟</div>
-    <div class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; 数据质量评级：五星</div>
-    <div class="highlight-line">核心判断：美伊14点草案曝光缓和地缘，但协议未签；USD/CNY 6.8109高位运行，资本层面12亿美元敞口承压</div>
-  </div>
-
-  <!-- Section 1: 隔夜市场速览 -->
-  <div class="section">
-    <div class="section-title">1. 隔夜市场速览（1分钟）</div>
-    <div class="section-subtitle">只给结论，不展开。2026年6月12日（周五）收盘数据。</div>
-    
-    <table>
-      <tr>
-        <th style="width:22%">资产</th>
-        <th style="width:22%">收盘/最新</th>
-        <th style="width:18%">变化</th>
-        <th style="width:38%">核心结论</th>
-      </tr>
-      <tr class="highlight-red-bg">
-        <td>USD/CNY中间价</td>
-        <td>6.8109</td>
-        <td class="positive">+0.00%</td>
-        <td>周一延续周五报价，仍处高位；资本层面12亿美元敞口承压</td>
-      </tr>
-      <tr>
-        <td>在岸人民币</td>
-        <td>6.7654</td>
-        <td class="neutral">周五收盘</td>
-        <td>中间价与在岸价差扩大至455点，央行维稳意图明显</td>
-      </tr>
-      <tr>
-        <td>DXY美元指数</td>
-        <td>99.80</td>
-        <td class="neutral">持平</td>
-        <td>地缘缓和预期下美元避险需求减弱，但利率差支撑仍在</td>
-      </tr>
-      <tr>
-        <td>道琼斯指数</td>
-        <td>51,202.26</td>
-        <td class="positive">+0.70%</td>
-        <td>地缘缓和提振风险偏好，工业股领涨</td>
-      </tr>
-      <tr>
-        <td>标普500</td>
-        <td>7,431.46</td>
-        <td class="positive">+0.50%</td>
-        <td>能源板块回调，科技板块温和上涨</td>
-      </tr>
-      <tr>
-        <td>纳斯达克</td>
-        <td>25,888.84</td>
-        <td class="positive">+0.31%</td>
-        <td>AI芯片龙头持稳，地缘缓和未引发大规模调仓</td>
-      </tr>
-      <tr>
-        <td>布伦特原油</td>
-        <td>$87.33/桶</td>
-        <td class="negative">-3.37%</td>
-        <td>美伊草案曝光霍尔木兹将开放，地缘溢价快速消退</td>
-      </tr>
-      <tr>
-        <td>上期金指</td>
-        <td>896.21</td>
-        <td class="negative">-2.64%</td>
-        <td>避险需求降温，黄金回吐部分地缘溢价</td>
-      </tr>
-      <tr>
-        <td>LME铜</td>
-        <td>$13,603/吨</td>
-        <td class="neutral">周五收盘</td>
-        <td>库存低位支撑，但宏观需求担忧限制涨幅</td>
-      </tr>
-      <tr>
-        <td>LME铝</td>
-        <td>$3,536/吨</td>
-        <td class="neutral">周五收盘</td>
-        <td>中国出口维持高位，供应端压力仍在</td>
-      </tr>
-      <tr>
-        <td>LME镍</td>
-        <td>$17,630/吨</td>
-        <td class="neutral">周五收盘</td>
-        <td>印尼RKAB政策未更新，供需双弱格局持续</td>
-      </tr>
-    </table>
-
-    <div class="section-title" style="font-size:14px; margin-top:16px;">隔夜要闻（一句话）</div>
-    <ul class="news-list">
-      <li><strong>美伊14点草案</strong>：6月14日曝光谅解备忘录草案，停火60天、霍尔木兹海峡开放、解冻240亿美元伊朗资产，但协议尚未正式签署，伊朗外长称"有进展但关键条款未达成一致"。</li>
-      <li><strong>美联储官员讲话</strong>：6月12日亚特兰大联储主席博斯蒂克重申"年内可能降息一次"，但强调需看到通胀持续回落证据。</li>
-      <li><strong>中国5月社融</strong>：6月12日公布M2同比增长7.2%，新增社融2.29万亿元，低于市场预期，实体经济融资需求仍偏弱。</li>
-      <li><strong>LME库存</strong>：铜库存降至11.2万吨低位，镍库存增至21.8万吨，铝库存维持91万吨高位。</li>
-    </ul>
-  </div>
-
-  <!-- Section 2: 今日风险预警 -->
-  <div class="section">
-    <div class="section-title">2. 今日风险预警</div>
-    <div class="section-subtitle">HIGH = 开盘前必须确认；MED = 盘中密切跟踪。</div>
-
-    <div class="risk-box risk-high">
-      <div class="risk-title"><span class="tag-high">HIGH</span> 美伊协议签署不确定性</div>
-      <div class="risk-desc">草案已曝光但尚未正式签署，若今日谈判破裂或伊朗方面提出新条件，霍尔木兹海峡通航风险可能重新升温。油价可能在日内快速反弹，影响我司原材料运输成本（印尼镍矿/钴矿海运路线）。触发条件：美伊任何一方发表声明否认协议进展。</div>
-    </div>
-
-    <div class="risk-box risk-high">
-      <div class="risk-title"><span class="tag-high">HIGH</span> USD/CNY 6.81高位对资本层面敞口的持续侵蚀</div>
-      <div class="risk-desc">中间价6.8109维持高位，若今日在岸开盘后跌破6.75（在岸6.7654为周五收盘），中间价与在岸价差将进一步扩大。我司资本层面12亿美元Long USD敞口（印尼子公司人民币借款，美元记账）持续面临人民币贬值带来的负债折算膨胀压力。触发条件：USD/CNY中间价突破6.85或在岸跌破6.70。</div>
-    </div>
-
-    <div class="risk-box risk-med">
-      <div class="risk-title"><span class="tag-med">MED</span> LME镍价低位震荡与印尼RKAB政策窗口</div>
-      <div class="risk-desc">LME镍$17,630/吨处于成本线附近，印尼RKAB配额政策已有一段时间未更新，若本周有新政策动向，将直接影响我司印尼基地硫酸镍生产成本。触发条件：印尼矿能部发布RKAB配额调整公告或HPM价格更新。</div>
-    </div>
-
-    <div class="risk-box risk-med">
-      <div class="risk-title"><span class="tag-med">MED</span> 中国社融偏弱后的政策预期博弈</div>
-      <div class="risk-desc">5月社融2.29万亿元低于预期，市场可能加大对6月央行宽松操作的押注（MLF/逆回购/降准），若今日央行开展大额逆回购或宣布降准，可能推动人民币汇率短期波动。触发条件：央行今日开展MLF操作或公告降准。</div>
-    </div>
-  </div>
-
-  <!-- Section 3: 今日行动清单 -->
-  <div class="section">
-    <div class="section-title">3. 今日行动清单（核心）</div>
-    <div class="section-subtitle">结合中伟新材敞口结构：资本层面12亿美元Long USD + 香港购汇Short USD + 欧洲/日韩/印尼多币种敞口。</div>
-
-    <div class="action-item">
-      <div class="action-header"><span class="tag-action">ACTION-1</span> 确认美伊协议进展，评估原油对冲持仓</div>
-      <div class="action-problem">美伊14点草案曝光后布伦特原油暴跌3.37%，若协议正式签署，油价可能进一步回落至$80-85区间。我司印尼基地镍矿/钴矿运输成本与油价高度相关，需确认当前是否持有原油相关对冲工具或运费锁定协议。</div>
-      <div class="action-steps">
-        <ol>
-          <li>检查当前原油/运费敞口：是否持有 Brent 期货或远期运费协议（FFA）</li>
-          <li>若油价跌破$85，评估是否需要增加Q3-Q4运费锁定比例</li>
-          <li>与物流团队确认霍尔木兹航线保险条款是否因草案曝光触发调整</li>
-        </ol>
-      </div>
-      <div class="deadline">决策时限：今日14:00前（美伊新一轮谈判预计北京时间14:00后）</div>
-    </div>
-
-    <div class="action-item">
-      <div class="action-header"><span class="tag-action">ACTION-2</span> 监控USD/CNY中间价，准备资本层面敞口对冲方案</div>
-      <div class="action-problem">USD/CNY中间价6.8109维持高位，在岸6.7654，价差455点。我司资本层面12亿美元Long USD敞口（印尼子公司人民币借款，美元记账）面临人民币贬值→负债折算膨胀的持续压力。2025年汇兑损益已激增45%，若中间价突破6.85，年度汇兑损益可能进一步恶化。</div>
-      <div class="action-steps">
-        <ol>
-          <li>确认今日9:15 USD/CNY中间价报价，若突破6.82，启动紧急对冲评估</li>
-          <li>联系合作银行确认12亿美元敞口的远期/期权报价（重点询价买入看跌期权 Protective Put，锁定6.80下方风险）</li>
-          <li>评估领子期权（Collar）可行性：买入6.75看跌 + 卖出6.90看涨，零成本锁定区间</li>
-          <li>与印尼子公司财务确认本周是否有新增人民币借款提款计划（提款时点影响敞口规模）</li>
-        </ol>
-      </div>
-      <div class="deadline">决策时限：今日11:00前（银行报价窗口）</div>
-    </div>
-
-    <div class="action-item">
-      <div class="action-header"><span class="tag-action">ACTION-3</span> 检查香港购汇敞口与资本层面的自然对冲匹配度</div>
-      <div class="action-problem">香港购汇为Short USD（美元支出），与资本层面12亿美元Long USD存在部分自然对冲。但购汇金额远小于12亿，净敞口仍为美元净多头。需确认本周香港购汇计划，评估自然对冲缺口是否扩大。</div>
-      <div class="action-steps">
-        <ol>
-          <li>获取本周香港购汇计划金额（Short USD敞口更新）</li>
-          <li>计算净敞口 = 12亿 Long USD - 香港购汇 Short USD，确认缺口规模</li>
-          <li>若净敞口扩大（购汇减少或新增借款），调整对冲优先级</li>
-        </ol>
-      </div>
-      <div class="deadline">决策时限：今日12:00前</div>
-    </div>
-
-    <div class="action-item">
-      <div class="action-header"><span class="tag-action">ACTION-4</span> 监控EUR/CNY与KRW/CNY，检查欧洲/日韩业务敞口</div>
-      <div class="action-problem">欧洲销售为Long EUR + USD计价合同，韩国基地为Long KRW + USD合同。USD/CNY高位运行通常伴随EUR/CNY、KRW/CNY同步波动，需确认欧洲/日韩敞口本周是否有到期结汇或新签合同。</div>
-      <div class="action-steps">
-        <ol>
-          <li>确认本周欧洲销售回款计划（EUR应收到期日）</li>
-          <li>确认韩国基地本周韩元收支计划（KRW应收/应付）</li>
-          <li>检查是否有新签美元计价、欧元结算合同（交叉汇率风险）</li>
-        </ol>
-      </div>
-      <div class="deadline">决策时限：今日15:00前（欧洲开盘前）</div>
-    </div>
-
-    <div class="action-item">
-      <div class="action-header"><span class="tag-action">ACTION-5</span> 跟踪印尼RKAB/HPM政策动态，更新成本预测</div>
-      <div class="action-problem">LME镍$17,630/吨处于低位，印尼RKAB配额和HPM价格已有一段时间未更新。若本周有政策调整，将直接影响硫酸镍生产成本。这是中伟新材区别于其他企业的核心成本变量。</div>
-      <div class="action-steps">
-        <ol>
-          <li>联系印尼基地法务/政府关系团队，确认RKAB配额更新时间表</li>
-          <li>评估HPM价格若上调5%对Q3硫酸镍成本的影响（敏感性测算）</li>
-          <li>确认当前镍矿库存是否足够覆盖政策窗口期（XL 2-3周）</li>
-        </ol>
-      </div>
-      <div class="deadline">决策时限：本周三前（若本周无政策更新，则降级为持续监控）</div>
-    </div>
-  </div>
-
-  <!-- Section 4: 数据来源 -->
-  <div class="section">
-    <div class="section-title">4. 数据来源与时效声明</div>
-    <div class="section-subtitle">极简声明，不展开。</div>
-
-    <table class="source-table">
-      <tr>
-        <th style="width:25%">数据类别</th>
-        <th style="width:30%">来源</th>
-        <th style="width:25%">时间</th>
-        <th style="width:20%">状态</th>
-      </tr>
-      <tr>
-        <td>USD/CNY中间价</td>
-        <td>中国外汇交易中心</td>
-        <td>2026-06-15 09:15</td>
-        <td>当日</td>
-      </tr>
-      <tr>
-        <td>在岸人民币</td>
-        <td>中国外汇交易中心</td>
-        <td>2026-06-12 16:30</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>美元指数</td>
-        <td>ICE期货交易所</td>
-        <td>2026-06-12 收盘</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>美股三大指数</td>
-        <td>彭博 / 交易所官方</td>
-        <td>2026-06-12 收盘</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>布伦特原油</td>
-        <td>ICE期货交易所 / Investing.com</td>
-        <td>2026-06-12 收盘</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>上期金指</td>
-        <td>上海期货交易所</td>
-        <td>2026-06-12 收盘</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>LME铜/铝/镍</td>
-        <td>伦敦金属交易所</td>
-        <td>2026-06-12 收盘</td>
-        <td>周五收盘</td>
-      </tr>
-      <tr>
-        <td>美伊14点草案</td>
-        <td>新华社 / 路透社</td>
-        <td>2026-06-14</td>
-        <td>周末新闻</td>
-      </tr>
-      <tr>
-        <td>中国5月社融</td>
-        <td>中国人民银行</td>
-        <td>2026-06-12</td>
-        <td>已发布</td>
-      </tr>
-    </table>
-
-    <div class="disclaimer">
-      本简报基于公开市场数据整理，仅供内部决策参考，不构成投资建议。数据截止2026年6月15日09:22，后续市场变化可能改变上述判断。
-    </div>
-  </div>
-
-  <div class="footer">
-    盘前简报是冲锋号，不是战报。 | 生成时间：2026-06-15 09:22 | 下次更新：08:30（明日盘前）
-  </div>
-
+<div class="header">
+  <h1>盘前市场简报</h1>
+  <div class="meta">2026年6月29日（周一） | 数据截止：09:20 CST</div>
+  <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733; 质量评级：5/5</div>
 </div>
 
+<div class="section">
+  <div class="info-bar">
+    <b>一句话重点：</b>原油抹去战争全部涨幅跌破72美元，亚洲股市周五暴跌，美伊进入60天谈判期，人民币升值43点至6.8166。
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">1. 隔夜市场速览（1分钟）</div>
+  <table>
+    <tr><th>资产</th><th>价格/点位</th><th>变动</th><th>备注</th></tr>
+    <tr><td>USD/CNY 中间价</td><td>6.8166</td><td class="down">+43点（人民币升值）</td><td>央行 2026-06-29</td></tr>
+    <tr><td>美元指数 DXY</td><td>101.83</td><td class="up">13个月新高</td><td>汇通财经 2026-06-27</td></tr>
+    <tr><td>道琼斯</td><td>51,876.11</td><td class="neutral">-0.09%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>标普500</td><td>7,354.02</td><td class="neutral">-0.05%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>纳斯达克</td><td>25,297.62</td><td class="neutral">-0.24%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>布伦特原油</td><td>71.73</td><td class="down">-4.69%</td><td>跌破72美元，抹去战争全部涨幅</td></tr>
+    <tr><td>WTI 原油</td><td>69.06</td><td class="down">-3.98%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>现货黄金</td><td>4,090.26</td><td class="up">+1.58%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>COMEX 黄金</td><td>4,103.00</td><td class="up">+1.37%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>沪指</td><td>4,027.26</td><td class="down">-2.26%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>日经225</td><td>69,360.88</td><td class="down">-4.15%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>韩国KOSPI</td><td>8,411.21</td><td class="down">-5.81%</td><td>6/26 周五收盘</td></tr>
+    <tr><td>恒生指数</td><td>22,671.86</td><td class="down">-1.76%</td><td>6/26 周五收盘</td></tr>
+  </table>
+</div>
+
+<div class="section">
+  <div class="section-title">2. 今日风险预警</div>
+  
+  <div class="alert-high">
+    <span class="tag tag-high">HIGH</span> <b>韩国股市暴跌 -5.81%（6/26）</b><br>
+    韩国KOSPI创年内最大跌幅，三星SDI/LG化学等核心客户可能受波及。需立即确认韩国基地订单稳定性及客户回款风险。
+  </div>
+  
+  <div class="alert-high">
+    <span class="tag tag-high">HIGH</span> <b>布伦特原油跌破72美元，抹去战争全部涨幅</b><br>
+    地缘溢价完全归零，布油即期价差已转为Contango。对公司原材料成本是重大利好，但需确认供应商传导时效——Q3采购成本下调空间可能开启。
+  </div>
+  
+  <div class="alert-med">
+    <span class="tag tag-med">MED</span> <b>美元指数101.83 + 人民币升值43点 = 背离信号</b><br>
+    DXY 13个月新高但人民币中间价反而升值，显示央行逆周期调节发力。USD/CNY短期可能承压，关注6.80支撑位是否守住。
+  </div>
+  
+  <div class="alert-med">
+    <span class="tag tag-med">MED</span> <b>美伊60天谈判期启动（6/19签署备忘录）</b><br>
+    霍尔木兹海峡已开放但伊朗维持监管。以色列6/14袭击贝鲁特试图搅局未成功。地缘风险从"极高"降至"中高"，但协议破裂仍有小概率。
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">3. 今日行动清单（核心）</div>
+  
+  <div class="action-box">
+    <span class="action-label">ACTION</span> <b>USD/CNY：维持对冲，暂不调整</b><br>
+    当前6.8166（人民币升值43点），不利于资本层面12亿美元Long USD。但DXY 101.83 + 美联储12月加息概率86.1%支撑中期美元强势。人民币短期升值或受央行逆周期调节驱动，持续性存疑。维持当前对冲覆盖率（60-70%），关注6.80支撑位。若跌破6.80且DXY站稳102，考虑逐步兑现红利（参考6/26方案）。
+  </div>
+  
+  <div class="action-box">
+    <span class="action-label">ACTION</span> <b>原材料成本：立即启动Q3采购成本评估</b><br>
+    原油跌破72美元（战争高点119.50，跌幅40%），地缘溢价归零。硫酸镍等能源密集型生产原材料成本应显著下降。ACTION：今日内联系印尼基地采购负责人，确认硫酸镍/硫酸钴供应商Q3报价调整意向；同步评估国内基地能源成本下调空间。
+  </div>
+  
+  <div class="action-box">
+    <span class="action-label">ACTION</span> <b>韩国基地：确认客户稳定性与回款风险</b><br>
+    韩国KOSPI -5.81%（6/26），三星SDI、LG化学等战略客户股价可能剧烈波动。ACTION：今日内联系韩国基地财务负责人，确认6月应收账款回收进度，评估客户信用评级是否需调整。关注韩国客户订单量是否出现收缩迹象。
+  </div>
+  
+  <div class="action-box">
+    <span class="action-label">ACTION</span> <b>地缘仪表盘：从"极高"调至"中高"</b><br>
+    美伊6/19签署谅解备忘录，霍尔木兹海峡6/22开放，60天谈判期已启动。战争状态结束，但核问题/制裁解除谈判仍有变数。建议将地缘风险仪表盘从"极高"下调至"中高"，对冲比例暂不调整，持续监控谈判进展。
+  </div>
+  
+  <div class="action-box">
+    <span class="action-label">ACTION</span> <b>黄金ETF失血：间接监控融资环境</b><br>
+    6月以来20只黄金ETF净流出超121亿元，金价4,000美元保卫战。对我司直接经营影响有限，但全球风险偏好变化可能间接影响跨境融资成本和债市情绪。ACTION：持续监控公司海外融资成本，若出现明显上行需及时报告。
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">4. 数据来源与免责声明</div>
+  <p style="font-size:12px;color:#666;">
+  数据来源：中国外汇交易中心（USD/CNY中间价）、财新国际/国际金融要情（大宗商品、股市）、汇通财经（美元指数）、央视/财新（中东局势）。<br>
+  免责声明：本简报仅供参考，不构成投资建议。市场有风险，决策需谨慎。数据时效以标注来源及时间为准。
+  </p>
+  <table style="font-size:11px;color:#666;">
+    <tr><th>数据类别</th><th>最新日期</th><th>更新频率</th><th>状态</th></tr>
+    <tr><td>USD/CNY中间价</td><td>2026-06-29</td><td>日度（9:15）</td><td>正常</td></tr>
+    <tr><td>美股</td><td>2026-06-26</td><td>日度（T-1）</td><td>正常</td></tr>
+    <tr><td>原油/黄金</td><td>2026-06-26</td><td>日度（T-1）</td><td>正常</td></tr>
+    <tr><td>亚洲股市</td><td>2026-06-26</td><td>日度（T-1）</td><td>正常</td></tr>
+    <tr><td>美元指数</td><td>2026-06-27</td><td>实时</td><td>正常</td></tr>
+  </table>
+</div>
+
+<div class="source">
+  生成时间：2026-06-29 09:20 CST | 发送对象：CFO | 财资团队内部参考
+</div>
+
+</div>
 </body>
 </html>
