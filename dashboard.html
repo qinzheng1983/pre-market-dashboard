@@ -16,19 +16,9 @@
             align-items: center;
             padding: 40px 20px;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .header h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .header p {
-            font-size: 16px;
-            opacity: 0.7;
-        }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 { font-size: 32px; font-weight: 600; margin-bottom: 10px; }
+        .header p { font-size: 16px; opacity: 0.7; }
         .report-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -51,37 +41,12 @@
             background: rgba(255,255,255,0.15);
             border-color: #e94560;
         }
-        .report-card .date {
-            font-size: 14px;
-            color: #e94560;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        .report-card .title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .report-card .desc {
-            font-size: 14px;
-            opacity: 0.7;
-            line-height: 1.6;
-        }
-        .footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.5;
-        }
-        .badge {
-            display: inline-block;
-            background: #27ae60;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-left: 8px;
-        }
+        .report-card .date { font-size: 14px; color: #e94560; font-weight: 600; margin-bottom: 10px; }
+        .report-card .title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+        .report-card .desc { font-size: 14px; opacity: 0.7; line-height: 1.6; }
+        .footer { margin-top: 40px; text-align: center; font-size: 12px; opacity: 0.5; }
+        .badge { display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px; }
+        .badge-new { background: #e94560; }
     </style>
 </head>
 <body>
@@ -91,30 +56,27 @@
     </div>
     
     <div class="report-grid">
-        <!-- 盘前简报 -->
         <a href="index.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
+            <div class="date">2026年6月29日（周一） <span class="badge badge-new">最新</span></div>
             <div class="title">盘前市场简报</div>
-            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>数据截止前一交易日收盘</div>
+            <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>美伊停火协议 | 霍尔木兹开放 | 原油跌破72美元 | 亚洲股市暴跌</div>
         </a>
         
-        <!-- 财资日报 -->
-        <a href="finance-daily/20260611_optimized.html" class="report-card">
-            <div class="date">2026年06月11日 <span class="badge">最新</span></div>
+        <a href="finance-daily/20260617.html" class="report-card">
+            <div class="date">2026年6月17日（周二） <span class="badge">最新</span></div>
             <div class="title">财资日报</div>
-            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>v4.1优化版：USDIDR取代JPY，有色金属增加钴剔除锌铅，补充USDIDR多头3亿美元敞口</div>
+            <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>当日完整收盘数据与深度分析</div>
         </a>
         
-        <!-- 财资周报 -->
-        <a href="finance-weekly/2026w17.html" class="report-card">
-            <div class="date">点击查看 <span class="badge">最新</span></div>
+        <a href="finance-weekly/2026w26.html" class="report-card">
+            <div class="date">2026年第26周（6月22日-28日） <span class="badge badge-new">最新</span></div>
             <div class="title">财资周报</div>
-            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>本周走势汇总+下周前瞻+CFO视角策略</div>
+            <div class="desc">每周五发布，周度走势汇总+下周前瞻+CFO视角对冲策略<br><br>地缘缓和+美元走强+亚洲暴跌 | 美伊停火 | 原油跌破72美元 | 央行净投放5297亿</div>
         </a>
     </div>
     
     <div class="footer">
-        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-06-11 17:39
+        由 OpenClaw AI 自动生成 | 数据仅供参考 | 更新于 2026-06-29 15:43
     </div>
 </body>
 </html>
