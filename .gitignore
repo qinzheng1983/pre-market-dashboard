@@ -1,1 +1,19 @@
 skills/pre-market-briefing/scripts/deploy.sh
+.github_token
+deploy.sh
+scripts/_tmp_deploy.py
+scripts/_tmp_deploy_pm.py
+tmp_deploy.sh
+
+# Secrets and tokens
+.github_token
+deploy.sh
+tmp_deploy.sh
+fix_deploy.py
+run_deploy2.py
+scripts/_tmp_deploy.py
+scripts/_tmp_deploy_pm.py
+scripts/_tmp_deploy_pm_0619.py
+scripts/deploy_vertical.py
+scripts/deploy_weekly_tmp.py
+scripts/deploy_report.sh

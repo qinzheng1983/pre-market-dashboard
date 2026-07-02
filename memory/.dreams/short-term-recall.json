@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-12T00:14:33.542Z",
+  "updatedAt": "2026-06-30T07:41:03.386Z",
   "entries": {
     "memory:memory/2026-05-10.md:217:243": {
       "key": "memory:memory/2026-05-10.md:217:243",
@@ -40,18 +40,20 @@
       "endLine": 219,
       "source": "memory",
       "snippet": "| 时间线 | `reports/usdidr_carry_trade_timeline.png` | 2016~2026年USD/IDR汇率 vs 美印尼利差走势 | | 时间线矢量版 | `reports/usdidr_carry_trade_timeline.pdf` | PDF格式 | ### 数据源 - **USD/IDR汇率**：BIS (国际清算银行) 日频数据，`/tmp/usdidr_bis_daily_clean.csv` - **美国利率**：FRED FEDFUNDS（有效联邦基金利率，月度，前向填充至日频） - **印尼利率**：Bank Indonesia BI Rate（年度年末值，月度前向填充至日频） ### 计算结果（累计） | 区间 | 总收益 | 利息收益 | 汇兑损益 | 平均利差 | USD/IDR变动 | |------|--------|---------|---------|---------|------------| | 近1年 (2025/5→2026/5) | **-3.60%** | +0.77% | **-4.37%** | +0.84% | +4.37% | | 近3年 (2023/5→2026/5) | **-15.95%** | +2.27% | **-18.22%** | +0.84% | +18.22% | | 近5年 (2021/5→2026/5) | **-11.45%** | +8.83% | **-20.28%** | +1.99% | +20.28% | | 近10年 (2016/5→202",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 0.49025243818759917,
+      "totalScore": 0.9260202765464782,
       "maxScore": 0.49025243818759917,
       "firstRecalledAt": "2026-05-12T00:14:33.542Z",
-      "lastRecalledAt": "2026-05-12T00:14:33.542Z",
+      "lastRecalledAt": "2026-06-12T11:12:46.345Z",
       "queryHashes": [
-        "668f15ad58d3"
+        "668f15ad58d3",
+        "f35680465349"
       ],
       "recallDays": [
-        "2026-05-12"
+        "2026-05-12",
+        "2026-06-12"
       ],
       "conceptTags": [
         "2026年usd/idr汇率",
@@ -155,6 +157,261 @@
         "阿根廷",
         "外汇",
         "风险"
+      ]
+    },
+    "memory:memory/2026-05-10.md:91:108": {
+      "key": "memory:memory/2026-05-10.md:91:108",
+      "path": "memory/2026-05-10.md",
+      "startLine": 91,
+      "endLine": 108,
+      "source": "memory",
+      "snippet": "## 印尼子公司 CNY/USD 套期保值策略（用户委托，2026-05-10 下午） ### 需求背景 用户新增一家**印尼子公司**，核心参数： - 记账本位币：**USD** - 每月收到人民币货款：**等值约2亿美元**（CNY流入） - 敞口方向：**Long CNY / 隐含 Short USD**（收到CNY，报表需折算USD，CNY贬值=损失） - 要求：策略必须**符合印尼外汇监管（Bank Indonesia）** + **当地银行金融衍生品条件** ### 市场调研过程 1. **印尼监管框架**：检索了 Bank Indonesia PBI No. 6/2024 + PADG No. 11/2024（实需原则）、PADG No. 7 of 2026（2026年4月生效，提高无基础文件门槛）、2026年5月收紧的现金购汇限制 2. **可用衍生品**：DNDF、Forward、Swap、Option 的合规门槛与适用性 3. **关键发现**：**中国银行雅加达分行**是中印尼双边本币结算（LCS）指定ACCD银行，占印尼ACCD交易量81.3%，是唯一能直接做CNY/USD远期的本地银行 4. **市场数据**：USD/CNH ~6.7795（年初至今CNY升值2.58%）、BI Rate 4.75%、中国1年期LPR ~3.1%、中美利差约+120-140bp 5. **远期定价**：基于利率平价，USD/CNY 12个月远期贴水约1.8%年化（USD利率高→远期USD更\"便宜\"） ### 策略核心结论 - **首选工具**：中国银行雅加达分行",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.9591901779174804,
+      "maxScore": 0.48851186931133267,
+      "firstRecalledAt": "2026-06-12T11:12:46.325Z",
+      "lastRecalledAt": "2026-06-12T11:12:46.345Z",
+      "queryHashes": [
+        "40cac23ec54f",
+        "f35680465349"
+      ],
+      "recallDays": [
+        "2026-06-12"
+      ],
+      "conceptTags": [
+        "cny/usd",
+        "6/2024",
+        "11/2024",
+        "占印尼accd交易量81.3",
+        "是唯一能直接做cny/usd远期的本地银行",
+        "usd/cnh",
+        "6.7795",
+        "年初至今cny升值2.58"
+      ]
+    },
+    "memory:memory/2026-06-01.md:22:41": {
+      "key": "memory:memory/2026-06-01.md:22:41",
+      "path": "memory/2026-06-01.md",
+      "startLine": 22,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "- **用户确认**：北美出口已转为内销，不再形成 USD/CNY 美元正敞口 - **COMPANY.md 已更新**： - 北美出口项标注\"已转为内销，不再形成 USD 敞口\" - 敞口总览图删除北美出口 Long USD 项 - \"对我司影响\"框架将北美出口标注为已消除 - 更新日志增加 2026-06-01 变更记录 - **当前 USD 敞口**：主要剩余资本层面（Long USD）和香港购汇（Short USD），两者形成对冲关系 - **多币种独立敞口**：EUR/CNY（欧洲）、KRW/CNY（韩国）、JPY/CNY（日本）、IDR/CNY（印尼）仍需分别评估 ## 资本层面敞口重大更新（2026-06-01 14:49） **用户明确告知**： 1. 境内和香港经常项目基本收支平衡 2. 资本项下：跨境人民币长期借款至印尼子公司（美元记账本位币），累积已形成集团 **约 10 亿美元规模的美元多头（Long USD）** 3. **人民币升值对我司不利** **已更新文件**： - `COMPANY.md`：资本层面敞口规模从\"子公司美元负债\"更新为\"约10亿美元 Long USD\" - `skills/pre-market-briefing/references/company-exposure.md`：同步更新敞口总览 - `COMPANY.md` 对冲执行规则：明确资本层面约10亿 Long USD 是净敞口主导，人民币升值不利 - `COMPANY.md` 情景化对冲矩阵：更新资本层面影响描述（10亿USD资产折算）",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.3683587551116942,
+      "maxScore": 0.5017492175102234,
+      "firstRecalledAt": "2026-06-12T11:12:46.325Z",
+      "lastRecalledAt": "2026-06-17T07:21:00.571Z",
+      "queryHashes": [
+        "40cac23ec54f",
+        "f35680465349",
+        "ef153a1c8a34"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-17"
+      ],
+      "conceptTags": [
+        "usd/cny",
+        "company.md",
+        "eur/cny",
+        "krw/cny",
+        "jpy/cny",
+        "idr/cny",
+        "用户",
+        "确认"
+      ]
+    },
+    "memory:memory/2026-05-10.md:121:141": {
+      "key": "memory:memory/2026-05-10.md:121:141",
+      "path": "memory/2026-05-10.md",
+      "startLine": 121,
+      "endLine": 141,
+      "source": "memory",
+      "snippet": "- PADG No. 7 of 2026（2026-04-01生效）：DNDF/Forward卖出门槛提高至USD 1,000万/笔，Swap提高至USD 1,000万/笔 - 但子公司月均2亿美元+有出口合同作为基础文件，不受无基础文件门槛限制 - BI 现金购汇限制收紧至USD 25,000/人/月（2026年5月），但对企业衍生品交易无直接影响 - **Cash Flow Hedge Accounting**：强烈建议向审计师咨询，可将远期有效部分变动计入OCI，平滑利润表 ### 用户偏好更新 - 用户新增需求：涉及\"我司\"的报告需同时加载COMPANY.md + USER.md - 印尼子公司敞口需纳入集团整体敞口矩阵（后续更新COMPANY.md） - 用户工作领域：跨国企业资金管理、汇率风险、利率风险；关注美元走势、汇率对冲成本 --- ## USD/IDR 多头IDR持仓天数分布回测（用户委托，2026-05-10 下午） ### 需求 用户要求按照USD/CNY回测的相同逻辑，回测USD/IDR汇率，敞口方向为**多头IDR / 空头USD**（即每日买入印尼盾，USD/IDR跌破加权平均入场价则清仓）。 ### 回测设定 - **数据源**：BIS (国际清算银行) 日频USD/IDR汇率（2016/05 ~ 2026/05） - **数据量**：约2,560个交易日",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1.2727547019720078,
+      "maxScore": 0.4573501706123352,
+      "firstRecalledAt": "2026-06-12T11:12:46.325Z",
+      "lastRecalledAt": "2026-06-17T07:21:00.571Z",
+      "queryHashes": [
+        "40cac23ec54f",
+        "f35680465349",
+        "ef153a1c8a34"
+      ],
+      "recallDays": [
+        "2026-06-12",
+        "2026-06-17"
+      ],
+      "conceptTags": [
+        "2026-04-01生效",
+        "dndf/forward卖出门槛提高至usd",
+        "000万/笔",
+        "000/人/月",
+        "的报告需同时加载company.md",
+        "user.md",
+        "后续更新company.md",
+        "usd/idr"
+      ]
+    },
+    "memory:memory/2026-06-12.md:149:179": {
+      "key": "memory:memory/2026-06-12.md:149:179",
+      "path": "memory/2026-06-12.md",
+      "startLine": 149,
+      "endLine": 179,
+      "source": "memory",
+      "snippet": "## 当前定时任务状态（2026-06-12 17:05） | 任务 | 状态 | ID | 调度 | |------|------|-----|------| | **pre-market-briefing** | ✅ 保留 | `df160f9d-d9d4-4f62-b4a5-a2876b538e00` | `cron 20 9 * * 1-5` | | **finance-daily-report** | ❌ 已删除 | `df058492-5295-4ea9-9c23-6bf4ffe97579` | — | **说明**：用户明确要求使用 `finance-daily` skill 生成报告，而非 `finance-daily-report` 定时任务。因此关闭后者，仅保留盘前简报定时任务。 --- ## 关键学习 ### finance-daily skill v4.1 规范（已固化） - **仪表盘**：6项固定（地缘/汇率/原油/印尼政策/大宗/央行），红黄绿灯+文字描述 - **对我司影响**：ACTION分组行（本周必须做/持续监控/前瞻），红/绿/灰标签 - **汇率**：多币种并行（USD/CNY/EUR/CNY/KRW/CNY/IDR/CNY），含\"对我司影响\"子段落 - **对冲建议**：6大维度+期权工具优先级排序 - **数据来源**：时效声明表，融入底部 - **vs预算/趋势**：红=不利，绿=利好，灰=无预算 - **监控阈值**：替代旧版\"触发条件\" ### 数据验证铁律（再次强化） - USD/CNY中间价 ONLY认央行授权",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.45526242256164545,
+      "maxScore": 0.45526242256164545,
+      "firstRecalledAt": "2026-06-30T07:41:03.386Z",
+      "lastRecalledAt": "2026-06-30T07:41:03.386Z",
+      "queryHashes": [
+        "5078c5521d3e"
+      ],
+      "recallDays": [
+        "2026-06-30"
+      ],
+      "conceptTags": [
+        "pre-market-briefing",
+        "1-5",
+        "finance-daily-report",
+        "finance-daily",
+        "v4.1",
+        "地缘/汇率/原油/印尼政策/大宗/央行",
+        "本周必须做/持续监控/前瞻",
+        "红/绿/灰标签"
+      ]
+    },
+    "memory:memory/2026-06-03.md:70:89": {
+      "key": "memory:memory/2026-06-03.md:70:89",
+      "path": "memory/2026-06-03.md",
+      "startLine": 70,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "- **建议**：盘前简报发送时间（09:20触发）与中间价发布时间（09:15）极为接近，未来可考虑将触发时间延后至 09:30 或 09:35，以确保中间价已发布并被搜索引擎收录。但需权衡用户“08:30前看到简报”的需求。当前 09:20 是折中方案，用户此前已同意从 08:27 调整为 09:20。 --- --- ## 2026-06-03 15:20-15:40 — USD/CNY 月度情景分析报告（第一版，含错误数据） **用户指令**：基于印尼盾分析技能（indonesia-rupiah-scenario），生成一个分析美元人民币（USD/CNY）的研究框架，形成HTML报告。 **操作**：读取 `SKILL.md` 和 `references/framework.md`，沿用5层框架（V3 技术重构版），生成 `reports/usdcny_monthly_scenario_202606.html`。 **关键数据错误（用户15:42指出）**： | 错误项 | 第一版 | 实际值 | 偏差 | |--------|--------|--------|------| | DXY | 100.57 | 99.05（已跌破100） | 严重 | | 中美利差方向 | \"收窄中\" | 倒挂从-241BP扩大至-274BP | 方向反 | | 美联储 | 未提及8:4分歧、CPI 3.8%、加息可能 | 4月FOMC 8:4投票创1992年来最大分歧 | 遗漏关键信息 | | 美伊谈判 | 过时描述 | 5月28日60天谅解备忘录，但6月1日伊朗暂停对话",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44692866206169124,
+      "maxScore": 0.44692866206169124,
+      "firstRecalledAt": "2026-06-30T07:41:03.386Z",
+      "lastRecalledAt": "2026-06-30T07:41:03.386Z",
+      "queryHashes": [
+        "5078c5521d3e"
+      ],
+      "recallDays": [
+        "2026-06-30"
+      ],
+      "conceptTags": [
+        "20-15",
+        "usd/cny",
+        "indonesia-rupiah-scenario",
+        "skill.md",
+        "references/framework.md",
+        "100.57",
+        "99.05",
+        "倒挂从-241bp扩大至-274bp"
+      ]
+    },
+    "memory:memory/2026-03-31.md:54:88": {
+      "key": "memory:memory/2026-03-31.md:54:88",
+      "path": "memory/2026-03-31.md",
+      "startLine": 54,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "- `/root/.openclaw/workspace/MEMORY.md` (appended briefing and daily report entries) ## System State - Date confirmed: March 31, 2026 (not 2025) - All scheduled reports delivered on time - User preference for HTML email format confirmed and documented --- *End of memory flush — 2026-03-31 15:30 CST* --- ## Additional Session Records — 2026-03-31 16:11 CST ### 4. Data Timeliness Audit (User Feedback) - **Issue Raised**: User identified FX rate data was lagging by 1 day - **Specific Problems Found**: - USD/CNY middle rate: Used 3/30 value 6.9223, actual 3/31 9:15 release was 6.9194 - USD/CNH offshore: Used yesterday's close 6.9320, real-time was 6.9118 - Central bank operations: Use",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44568856358528136,
+      "maxScore": 0.44568856358528136,
+      "firstRecalledAt": "2026-06-30T07:41:03.386Z",
+      "lastRecalledAt": "2026-06-30T07:41:03.386Z",
+      "queryHashes": [
+        "5078c5521d3e"
+      ],
+      "recallDays": [
+        "2026-06-30"
+      ],
+      "conceptTags": [
+        "openclaw/workspace/memory.md",
+        "usd/cny",
+        "3/30",
+        "6.9223",
+        "3/31",
+        "6.9194",
+        "usd/cnh",
+        "6.9320"
+      ]
+    },
+    "memory:memory/2026-04-21.md:180:206": {
+      "key": "memory:memory/2026-04-21.md:180:206",
+      "path": "memory/2026-04-21.md",
+      "startLine": 180,
+      "endLine": 206,
+      "source": "memory",
+      "snippet": "| 汇率/原油/黄金 | 0天 | 必须当日，否则报告延迟发布 | | 美股三大指数 | 0天 | T-1收盘数据，盘前简报使用 | | LME有色金属 | 1-2天 | 周末/节假日顺延 | | 碳酸锂 | 3-5天 | 价格波动较慢 | | 新能源装机 | 15-30天 | 月度数据本身滞后 | | LPR/央行操作 | 0-1天 | 按月发布，发布后当日获取 | ### 执行计划（2026-04-22） - [ ] 创建 `data/cache/` 目录，建立市场数据缓存结构 - [ ] 配置tavily-web-search作为备用搜索工具 - [ ] 编写USD/CNY中间价直接抓取脚本（基于kimi_fetch或curl） - [ ] 编写LME数据直接抓取脚本 - [ ] 更新报告生成流程，加入缓存降级逻辑 - [ ] 测试容灾机制（模拟搜索不可用场景） ### 需求记录（用户新需求） **角色锚定**： - \"我\" = 中伟新材（CNGR Advanced Material）财务总监 - 管理资金、利率和汇率风险，考虑经营效率 **\"我司\"关注清单**（已固化到USER.md和MEMORY.md）： 1. USD/CNY波动对海外项目收益折算影响 2. 印尼、阿根廷外汇风险敞口及套期保值有效性 3. 海外借款（印尼恒生1800万美元）外币融资成本风险 4. 净利润增速低于营收增速的盈利质量问题 5. 印尼政策与行业变局下的成本结构与资金链压力",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.44490164220333095,
+      "maxScore": 0.44490164220333095,
+      "firstRecalledAt": "2026-06-30T07:41:03.386Z",
+      "lastRecalledAt": "2026-06-30T07:41:03.386Z",
+      "queryHashes": [
+        "5078c5521d3e"
+      ],
+      "recallDays": [
+        "2026-06-30"
+      ],
+      "conceptTags": [
+        "汇率/原油/黄金",
+        "t-1收盘数据",
+        "1-2天",
+        "周末/节假日顺延",
+        "3-5天",
+        "15-30天",
+        "lpr/央行操作",
+        "0-1天"
+      ]
+    },
+    "memory:memory/2026-04-13.md:34:86": {
+      "key": "memory:memory/2026-04-13.md:34:86",
+      "path": "memory/2026-04-13.md",
+      "startLine": 34,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "### 任务信息 - **任务类型**: 财资日报生成与发送 - **执行时间**: 2026-04-13 17:25 CST - **发送状态**: ✅ 已发送（17:26） - **数据基准**: 2026年4月13日（当日完整收盘数据） ### 报告核心数据 #### 汇率市场 | 指标 | 数值 | 变化 | |:-----|:-----|:-----| | USD/CNY在岸 | 6.8335 | +0.08% | | USD/CNY离岸 | 6.8331 | -0.10% | | 中行折算价 | 6.8657 | — | | 美元指数 | 99.19 | +0.5% | #### 新能源 | 品种 | 价格（元/吨） | 涨跌 | |:-----|:-------------|:-----| | 电池级碳酸锂 | 157,000 | +1,450 (+0.93%) | | 工业级碳酸锂 | 152,050 | -200 (-0.13%) | | 电池级氢氧化锂 | 144,200 | -3,300 (-2.24%) | | 多晶硅期货 | — | +8.18%（涨停） | #### 有色金属（LME） | 品种 | 涨跌 | |:-----|:-----| | LME铜 | -0.6% | | LME铝 | +0.11% | | LME镍 | -0.4% | | LME锡 | -2.8% | | LME锌 | -0.57% | #### 贵金属 | 品种 | 数值 | 变化 | |:-----|:-----|:-----| | COMEX黄金 | $4,6",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 0.4374836444854736,
+      "maxScore": 0.4374836444854736,
+      "firstRecalledAt": "2026-06-30T07:41:03.386Z",
+      "lastRecalledAt": "2026-06-30T07:41:03.386Z",
+      "queryHashes": [
+        "5078c5521d3e"
+      ],
+      "recallDays": [
+        "2026-06-30"
+      ],
+      "conceptTags": [
+        "usd/cny在岸",
+        "6.8335",
+        "0.08",
+        "usd/cny离岸",
+        "6.8331",
+        "0.10",
+        "6.8657",
+        "99.19"
       ]
     }
   }

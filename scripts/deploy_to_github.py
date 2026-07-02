@@ -2,6 +2,8 @@
 """
 deploy_to_github.py - 报告自动部署到GitHub Pages
 自动上传报告并更新导航页，无需手动干预
+
+关键修正：GitHub Pages 从 docs 目录部署，所有文件必须上传到 docs/ 路径下
 """
 
 import base64
@@ -14,28 +16,27 @@ from datetime import datetime
 # 配置
 REPO = "qinzheng1983/pre-market-dashboard"
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
-
 if not TOKEN:
-    print("❌ 错误: 未设置 GITHUB_TOKEN 环境变量")
-    print("   请执行: export GITHUB_TOKEN='ghp_xxx'")
+    print("⚠️  环境变量 GITHUB_TOKEN 未设置，部署将失败。请设置 GITHUB_TOKEN 环境变量。")
+    print("   示例: export GITHUB_TOKEN=ghp_xxxxxxxxxxxx")
     sys.exit(1)
+
 REPORTS_DIR = "/root/.openclaw/workspace/reports"
 GITHUB_API = f"https://api.github.com/repos/{REPO}/contents"
+PAGES_ROOT = "docs"  # GitHub Pages 从 docs 目录部署
 
-def github_api(path, method="GET", data=None):
-    """调用GitHub API"""
-    url = f"{GITHUB_API}/{path}"
+def github_api(path, method="GET", data=None, raw_url=None):
+    """调用GitHub API。raw_url 为完整 URL 时直接使用"""
+    url = raw_url if raw_url else f"{GITHUB_API}/{path}"
     headers = {
         "Authorization": f"token {TOKEN}",
         "Content-Type": "application/json",
         "Accept": "application/vnd.github.v3+json"
     }
-    
     if method == "GET":
         req = urllib.request.Request(url, headers=headers, method=method)
     else:
         req = urllib.request.Request(url, data=json.dumps(data).encode('utf-8'), headers=headers, method=method)
-    
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
             return json.loads(resp.read().decode('utf-8'))
@@ -49,28 +50,65 @@ def github_api(path, method="GET", data=None):
         print(f"   ⚠️  请求失败: {e}")
         return None
 
+def verify_pages_source():
+    """部署前验证 GitHub Pages Source 与 PAGES_ROOT 一致"""
+    result = github_api("", raw_url=f"https://api.github.com/repos/{REPO}/pages")
+    if not result:
+        print("⚠️  无法查询 Pages 配置，跳过验证（请手动确认）")
+        return True
+    source_path = result.get("source", {}).get("path", "/")
+    expected = f"/{PAGES_ROOT}" if PAGES_ROOT else "/"
+    if source_path != expected:
+        print(f"❌ 配置不匹配！")
+        print(f"   仓库 Pages Source: {source_path}")
+        print(f"   脚本 PAGES_ROOT:   {expected}")
+        print(f"   必须同步修改 PAGES_ROOT 变量或仓库 Pages 设置")
+        return False
+    print(f"   ✅ Pages Source 验证通过: {source_path}")
+    return True
+
+def verify_url(url, expect_200=True):
+    """部署后 curl 验证 URL 可达"""
+    try:
+        req = urllib.request.Request(url, method="HEAD", headers={"User-Agent": "deploy-check"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            ok = resp.status == 200
+            if ok:
+                print(f"   ✅ URL 可达: {url}")
+            else:
+                print(f"   ⚠️  HTTP {resp.status}: {url}")
+            return ok
+    except Exception as e:
+        print(f"   ⚠️  URL 验证失败: {url} ({e})")
+        return not expect_200
+
 def get_file_sha(path):
-    """获取文件SHA（如果存在）"""
     result = github_api(path)
     if result and 'sha' in result:
         return result['sha']
     return None
 
 def upload_file(path, local_file, message):
-    """上传文件到GitHub"""
     with open(local_file, 'rb') as f:
         content = base64.b64encode(f.read()).decode('utf-8')
-    
     sha = get_file_sha(path)
-    
-    payload = {
-        "message": message,
-        "content": content,
-        "branch": "main"
-    }
+    payload = {"message": message, "content": content, "branch": "main"}
     if sha:
         payload["sha"] = sha
-    
+    result = github_api(path, "PUT", payload)
+    if result and 'content' in result:
+        print(f"   ✅ 上传成功: {path}")
+        return True
+    else:
+        print(f"   ❌ 上传失败: {path}")
+        return False
+
+def upload_string(path, content_str, message):
+    content = base64.b64encode(content_str.encode('utf-8')).decode('utf-8')
+    sha = get_file_sha(path)
+    payload = {"message": message, "content": content, "branch": "main"}
+    if sha:
+        payload["sha"] = sha
     result = github_api(path, "PUT", payload)
     if result and 'content' in result:
         print(f"   ✅ 上传成功: {path}")
@@ -82,8 +120,8 @@ def upload_file(path, local_file, message):
 def update_dashboard(report_type, date_str, display_date, summary):
     """更新导航页，保留最新一期盘前简报 + 最新一期财资日报 + 最新一期财资周报"""
     
-    # 获取现有导航页
-    dashboard_sha = get_file_sha("dashboard.html")
+    # 获取现有导航页（从 docs 目录）
+    dashboard_sha = get_file_sha(f"{PAGES_ROOT}/dashboard.html")
     
     # 构建报告卡片HTML
     pre_market_date = display_date if report_type == 'pre-market' else '点击查看'
@@ -112,19 +150,9 @@ def update_dashboard(report_type, date_str, display_date, summary):
             align-items: center;
             padding: 40px 20px;
         }}
-        .header {{
-            text-align: center;
-            margin-bottom: 40px;
-        }}
-        .header h1 {{
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }}
-        .header p {{
-            font-size: 16px;
-            opacity: 0.7;
-        }}
+        .header {{ text-align: center; margin-bottom: 40px; }}
+        .header h1 {{ font-size: 32px; font-weight: 600; margin-bottom: 10px; }}
+        .header p {{ font-size: 16px; opacity: 0.7; }}
         .report-grid {{
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -147,37 +175,11 @@ def update_dashboard(report_type, date_str, display_date, summary):
             background: rgba(255,255,255,0.15);
             border-color: #e94560;
         }}
-        .report-card .date {{
-            font-size: 14px;
-            color: #e94560;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }}
-        .report-card .title {{
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }}
-        .report-card .desc {{
-            font-size: 14px;
-            opacity: 0.7;
-            line-height: 1.6;
-        }}
-        .footer {{
-            margin-top: 40px;
-            text-align: center;
-            font-size: 12px;
-            opacity: 0.5;
-        }}
-        .badge {{
-            display: inline-block;
-            background: #27ae60;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            margin-left: 8px;
-        }}
+        .report-card .date {{ font-size: 14px; color: #e94560; font-weight: 600; margin-bottom: 10px; }}
+        .report-card .title {{ font-size: 20px; font-weight: 600; margin-bottom: 8px; }}
+        .report-card .desc {{ font-size: 14px; opacity: 0.7; line-height: 1.6; }}
+        .footer {{ margin-top: 40px; text-align: center; font-size: 12px; opacity: 0.5; }}
+        .badge {{ display: inline-block; background: #27ae60; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-left: 8px; }}
     </style>
 </head>
 <body>
@@ -187,21 +189,18 @@ def update_dashboard(report_type, date_str, display_date, summary):
     </div>
     
     <div class="report-grid">
-        <!-- 盘前简报 -->
         <a href="index.html" class="report-card">
             <div class="date">{pre_market_date} <span class="badge">最新</span></div>
             <div class="title">盘前市场简报</div>
             <div class="desc">每日08:30发布，覆盖全球市场开盘前关键数据与事件<br><br>{pre_market_summary}</div>
         </a>
         
-        <!-- 财资日报 -->
         <a href="finance-daily/{date_str if report_type == 'finance-daily' else '20260424'}.html" class="report-card">
             <div class="date">{finance_daily_date} <span class="badge">最新</span></div>
             <div class="title">财资日报</div>
             <div class="desc">每日16:00发布，涵盖货币政策、汇率、新能源、有色金属、贵金属、地缘风险<br><br>{finance_daily_summary}</div>
         </a>
         
-        <!-- 财资周报 -->
         <a href="finance-weekly/{date_str if report_type == 'finance-weekly' else '2026w17'}.html" class="report-card">
             <div class="date">{finance_weekly_date} <span class="badge">最新</span></div>
             <div class="title">财资周报</div>
@@ -215,12 +214,6 @@ def update_dashboard(report_type, date_str, display_date, summary):
 </body>
 </html>'''
     
-    # 如果已有导航页，尝试保留另一份报告的信息
-    if dashboard_sha:
-        # 简化处理：直接上传新导航页
-        pass
-    
-    # 上传导航页
     content = base64.b64encode(html.encode('utf-8')).decode('utf-8')
     payload = {
         "message": f"Update dashboard for {report_type} {date_str}",
@@ -230,7 +223,7 @@ def update_dashboard(report_type, date_str, display_date, summary):
     if dashboard_sha:
         payload["sha"] = dashboard_sha
     
-    result = github_api("dashboard.html", "PUT", payload)
+    result = github_api(f"{PAGES_ROOT}/dashboard.html", "PUT", payload)
     if result and 'content' in result:
         print(f"   ✅ 导航页更新成功")
         return True
@@ -239,33 +232,34 @@ def update_dashboard(report_type, date_str, display_date, summary):
         return False
 
 def deploy_report(report_type, date_str, summary=""):
-    """主部署函数"""
     print("=" * 60)
     print(f"🚀 部署 {report_type} {date_str} 到 GitHub Pages")
     print("=" * 60)
     
-    # 确定源文件和目标路径
+    # 0. 部署前验证 Pages Source
+    print("\n0. 验证 Pages Source 配置...")
+    if not verify_pages_source():
+        return False
+    
     if report_type == "pre-market":
         possible_files = [
             f"{REPORTS_DIR}/pre_market_briefing_{date_str}.html",
             f"{REPORTS_DIR}/pre_market_briefing_{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}.html",
         ]
-        target_path = "index.html"
+        target_path = f"{PAGES_ROOT}/index.html"
         display_date = f"{date_str[:4]}年{date_str[4:6]}月{date_str[6:]}日"
     elif report_type == "finance-daily":
         possible_files = [
             f"{REPORTS_DIR}/finance_daily_{date_str}.html",
             f"{REPORTS_DIR}/finance_daily_{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}.html",
         ]
-        target_path = f"finance-daily/{date_str}.html"
+        target_path = f"{PAGES_ROOT}/finance-daily/{date_str}.html"
         display_date = f"{date_str[:4]}年{date_str[4:6]}月{date_str[6:]}日"
     elif report_type == "finance-weekly":
-        # date_str format: 2026w17
         possible_files = [
             f"{REPORTS_DIR}/finance_weekly_{date_str}.html",
         ]
-        target_path = f"finance-weekly/{date_str}.html"
-        # Extract year and week from 2026w17
+        target_path = f"{PAGES_ROOT}/finance-weekly/{date_str}.html"
         year = date_str[:4]
         week = date_str[5:]
         display_date = f"{year}年第{week}周"
@@ -273,7 +267,6 @@ def deploy_report(report_type, date_str, summary=""):
         print(f"❌ 未知报告类型: {report_type}")
         return False
     
-    # 查找存在的文件
     source_file = None
     for f in possible_files:
         if os.path.exists(f):
@@ -297,14 +290,22 @@ def deploy_report(report_type, date_str, summary=""):
     print(f"\n{'=' * 60}")
     print(f"✅ 部署完成")
     print(f"{'=' * 60}")
-    print(f"报告URL: https://qinzheng1983.github.io/pre-market-dashboard/{target_path}")
-    print(f"导航页: https://qinzheng1983.github.io/pre-market-dashboard/dashboard.html")
+    
+    # 3. 部署后验证 URL 可达
+    print(f"\n3. 验证 URL 可达性...")
+    report_url = f"https://qinzheng1983.github.io/pre-market-dashboard/{target_path.replace(PAGES_ROOT+'/', '')}"
+    dashboard_url = "https://qinzheng1983.github.io/pre-market-dashboard/dashboard.html"
+    verify_url(report_url)
+    verify_url(dashboard_url)
+    
+    print(f"\n报告URL: {report_url}")
+    print(f"导航页: {dashboard_url}")
     
     return True
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print("用法: python3 deploy_to_github.py <pre-market|finance-daily> <YYYYMMDD> [summary]")
+        print("用法: python3 deploy_to_github.py <pre-market|finance-daily|finance-weekly> <YYYYMMDD|YYYYwNN> [summary]")
         print("示例: python3 deploy_to_github.py pre-market 20260423")
         sys.exit(1)
     

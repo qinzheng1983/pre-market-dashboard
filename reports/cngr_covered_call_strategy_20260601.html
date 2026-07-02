@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中伟新材 USD/CNY Covered Call 策略方案</title>
+<style>
+  body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; margin: 0; padding: 20px; background: #f5f6f7; color: #333; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 28px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+  h1 { font-size: 22px; color: #1a1a2e; margin: 0 0 6px 0; border-left: 4px solid #e94560; padding-left: 12px; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 18px; padding-left: 16px; }
+  .section { margin: 22px 0; }
+  .section-title { font-size: 15px; font-weight: bold; color: #1a1a2e; margin-bottom: 10px; padding: 8px 10px; background: #f0f1f2; border-left: 3px solid #e94560; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+  th, td { border: 1px solid #ddd; padding: 7px 9px; text-align: center; }
+  th { background: #1a1a2e; color: #fff; }
+  .cell-red { background: #ffe6e6; color: #c0392b; font-weight: bold; }
+  .cell-green { background: #e8f5e9; color: #27ae60; font-weight: bold; }
+  .cell-yellow { background: #fff9e6; color: #b7950b; font-weight: bold; }
+  .text-block { font-size: 13px; line-height: 1.7; margin: 8px 0; }
+  .highlight-red { color: #e94560; font-weight: bold; }
+  .note { font-size: 12px; color: #666; margin-top: 6px; }
+  .formula { background: #f8f9fa; border-left: 3px solid #1a1a2e; padding: 10px 14px; font-family: "Courier New", monospace; font-size: 13px; margin: 10px 0; }
+  .warning { background: #fff3e0; border-left: 3px solid #ff9800; padding: 10px 14px; font-size: 13px; margin: 10px 0; }
+  .action { color: #e94560; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>中伟新材 USD/CNY Covered Call 策略方案</h1>
+<div class="subtitle">策略类型：持有美元多头 + 卖出美元看涨期权 | 生成时间：2026-06-01 06:49 CST</div>
+
+<!-- 一、敞口诊断 -->
+<div class="section">
+<div class="section-title">一、敞口诊断：为什么选中伟做 Covered Call</div>
+<table>
+<tr><th>敞口维度</th><th>方向</th><th>金额量级</th><th>汇率敏感性</th></tr>
+<tr><td>北美出口应收（特斯拉等）</td><td class="cell-green">Long USD</td><td>最大</td><td>USD升值→收入增加</td></tr>
+<tr><td>资本层面（子公司美元负债）</td><td class="cell-green">Long USD</td><td>大</td><td>USD升值→负债折算减少</td></tr>
+<tr><td>香港购汇（印尼子公司支付）</td><td class="cell-red">Short USD</td><td>中</td><td>USD升值→购汇成本上升</td></tr>
+<tr><td colspan="4" class="note"><b>净敞口判断</b>：北美出口 + 资本层面 Long USD 显著大于香港购汇 Short USD → <span class="highlight-red">净美元多头（Net Long USD）</span></td></tr>
+</table>
+
+<div class="text-block">
+<span class="highlight-red">核心矛盾</span>：2025年汇兑损益激增45%至12.69亿元，验证了一个事实——人民币升值时中伟新材受损远大于受益。净美元多头暴露在人民币单边升值风险中，需要结构性对冲。
+</div>
+
+<div class="text-block">
+<span class="highlight-red">为什么不是 Covered Put</span>：Covered Put = 持有美元空头 + 卖出美元看跌期权，适合"有美元应付、赌美元不跌"。中伟的美元空头（香港购汇）规模较小，且当前美元在走弱，卖Put等于赌美元反弹，与趋势相悖。Covered Call 才是匹配中伟敞口方向的正确策略。
+</div>
+</div>
+
+<!-- 二、市场环境 -->
+<div class="section">
+<div class="section-title">二、当前市场环境（策略定价基准）</div>
+<table>
+<tr><th>指标</th><th>当前值</th><th>趋势</th><th>对策略影响</th></tr>
+<tr><td>USD/CNY 在岸即期</td><td class="cell-red">6.7685</td><td>贬值（周降142点）</td><td>美元多头账面浮亏</td></tr>
+<tr><td>USD/CNY 中间价</td><td>6.8176</td><td>引导下调</td><td>央行释放稳定信号</td></tr>
+<tr><td>在岸-中间价差</td><td class="cell-red">490点</td><td>走阔</td><td>市场结汇推动即期更快升值</td></tr>
+<tr><td>DXY</td><td>98.91</td><td>走弱</td><td>美伊"和平预期"压制美元</td></tr>
+<tr><td>美伊局势</td><td>谈判反复</td><td>不确定性高</td><td>地缘溢价仍存，美元下行有底</td></tr>
+<tr><td>美联储预期</td><td>6月可能暂停/降息</td><td>偏鸽</td><td>美元偏弱格局延续概率大</td></tr>
+</table>
+</div>
+
+<!-- 三、策略设计 -->
+<div class="section">
+<div class="section-title">三、策略设计：Covered Call 具体参数</div>
+
+<div class="formula">
+<b>策略结构</b> = 持有美元应收（标的）+ 卖出 USD/CNY Call（美元看涨期权）<br>
+<b>盈亏本质</b> = 用"放弃美元大幅升值收益"换取"期权费收入"，补贴人民币贬值损失
+</div>
+
+<table>
+<tr><th>参数</th><th>设定值</th><th>逻辑</th></tr>
+<tr><td>标的敞口</td><td>USD 100M（举例，按实际敞口调整）</td><td>北美出口应收 + 资本层面净敞口</td></tr>
+<tr><td>期权类型</td><td>USD Call / CNY Put</td><td>卖出"美元升值"的权利</td></tr>
+<tr><td>执行价 K</td><td class="cell-yellow">6.8500</td><td>高于即期6.7685约1.2%，覆盖中间价6.8176上方的反弹空间</td></tr>
+<tr><td>到期日</td><td>3个月（2026年8月底）</td><td>匹配应收账期60-90天 + Q2-Q3过渡</td></tr>
+<tr><td>期权费（估算）</td><td class="cell-green">年化 2.0-2.5%（3个月约0.5-0.6%）</td><td>当前隐含波动率中等，DXY偏弱环境下Call费不高</td></tr>
+<tr><td>名义本金</td><td>USD 50M（对冲覆盖50%敞口）</td><td>保留50%裸敞口应对美元反弹，避免过度保守</td></tr>
+<tr><td>交易对手</td><td>中资大行场外期权台（中银/工银/建银）</td><td>场外定制，执行价和到期可灵活调整</td></tr>
+</table>
+
+<div class="warning">
+<b>⚠️ 参数调整建议</b>：如果实际净美元敞口远大于100M，可按比例放大名义本金。如果敞口小于50M，建议全额覆盖（100% Covered Call），因为小额敞口下"保留裸敞口"的管理成本高于收益。
+</div>
+</div>
+
+<!-- 四、盈亏分析 -->
+<div class="section">
+<div class="section-title">四、盈亏分析：三种情景推演</div>
+
+<div class="formula">
+<b>到期时 USD/CNY = S</b><br>
+• 美元应收价值 = S × 50M USD（按对冲部分计算）<br>
+• Call 期权盈亏 = -max(0, S - 6.85) × 50M USD（被行权时交付美元）<br>
+• 期权费收入 = 约 50M × 6.77 × 0.55% ≈ CNY 186万（一次性收取）<br>
+• <b>综合效果</b> = 美元应收价值 + 期权费 - Call 履约成本
+</div>
+
+<table>
+<tr><th>情景</th><th>到期 USD/CNY</th><th>美元应收（50M）</th><th>Call 履约</th><th>期权费</th><th>综合人民币收入</th><th>vs 裸敞口对比</th></tr>
+<tr><td class="cell-red">A. 人民币大幅升值</td><td>6.60</td><td>3.30亿</td><td>0（失效）</td><td>+186万</td><td>3.3186亿</td><td>比裸敞口多186万（期权费补贴）</td></tr>
+<tr><td class="cell-yellow">B. 区间震荡</td><td>6.75</td><td>3.375亿</td><td>0（失效）</td><td>+186万</td><td>3.3936亿</td><td>比裸敞口多186万</td></tr>
+<tr><td class="cell-green">C. 美元反弹但 capped</td><td>6.90</td><td>3.45亿</td><td>-250万</td><td>+186万</td><td>3.4436亿</td><td>比裸敞口少64万（收益被cap）</td></tr>
+<tr><td class="cell-green">D. 美元大涨</td><td>7.10</td><td>3.55亿</td><td>-1,250万</td><td>+186万</td><td>3.4436亿</td><td>比裸敞口少1,064万（上端收益封顶）</td></tr>
+</table>
+
+<div class="text-block">
+<span class="highlight-red">核心结论</span>：<br>
+1. <b>情景A/B（人民币升值/横盘）</b>：Covered Call 最优。期权费直接补贴贬值损失，裸敞口无保护时亏多少，Covered Call亏得少186万。<br>
+2. <b>情景C（温和反弹）</b>：Covered Call 略差。美元涨到6.90，裸敞口赚更多，但差距仅64万（可接受）。<br>
+3. <b>情景D（大涨）</b>：Covered Call 明显吃亏。但当前DXY 98.91 + 美伊和平预期 + 美联储偏鸽，美元大涨到7.10的概率较低（<15%）。
+</div>
+</div>
+
+<!-- 五、为什么不选 Covered Put -->
+<div class="section">
+<div class="section-title">五、为什么不选 Covered Put（策略排除逻辑）</div>
+<table>
+<tr><th>维度</th><th>Covered Call</th><th>Covered Put</th></tr>
+<tr><td>适用敞口</td><td class="cell-green">美元多头（中伟匹配）</td><td class="cell-red">美元空头（中伟不匹配）</td></tr>
+<tr><td>当前操作</td><td>持有美元 + 卖 USD Call</td><td>做空美元 + 卖 USD Put</td></tr>
+<tr><td>对中伟意味着</td><td>应收美元贬值时，期权费补贴损失</td><td>购汇成本上升时，期权费补贴成本</td></tr>
+<tr><td>中伟敞口规模</td><td>大（北美出口+资本）</td><td>小（香港购汇）</td></tr>
+<tr><td>当前趋势适配</td><td class="cell-green">美元走弱 → Call 不易被行权，赚时间价值</td><td class="cell-red">美元走弱 → Put 容易被行权，被迫高价买入美元</td></tr>
+<tr><td>风险方向</td><td>上端收益封顶（可接受）</td><td>下端敞口无限（裸卖Put风险极大）</td></tr>
+</table>
+
+<div class="warning">
+<b>排除 Covered Put 的致命理由</b>：如果选 Covered Put，等于在美元已经走弱的时候"赌美元不跌"，一旦USD/CNY继续跌到6.60，Put被行权意味着中伟被迫以6.85（或更高）买入美元——而即期只有6.60，直接亏损250点/美元。这是方向性错误，敞口错配 + 趋势错配。
+</div>
+</div>
+
+<!-- 六、执行建议 -->
+<div class="section">
+<div class="section-title">六、执行建议与下一步</div>
+
+<table>
+<tr><th>步骤</th><th>动作</th><th>时间窗口</th><th>负责人</th></tr>
+<tr><td>1</td><td>确认净美元敞口精确金额（北美应收 - 香港应付 + 资本层面）</td><td>本周内</td><td>财资部</td></tr>
+<tr><td>2</td><td>联系中银/工银/建银场外期权台，询价3个月 USD Call @6.85</td><td>本周内</td><td>财资部</td></tr>
+<tr><td>3</td><td>对比期权费报价，目标：年化≥2.0%</td><td>收到报价后48小时</td><td>财资部+CFO</td></tr>
+<tr><td>4</td><td>确定对冲比例：建议首轮50% Covered Call，保留50%裸敞口</td><td>决策后即时</td><td>CFO</td></tr>
+<tr><td>5</td><td>签署场外期权协议（ISDA/CSA框架）</td><td>1-2周</td><td>法务+财资</td></tr>
+<tr><td>6</td><td>到期前30天评估展期或调整执行价</td><td>2026年7月底</td><td>财资部</td></tr>
+</table>
+
+<div class="text-block">
+<span class="highlight-red">替代方案（更保守）</span>：如果担心美元反弹超预期，可将 Covered Call 升级为 <b>Collar（领子期权）</b> = 卖出 Call @6.85 + 买入 Put @6.65。这样下端也有保护，但期权费净支出接近零（甚至略有收入）。代价是下端保护消耗了部分期权费收入。
+</div>
+
+<div class="text-block">
+<span class="highlight-red">替代方案（更激进）</span>：如果认为美元反弹概率极低，可卖出 <b>虚值更深的 Call @6.90</b>，期权费更低但上端空间更大。适合"强烈看空美元"的情景。
+</div>
+</div>
+
+<!-- 七、风险边界 -->
+<div class="section">
+<div class="section-title">七、风险边界与止损纪律</div>
+<table>
+<tr><th>风险类型</th><th>触发条件</th><th>应对措施</th></tr>
+<tr><td>美元意外大涨</td><td>USD/CNY突破6.90</td><td>评估提前平仓Call（可能亏损），或接受收益封顶</td></tr>
+<tr><td>波动率飙升</td><td>地缘冲突升级（美伊谈判破裂）</td><td>Call被行权概率大增，但美元应收同步增值，净损失有限</td></tr>
+<tr><td>交易对手风险</td><td>银行信用恶化</td><td>只选系统重要性银行（中农工建），要求CSA抵押品</td></tr>
+<tr><td>流动性风险</td><td>到期前需要提前平仓</td><td>场外期权流动性差，尽量持有到期；如需平仓，折价可能10-20%</td></tr>
+</table>
+</div>
+
+<!-- 八、一句话总结 -->
+<div class="section">
+<div class="section-title">八、一句话总结</div>
+<div class="formula">
+<b>中伟新材是净美元多头，当前美元偏弱、人民币持续升值。Covered Call = 持有美元应收 + 卖出 USD/CNY Call @6.85，收取期权费补贴贬值损失，放弃小概率的美元大涨收益。这是敞口方向正确、趋势适配、盈亏比合理的策略选择。</b>
+</div>
+</div>
+
+</div>
+</body>
+</html>

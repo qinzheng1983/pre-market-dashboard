@@ -50,7 +50,7 @@ date "+%Y-%m-%d %H:%M:%S %A %Z"
 | 仪表盘 | USD/CNY在岸 | Investing.com / 东方财富 | ✅ |
 | 仪表盘 | USD/CNH离岸 | Investing.com / 每日经济新闻 | ✅ |
 | 仪表盘 | 美元指数DXY | 东方财富/金投网 | ✅ |
-| 仪表盘 | LME镍收盘 | 生意社/SMM/LME官方 | ✅ |
+| 仪表盘 | LME镍收盘 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
 | 仪表盘 | 碳酸锂现货 | SMM / Mysteel | ✅ |
 | 仪表盘 | 布伦特原油 | Investing.com / 每日经济新闻 | ✅ |
 | 仪表盘 | 央行操作 | 央行公告 / 金十数据 | ✅ |
@@ -64,10 +64,10 @@ date "+%Y-%m-%d %H:%M:%S %A %Z"
 | 新能源 | 碳酸锂期货 | 华泰期货/广期所 | ✅ |
 | 新能源 | 碳酸锂库存 | SMM | ✅ |
 | 新能源 | 锂辉石精矿CIF | SMM | ✅ |
-| 有色金属 | LME铜 | SMM/生意社 | ✅ |
-| 有色金属 | LME铝 | 生意社 | ✅ |
-| 有色金属 | LME锌 | 生意社 | ✅ |
-| 有色金属 | LME铅 | SMM/生意社 | ✅ |
+| 有色金属 | LME铜 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
+| 有色金属 | LME铝 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
+| 有色金属 | LME锌 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
+| 有色金属 | LME铅 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
 | 贵金属 | 现货黄金 | 汇通财经/金投网 | ✅ |
 | 贵金属 | 现货白银 | 21经济网 | ✅ |
 | 贵金属 | 沪金T+D | 金融界/上海黄金交易所 | ✅ |
@@ -82,10 +82,23 @@ date "+%Y-%m-%d %H:%M:%S %A %Z"
 4. 离岸价必须用Investing.com + 东方财富/新浪财经双源，价差>50点需第三源验证
 
 ### Step 4: 交叉验证
-- 镍：至少2源（生意社+SMM），差异>$50需第三源
+- 镍：至少2源（Westmetall + SMM），差异>$50需第三源
+- 铜/铝/锌/铅：至少2源（Westmetall + SMM/财联社），差异>$50需第三源
 - 碳酸锂：至少2源（SMM+Mysteel）
 - 汇率：中间价+在岸+离岸三方对照
 - 每个数字标注：来源+发布时间
+
+**LME有色金属校验规则（强制执行）**：
+1. 打开 Westmetall 官方逐日数据表：
+   - 镍：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Ni_cash
+   - 铜：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Cu_cash
+   - 铝：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash
+   - 锌：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Zn_cash
+   - 铅：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Pb_cash
+2. 确认表格最顶行日期 = 最近一个交易日
+3. 记录 3-month 收盘价（优先使用此列）
+4. **警报规则**：镍价在 $18,500 以上必须二次确认日期（2026-06-13 误用 5 月 11 日 $18,955）
+5. 数据源标注：必须写 `数据来源：LME（Westmetall 官方）`
 
 ### Step 5: 报告生成（v4.1 10大板块）
 

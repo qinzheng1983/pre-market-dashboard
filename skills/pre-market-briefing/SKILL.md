@@ -40,7 +40,8 @@ date "+%Y-%m-%d %H:%M:%S %A %Z"
 | P0 | USD/CNY中间价 | 中国货币网/chinamoney.org.cn 或央行官网 | ✅ |
 | P0 | USD/CNY在岸/离岸 | Investing.com + 东方财富/新浪财经 双源 | ✅ |
 | P0 | 美元指数DXY | Investing.com | ✅ |
-| P0 | LME镍收盘价 | 世铝网/SMM/LME官方 | ✅ |
+| P0 | LME镍收盘价 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
+| P0 | LME铜/铝收盘价 | **Westmetall官方逐日数据表** > SMM/财联社 | ✅ |
 | P0 | 印尼镍政策新闻 | 搜索"HPM RKAB 印尼镍" | ✅ |
 | P1 | 布伦特原油 | Investing.com / 新浪财经 | ✅ |
 | P1 | 现货黄金 | 格隆汇/金价查询网 | ✅ |
@@ -56,6 +57,16 @@ date "+%Y-%m-%d %H:%M:%S %A %Z"
 2. 确认公告日期 = 报告日期
 3. 提取中间价后，用 chinamoney.com.cn/bkccpr/ 二次确认
 4. 离岸价必须用Investing.com + 东方财富/新浪财经双源，价差>50点需第三源验证
+
+**LME有色金属校验规则（强制执行）**：
+1. 打开 Westmetall 官方逐日数据表：
+   - 镍：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Ni_cash
+   - 铜：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Cu_cash
+   - 铝：https://www.westmetall.com/en/markdaten.php?action=table&field=LME_Al_cash
+2. 确认表格最顶行日期 = 最近一个交易日
+3. 记录 3-month 收盘价（优先使用此列）
+4. **警报规则**：镍价在 $18,500 以上必须二次确认日期（2026-06-13 误用 5 月 11 日 $18,955）
+5. 数据源标注：必须写 `数据来源：LME（Westmetall 官方）`
 
 ### Step 3: 报告生成（v3.0结构）
 
