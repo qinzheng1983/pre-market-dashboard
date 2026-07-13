@@ -3,463 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>盘前简报 — 2026年7月13日（周一）</title>
+<title>盘前市场简报 — 2026年7月7日（周二）</title>
 <style>
-body {
-  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-  background-color: #f0f2f5;
-  margin: 0;
-  padding: 20px;
-  color: #1a1a2e;
-}
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  overflow: hidden;
-}
-.header {
-  background: #1a1a2e;
-  color: #ffffff;
-  padding: 24px 20px;
-}
-.header h1 {
-  margin: 0 0 8px 0;
-  font-size: 20px;
-  font-weight: 600;
-}
-.header-meta {
-  font-size: 13px;
-  color: #a0a0b0;
-  line-height: 1.6;
-}
-.header-highlight {
-  background: #e94560;
-  color: #ffffff;
-  padding: 12px 16px;
-  margin: 16px -20px -24px -20px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.section {
-  padding: 20px;
-  border-bottom: 1px solid #e8e8f0;
-}
-.section-title {
-  font-size: 15px;
-  font-weight: 600;
-  color: #1a1a2e;
-  margin: 0 0 12px 0;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #e94560;
-  display: inline-block;
-}
-.section-subtitle {
-  font-size: 12px;
-  color: #8888a0;
-  margin-bottom: 12px;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-th {
-  background: #f4f4f8;
-  padding: 8px 10px;
-  text-align: left;
-  font-weight: 600;
-  color: #555;
-  border-bottom: 1px solid #ddd;
-}
-td {
-  padding: 8px 10px;
-  border-bottom: 1px solid #eee;
-  vertical-align: top;
-}
-tr:last-child td {
-  border-bottom: none;
-}
-.asset-name {
-  font-weight: 600;
-  color: #1a1a2e;
-}
-.change-up {
-  color: #d32f2f;
-}
-.change-down {
-  color: #388e3c;
-}
-.conclusion {
-  color: #666;
-  font-size: 12px;
-}
-.risk-high {
-  background: #fff0f0;
-  border-left: 3px solid #e94560;
-  padding: 10px 12px;
-  margin: 8px 0;
-}
-.risk-med {
-  background: #fff8e0;
-  border-left: 3px solid #f9a825;
-  padding: 10px 12px;
-  margin: 8px 0;
-}
-.risk-label {
-  font-weight: 700;
-  font-size: 12px;
-  margin-bottom: 4px;
-}
-.risk-high .risk-label {
-  color: #e94560;
-}
-.risk-med .risk-label {
-  color: #f9a825;
-}
-.action-item {
-  background: #f8f9fa;
-  border-left: 3px solid #1a1a2e;
-  padding: 12px;
-  margin: 10px 0;
-}
-.action-header {
-  font-weight: 600;
-  font-size: 13px;
-  color: #1a1a2e;
-  margin-bottom: 6px;
-}
-.action-desc {
-  font-size: 12px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 6px;
-}
-.action-steps {
-  font-size: 12px;
-  color: #444;
-  line-height: 1.8;
-  padding-left: 16px;
-}
-.action-steps li {
-  margin-bottom: 2px;
-}
-.deadline {
-  font-size: 11px;
-  color: #e94560;
-  font-weight: 600;
-  margin-top: 6px;
-}
-.news-list {
-  font-size: 12px;
-  line-height: 1.8;
-  color: #555;
-  padding-left: 16px;
-  margin: 0;
-}
-.news-list li {
-  margin-bottom: 4px;
-}
-.source-table {
-  font-size: 11px;
-  color: #777;
-}
-.source-table td, .source-table th {
-  padding: 6px 8px;
-}
-.footer {
-  padding: 16px 20px;
-  font-size: 11px;
-  color: #999;
-  background: #f8f9fa;
-  text-align: center;
-}
+body { font-family: "Microsoft YaHei", "PingFang SC", sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
+.container { max-width: 800px; margin: 0 auto; background: #fff; padding: 30px; }
+.header { background: #1a1a2e; color: #fff; padding: 20px; text-align: center; margin: -30px -30px 20px -30px; }
+.header h1 { margin: 0; font-size: 22px; }
+.header .subtitle { margin-top: 8px; font-size: 13px; color: #aaa; }
+.header .rating { margin-top: 10px; font-size: 14px; color: #ffd700; }
+.section { margin-bottom: 24px; border-left: 3px solid #e94560; padding-left: 16px; }
+.section-title { font-size: 16px; font-weight: bold; color: #1a1a2e; margin-bottom: 10px; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 8px; }
+th { background: #1a1a2e; color: #fff; padding: 8px; text-align: left; }
+td { padding: 8px; border-bottom: 1px solid #eee; }
+tr:nth-child(even) { background: #f9f9f9; }
+.up { color: #e94560; font-weight: bold; }
+.down { color: #27ae60; font-weight: bold; }
+.warn-box { background: #ffe6e6; border: 1px solid #e94560; padding: 12px; margin: 8px 0; font-size: 13px; }
+.med-box { background: #fff9e6; border: 1px solid #f0a500; padding: 12px; margin: 8px 0; font-size: 13px; }
+.action-box { background: #e8f4fd; border: 1px solid #2196F3; padding: 12px; margin: 8px 0; font-size: 13px; }
+.action-tag { display: inline-block; background: #e94560; color: #fff; padding: 2px 8px; font-size: 11px; margin-right: 6px; }
+.source { font-size: 11px; color: #888; margin-top: 16px; padding-top: 12px; border-top: 1px solid #ddd; }
+.source-line { margin: 4px 0; }
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- HEADER -->
 <div class="header">
-  <h1>盘前简报 — 2026年7月13日（周一）</h1>
-  <div class="header-meta">
-    数据时间范围：7月10日 09:00（北京时间）— 7月13日 09:25<br>
-    预计阅读时间：5分钟
-  </div>
-  <div class="header-highlight">
-    今日重点：霍尔木兹海峡关闭推高油价，美伊冲突升级；人民币升值17个基点，有利进口敞口
-  </div>
+  <h1>盘前市场简报</h1>
+  <div class="subtitle">2026年7月7日（周二）09:24 | 数据覆盖：2026-07-06 09:00 — 2026-07-07 09:20</div>
+  <div class="rating">质量评级：★★★★☆（7月7日中间价待09:15更新，美股最新数据为7月3日）</div>
 </div>
 
-<!-- SECTION 1: 隔夜市场速览 -->
+<!-- 1. 隔夜市场速览 -->
 <div class="section">
-  <div class="section-title">隔夜市场速览（1分钟）</div>
-  <div class="section-subtitle">只给结论，不展开分析</div>
+  <div class="section-title">一、隔夜市场速览（1分钟）</div>
+  <div class="table-wrap">
   <table>
-    <tr>
-      <th style="width:20%">资产</th>
-      <th style="width:22%">收盘/最新</th>
-      <th style="width:18%">变化</th>
-      <th style="width:40%">核心结论</th>
-    </tr>
-    <tr>
-      <td class="asset-name">USD/CNY中间价</td>
-      <td>6.7972 <span style="color:#999;font-size:11px">(7/13)</span></td>
-      <td class="change-down">+17bp</td>
-      <td class="conclusion">较7/10的6.7989升值17bp，偏有利进口敞口</td>
-    </tr>
-    <tr>
-      <td class="asset-name">离岸人民币</td>
-      <td>6.78下方 <span style="color:#999;font-size:11px">(7/13)</span></td>
-      <td class="change-down">升值</td>
-      <td class="conclusion">盘中涨破6.78，两周多来首次，CNH强于CNY</td>
-    </tr>
-    <tr>
-      <td class="asset-name">美股·道指</td>
-      <td>52,637.01</td>
-      <td class="change-up">+0.29%</td>
-      <td class="conclusion">上周五小涨，全周道指微跌0.50%</td>
-    </tr>
-    <tr>
-      <td class="asset-name">美股·标普</td>
-      <td>7,575.39</td>
-      <td class="change-up">+0.42%</td>
-      <td class="conclusion">全周+1.23%，连涨两周</td>
-    </tr>
-    <tr>
-      <td class="asset-name">美股·纳指</td>
-      <td>26,281.61</td>
-      <td class="change-up">+0.29%</td>
-      <td class="conclusion">全周+1.74%，科技股回暖</td>
-    </tr>
-    <tr>
-      <td class="asset-name">布伦特原油</td>
-      <td>$78.46 <span style="color:#999;font-size:11px">(7/12)</span></td>
-      <td class="change-up">+3.22%</td>
-      <td class="conclusion">周日电子盘跳涨，霍尔木兹关闭推高；全周+5.65%</td>
-    </tr>
-    <tr>
-      <td class="asset-name">现货黄金</td>
-      <td>$4,070 <span style="color:#999;font-size:11px">(7/13)</span></td>
-      <td class="change-down">-1.34%</td>
-      <td class="conclusion">上周累计下跌，美伊冲突反而抑制金价（加息预期）</td>
-    </tr>
-    <tr>
-      <td class="asset-name">LME镍</td>
-      <td>$16,600 <span style="color:#999;font-size:11px">(7/10)</span></td>
-      <td>—</td>
-      <td class="conclusion">Settlement $16,410，关注RKAB补充配额进展</td>
-    </tr>
-    <tr>
-      <td class="asset-name">LME铜</td>
-      <td>$13,454 <span style="color:#999;font-size:11px">(7/10)</span></td>
-      <td>—</td>
-      <td class="conclusion">Settlement $13,408.50，高位震荡</td>
-    </tr>
-    <tr>
-      <td class="asset-name">碳酸锂</td>
-      <td>155,000元/吨</td>
-      <td class="change-down">-3,500</td>
-      <td class="conclusion">SMM电池级均价，继续承压</td>
-    </tr>
-    <tr>
-      <td class="asset-name">恒生指数</td>
-      <td>24,175.12</td>
-      <td class="change-up">+0.60%</td>
-      <td class="conclusion">港股冲高回落，AI芯片板块重挫</td>
-    </tr>
-    <tr>
-      <td class="asset-name">美元指数</td>
-      <td>100.84</td>
-      <td class="change-down">-0.09%</td>
-      <td class="conclusion">偏弱，支撑非美货币</td>
-    </tr>
+    <tr><th>资产</th><th>收盘价/最新价</th><th>涨跌</th><th>备注</th></tr>
+    <tr><td>USD/CNY中间价（7/6）</td><td><strong>6.8066</strong></td><td>—</td><td>央行官网，09:25发布</td></tr>
+    <tr><td>USD/CNY中间价（7/7）</td><td><strong>待09:15更新</strong></td><td>—</td><td>7/3为6.8047，7/2为6.8088</td></tr>
+    <tr><td>美元指数DXY</td><td>100.8756</td><td>—</td><td>金投网，7月6日</td></tr>
+    <tr><td>LME镍（3-month）</td><td>$16,250</td><td class="down">-80 (-0.49%)</td><td>Westmetall官方，7/6 vs 7/3</td></tr>
+    <tr><td>LME铜（3-month）</td><td>$13,370</td><td class="up">+25 (+0.19%)</td><td>Westmetall官方，7/6 vs 7/3</td></tr>
+    <tr><td>LME铝（3-month）</td><td>$3,113</td><td class="up">+26 (+0.84%)</td><td>Westmetall官方，7/6 vs 7/3</td></tr>
+    <tr><td>布伦特原油</td><td>~$72.10</td><td>—</td><td>7/6盘中；7/3收盘$71.94</td></tr>
+    <tr><td>现货黄金</td><td>$4,180.61</td><td>—</td><td>金投网，7/6 23:12</td></tr>
+    <tr><td>美股道指（7/3）</td><td>52,899.42</td><td class="up">+1.14%</td><td>创历史新高；7/4-7/6休市</td></tr>
+    <tr><td>美股纳指（7/3）</td><td>25,832.67</td><td class="down">-0.80%</td><td>芯片股拖累</td></tr>
+    <tr><td>标普500（7/3）</td><td>7,483.24</td><td class="up">+0.01%</td><td>基本持平</td></tr>
+    <tr><td>上证指数（7/6）</td><td>4,043.00</td><td class="up">+0.37%</td><td>亚太股市普涨</td></tr>
+    <tr><td>恒生指数（7/6）</td><td>26,213.78</td><td class="up">+1.22%</td><td>腾讯涨4.82%</td></tr>
+    <tr><td>日经225（7/6）</td><td>69,744.07</td><td class="up">+1.47%</td><td>—</td></tr>
+    <tr><td>韩国KOSPI（7/6）</td><td>8,088.33</td><td class="up">+5.76%</td><td>大幅反弹</td></tr>
+    <tr><td>电池级碳酸锂</td><td>161,000元/吨</td><td>—</td><td>91金属网，7/1报价</td></tr>
   </table>
-
-  <div class="section-title" style="border-bottom-color:#1a1a2e;margin-top:16px;">隔夜要闻一句话</div>
-  <ol class="news-list">
-    <li><strong>美伊冲突：</strong>7月12日凌晨美军发动第三轮袭击，伊朗宣布霍尔木兹海峡"无限期关闭"，原油开盘跳涨3%</li>
-    <li><strong>美联储：</strong>9月加息概率升至69%，能源价格上涨加剧通胀担忧</li>
-    <li><strong>印尼RKAB：</strong>7月补充配额申报窗口开启，基础配额2.6亿吨不变，逐企审批</li>
-    <li><strong>特斯拉：</strong>电池回收量增长20%，湿法冶金回收率98%，镍钴循环供应</li>
-    <li><strong>A股：</strong>7月10日上证跌1%，创业板跌4.37%，科技股大幅回调</li>
-  </ol>
+  </div>
 </div>
 
-<!-- SECTION 2: 今日风险预警 -->
+<!-- 2. 今日风险预警 -->
 <div class="section">
-  <div class="section-title">今日风险预警</div>
-  <div class="section-subtitle">精简至HIGH/MED两级</div>
-
-  <div class="risk-high">
-    <div class="risk-label">HIGH — 霍尔木兹海峡关闭，油价飙升</div>
-    <div style="font-size:12px;color:#444;line-height:1.6;">
-      伊朗革命卫队宣布即日起关闭霍尔木兹海峡，布伦特原油上周涨5.65%，周日电子盘跳涨3%至$78.46。若海峡长期关闭，油价可能冲击$100。<strong>对我司影响：</strong>公司印尼-中国航线运输成本将上升，硫酸镍等进口原材料物流费用增加；同时北美客户可能要求重新谈判价格条款。
-    </div>
+  <div class="section-title">二、今日风险预警</div>
+  
+  <div class="warn-box">
+    <strong>[HIGH] 霍尔木兹海峡通航风险 — 7月关键窗口</strong><br>
+    伊朗5月宣布关闭霍尔木兹海峡，并通过《霍尔木兹海峡管理法》永久禁止以色列船只通行。中金财富期货6月9日警告：若7月海峡仍无法通航，油价存在失控风险。当前布伦特原油约$72，但地缘溢价随时可能引爆。我司印尼基地原材料运输路径需高度关注。
   </div>
-
-  <div class="risk-high">
-    <div class="risk-label">HIGH — 美联储9月加息概率升至69%</div>
-    <div style="font-size:12px;color:#444;line-height:1.6;">
-      美伊冲突推高能源价格，通胀预期升温，CME FedWatch显示9月加息概率约69%。<strong>对我司影响：</strong>若美元因加息走强，USD/CNY可能突破6.90，北美出口美元敞口升值有利，但需警惕汇率波动加剧。
-    </div>
+  
+  <div class="warn-box">
+    <strong>[HIGH] 汇率波动 — 多币种敞口承压</strong><br>
+    2025年我司汇兑损益激增45.04%至12.69亿元。当前USD/CNY中间价6.8066，处于年内相对低位（1月初7.0187）。但美元指数100.87维持强势，且我司同时面临EUR/CNY、KRW/CNY、IDR/CNY、JPY/CNY五币种并行敞口，任何单一币种剧烈波动都可能击穿对冲防线。
   </div>
-
-  <div class="risk-med">
-    <div class="risk-label">MED — 人民币升值，CNH涨破6.78</div>
-    <div style="font-size:12px;color:#444;line-height:1.6;">
-      7月13日中间价6.7972（升值17bp），离岸盘中涨破6.78。<strong>对我司影响：</strong>进口端（镍钴锂、印尼采购）成本下降；但北美出口FOB美元收入换算人民币减少，需评估是否需要对冲比例调整。
-    </div>
+  
+  <div class="med-box">
+    <strong>[MED] 镍价震荡 — LME镍回落至$16,250</strong><br>
+    LME镍从7月3日的$16,330回落至7月6日的$16,250，短期承压。印尼HPM新政及RKAB审批节奏仍是关键变量。我司作为镍产业链下游企业，需跟踪印尼政策动向对原料成本的影响。
   </div>
-
-  <div class="risk-med">
-    <div class="risk-label">MED — 碳酸锂持续下跌</div>
-    <div style="font-size:12px;color:#444;line-height:1.6;">
-      SMM电池级碳酸锂均价155,000元/吨（-3,500），连续下行。<strong>对我司影响：</strong>若客户（如特斯拉）电池成本下降，可能传导至前驱体价格谈判压力，需关注Q3订单价格锁定。
-    </div>
+  
+  <div class="med-box">
+    <strong>[MED] 美股芯片股回调 — 纳指跌0.80%</strong><br>
+    7月3日纳指受半导体板块拖累下跌0.80%，VanEck半导体ETF跌5.2%。若AI产业链调整持续，可能间接影响我司客户（特斯拉等）的资本开支节奏和订单预期。
   </div>
 </div>
 
-<!-- SECTION 3: 今日行动清单（核心） -->
+<!-- 3. 今日行动清单 -->
 <div class="section">
-  <div class="section-title">今日行动清单（核心）</div>
-  <div class="section-subtitle">结合我司敞口结构，给出可执行步骤</div>
-
-  <div class="action-item">
-    <div class="action-header">ACTION-1 | 评估霍尔木兹海峡关闭对供应链的冲击</div>
-    <div class="action-desc">
-      敞口影响：印尼-中国航线（硫酸镍、MHP运输）若绕行，运输周期+7-10天，成本上升15-20%。北美出口（特斯拉等）若油价持续高位，客户可能要求分担运费或推迟提货。
-    </div>
-    <ol class="action-steps">
-      <li>联系货代确认当前航线是否已受影响，获取绕行方案和加价报价</li>
-      <li>盘点印尼仓库（Morowali等）原料库存，计算安全库存天数</li>
-      <li>若库存<30天，启动应急采购或协商供应商延迟交货</li>
-      <li>向北美客户发送预警函，明确FOB条款下运费风险归属</li>
-    </ol>
-    <div class="deadline">决策时限：今日12:00前</div>
+  <div class="section-title">三、今日行动清单（CFO操作视角）</div>
+  
+  <div class="action-box">
+    <span class="action-tag">URGENT</span><strong>确认7月7日USD/CNY中间价</strong>（09:15已发布，待搜索引擎收录后更新）<br>
+    对比7/6的6.8066，若突破6.81向上，需评估是否触发USD/CNY对冲阈值。我司北美出口Long USD敞口较大，人民币升值将直接侵蚀出口利润。
   </div>
-
-  <div class="action-item">
-    <div class="action-header">ACTION-2 | 检查美元敞口对冲比例</div>
-    <div class="action-desc">
-      敞口影响：当前USD/CNY 6.7972，较预算6.90偏有利（约1.5%）。但美联储加息预期升温，美元可能反弹。北美出口Long USD（60-90天账期）+ 资本层面Long USD，需确认对冲比例是否充足。
-    </div>
-    <ol class="action-steps">
-      <li>确认今日中间价6.7972后的未对冲敞口金额</li>
-      <li>若对冲比例<60%，考虑在6.80附近加仓远期或期权</li>
-      <li>关注美联储本周通胀数据和沃什证词，评估9月加息概率变化</li>
-      <li>检查香港购汇（Short USD）头寸是否与中间价匹配</li>
-    </ol>
-    <div class="deadline">决策时限：今日15:00前</div>
+  
+  <div class="action-box">
+    <span class="action-tag">TODAY</span><strong>核查霍尔木兹海峡最新通航状态</strong><br>
+    联系货代/船公司确认7月第二周航线安排。若海峡封锁持续，评估备用路线（绕行好望角）对印尼-中国镍原料运输时间和成本的影响。中金财富期货警告7月是关键窗口。
   </div>
-
-  <div class="action-item">
-    <div class="action-header">ACTION-3 | 跟踪印尼RKAB补充配额审批</div>
-    <div class="action-desc">
-      敞口影响：RKAB补充配额7月1-31日申报，基础配额2.6亿吨不变。若补充配额获批，镍矿供应增加，镍价可能承压；若审批严格，镍价支撑。
-    </div>
-    <ol class="action-steps">
-      <li>确认我司印尼子公司是否已提交补充配额申请</li>
-      <li>跟踪7月15日前后的审批窗口，关注首批获批名单</li>
-      <li>评估镍矿成本变化对硫酸镍/前驱体毛利率的影响</li>
-    </ol>
-    <div class="deadline">决策时限：本周五前</div>
+  
+  <div class="action-box">
+    <span class="action-tag">TODAY</span><strong>复核多币种对冲仓位</strong><br>
+    重点检查：USD/CNY（⭐⭐⭐⭐⭐）、EUR/CNY（⭐⭐⭐⭐⭐）、KRW/CNY（⭐⭐⭐⭐）、IDR/CNY（⭐⭐⭐⭐）、JPY/CNY（⭐⭐⭐）。2025年汇兑损益45%激增是底线数据，目标：年度波动控制在±20%以内。
   </div>
-
-  <div class="action-item">
-    <div class="action-header">ACTION-4 | 监控刚果金钴出口配额执行</div>
-    <div class="action-desc">
-      敞口影响：刚果金2026年钴出口配额96,600吨（约为2024年产量的一半），嘉能可Q1产量仅5,800吨（同比-39%）。钴供应紧张可能推高成本，但高镍低钴化趋势（特斯拉）降低单位需求。
-    </div>
-    <ol class="action-steps">
-      <li>确认Q3钴原料库存水平和采购合同价格</li>
-      <li>评估是否需提前锁定Q4钴供应或寻找替代来源（如回收钴）</li>
-      <li>跟踪嘉能可Mutanda/KCC复产进度</li>
-    </ol>
-    <div class="deadline">决策时限：本周内</div>
+  
+  <div class="action-box">
+    <span class="action-tag">THIS WEEK</span><strong>跟踪LME镍价与印尼政策</strong><br>
+    LME镍$16,250，关注印尼HPM（矿物基准价）新政及RKAB配额审批进度。镍价波动直接影响前驱体成本，建议与采购部门同步本周镍原料锁价策略。
+  </div>
+  
+  <div class="action-box">
+    <span class="action-tag">MONITOR</span><strong>关注美联储政策动向与美元走势</strong><br>
+    美国6月非农就业仅5.7万（预期11万），失业率4.2%。弱就业数据可能延缓美联储紧缩节奏，但特朗普持续施压美联储降息。DXY 100.87是关键分水岭，突破101需警惕新兴市场货币连锁反应（含IDR）。
   </div>
 </div>
 
-<!-- SECTION 4: 数据来源 -->
-<div class="section" style="border-bottom:none;">
-  <div class="section-title">数据来源与时效声明</div>
-  <table class="source-table">
-    <tr>
-      <th>数据</th>
-      <th>来源</th>
-      <th>时间</th>
-    </tr>
-    <tr>
-      <td>USD/CNY中间价</td>
-      <td>央行授权公告 / chinamoney.com.cn</td>
-      <td>2026-07-13 09:15</td>
-    </tr>
-    <tr>
-      <td>离岸人民币</td>
-      <td>华尔街见闻 / 市场数据</td>
-      <td>2026-07-13 09:20</td>
-    </tr>
-    <tr>
-      <td>美股</td>
-      <td>ChainCatcher / 华尔街见闻</td>
-      <td>2026-07-10 收盘</td>
-    </tr>
-    <tr>
-      <td>布伦特原油</td>
-      <td>Investing.com / 汇通财经</td>
-      <td>2026-07-12/13</td>
-    </tr>
-    <tr>
-      <td>黄金</td>
-      <td>COMEX / 金投网</td>
-      <td>2026-07-10 收盘</td>
-    </tr>
-    <tr>
-      <td>LME金属</td>
-      <td>Westmetall官方逐日表</td>
-      <td>2026-07-10</td>
-    </tr>
-    <tr>
-      <td>碳酸锂</td>
-      <td>SMM上海有色网</td>
-      <td>2026-07-10</td>
-    </tr>
-    <tr>
-      <td>恒生指数</td>
-      <td>界面新闻 / 财新</td>
-      <td>2026-07-10</td>
-    </tr>
-    <tr>
-      <td>地缘风险</td>
-      <td>央视新闻 / 汇通财经 / 华尔街见闻</td>
-      <td>2026-07-13 07:00</td>
-    </tr>
-    <tr>
-      <td>印尼RKAB</td>
-      <td>上海金属网 / 新浪财经</td>
-      <td>2026-07-08</td>
-    </tr>
-    <tr>
-      <td>刚果金钴</td>
-      <td>铁合金在线 / 财联社</td>
-      <td>2026-05-06</td>
-    </tr>
-    <tr>
-      <td>特斯拉</td>
-      <td>新浪财经</td>
-      <td>2026-07-12</td>
-    </tr>
-  </table>
-  <p style="font-size:11px;color:#999;margin-top:8px;">
-    免责声明：本简报仅供内部决策参考，不构成投资建议。数据来源于公开渠道，时效性以标注为准。盘前简报侧重前瞻与行动，详细分析见当日16:00财资日报。
-  </p>
-</div>
-
-<div class="footer">
-  盘前简报 v3.0 行动导向版 | 生成时间：2026-07-13 09:25 CST
+<!-- 4. 数据来源 -->
+<div class="section">
+  <div class="section-title">四、数据来源与声明</div>
+  <div class="source">
+    <div class="source-line"><strong>USD/CNY中间价</strong>：中国人民银行授权中国外汇交易中心，2026-07-06 09:25:12</div>
+    <div class="source-line"><strong>美元指数DXY</strong>：金投外汇网，2026-07-06</div>
+    <div class="source-line"><strong>LME有色金属</strong>：LME官方（Westmetall逐日数据表），2026-07-06</div>
+    <div class="source-line"><strong>布伦特原油</strong>：金十数据/新浪财经，2026-07-06</div>
+    <div class="source-line"><strong>现货黄金</strong>：金投网，2026-07-06 23:12</div>
+    <div class="source-line"><strong>美股</strong>：新浪财经/财联社，2026-07-03（7/4独立日休市，7/5-7/6周末）</div>
+    <div class="source-line"><strong>亚洲股市</strong>：新浪财经/财联社，2026-07-06</div>
+    <div class="source-line"><strong>碳酸锂</strong>：91金属网，2026-07-01</div>
+    <div class="source-line"><strong>地缘风险</strong>：新浪财经/中金财富期货，2026-06-09</div>
+    <div class="source-line" style="margin-top:8px; color:#999;">免责声明：本简报仅供内部决策参考，不构成投资建议。数据时效性以标注时间为准。</div>
+  </div>
 </div>
 
 </div>
