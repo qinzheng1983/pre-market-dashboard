@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNY/KRW 月度情景分析报告 — 2026年7月（更新版）</title>
+<style>
+  body { font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 28px; border-left: 4px solid #e94560; }
+  h1 { font-size: 22px; color: #1a1a2e; margin: 0 0 6px 0; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 18px; }
+  .meta { font-size: 12px; color: #888; margin-bottom: 16px; }
+  .lead { font-size: 14px; color: #555; background: #f9f9f9; padding: 12px; margin-bottom: 22px; border-left: 3px solid #e94560; }
+  h2 { font-size: 16px; color: #1a1a2e; margin: 28px 0 12px 0; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+  h3 { font-size: 14px; color: #1a1a2e; margin: 20px 0 8px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+  th { background: #1a1a2e; color: #fff; text-align: left; padding: 8px; font-weight: 600; }
+  td { padding: 8px; border-bottom: 1px solid #eee; }
+  .up { color: #e94560; }
+  .down { color: #27ae60; }
+  .neutral { color: #666; }
+  .risk-high { display: inline-block; background: #ffe6e6; color: #c0392b; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .risk-med { display: inline-block; background: #fff9e6; color: #b7950b; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .risk-low { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .scenario-box { padding: 14px; margin-bottom: 14px; border-left: 4px solid; }
+  .scenario-opt { border-color: #27ae60; background: #f0f9f6; }
+  .scenario-base { border-color: #3498db; background: #f4f8ff; }
+  .scenario-pes { border-color: #e94560; background: #fff5f5; }
+  .scenario-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+  .scenario-prob { float: right; font-size: 12px; font-weight: bold; padding: 2px 8px; border-radius: 4px; }
+  .prob-opt { background: #27ae60; color: #fff; }
+  .prob-base { background: #3498db; color: #fff; }
+  .prob-pes { background: #e94560; color: #fff; }
+  .factor-box { background: #fafafa; padding: 12px; margin-bottom: 12px; border-left: 3px solid #888; }
+  .factor-title { font-weight: bold; color: #1a1a2e; margin-bottom: 4px; }
+  .num { font-family: 'SF Mono', 'Roboto Mono', monospace; font-weight: 600; }
+  .footer { font-size: 11px; color: #999; margin-top: 28px; padding-top: 12px; border-top: 1px solid #eee; }
+  .highlight-box { background: #fff9e6; padding: 10px; margin: 12px 0; border: 1px solid #ffe6a0; }
+  .voice-item { font-size: 13px; color: #444; margin-bottom: 8px; padding-left: 10px; border-left: 2px solid #ddd; }
+  .divergence { background: #fff5f5; padding: 10px; margin: 10px 0; border: 1px solid #ffcccc; font-size: 13px; }
+  .alert { background: #ffe6e6; color: #c0392b; padding: 8px 12px; font-weight: bold; font-size: 13px; margin-bottom: 12px; border-left: 4px solid #e94560; }
+  .price-gap { background: #e8f8f5; padding: 8px 12px; font-size: 13px; margin-bottom: 12px; border-left: 4px solid #27ae60; }
+  .cashflow-box { background: #f0f4ff; padding: 14px; margin: 14px 0; border-left: 4px solid #4a6cf7; }
+  .strategy-box { background: #f9f9f9; padding: 14px; margin: 14px 0; border-left: 4px solid #1a1a2e; }
+  .strategy-yes { background: #e8f8f5; padding: 14px; margin: 14px 0; border-left: 4px solid #27ae60; }
+  .strategy-no { background: #fff5f5; padding: 14px; margin: 14px 0; border-left: 4px solid #e94560; }
+  .update-tag { display: inline-block; background: #e94560; color: #fff; padding: 2px 8px; font-size: 11px; border-radius: 3px; margin-left: 8px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>CNY/KRW 月度情景分析报告</h1>
+<div class="subtitle">基于5层分析框架（韩国特化版 V2）| 2026年7月 | 人民币/韩元直接标价</div>
+<div class="meta">报告日期：2026-07-29 | 数据截止：2026-07-28 | 质量评级：★★★★★ <span class="update-tag">BOK加息后更新</span></div>
+
+<div class="lead">
+<strong>核心结论：</strong>韩国央行已于7月16日加息25bp至2.75%（2023年1月以来首次），行长申铉松释放持续紧缩信号。加息后韩元明显升值——CNY/KRW中间价从月初228.18快速回落至7月27日<span class="down">215.52</span>，韩元月内升值约5.5%。半导体超级周期继续推升贸易顺差至历史高位（7月前20天顺差122亿美元，出口同比+52.3%），但KOSPI因杠杆踩踏暴跌进入技术性熊市（从高点回落25%），资本外流与基本面仍在撕裂。我司韩国子公司<strong>2.66亿CNY</strong>应付款敞口，<strong>韩元升值趋势已确认，对我司显著有利</strong>。建议<strong>降低对冲覆盖率至20-30%</strong>，保留敞口享受升值收益，仅对极端尾部风险做底线保护。
+</div>
+
+<!-- ==================== Layer 0 ==================== -->
+<h2>Layer 0: 我司韩国子公司敞口与现金流时间表</h2>
+
+<div class="cashflow-box">
+<div class="factor-title">敞口方向确认</div>
+<p>韩国子公司需要向母公司/供应商支付人民币货款 → 子公司持有韩元，需购汇人民币（卖出KRW，买入CNY）。</p>
+<p><strong>汇率影响：</strong>韩元升值（KRW走强）→ 同样多韩元可换更多人民币 → 子公司支付成本降低 → <span class="down">对我司有利</span>；</p>
+<p>韩元贬值（KRW走弱）→ 需更多韩元才能换到同样人民币 → 子公司支付成本增加 → <span class="up">对我司不利</span>。</p>
+<p><strong>CNY/KRW标价解读：</strong>1 CNY = X KRW。CNY/KRW数值下降 → 韩元升值 → 对我司有利；CNY/KRW数值上升 → 韩元贬值 → 对我司不利。</p>
+</div>
+
+<table>
+<tr><th>时间节点</th><th>付款金额（CNY）</th><th>累计付款（CNY）</th><th>敞口状态</th></tr>
+<tr><td>2026年上半年（已付）</td><td class="num">2,162万</td><td class="num">2,162万</td><td>已结汇，无敞口</td></tr>
+<tr><td>2026年下半年（预计）</td><td class="num">1.94亿</td><td class="num">2.10亿</td><td><span class="risk-high">待对冲</span></td></tr>
+<tr><td>&nbsp;&nbsp;├─ 7月</td><td class="num">6,100万</td><td class="num">—</td><td>即将到期</td></tr>
+<tr><td>&nbsp;&nbsp;├─ 8月</td><td class="num">2,800万</td><td class="num">—</td><td>远期敞口</td></tr>
+<tr><td>&nbsp;&nbsp;├─ 9月</td><td class="num">2,000万</td><td class="num">—</td><td>远期敞口</td></tr>
+<tr><td>&nbsp;&nbsp;├─ 10月</td><td class="num">4,000万</td><td class="num">—</td><td>远期敞口</td></tr>
+<tr><td>&nbsp;&nbsp;└─ 11-12月</td><td class="num">4,500万</td><td class="num">—</td><td>远期敞口</td></tr>
+<tr><td>2027年全年（预计）</td><td class="num">0.56亿</td><td class="num">2.66亿</td><td><span class="risk-high">远期敞口</span></td></tr>
+</table>
+
+<div class="alert">
+⚠️ 关键时点：2026年下半年<strong>1.94亿CNY</strong>付款集中释放（<strong>7月6100万为首笔大额</strong>），恰逢BOK 7月16日加息后韩元快速升值。CNY/KRW已从月初228.18降至215.52，韩元月内升值5.5%。建议评估已锁汇头寸——若此前锁在较高汇率（220-228），当前即期已更有利。
+</div>
+
+<!-- ==================== Layer 1 ==================== -->
+<h2>Layer 1: 核心驱动因子与断裂点诊断</h2>
+
+<h3>1.1 三因子模型（CNY/KRW韩国特化版）</h3>
+
+<table>
+<tr><th>因子</th><th>权重</th><th>核心指标</th><th>方向逻辑</th><th>KRW特殊性</th></tr>
+<tr>
+<td><strong>中韩利差</strong></td>
+<td>25%</td>
+<td>韩国10Y国债收益率 vs 中国10Y国债收益率</td>
+<td>BOK 7月16日加息25BP至2.75%，花旗预计下半年每季度加息（10月+25BP，2027年1月/4月可能再加）。中国LPR维持3.0%不变，10Y约1.74%。中韩利差拉宽 → 韩元升值</td>
+<td>韩国基准利率已升至2.75%，BOK行长申铉松明确释放持续紧缩信号，利差因子已转为明确支撑韩元</td>
+</tr>
+<tr>
+<td><strong>半导体周期/贸易顺差</strong></td>
+<td>45%</td>
+<td>韩国月度贸易顺差、半导体出口增速</td>
+<td>顺差扩大 → 韩元基本面支撑 → 升值压力。7月前20天出口549亿美元（+52.3%），半导体出口+180.6%，对中国出口+94.1%，贸易顺差122亿美元</td>
+<td><strong>主导因子：</strong>AI芯片超级周期推动韩国贸易顺差创历史高位（6月单月361亿美元），但BOK指出"顺差不再支撑韩元"——资本外流结构已变</td>
+</tr>
+<tr>
+<td><strong>政策与风险溢价</strong></td>
+<td>30%</td>
+<td>韩国央行政策、美联储政策、KOSPI杠杆风险</td>
+<td>BOK加息支撑韩元；美联储7月28-29日会议是关键变量；KOSPI杠杆踩踏引发政策干预</td>
+<td>韩美利差、韩日套息交易、外资持股结构、散户杠杆ETF踩踏风险</td>
+</tr>
+</table>
+
+<h3>1.2 本月关键事件：BOK 7月16日加息</h3>
+
+<div class="factor-box" style="border-left-color:#e94560;">
+<div class="factor-title">BOK 7月16日利率决议 — 已确认</div>
+<p><strong>决议：</strong>加息25BP至2.75%，为2023年1月以来首次加息。</p>
+<p><strong>行长：</strong>申铉松</p>
+<p><strong>市场反应：</strong>USD/KRW从~1500快速回落至~1450（韩元升值约3.3%），CNY/KRW从~220降至~215（韩元对人民币升值约2.3%）。KOSPI暴跌6.37%至6820.6。</p>
+<p><strong>前瞻指引：</strong>花旗预计下半年每季度加息25BP（10月+25BP至3.00%），2027年1月和4月可能各再加25BP。若兑现，韩国基准利率将升至3.50%。</p>
+<p><strong>与我司关系：</strong>BOK加息 → 韩元升值 → CNY/KRW下降 → 韩国子公司购汇成本降低 → <span class="down">对我司有利</span>。</p>
+</div>
+
+<h3>1.3 贸易数据：7月前20天出口创纪录</h3>
+
+<table>
+<tr><th>指标</th><th>7月前20天</th><th>同比变化</th><th>备注</th></tr>
+<tr><td>出口总额</td><td class="num">549亿美元</td><td class="down">+52.3%</td><td>未经工作日调整；经调整后+62.9%</td></tr>
+<tr><td>进口总额</td><td class="num">427亿美元</td><td class="down">+20.0%</td><td>—</td></tr>
+<tr><td>贸易顺差</td><td class="num">122亿美元</td><td class="down">大幅扩大</td><td>—</td></tr>
+<tr><td>半导体出口</td><td>—</td><td class="down">+180.6%</td><td>AI芯片超级周期主导</td></tr>
+<tr><td>对中国出口</td><td>—</td><td class="down">+94.1%</td><td>中国AI需求强劲</td></tr>
+<tr><td>对美国出口</td><td>—</td><td class="down">+39.6%</td><td>—</td></tr>
+</table>
+
+<p><strong>6月完整月数据：</strong>出口1022.5亿美元（首次突破千亿美元大关），同比+70.9%；贸易顺差361.5亿美元（首次突破300亿美元），均为历史最高纪录。</p>
+
+<h3>1.4 KOSPI暴跌：技术性熊市+杠杆踩踏</h3>
+
+<div class="factor-box" style="border-left-color:#e94560;">
+<div class="factor-title">KOSPI进入技术性熊市</div>
+<p><strong>7月16日：</strong>KOSPI暴跌6.37%至6820.6，较6月历史高点下跌近25%，进入技术性熊市。</p>
+<p><strong>2026年熔断记录：</strong>已触发7次全市场熔断、40个sidecar（程序化交易暂停）。</p>
+<p><strong>杠杆踩踏：</strong>5月27日韩国交易所批准16只单股2倍杠杆ETF上市，散户累计净买入14万亿韩元（约639.8亿元人民币）。下跌时ETF机械性卖出放大跌幅。</p>
+<p><strong>政策干预：</strong>7月16日三部门联合收紧杠杆——个人保证金从1000万韩元上调至3000万韩元，最小交易单位从1份提高至20份，暂停新产品上市。</p>
+<p><strong>外资流出：</strong>上半年外资在KOSPI累计净卖出148.316万亿韩元（约950亿美元），创亚洲单一市场年度流出纪录。</p>
+</div>
+
+<h3>1.5 跨因子断裂诊断</h3>
+
+<div class="divergence">
+<strong>撕裂A（核心撕裂）：</strong>半导体超级周期（顺差创纪录） vs 资本外流（外资抛售950亿美元） → 韩元"应该升值但实际在上半年贬值"<br>
+<strong>7月变化：</strong>BOK加息后利差因子开始主导，韩元终于升值。但KOSPI暴跌显示资本外流仍在持续，只是被利差暂时压制。
+</div>
+
+<div class="divergence">
+<strong>撕裂B：</strong>BOK鹰派加息（支撑韩元） vs KOSPI杠杆踩踏（资本外流） → 政策紧缩反而引发股市暴跌<br>
+<strong>信号意义：</strong>韩国面临"加息保汇率、降息保股市"的两难。BOK选择了汇率，股市付出代价。
+</div>
+
+<!-- ==================== Layer 2 ==================== -->
+<h2>Layer 2: 外部市场声音</h2>
+
+<h3>2.1 投行/机构观点（近一个月内）</h3>
+
+<div class="voice-item">
+<strong>花旗（2026年7月）：</strong>预计韩国下半年每季度加息25BP（10月至3.00%），2027年1月和4月可能各再加25BP至3.50%。核心逻辑：5月CPI 3.14%为26个月最高，存储芯片景气周期带来的巨额绩效奖金扩散至更广泛领域推高通胀。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅近1个月</span>
+</div>
+
+<div class="voice-item">
+<strong>美国银行（2026年6月）：</strong>深度报告解析"股汇背离"——2026年KOSPI涨超100%，但韩元跌至2009年来最低。根本驱动力：创纪录的外资股票净流出（950亿美元）+ 货币对冲交易需求。外资抛售规模远超5月270亿美元贸易顺差。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅近1个月</span>
+</div>
+
+<div class="voice-item">
+<strong>摩根大通（2026年6月25日）：</strong>维持对韩国股市看多立场，将KOSPI未来12个月基准/乐观/悲观情景目标分别上调至12500/15000/8000点。建议在任何回调中加仓、保持最大敞口。核心逻辑：AI驱动的基本面上行、企业盈利增长。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅近1个月</span>
+</div>
+
+<div class="voice-item">
+<strong>财新（2026年7月22日）：</strong>"韩国股市版鱿鱼游戏"——截至7月22日，KOSPI年内最大回撤达33%。散户在交易论坛上喊出"我想回到炒股之前的日子，把我的钱还给我。"全民炒股大潮下，韩国散户度过了"最好的夏天"，却在7月痛苦踩踏。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅近1周</span>
+</div>
+
+<h3>2.2 央行/政策声音</h3>
+
+<div class="voice-item">
+<strong>韩国央行行长申铉松（2026年6月21日）：</strong>"不能在控制通胀方面落后于曲线"——暗示7月16日议息会议可能启动加息。背景：5月CPI 3.14%为26个月最高。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅已兑现</span>
+</div>
+
+<div class="voice-item">
+<strong>韩国金融委员会/监督院/交易所（2026年7月16日）：</strong>三部门联合宣布对个股杠杆ETF的一揽子限制措施——个人保证金从1000万韩元上调至3000万韩元，不再接受有价证券作担保，最小交易单位从1份提高至20份，暂停新产品上市。<br>
+<span style="color:#888;font-size:12px;">时效状态：✅已执行</span>
+</div>
+
+<h3>2.3 关键分歧分析</h3>
+
+<table>
+<tr><th>分歧主题</th><th>乐观方（韩元升值）</th><th>悲观方（韩元贬值）</th><th>差距量化</th></tr>
+<tr>
+<td>BOK 2026-2027年加息次数</td>
+<td>花旗：4次（7月+10月+2027年1月+4月，至3.50%）</td>
+<td>市场部分押注仅1-2次后暂停</td>
+<td>75-100BP差距</td>
+</tr>
+<tr>
+<td>外资抛售是否持续</td>
+<td>MSCI调整周期结束（8月），抛盘缓和</td>
+<td>韩股估值过高，获利了结持续</td>
+<td>950亿已抛 vs 潜在更多</td>
+</tr>
+<tr>
+<td>美联储2026年方向</td>
+<td>降息（市场主流）</td>
+<td>加息（FOMC点阵图9人预计加息）</td>
+<td>50-75BP差距</td>
+</tr>
+</table>
+
+<!-- ==================== Layer 3 ==================== -->
+<h2>Layer 3: 情景分析（CNY/KRW直接标价）— 结合我司敞口</h2>
+
+<div class="highlight-box">
+<strong>敞口方向确认（中伟新材韩国子公司）：</strong><br>
+- 韩国子公司需向母公司/供应商支付人民币：2026年下半年1.94亿CNY + 2027年0.56亿CNY<br>
+- 敞口方向：子公司持有韩元，需购汇人民币（卖出KRW，买入CNY）<br>
+- <strong>CNY/KRW上升（韩元贬值）→ 对我司不利</strong>（需更多韩元换同样人民币）<br>
+- <strong>CNY/KRW下降（韩元升值）→ 对我司有利</strong>（需更少韩元换同样人民币）<br>
+- 情景重新定义：乐观=韩元升值（有利），基准=区间波动（中性），悲观=韩元贬值（不利）
+</div>
+
+<div class="scenario-box scenario-opt">
+<div class="scenario-title">乐观（韩元升值/对我司有利）<span class="scenario-prob prob-opt">40%</span></div>
+<p><strong>CNY/KRW区间：</strong>205-215（韩元继续升值约0-5%，从当前215.52回落）</p>
+<p><strong>对我司影响：</strong>1.94亿CNY付款可节省约0-970万CNY等值韩元成本</p>
+<p><strong>触发条件清单：</strong></p>
+<ol>
+<li>BOK连续加息路径兑现（10月+2027年1月/4月）</li>
+<li>外资回流韩国（AI叙事持续+估值修复）</li>
+<li>美联储转向鸽派（降息），美元走弱</li>
+<li>贸易顺差维持高位，半导体出口持续强劲</li>
+</ol>
+<p><strong>概率逻辑：</strong>BOK已开启加息周期，10月再加25BP概率高。若美联储降息而BOK继续加息，韩美利差收窄 → 韩元大幅升值。乐观概率从25%上调至40%。</p>
+</div>
+
+<div class="scenario-box scenario-base">
+<div class="scenario-title">基准（区间波动/对我司中性）<span class="scenario-prob prob-base">45%</span></div>
+<p><strong>CNY/KRW区间：</strong>215-225（当前水平附近波动）</p>
+<p><strong>对我司影响：</strong>付款成本基本可控，按当前汇率锁汇无显著损益</p>
+<p><strong>触发条件清单：</strong></p>
+<ol>
+<li>BOK 7月加息后10月暂停，市场已充分price in</li>
+<li>美联储维持鹰派但暂不行动，美元指数区间波动</li>
+<li>半导体出口维持高位但增速放缓（基数效应）</li>
+<li>外资抛售缓和但无大幅回流</li>
+</ol>
+<p><strong>概率逻辑：</strong>基准概率从55%下调至45%。BOK已兑现加息，韩元已开始升值，维持完全中性的概率下降。</p>
+</div>
+
+<div class="scenario-box scenario-pes">
+<div class="scenario-title">悲观（韩元贬值/对我司不利）<span class="scenario-prob prob-pes">15%</span></div>
+<p><strong>CNY/KRW区间：</strong>225-240（韩元贬值约4-11%，从当前215.52反弹）</p>
+<p><strong>对我司影响：</strong>1.94亿CNY付款额外增加约776-2134万CNY等值韩元成本</p>
+<p><strong>触发条件清单：</strong></p>
+<ol>
+<li>美联储鹰派超预期（加息50BP+），美元走强压制韩元</li>
+<li>朝鲜半岛地缘风险升级</li>
+<li>全球AI投资周期见顶，半导体需求骤降</li>
+<li>韩国家庭海外投资需求继续激增</li>
+</ol>
+<p><strong>概率逻辑：</strong>悲观概率从20%下调至15%。BOK加息已改变游戏格局，单纯外资抛售难以再推动韩元大幅贬值。</p>
+</div>
+
+<!-- ==================== Layer 4 ==================== -->
+<h2>Layer 4: 纯技术分析</h2>
+
+<h3>4.1 价格结构</h3>
+
+<div class="price-gap">
+<strong>核算口径 vs 交易口径铁律：</strong><br>
+- 中国外汇交易中心公布的CNY/KRW中间价：用于报表折算、内部KPI<br>
+- 银行间外汇市场CNY/KRW即期：用于实际购汇成本、锁汇决策<br>
+<strong>锁汇决策一律基于即期价+掉期点，中间价只做核算参考。</strong>
+</div>
+
+<table>
+<tr><th>价格类型</th><th>当前水平</th><th>7月初水平</th><th>变化</th><th>用途</th></tr>
+<tr><td>CNY/KRW中间价（央行）</td><td class="num">215.52</td><td class="num">228.18</td><td class="down">-12.66 (-5.5%)</td><td>报表折算</td></tr>
+<tr><td>CNY/KRW即期（银行间）</td><td class="num">213-217</td><td class="num">225-230</td><td class="down">-12~-13</td><td><strong>锁汇决策</strong></td></tr>
+<tr><td>USD/KRW（韩国市场）</td><td class="num">~1,470</td><td class="num">~1,530</td><td class="down">-60 (-3.9%)</td><td>交叉验证</td></tr>
+<tr><td>USD/CNY（中国）</td><td class="num">6.7948</td><td class="num">6.8067</td><td class="down">-0.012</td><td>验证用</td></tr>
+</table>
+
+<h3>4.2 波动率与动量</h3>
+
+<table>
+<tr><th>指标</th><th>解释</th><th>状态判断</th></tr>
+<tr><td>20日历史波动率</td><td>近期波动幅度</td><td>~15-18%（高，BOK会议前后波动放大）</td></tr>
+<tr><td>RSI（14日）</td><td>超买/超卖</td><td>55-60（中性偏强，韩元 momentum 向上）</td></tr>
+<tr><td>布林带带宽</td><td>挤压/扩张状态</td><td>~3.0%（扩张中，突破方向已确认向上即韩元升值）</td></tr>
+<tr><td>20日/50日SMA</td><td>短期/中期趋势</td><td>价格突破50日均线向上，短期趋势转为升值</td></tr>
+</table>
+
+<h3>4.3 交叉验证（Layer 1 vs Layer 4）</h3>
+
+<table>
+<tr><th>验证项</th><th>Layer 1（基本面）</th><th>Layer 4（技术面）</th><th>一致性</th></tr>
+<tr><td>趋势方向</td><td>BOK加息+利差拉宽 → 韩元升值</td><td>突破50日均线，RSI偏强</td><td>✅一致：均指向韩元升值</td></tr>
+<tr><td>波动预期</td><td>BOK会议后波动缓和</td><td>波动率仍高但 momentum 明确</td><td>✅一致：方向明确，波动仍存</td></tr>
+<tr><td>关键点位</td><td>BOK 10月会议是下一个催化剂</td><td>技术支撑210-215，阻力220-225</td><td>✅一致：210-225为关键区间</td></tr>
+</table>
+
+<!-- ==================== Layer 5 ==================== -->
+<h2>Layer 5: 对冲建议 — 基于中伟新材韩国子公司敞口</h2>
+
+<h3>5.1 敞口结构确认</h3>
+
+<table>
+<tr><th>敞口类型</th><th>金额</th><th>币种方向</th><th>风险特征</th></tr>
+<tr><td>韩国子公司付款（2026H2）</td><td class="num">1.94亿 CNY</td><td>子公司持有KRW，需买入CNY</td><td>7月6100万为首笔大额，集中释放</td></tr>
+<tr><td>韩国子公司付款（2027）</td><td class="num">0.56亿 CNY</td><td>子公司持有KRW，需买入CNY</td><td>远期敞口，可逐步建仓</td></tr>
+</table>
+
+<div class="alert">
+⚠️ 敞口方向关键纠正：与USD/CNY敞口（Long USD）方向不同！韩国子公司需要支付CNY，汇率风险在于韩元走弱。当前BOK加息后韩元已升值，CNY/KRW从228降至215，对我司<strong>有利方向已确认</strong>。
+</div>
+
+<h3>5.2 核心策略：降低对冲覆盖率至20-30%</h3>
+
+<div class="strategy-yes">
+<div class="factor-title">结论：降低对冲覆盖率至20-30%，保留70-80%敞口享受升值收益</div>
+<p><strong>理由：</strong></p>
+<ol>
+<li><strong>有利方向概率极高：</strong>韩元升值（40%）+ 区间波动（45%）= 85%概率对我司中性或有利。过度锁汇将直接放弃这部分收益。</li>
+<li><strong>BOK加息周期刚启动：</strong>7月16日首次加息至2.75%，花旗预计10月再加25BP至3.00%，2027年可能继续加息。利差拉宽支撑韩元继续升值。</li>
+<li><strong>套保成本是净损失：</strong>若韩元继续升值，已锁汇头寸将产生"机会成本损失"——锁在220-228的远期，当前即期已215。</li>
+<li><strong>贸易顺差持续强劲：</strong>7月前20天顺差122亿美元，半导体出口+180.6%，基本面支撑韩元。</li>
+</ol>
+<p><strong>核心策略：</strong>从之前的"轻对冲30-50%"进一步降低至"底线保护20-30%"，仅对极端尾部风险做保护，保留大部分敞口享受BOK加息周期带来的韩元升值收益。</p>
+</div>
+
+<h3>5.3 对冲节奏（更新版）</h3>
+
+<div class="factor-box">
+<div class="factor-title">第一阶段：2026年7-8月（BOK加息后）— 维持底线保护，不新增远期</div>
+<p><strong>覆盖率目标：</strong>20-30%（约4000-6000万CNY等值），仅保留已建仓的底线保护</p>
+<p><strong>行动：</strong>若此前已锁汇在220-228的高位，评估是否解锁或展期至更低汇率。当前即期215已显著优于多数锁汇头寸。</p>
+<p><strong>理由：</strong>BOK加息刚启动，10月再加25BP概率高。此时新增远期等于放弃后续升值收益。仅保留最低限度的尾部风险保护。</p>
+</div>
+
+<div class="factor-box">
+<div class="factor-title">第二阶段：2026年9-10月（BOK 10月会议前）— 视情况维持或进一步降低</div>
+<p><strong>覆盖率目标：</strong>20%以下（仅极端尾部保护）</p>
+<p><strong>行动：</strong>若CNY/KRW < 210（韩元大幅升值确认），可将覆盖率降至10-15%或完全观望；若CNY/KRW > 225（意外贬值），可适度追加至30%。</p>
+<p><strong>理由：</strong>10月会议若兑现加息，韩元可能进一步升值。不主动押注不利方向。</p>
+</div>
+
+<div class="factor-box">
+<div class="factor-title">第三阶段：2026年11-12月（年末剩余敞口）— 维持轻保护</div>
+<p><strong>覆盖率目标：</strong>维持20%以下</p>
+<p><strong>行动：</strong>年末剩余敞口若韩元已确认升值趋势，追加远期无意义。仅保留底线保护，剩余部分享受韩元强势带来的成本节约。</p>
+</div>
+
+<h3>5.4 产品选择（更新优先级）</h3>
+
+<table>
+<tr><th>产品</th><th>适用场景</th><th>成本</th><th>优缺点</th><th>推荐度</th></tr>
+<tr>
+<td><strong>自然暴露（不锁汇）</strong></td>
+<td>当前首选：韩元升值趋势确认，保留敞口享受收益</td>
+<td>0</td>
+<td>优点：零成本、享受全部升值收益；缺点：无保护，若韩元反转则暴露</td>
+<td>⭐⭐⭐⭐⭐（当前首选）</td>
+</tr>
+<tr>
+<td><strong>Collar（领子期权）</strong></td>
+<td>保留升值收益+限制损失，低成本保护</td>
+<td>年化0.3-0.8%</td>
+<td>优点：低成本、保留部分收益；缺点：结构复杂</td>
+<td>⭐⭐⭐⭐（辅助工具，若需保护）</td>
+</tr>
+<tr>
+<td><strong>远期合约</strong></td>
+<td>仅对极端尾部风险做底线保护</td>
+<td>年化0.5-1.5%</td>
+<td>优点：简单；缺点：放弃升值收益</td>
+<td>⭐⭐（仅小仓位使用）</td>
+</tr>
+</table>
+
+<h3>5.5 技术面→对冲决策传导（更新）</h3>
+
+<table>
+<tr><th>技术信号</th><th>对冲行动</th><th>理由</th></tr>
+<tr><td>CNY/KRW突破225（韩元贬值突破）</td><td>若确认（收盘>225），增加对冲覆盖率至40%</td><td>技术突破可能触发止损盘，但BOK加息周期下概率降低</td></tr>
+<tr><td>BOK释放连续加息信号（10月+25BP）</td><td>降低远期比例至15%以下</td><td>政策路径明确后，韩元可能快速升值</td></tr>
+<tr><td>USD/KRW跌破1,400</td><td>交叉验证韩元强势，减少新增远期</td><td>USD/KRW是韩元全球定价基准</td></tr>
+<tr><td>CNY/KRW < 210（大幅升值）</td><td>完全取消新增远期，仅保留自然暴露</td><td>趋势确认，锁汇无意义</td></tr>
+</table>
+
+<!-- ==================== 数据来源与时效声明 ==================== -->
+<h2>数据来源与时效声明</h2>
+
+<table>
+<tr><th>数据类别</th><th>最新日期</th><th>来源</th><th>更新频率</th><th>状态</th></tr>
+<tr><td>CNY/KRW中间价</td><td>2026-07-27</td><td>中国外汇交易中心</td><td>日度(9:15)</td><td>✅当日</td></tr>
+<tr><td>USD/KRW</td><td>2026-07-28</td><td>Investing.com / 金投网</td><td>实时</td><td>✅实时</td></tr>
+<tr><td>USD/CNY</td><td>2026-07-20</td><td>中国外汇交易中心</td><td>日度(9:15)</td><td>✅当日</td></tr>
+<tr><td>韩国央行基准利率</td><td>2026-07-16</td><td>BOK官网</td><td>月度（议息会议）</td><td>✅最新</td></tr>
+<tr><td>韩国贸易数据</td><td>2026-07-21（前20天）</td><td>韩国关税厅</td><td>月度</td><td>✅最新</td></tr>
+<tr><td>韩国CPI</td><td>2026-05月</td><td>韩国统计局</td><td>月度</td><td>✅最新</td></tr>
+<tr><td>KOSPI指数</td><td>2026-07-16</td><td>韩国交易所</td><td>实时</td><td>✅最新</td></tr>
+<tr><td>外资持股数据</td><td>2026-06月</td><td>韩国金融监督院</td><td>月度</td><td>✅近一个月</td></tr>
+<tr><td>机构观点</td><td>2026年6-7月</td><td>花旗/美银/摩根大通/财新</td><td>事件驱动</td><td>✅已标注时效</td></tr>
+</table>
+
+<div class="footer">
+<p>免责声明：本报告仅供内部决策参考，不构成投资建议。CNY/KRW汇率数据基于中国外汇交易中心中间价，实际交易前请向银行确认实际中间价和即期报价。期权波动率为推断值，非直接OTC报价。</p>
+<p>报告生成：2026-07-29 | 模型版本：CNY/KRW V2（韩国特化版）| 下次更新：2026年8月初（BOK 10月会议前）</p>
+</div>
+
+</div>
+</body>
+</html>

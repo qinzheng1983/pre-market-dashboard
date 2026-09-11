@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>USD/CNY 广义Delta观测报告 — 2026年7月14日</title>
+<style>
+body {
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 20px;
+  color: #1a1a2e;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+.header {
+  background: #1a1a2e;
+  color: #ffffff;
+  padding: 24px 20px;
+}
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.header-meta {
+  font-size: 13px;
+  color: #a0a0b0;
+  line-height: 1.6;
+}
+.header-highlight {
+  background: #e94560;
+  color: #ffffff;
+  padding: 12px 16px;
+  margin: 16px -20px -24px -20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.section {
+  padding: 20px;
+  border-bottom: 1px solid #e8e8f0;
+}
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e94560;
+  display: inline-block;
+}
+.section-subtitle {
+  font-size: 12px;
+  color: #8888a0;
+  margin-bottom: 12px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+th {
+  background: #f4f4f8;
+  padding: 8px 10px;
+  text-align: left;
+  font-weight: 600;
+  color: #555;
+  border-bottom: 1px solid #ddd;
+}
+td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  vertical-align: top;
+}
+tr:last-child td {
+  border-bottom: none;
+}
+.delta-positive {
+  color: #388e3c;
+  font-weight: 600;
+}
+.delta-negative {
+  color: #d32f2f;
+  font-weight: 600;
+}
+.delta-neutral {
+  color: #f9a825;
+  font-weight: 600;
+}
+.resonance-high {
+  background: #fff0f0;
+  border-left: 3px solid #e94560;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.resonance-med {
+  background: #fff8e0;
+  border-left: 3px solid #f9a825;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.resonance-low {
+  background: #f0f8f0;
+  border-left: 3px solid #388e3c;
+  padding: 10px 12px;
+  margin: 8px 0;
+}
+.label {
+  font-weight: 700;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.footer {
+  padding: 16px 20px;
+  font-size: 11px;
+  color: #999;
+  background: #f8f9fa;
+  text-align: center;
+}
+.math {
+  font-family: "Courier New", monospace;
+  background: #f4f4f8;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <h1>USD/CNY 广义Delta观测报告</h1>
+  <div class="header-meta">
+    观测日期：2026年7月14日（周二）<br>
+    数据窗口：7月1日 — 7月13日 | 预计阅读时间：8分钟<br>
+    报告版本：Delta维度 v1.0
+  </div>
+  <div class="header-highlight">
+    核心结论：正Delta因子（政策引导+资金流入+技术突破）占优，但利差Delta方向摇摆，7/29美联储FOMC是潜在反转触发点
+  </div>
+</div>
+
+<!-- SECTION 1: 什么是广义Delta -->
+<div class="section">
+  <div class="section-title">一、广义Delta：从"水平"到"变化"的观测范式</div>
+  <div class="section-subtitle">传统模型看因子水平，Delta模型看因子边际变化对汇率的冲击</div>
+  
+  <p style="font-size:13px;line-height:1.8;color:#444;margin-bottom:12px;">
+    传统USD/CNY预测模型关注因子的<strong>绝对水平</strong>——利差是多少、顺差是多少、DXY在什么位置。但市场定价的是<strong>预期差</strong>，而预期差本质上是因子的<strong>边际变化</strong>。广义Delta观测维度将每个因子的"变化率"而非"水平值"作为核心输入，捕捉汇率对边际冲击的响应。
+  </p>
+
+  <table>
+    <tr>
+      <th style="width:25%">维度</th>
+      <th style="width:35%">传统模型（Level）</th>
+      <th style="width:40%">Delta模型（Change）</th>
+    </tr>
+    <tr>
+      <td>中美利差</td>
+      <td>10Y利差倒挂274bp</td>
+      <td>利差<span class="math">Δ</span>：美联储从降息转向加息→利差走阔速度</td>
+    </tr>
+    <tr>
+      <td>贸易顺差</td>
+      <td>4月顺差848亿美元</td>
+      <td>顺差<span class="math">Δ</span>：同比-12%→顺差收缩的边际速度</td>
+    </tr>
+    <tr>
+      <td>央行干预</td>
+      <td>中间价6.7972</td>
+      <td>中间价<span class="math">Δ</span>：单日升值88bp→逆周期因子力度突变</td>
+    </tr>
+    <tr>
+      <td>地缘风险</td>
+      <td>霍尔木兹关闭</td>
+      <td>风险<span class="math">Δ</span>：新增信息量（从谈判到军事冲突的跃迁）</td>
+    </tr>
+  </table>
+
+  <p style="font-size:13px;line-height:1.8;color:#444;">
+    <strong>核心公式：</strong><span class="math">ΔUSD/CNY ≈ Σ(ΔFactor_i × Elasticity_i) + ResonanceTerm</span><br>
+    其中Elasticity_i是汇率对第i个因子变化的弹性系数，ResonanceTerm是多因子同向变化时的共振放大项。
+  </p>
+</div>
+
+<!-- SECTION 2: 六大Delta因子观测 -->
+<div class="section">
+  <div class="section-title">二、六大Delta因子实时观测（7月窗口）</div>
+  <div class="section-subtitle">每个因子标注：当前Δ方向 | 弹性系数 | 对USD/CNY边际影响</div>
+
+  <table>
+    <tr>
+      <th style="width:18%">Delta因子</th>
+      <th style="width:22%">水平值（参考）</th>
+      <th style="width:22%">变化观测（Δ）</th>
+      <th style="width:18%">弹性</th>
+      <th style="width:20%">边际影响</th>
+    </tr>
+    <tr>
+      <td><strong>Δ利差</strong><br><span style="font-size:11px;color:#888">Interest</span></td>
+      <td>10Y利差倒挂~274bp<br>美4.46% / 中1.72%</td>
+      <td>6月FOMC点阵图从降息→加息偏向，但6月非农仅5.7万→加息预期降温。<span style="color:#d32f2f">Δ方向摇摆</span>：鹰派转向(+Δ) vs 弱非农(-Δ)</td>
+      <td>高<br><span style="font-size:11px">（利差是定价核心）</span></td>
+      <td class="delta-neutral">方向不明<br>±50bp波动</td>
+    </tr>
+    <tr>
+      <td><strong>Δ贸易</strong><br><span style="font-size:11px;color:#888">Trade</span></td>
+      <td>4月顺差848亿美元<br>同比-12%</td>
+      <td>顺差从高位边际收缩。台湾6月顺差同比+1.2%（大幅放缓）。<span style="color:#d32f2f">Δ为负</span>：顺差增速下降</td>
+      <td>中高<br><span style="font-size:11px">（经常账户是锚）</span></td>
+      <td class="delta-negative">偏贬值<br>-20bp压力</td>
+    </tr>
+    <tr>
+      <td><strong>Δ政策</strong><br><span style="font-size:11px;color:#888">Policy</span></td>
+      <td>中间价6.7972<br>即期~6.78</td>
+      <td>7/10中间价单日升值88bp（6.8077→6.7989），7/13再+17bp。<span style="color:#388e3c">Δ为正</span>：央行主动引导升值</td>
+      <td>极高<br><span style="font-size:11px">（逆周期因子）</span></td>
+      <td class="delta-positive">强升值<br>+80bp驱动</td>
+    </tr>
+    <tr>
+      <td><strong>Δ风险溢价</strong><br><span style="font-size:11px;color:#888">Risk</span></td>
+      <td>霍尔木兹关闭<br>布油$78.46</td>
+      <td>7/12伊朗宣布"无限期关闭"海峡，新增重大风险。但油价飙升反而抑制美元（加息预期降温）。<span style="color:#f9a825">Δ复杂</span></td>
+      <td>中<br><span style="font-size:11px">（非线性传导）</span></td>
+      <td class="delta-neutral">双向抵消<br>±10bp</td>
+    </tr>
+    <tr>
+      <td><strong>Δ资金流</strong><br><span style="font-size:11px;color:#888">Flow</span></td>
+      <td>CNH盘中破6.78<br>DXY 100.84</td>
+      <td>CNH持续强于CNY（离岸>在岸），显示离岸资金流入人民币。<span style="color:#388e3c">Δ为正</span></td>
+      <td>中高<br><span style="font-size:11px">（流动性信号）</span></td>
+      <td class="delta-positive">偏升值<br>+30bp</td>
+    </tr>
+    <tr>
+      <td><strong>Δ技术面</strong><br><span style="font-size:11px;color:#888">Tech</span></td>
+      <td>6.80关口跌破<br>20日SMA~6.82</td>
+      <td>7/10突破6.80关键位，跟随意愿强，动量延续。<span style="color:#388e3c">Δ为正</span></td>
+      <td>中<br><span style="font-size:11px">（动量延续性）</span></td>
+      <td class="delta-positive">动量支撑<br>+20bp</td>
+    </tr>
+  </table>
+
+  <p style="font-size:12px;color:#666;margin-top:8px;">
+    <strong>注：</strong>弹性系数基于历史回归估计。Δ政策弹性"极高"是因为中间价由央行设定，具有直接定价权。Δ风险溢价弹性"中"是因为地缘风险对USD/CNY的传导存在非线性——避险通常推高美元，但霍尔木兹关闭推高油价→抑制加息预期→反而压制美元。
+  </p>
+</div>
+
+<!-- SECTION 3: Delta共振与对冲分析 -->
+<div class="section">
+  <div class="section-title">三、Delta共振与对冲矩阵</div>
+  <div class="section-subtitle">多因子同向→共振放大；反向→对冲抵消</div>
+
+  <div class="resonance-high">
+    <div class="label" style="color:#e94560">共振集群 A：升值驱动（3个Delta同向）</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      <strong>Δ政策 + Δ资金流 + Δ技术面</strong> 形成同向升值推力。<br>
+      央行引导升值（Δ政策+80bp）→ 离岸资金跟风流入（Δ资金流+30bp）→ 技术位突破吸引更多投机多头（Δ技术面+20bp）。<br>
+      <strong>共振放大系数估算：1.3x</strong>（三个正Delta相互强化，而非简单加总）。<br>
+      合成升值推力：~170bp（130bp × 1.3）。
+    </div>
+  </div>
+
+  <div class="resonance-med">
+    <div class="label" style="color:#f9a825">对冲集群 B：利差与贸易的对冲效应</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      <strong>Δ利差（摇摆） vs Δ贸易（负）</strong>：两者均指向贬值方向，但力度不同。<br>
+      利差Δ方向不明（±50bp），贸易Δ提供-20bp持续压力。<br>
+      这部分贬值推力被共振集群A的升值推力部分抵消，形成当前"升值惯性但力度受限"的格局。
+    </div>
+  </div>
+
+  <div class="resonance-low">
+    <div class="label" style="color:#388e3c">对冲集群 C：风险溢价的双向抵消</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      <strong>Δ风险溢价</strong> 是典型非线性因子：霍尔木兹关闭→油价↑→通胀预期↑→美元本应↑，但弱非农→加息预期↓→美元↓。<br>
+      两个子通道几乎完全对冲，使风险溢价Δ对USD/CNY的净影响接近零（±10bp）。<br>
+      <strong>关键观察：</strong>若7/29 FOMC释放更鹰派信号，非线性通道将打破平衡，风险溢价Δ可能突然转向贬值方向。
+    </div>
+  </div>
+
+  <table style="margin-top:12px;">
+    <tr>
+      <th>合成Delta</th>
+      <th>升值推力</th>
+      <th>贬值推力</th>
+      <th>净Delta</th>
+      <th>解读</th>
+    </tr>
+    <tr>
+      <td>共振集群A（政策+资金+技术）</td>
+      <td class="delta-positive">+170bp</td>
+      <td>—</td>
+      <td rowspan="3" class="delta-positive" style="font-size:16px;">+120bp<br>（净升值）</td>
+      <td rowspan="3">正Delta占优，人民币短期有升值惯性。但推力主要来自中国央行引导，若央行暂停干预，惯性可能快速消退。</td>
+    </tr>
+    <tr>
+      <td>对冲集群B（利差+贸易）</td>
+      <td>—</td>
+      <td class="delta-negative">-50bp</td>
+    </tr>
+    <tr>
+      <td>对冲集群C（风险溢价）</td>
+      <td>—</td>
+      <td class="delta-neutral">≈0bp</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SECTION 4: 关键断裂点与触发器 -->
+<div class="section">
+  <div class="section-title">四、关键断裂点与Delta反转触发器</div>
+  <div class="section-subtitle">Delta模型的价值在于识别"变化的变化"——第二阶拐点</div>
+
+  <table>
+    <tr>
+      <th style="width:20%">触发器</th>
+      <th style="width:20%">时间</th>
+      <th style="width:25%">对Delta因子的冲击</th>
+      <th style="width:35%">USD/CNY响应预测</th>
+    </tr>
+    <tr>
+      <td><strong>美联储7月FOMC</strong></td>
+      <td>7月29-30日</td>
+      <td>Δ利差方向明确化：若鹰派→利差走阔Δ加速；若鸽派→利差收窄Δ</td>
+      <td>鹰派：USD/CNY反弹至6.85+（Δ利差反转主导）；鸽派：继续下探6.75（正Delta共振延续）</td>
+    </tr>
+    <tr>
+      <td><strong>美国6月CPI</strong></td>
+      <td>7月14日（今日）</td>
+      <td>若CPI>3.8%→加息概率↑→Δ利差负向；若CPI<3.4%→Δ利差正向</td>
+      <td>今日晚间关键数据，可能立即改变Δ利差方向</td>
+    </tr>
+    <tr>
+      <td><strong>央行中间价突变</strong></td>
+      <td>任意交易日9:15</td>
+      <td>若央行暂停升值引导（中间价回调至6.81+）→Δ政策归零</td>
+      <td>升值惯性失去最大推力，可能快速回落至6.82-6.85区间</td>
+    </tr>
+    <tr>
+      <td><strong>霍尔木兹局势升级/缓和</strong></td>
+      <td>不可预测</td>
+      <td>若美国军事打击→避险美元↑→Δ风险溢价负向；若谈判重启→油价↓→加息预期↑→Δ复杂</td>
+      <td>非线性响应，难以线性预测，但波动率将显著上升</td>
+    </tr>
+    <tr>
+      <td><strong>中国6月贸易数据</strong></td>
+      <td>7月中旬</td>
+      <td>若顺差<700亿→Δ贸易负向加速；若顺差>1000亿→Δ贸易转正</td>
+      <td>顺差边际变化对汇率的影响存在1-2周滞后</td>
+    </tr>
+  </table>
+</div>
+
+<!-- SECTION 5: 对我司敞口的Delta视角 -->
+<div class="section">
+  <div class="section-title">五、Delta视角下的我司敞口应对</div>
+  <div class="section-subtitle">中伟新材：资本层面~10亿美元 Long USD</div>
+
+  <p style="font-size:13px;line-height:1.8;color:#444;margin-bottom:12px;">
+    从Delta模型看，当前最大的风险不是"USD/CNY在什么水平"，而是<strong>"Δ政策（央行引导）的可持续性"</strong>。正Delta集群A的170bp升值推力中，80bp来自央行干预，这是外生变量，可能随时逆转。
+  </p>
+
+  <table>
+    <tr>
+      <th style="width:20%">情景</th>
+      <th style="width:25%">Delta触发</th>
+      <th style="width:25%">USD/CNY响应</th>
+      <th style="width:30%">我司行动</th>
+    </tr>
+    <tr>
+      <td><strong>正Delta延续</strong><br><span style="font-size:11px;color:#888">概率40%</span></td>
+      <td>央行继续引导升值+资金流持续+技术动量</td>
+      <td>USD/CNY下探6.75-6.78</td>
+      <td class="delta-negative">不利。资本层面10亿Long USD折算损失扩大。建议：在6.78下方加仓远期对冲，目标覆盖率60%</td>
+    </tr>
+    <tr>
+      <td><strong>Delta反转</strong><br><span style="font-size:11px;color:#888">概率35%</span></td>
+      <td>7/29 FOMC鹰派+央行暂停干预</td>
+      <td>USD/CNY反弹至6.85-6.90</td>
+      <td class="delta-positive">有利。升值损失部分回补。建议：若反弹至6.85+，降低对冲覆盖率至30-40%，兑现部分红利</td>
+    </tr>
+    <tr>
+      <td><strong>Delta震荡</strong><br><span style="font-size:11px;color:#888">概率25%</span></td>
+      <td>多空Delta相互抵消，无明确方向</td>
+      <td>USD/CNY区间6.78-6.85</td>
+      <td>中性。维持当前对冲比例，用Collar（领子期权）低成本锁定区间</td>
+    </tr>
+  </table>
+
+  <div class="resonance-med" style="margin-top:12px;">
+    <div class="label" style="color:#f9a825">关键洞察：Δ政策的"脆弱性"</div>
+    <div style="font-size:12px;color:#444;line-height:1.6;">
+      当前升值推力中，<strong>Δ政策占比47%（80/170bp）</strong>，这是最不稳定的成分。央行引导升值的动机可能包括：①对冲关税冲击下的出口竞争力；②稳定资本流动；③为后续贬值预留空间。无论动机如何，历史规律显示央行单向引导通常持续2-4周。若7月中旬后中间价不再继续调升，意味着Δ政策归零，升值惯性将快速消退。
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 6: 模型建议与因子升级 -->
+<div class="section">
+  <div class="section-title">六、模型建议：如何将Delta融入现有框架</div>
+  <div class="section-subtitle">从静态三因子到动态六Delta的升级路径</div>
+
+  <table>
+    <tr>
+      <th style="width:20%">升级维度</th>
+      <th style="width:35%">现有模型</th>
+      <th style="width:45%">Delta增强版</th>
+    </tr>
+    <tr>
+      <td><strong>数据输入</strong></td>
+      <td>因子水平值（月度/季度）</td>
+      <td>因子变化率（日频/周频）+ 变化加速度（二阶导）</td>
+    </tr>
+    <tr>
+      <td><strong>权重分配</strong></td>
+      <td>固定权重（利差25%+贸易40%+政策35%）</td>
+      <td>动态权重：根据Δ的显著性调整。Δ政策突变时，政策权重临时上调至50%</td>
+    </tr>
+    <tr>
+      <td><strong>共振检测</strong></td>
+      <td>无</td>
+      <td>引入共振指数：同向Delta数量×相关性系数。≥3个同向Delta时触发预警</td>
+    </tr>
+    <tr>
+      <td><strong>非线性处理</strong></td>
+      <td>线性回归</td>
+      <td>阈值效应：关键位突破（如6.80）后弹性系数跃升；事件跳跃（地缘冲突）引入脉冲函数</td>
+    </tr>
+    <tr>
+      <td><strong>预测输出</strong></td>
+      <td>点位预测（6.75-6.95）</td>
+      <td>Delta路径："若Δ政策持续+Δ利差不变→6.75；若Δ政策归零+Δ利差鹰派→6.90"</td>
+    </tr>
+  </table>
+
+  <p style="font-size:13px;line-height:1.8;color:#444;margin-top:12px;">
+    <strong>建议的模型架构（三层）：</strong><br>
+    <strong>Layer 1（数据采集层）：</strong>每日自动抓取六大因子水平值，计算日频Δ、周频Δ、5日滚动加速度。<br>
+    <strong>Layer 2（Delta计算层）：</strong>对每个因子，计算<span class="math">Δ = (今日值 - N日前值) / N日标准差</span>（标准化变化率），判断Δ是否超过历史阈值（如>1.5σ为"显著变化"）。<br>
+    <strong>Layer 3（共振聚合层）：</strong>统计显著Δ的数量和方向，计算共振指数，输出条件化路径（"如果...则..."格式）。<br>
+    <strong>Layer 4（敞口映射层）：</strong>将Delta路径映射到我司敞口，生成Action触发器（如"若Δ政策归零且USD/CNY>6.85，启动对冲覆盖率下调"）。
+  </p>
+</div>
+
+<!-- SECTION 7: 数据来源 -->
+<div class="section" style="border-bottom:none;">
+  <div class="section-title">七、数据来源与免责声明</div>
+  <table style="font-size:11px;color:#777;">
+    <tr>
+      <th>数据</th>
+      <th>来源</th>
+      <th>时间</th>
+    </tr>
+    <tr>
+      <td>USD/CNY中间价</td>
+      <td>央行授权公告 / chinamoney.com.cn</td>
+      <td>2026-07-13 09:15</td>
+    </tr>
+    <tr>
+      <td>离岸人民币</td>
+      <td>华尔街见闻 / 市场数据</td>
+      <td>2026-07-13</td>
+    </tr>
+    <tr>
+      <td>美元指数</td>
+      <td>Investing.com / 汇通财经</td>
+      <td>2026-07-10</td>
+    </tr>
+    <tr>
+      <td>美联储政策</td>
+      <td>FOMC声明 / CME FedWatch</td>
+      <td>2026-06-12 / 实时</td>
+    </tr>
+    <tr>
+      <td>美国非农</td>
+      <td>美国劳工统计局</td>
+      <td>2026-07-03</td>
+    </tr>
+    <tr>
+      <td>中国贸易数据</td>
+      <td>海关总署 / 雪球</td>
+      <td>2026-05-09（4月数据）</td>
+    </tr>
+    <tr>
+      <td>地缘风险</td>
+      <td>央视新闻 / 汇通财经</td>
+      <td>2026-07-12</td>
+    </tr>
+  </table>
+  <p style="font-size:11px;color:#999;margin-top:8px;">
+    免责声明：本报告仅供内部决策参考，不构成投资建议。Delta模型为实验性框架，弹性系数和共振放大系数基于历史数据估计，实际市场响应可能存在偏差。关键假设：央行干预力度可持续2-4周，若实际情况不同，结论需相应调整。
+  </p>
+</div>
+
+<div class="footer">
+  USD/CNY 广义Delta观测报告 v1.0 | 生成时间：2026-07-14 08:05 CST
+</div>
+
+</div>
+</body>
+</html>

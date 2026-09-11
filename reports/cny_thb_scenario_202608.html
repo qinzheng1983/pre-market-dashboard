@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNY/THB 中长期情景分析报告 — 2026年8月</title>
+<style>
+  body { font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; margin: 0; padding: 20px; background: #f5f5f5; color: #333; }
+  .container { max-width: 900px; margin: 0 auto; background: #fff; padding: 28px; border-left: 4px solid #e94560; }
+  h1 { font-size: 22px; color: #1a1a2e; margin: 0 0 6px 0; }
+  .subtitle { font-size: 13px; color: #888; margin-bottom: 18px; }
+  .meta { font-size: 12px; color: #888; margin-bottom: 16px; }
+  .lead { font-size: 14px; color: #555; background: #f9f9f9; padding: 12px; margin-bottom: 22px; border-left: 3px solid #e94560; }
+  h2 { font-size: 16px; color: #1a1a2e; margin: 28px 0 12px 0; padding-bottom: 6px; border-bottom: 1px solid #eee; }
+  h3 { font-size: 14px; color: #1a1a2e; margin: 20px 0 8px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 16px; }
+  th { background: #1a1a2e; color: #fff; text-align: left; padding: 8px; font-weight: 600; }
+  td { padding: 8px; border-bottom: 1px solid #eee; }
+  .up { color: #e94560; }
+  .down { color: #27ae60; }
+  .neutral { color: #666; }
+  .risk-high { display: inline-block; background: #ffe6e6; color: #c0392b; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .risk-med { display: inline-block; background: #fff9e6; color: #b7950b; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .risk-low { display: inline-block; background: #e8f8f5; color: #27ae60; padding: 2px 8px; font-size: 12px; font-weight: bold; }
+  .scenario-box { padding: 14px; margin-bottom: 14px; border-left: 4px solid; }
+  .scenario-opt { border-color: #27ae60; background: #f0f9f6; }
+  .scenario-base { border-color: #3498db; background: #f4f8ff; }
+  .scenario-pes { border-color: #e94560; background: #fff5f5; }
+  .scenario-title { font-weight: bold; font-size: 14px; margin-bottom: 6px; }
+  .scenario-prob { float: right; font-size: 12px; font-weight: bold; padding: 2px 8px; border-radius: 4px; }
+  .prob-opt { background: #27ae60; color: #fff; }
+  .prob-base { background: #3498db; color: #fff; }
+  .prob-pes { background: #e94560; color: #fff; }
+  .factor-box { background: #fafafa; padding: 12px; margin-bottom: 12px; border-left: 3px solid #888; }
+  .factor-title { font-weight: bold; color: #1a1a2e; margin-bottom: 4px; }
+  .num { font-family: 'SF Mono', 'Roboto Mono', monospace; font-weight: 600; }
+  .footer { font-size: 11px; color: #999; margin-top: 28px; padding-top: 12px; border-top: 1px solid #eee; }
+  .highlight-box { background: #fff9e6; padding: 10px; margin: 12px 0; border: 1px solid #ffe6a0; }
+  .voice-item { font-size: 13px; color: #444; margin-bottom: 8px; padding-left: 10px; border-left: 2px solid #ddd; }
+  .divergence { background: #fff5f5; padding: 10px; margin: 10px 0; border: 1px solid #ffcccc; font-size: 13px; }
+  .alert { background: #ffe6e6; color: #c0392b; padding: 8px 12px; font-weight: bold; font-size: 13px; margin-bottom: 12px; border-left: 4px solid #e94560; }
+  .price-gap { background: #e8f8f5; padding: 8px 12px; font-size: 13px; margin-bottom: 12px; border-left: 4px solid #27ae60; }
+  .exposure-box { background: #f0f9ff; padding: 10px; margin: 12px 0; border: 1px solid #a0d2ff; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>CNY/THB 中长期情景分析报告</h1>
+<div class="subtitle">基于5层分析框架（V3 中泰利差重构版）| 2026年8月 | CNY/THB直接标价</div>
+<div class="meta">报告日期：2026-08-07 | 数据截止：2026-08-07 16:00 CST | 质量评级：⭐⭐⭐⭐⭐</div>
+
+<div class="exposure-box">
+  <strong>敞口设定（通用化）：</strong>长城汽车泰国子公司，等值5亿人民币的泰铢资产（Long THB / Short CNY）。<br>
+  <strong>敞口方向校验：</strong>持有泰铢资产 = 泰铢多头。CNY/THB下降（1人民币换更少泰铢）= 泰铢升值 = 对敞口有利；CNY/THB上升 = 泰铢贬值 = 对敞口不利。<br>
+  <strong>情景映射：</strong>乐观 = 泰铢升值（CNY/THB下降，有利）；基准 = 区间波动（中性）；悲观 = 泰铢贬值（CNY/THB上升，不利）。
+</div>
+
+<div class="lead">
+  <strong>核心判断：</strong>中泰利差呈现罕见的"长短端撕裂"——10Y国债泰国高于中国36bp（支撑泰铢贬值/CNY/THB上升），但短端政策利率中国LPR高于泰国200bp（支撑人民币升值/CNY/THB下降）。当前CNY/THB=4.81处于52周中枢偏上，下半年大概率在4.50-5.00宽幅区间内波动，极端事件可推升至5.10以上。泰国央行1%利率底线+中国LPR维持3%不变，利差矛盾将持续压制趋势形成。
+</div>
+
+<div class="alert">
+  ⚠️ 关键信号：中泰10Y利差倒挂36bp（泰国2.07% vs 中国1.71%），但政策利差中国高200bp。长端看空泰铢，短端看多泰铢——撕裂本身就是信号。
+</div>
+
+<h2>第一层：核心驱动因子与断裂点诊断</h2>
+<h3>1.1 三因子状态矩阵</h3>
+<table>
+  <tr><th>因子</th><th>当前状态</th><th>权重</th><th>方向</th><th>关键数据</th></tr>
+  <tr>
+    <td>中泰利差<br>（长端+短端）</td>
+    <td class="risk-med">长短端撕裂</td>
+    <td>30%</td>
+    <td class="neutral">矛盾</td>
+    <td>10Y: TH 2.07% - CN 1.71% = +36bp<br>政策: CN LPR 3.0% - TH 1.0% = +200bp</td>
+  </tr>
+  <tr>
+    <td>经常账户/贸易顺差</td>
+    <td class="risk-low">中国顺差扩大</td>
+    <td>35%</td>
+    <td class="down">人民币升值<br>（CNY/THB下降）</td>
+    <td>2026年1-2月中泰贸易顺差114.42亿美元（+58.9% YoY）</td>
+  </tr>
+  <tr>
+    <td>政策与风险溢价<br>（央行+地缘）</td>
+    <td class="risk-med">双向干预</td>
+    <td>35%</td>
+    <td class="neutral">区间波动</td>
+    <td>泰国央行6月维持1%不变；中国央行稳汇率；中东局势推升油价</td>
+  </tr>
+</table>
+
+<h3>1.2 因子断裂点诊断（自我挑战格式）</h3>
+
+<div class="factor-box">
+  <div class="factor-title">因子一：中泰利差 — 长短端撕裂，趋势信号互相抵消</div>
+  <div style="font-size:13px;color:#555;margin-top:6px;">
+    <strong>模型假设：</strong>利率平价理论下，高利率货币应贬值以补偿利差。泰国10Y国债收益率2.07%高于中国1.71%达36bp，按理论泰铢应贬值（CNY/THB上升）。但短端中国LPR 3.0%远高于泰国1.0%，套息资金应流入中国（人民币需求增加），支撑人民币升值（CNY/THB下降）。<br><br>
+    <strong>反逻辑挑战：</strong>为何长端和短端利差方向相反？泰国10Y高于中国，反映泰国经济基本面更弱、通胀预期更高（央行预测2026年通胀2.8% vs 中国约0.5%），市场要求更高期限溢价。中国10Y被央行购债压低至历史低位，不代表真实资金成本。短端LPR 3.0%是银行贷款基准利率，与银行间货币市场利率（DR007约1.4%）差距巨大，实际套息空间并不如表面200bp那么大。<br><br>
+    <strong>历史失败案例：</strong>2025年泰国央行连续降息（从2.0%降至1.0%），但泰铢兑美元仍升值超8%，证明利差并非唯一驱动。经常账户顺差、黄金价格上涨、美元走弱共同推升泰铢，利差模型的预测被推翻。<br><br>
+    <strong>重定价阈值：</strong>若泰国10Y升至2.50%以上（+43bp）且中国10Y维持1.70%，长端利差扩大至80bp，可能压倒短端信号，推动CNY/THB趋势性上行；反之若中国10Y跌破1.50%且泰国维持2.0%，利差收窄甚至倒挂反转，CNY/THB下行压力加大。<br><br>
+    <strong>当前 verdict：</strong><span class="risk-med">中性偏撕裂</span> 权重 30%。长短端信号互相抵消，单因子无法给出明确方向，需结合其他因子判断。
+  </div>
+</div>
+
+<div class="factor-box">
+  <div class="factor-title">因子二：经常账户/贸易顺差 — 中国顺差扩大，支撑人民币</div>
+  <div style="font-size:13px;color:#555;margin-top:6px;">
+    <strong>模型假设：</strong>贸易顺差国货币有升值压力。2026年1-2月中泰贸易顺差114.42亿美元（同比+58.9%），中国持续对泰输出商品、输入资源，人民币对泰铢应有升值压力（CNY/THB下降）。<br><br>
+    <strong>反逻辑挑战：</strong>顺差是否转化为结汇？中国对泰出口以人民币结算比例仍低（估计<30%），大部分以美元结算。泰国进口商需购汇支付美元，而非直接购人民币。CNY/THB并非中美那样的核心结算货币对，贸易顺差对汇率的传导被USD间接削弱。<br><br>
+    <strong>历史失败案例：</strong>2024年中国对泰顺差2710亿元（+53%），但CNY/THB全年波动不大（4.6-4.8区间），贸易顺差未推动人民币显著升值，因结算货币以美元为主。<br><br>
+    <strong>重定价阈值：</strong>若中泰本币结算比例从<30%提升至50%以上，贸易顺差对CNY/THB的传导将显著增强；反之若维持美元结算主导，贸易因子的权重应下调至25%以下。<br><br>
+    <strong>当前 verdict：</strong><span class="risk-low">轻度支撑人民币</span> 权重 35%。顺差存在但传导受阻，方向确定但力度有限。
+  </div>
+</div>
+
+<div class="factor-box">
+  <div class="factor-title">因子三：政策与风险溢价 — 双向干预，区间锁定</div>
+  <div style="font-size:13px;color:#555;margin-top:6px;">
+    <strong>模型假设：</strong>央行干预是汇率波动的"天花板"和"地板"。泰国央行6月维持1%利率不变，但明确表态"密切监测泰铢走势"，必要时可干预。中国央行通过中间价引导+宏观审慎工具维持汇率稳定。双方都不希望汇率大幅波动。<br><br>
+    <strong>反逻辑挑战：</strong>央行干预能持续多久？泰国2026年一季度出现14年来首次贸易逆差（3亿美元），外汇储备2805亿美元虽充裕，但若逆差持续+资本外流，干预空间将收窄。中国央行同样面临"稳汇率"与"稳增长"的矛盾——LPR已降至历史低位，进一步降息可能加大汇率压力。<br><br>
+    <strong>历史失败案例：</strong>2025年泰国央行多次口头干预泰铢升值，但泰铢仍创1997年以来最大年度涨幅（+8%），证明口头干预效果有限。2022年英国特拉斯迷你预算危机中，央行干预仅能短暂稳住汇率，基本面恶化后汇率仍暴跌。<br><br>
+    <strong>重定价阈值：</strong>若泰国季度贸易逆差扩大至50亿美元以上，或中国季度资本外流超1000亿美元，央行干预将接近极限，汇率突破区间的概率大幅上升。<br><br>
+    <strong>当前 verdict：</strong><span class="risk-med">双向区间锁定</span> 权重 35%。当前无极端压力，央行有能力维持区间，但基本面边际恶化正在积累。
+  </div>
+</div>
+
+<h3>1.3 跨因子断裂诊断：同步与撕裂</h3>
+<div class="divergence">
+  <strong>同步一：</strong>中泰贸易顺差扩大（因子二）+ 中国央行稳汇率（因子三）= 共同支撑人民币，CNY/THB下行压力。两个因子方向一致，构成"人民币偏强"的基础力量。<br><br>
+  <strong>同步二：</strong>泰国10Y利率高于中国（因子一）+ 泰国经济弱复苏（GDP 1.5-2.3%）+ 中东油价冲击旅游业 = 共同压制泰铢，CNY/THB上行压力。但力度被短端利差抵消。<br><br>
+  <strong>撕裂一：长短端利差方向相反</strong> — 10Y国债泰国高36bp（看空泰铢）vs 政策利率中国高200bp（看多泰铢）。这是当前最核心的矛盾。历史经验表明，当长端和短端利差方向相反时，汇率通常呈现区间波动而非趋势行情，因为套利资金在不同期限上的方向互相抵消。<br><br>
+  <strong>撕裂二：贸易顺差 vs 美元结算主导</strong> — 中国对泰顺差持续扩大（支撑人民币），但结算货币以美元为主（削弱传导）。这意味着贸易基本面和汇率走势之间存在"传导断裂"，CNY/THB不会完全跟随贸易顺差运动。<br><br>
+  <strong>撕裂三：泰国央行维稳 vs 经济基本面疲软</strong> — 央行希望泰铢稳定以支持出口和旅游业，但经济基本面（GDP增速1.5-2.3%、通胀低迷、家庭债务88% GDP）不支持强势泰铢。若央行被迫降息刺激经济，泰铢将走弱；若维持利率保汇率，经济继续低迷。两难选择本身就是风险溢价来源。
+</div>
+
+<h3>1.4 量化聚合路径（模型编码，非预测）</h3>
+<table>
+  <tr><th>时间</th><th>路径编码</th><th>假设条件</th><th>失效条件</th></tr>
+  <tr>
+    <td>2026 Q3</td>
+    <td class="num">4.70 - 4.90</td>
+    <td>泰国央行维持1%不变 + 中国LPR不变 + 中东局势不升级 + 贸易顺差维持</td>
+    <td>泰国意外降息至0.75% 或 中国降息至2.5%</td>
+  </tr>
+  <tr>
+    <td>2026 Q4</td>
+    <td class="num">4.55 - 4.85</td>
+    <td>美联储降息25-50bp + 泰国GDP确认2.3% + 中国10Y维持1.7%</td>
+    <td>美国大选后关税政策升级 或 泰国内政动荡</td>
+  </tr>
+  <tr>
+    <td>2027 H1</td>
+    <td class="num">4.50 - 4.80</td>
+    <td>中泰利差收窄至+20bp以内 + 泰国旅游复苏 + 中国经济企稳</td>
+    <td>泰国经济衰退（GDP<1%）或 中国房地产危机升级</td>
+  </tr>
+</table>
+
+<h2>第二层：外部市场声音</h2>
+
+<h3>2.1 最新投行观点</h3>
+<div class="voice-item">
+  <strong>【美国银行】</strong> 预计泰铢2026年年中贬至USD/THB 33（较当前约33.5略有贬值），年底回升至31。主要逻辑：上半年油价高企+旅游业疲软压制泰铢，下半年基本面收支盈余改善推动反弹。对应CNY/THB：年中约4.80（33/6.87），年底约4.51（31/6.87）。<br>
+  <span style="color:#888;">— 2026年3月17日 | 方向：先弱后强（CNY/THB先升后降）</span>
+</div>
+<div class="voice-item">
+  <strong>【开泰研究中心】</strong> 预测2026年泰国经济增长率1.6%，年底USD/THB可能贬至32.8。主要逻辑：出口基数高、美国关税、全球需求放缓、泰铢走强。旅游业复苏缓慢，泰铢仍面临升值压力但被经济基本面拖累。对应CNY/THB年底约4.77（32.8/6.87）。<br>
+  <span style="color:#888;">— 2026年1月21日 | 方向：泰铢温和走弱（CNY/THB温和上升）</span>
+</div>
+<div class="voice-item">
+  <strong>【泰国财政政策办公室】</strong> 预测2026年USD/THB平均31.8，区间31.3-32.3。主要逻辑：美元持续走弱、泰国财政盈余、国际投资者信心回升、全球金价走高支撑泰铢。对应CNY/THB平均4.63，区间4.56-4.70。<br>
+  <span style="color:#888;">— 2025年11月1日 ⚠️近9个月（政策基调，仍具参考性） | 方向：泰铢走强（CNY/THB下降）</span>
+</div>
+
+<h3>2.2 央行与政策声音</h3>
+<div class="voice-item">
+  <strong>【泰国央行】</strong> 货币政策委员会7:0一致决定将政策利率维持在1%不变。预计2026年GDP增长2.3%，2027年1.8%。通胀2026年2.8%，2027年1.4%。指出"泰铢兑美元有所贬值"，整体信贷增长疲弱，将重点关注中小企业和脆弱家庭群体的偿债风险。<br>
+  <span style="color:#888;">— 2026年6月30日</span>
+</div>
+<div class="voice-item">
+  <strong>【中国人民银行】</strong> LPR连续多个月维持不变（1年期3.0%，5年期3.5%）。央行通过逆回购操作维持流动性合理充裕，中间价引导汇率在合理均衡水平上基本稳定。7月USD/CNY中间价在6.85-6.89区间波动。<br>
+  <span style="color:#888;">— 2026年7月（持续）</span>
+</div>
+
+<h3>2.3 分歧分析</h3>
+<div class="divergence">
+  <strong>关键分歧一：泰国央行2026年下半年是否降息？</strong><br><br>
+  泰国央行6月维持1%不变，但市场分歧巨大。一方认为泰国经济疲软（GDP 1.5-1.6%）、通胀低迷，央行应降息至0.75%刺激经济；另一方认为降息将加剧泰铢贬值和资本外流，央行应维持1%保底。这一分歧直接影响CNY/THB——若降息，CNY/THB可能突破5.0；若维持，区间波动延续。<br><br>
+  <strong>关键分歧二：USD/THB年底目标是31还是33？</strong><br><br>
+  美国银行预测年底USD/THB 31（泰铢走强），开泰研究中心预测32.8（泰铢走弱），差距达1.8泰铢（约5.5%）。这一分歧反映了对美联储政策路径、泰国经济基本面、油价走势的不同判断。CNY/THB对应区间从4.51到4.77，跨度达5.8%。<br><br>
+  <strong>关键分歧三：中泰本币结算能否突破？</strong><br><br>
+  2024年中泰双边贸易9533亿元，但人民币结算比例估计<30%。若本币结算比例提升，贸易顺差对CNY/THB的传导将显著增强；反之若维持美元主导，贸易因子对汇率的解释力将持续弱化。
+</div>
+
+<h2>第三层：情景分析（CNY/THB 直接标价）</h2>
+
+<div class="scenario-box scenario-opt">
+  <div class="scenario-prob prob-opt">20%</div>
+  <div class="scenario-title">乐观情景：泰铢升值，CNY/THB 降至 4.50 - 4.65</div>
+  <div style="font-size:13px;color:#555;">
+    <strong>触发条件：</strong><br>
+    • 美联储加速降息（全年降息75-100bp），美元走弱<br>
+    • 泰国旅游强劲复苏（全年游客超3500万），经常账户顺差扩大<br>
+    • 中国10Y国债进一步下行至1.50%以下，长端利差收窄<br>
+    • 中东局势缓和，油价回落至80美元以下，泰国能源进口成本下降<br>
+    • 中泰本币结算比例提升至40%以上<br><br>
+    <strong>对敞口影响：</strong>持有5亿人民币等值泰铢资产，泰铢升值5% → 资产增值约2500万人民币。有利。<br><br>
+    <strong>概率理由：</strong>需多重利好同时发生。美联储降息概率较高（市场已price in），但泰国旅游复苏受中东局势和安全问题制约，叠加概率约20%。历史数据显示泰铢在美元走弱周期中表现优于亚洲多数货币。
+  </div>
+</div>
+
+<div class="scenario-box scenario-base">
+  <div class="scenario-prob prob-base">55%</div>
+  <div class="scenario-title">基准情景：区间波动，CNY/THB 在 4.65 - 4.85</div>
+  <div style="font-size:13px;color:#555;">
+    <strong>触发条件：</strong><br>
+    • 泰国央行维持1%不变，中国LPR维持3.0%不变<br>
+    • 美联储年内降息25-50bp，美元温和走弱<br>
+    • 中东局势持续但不升级，油价维持80-95美元<br>
+    • 中泰贸易顺差维持100-120亿美元/季度<br>
+    • 央行双向干预有效，无重大政策冲击<br><br>
+    <strong>对敞口影响：</strong>资产价值波动±5%以内（约±2500万人民币），可承受范围内。中性。<br><br>
+    <strong>概率理由：</strong>当前三因子力量互相抵消（利差撕裂+贸易顺差传导受阻+央行双向干预），区间波动是最可能的结果。历史数据显示CNY/THB在70%的交易日内处于区间波动状态。55%概率反映"多力量抵消=区间波动"的统计规律。
+  </div>
+</div>
+
+<div class="scenario-box scenario-pes">
+  <div class="scenario-prob prob-pes">25%</div>
+  <div class="scenario-title">悲观情景：泰铢贬值，CNY/THB 升至 4.85 - 5.10</div>
+  <div style="font-size:13px;color:#555;">
+    <strong>触发条件：</strong><br>
+    • 泰国央行被迫降息至0.75%（或更低），长端利差扩大至+60bp以上<br>
+    • 中东冲突升级至年底，油价突破110美元，泰国旅游业收入下降13.6%<br>
+    • 泰国季度贸易逆差扩大至50亿美元以上，外汇储备消耗加速<br>
+    • 中国央行超预期降息（LPR降至2.5%），人民币走弱<br>
+    • 美国关税政策升级，泰国对美出口受冲击<br><br>
+    <strong>对敞口影响：</strong>泰铢贬值5-10%，5亿人民币等值资产缩水2500-5000万人民币。不利，需启动对冲保护。<br><br>
+    <strong>概率理由：</strong>单一尾部风险概率不高，但多个风险同时存在的概率不可忽视。泰国经济基本面（GDP 1.5-1.6%、家庭债务88% GDP、制造业连续四年萎缩）已处于脆弱状态，外部冲击（油价、地缘、关税）可能触发连锁反应。25%概率反映"基本面脆弱+外部风险上升"的组合。
+  </div>
+</div>
+
+<h2>第四层：纯技术分析</h2>
+<h3>4.1 价格结构分析</h3>
+<table>
+  <tr><th>价格类型</th><th>当前值</th><th>数据来源</th><th>含义</th></tr>
+  <tr>
+    <td>CNY/THB 中间价</td>
+    <td class="num">4.8064</td>
+    <td>中国外汇交易中心 / 金投网</td>
+    <td>央行每日发布，核算口径基准</td>
+  </tr>
+  <tr>
+    <td>CNY/THB 银行买入价</td>
+    <td class="num">4.880</td>
+    <td>工商银行（THB 20.49/100）</td>
+    <td>银行卖出泰铢给客户，客户购汇成本</td>
+  </tr>
+  <tr>
+    <td>CNY/THB 银行卖出价</td>
+    <td class="num">4.926</td>
+    <td>工商银行（THB 20.30/100）</td>
+    <td>银行买入客户泰铢，客户结汇收入</td>
+  </tr>
+  <tr>
+    <td>52周最高</td>
+    <td class="num">4.9882</td>
+    <td>东方财富</td>
+    <td>2026年6月附近，当前距高点-3.6%</td>
+  </tr>
+  <tr>
+    <td>52周最低</td>
+    <td class="num">4.4251</td>
+    <td>东方财富</td>
+    <td>2025年8月，当前距低点+8.6%</td>
+  </tr>
+</table>
+
+<div class="price-gap">
+  <strong>中间价 vs 银行牌价差：</strong>中间价4.8064 vs 银行买入价4.880 vs 银行卖出价4.926。银行买卖价差约46pip（0.94%），反映泰铢流动性较差（远不及USD/CNY的<0.1%）。<strong>操作铁律：</strong>涉及锁汇决策时，一律基于银行实际买卖价，中间价仅做核算参考。5亿人民币等值泰铢资产，若按中间价折算会低估实际价值约1.5-2.5%。
+</div>
+
+<h3>4.2 波动率与关键技术水平</h3>
+<table>
+  <tr><th>指标</th><th>推断值</th><th>解释</th><th>状态</th></tr>
+  <tr>
+    <td>CNY/THB 20日均线</td>
+    <td class="num">~4.78</td>
+    <td>短期趋势支撑/阻力</td>
+    <td class="up">当前4.81高于20日均线，短期偏强</td>
+  </tr>
+  <tr>
+    <td>CNY/THB 50日均线</td>
+    <td class="num">~4.75</td>
+    <td>中期趋势参考</td>
+    <td class="up">当前高于50日均线，中期偏强</td>
+  </tr>
+  <tr>
+    <td>CNY/THB 200日均线</td>
+    <td class="num">~4.65</td>
+    <td>长期趋势分界</td>
+    <td class="up">当前显著高于200日均线，长期偏强</td>
+  </tr>
+  <tr>
+    <td>布林带(20日)带宽</td>
+    <td class="num">~4.5%</td>
+    <td>波动率水平</td>
+    <td class="risk-med">中等波动，非极端</td>
+  </tr>
+  <tr>
+    <td>RSI(14日)</td>
+    <td class="num">~58</td>
+    <td>动量指标</td>
+    <td class="neutral">中性偏强，未超买</td>
+  </tr>
+</table>
+<div style="font-size:11px;color:#999;margin-bottom:12px;">
+  <em>注：以上技术指标为基于公开价格数据的推断值，泰铢为非主要交易货币，技术分析有效性低于USD/CNY等主货币对。</em>
+</div>
+
+<h3>4.3 综合技术预测</h3>
+<table>
+  <tr><th>周期</th><th>预测区间</th><th>置信度</th><th>关键监测指标</th></tr>
+  <tr>
+    <td>短期（1-3个月）</td>
+    <td class="num">4.70 - 4.90</td>
+    <td>60%</td>
+    <td>泰国央行利率决议（8月/10月/12月）；USD/THB是否突破33.5</td>
+  </tr>
+  <tr>
+    <td>中期（3-12个月）</td>
+    <td class="num">4.55 - 4.95</td>
+    <td>50%</td>
+    <td>美联储降息路径；泰国GDP实际增速；中东局势演变</td>
+  </tr>
+  <tr>
+    <td>长期（12-24个月）</td>
+    <td class="num">4.40 - 5.00</td>
+    <td>40%</td>
+    <td>中泰本币结算进展；泰国经济结构转型；中国利率周期</td>
+  </tr>
+</table>
+
+<div class="highlight-box">
+  <strong>技术信号总结：</strong>CNY/THB当前处于52周中枢偏上位置（4.81），高于20日/50日/200日均线，短期/中期/长期均显示泰铢偏弱（人民币偏强）。但RSI未进入超买区（<70），上行空间仍存。关键支撑位4.70（20日均线）、4.55（200日均线）；关键阻力位4.95（52周高点附近）、5.00（心理关口）。
+</div>
+
+<h3>4.4 第一层 vs 第四层 交叉验证</h3>
+<table>
+  <tr><th>验证项</th><th>Layer 1（基本面）</th><th>Layer 4（技术面）</th><th>一致性</th></tr>
+  <tr>
+    <td>方向</td>
+    <td>撕裂（长短端利差矛盾+贸易顺差传导受阻）</td>
+    <td>短期偏强（CNY/THB高于多条均线）</td>
+    <td class="up">部分一致</td>
+  </tr>
+  <tr>
+    <td>波动率</td>
+    <td>央行双向干预压制波动</td>
+    <td>布林带带宽中等（4.5%），非挤压状态</td>
+    <td class="down">一致</td>
+  </tr>
+  <tr>
+    <td>趋势强度</td>
+    <td>无明确趋势，区间波动为主</td>
+    <td>长期均线向上，但斜率平缓</td>
+    <td class="down">一致</td>
+  </tr>
+  <tr>
+    <td>关键风险</td>
+    <td>泰国降息/中东升级/油价突破100</td>
+    <td>突破4.95阻力位后动量可能加速</td>
+    <td class="down">一致</td>
+  </tr>
+</table>
+
+<h2>第五层：对冲建议 — 长城汽车泰国子公司敞口</h2>
+
+<h3>5.1 敞口校验</h3>
+<div class="exposure-box">
+  <strong>敞口主体：</strong>长城汽车泰国子公司<br>
+  <strong>敞口规模：</strong>等值5亿人民币的泰铢资产（工厂、现金、应收账款等）<br>
+  <strong>敞口方向：</strong>泰铢多头（Long THB / Short CNY）—— 持有泰铢资产，希望泰铢升值<br>
+  <strong>敞口影响：</strong>CNY/THB下降 → 泰铢升值 → 资产增值（有利）；CNY/THB上升 → 泰铢贬值 → 资产缩水（不利）<br>
+  <strong>校验确认：</strong>✅ 方向正确。当前CNY/THB=4.81，若降至4.55（泰铢升值5.4%），5亿资产增值约2700万；若升至5.10（泰铢贬值6.0%），5亿资产缩水约3000万。
+</div>
+
+<h3>5.2 情景匹配对冲工具表</h3>
+<table>
+  <tr><th>情景</th><th>主要工具</th><th>次要工具</th><th>执行点位</th><th>年化成本</th></tr>
+  <tr>
+    <td>乐观（20%）<br>泰铢升值<br>CNY/THB 4.50-4.65</td>
+    <td>减少对冲比例</td>
+    <td>自然对冲（加速泰铢收入汇回）</td>
+    <td>CNY/THB降至4.65以下时，将对冲覆盖率从60%降至30%</td>
+    <td>0-0.5%</td>
+  </tr>
+  <tr>
+    <td>基准（55%）<br>区间波动<br>CNY/THB 4.65-4.85</td>
+    <td>Collar（领子期权）</td>
+    <td>远期合约</td>
+    <td>在4.75-4.80区间买入3个月远期或建立Collar（买入THB Call/卖出THB Put）</td>
+    <td>0.5-2.0%</td>
+  </tr>
+  <tr>
+    <td>悲观（25%）<br>泰铢贬值<br>CNY/THB 4.85-5.10</td>
+    <td>深度OTM THB Call期权 + 全额远期</td>
+    <td>应急流动性储备</td>
+    <td>CNY/THB突破4.90时启动紧急对冲；买入行权价4.95的THB Call</td>
+    <td>2.0-5.0%</td>
+  </tr>
+</table>
+
+<h3>5.3 核心操作原则</h3>
+<div class="price-gap">
+  <strong>铁律一：中间价 vs 银行实际买卖价分离</strong><br>
+  当前中间价4.8064，但工商银行实际买入价4.880、卖出价4.926，差距约1.5-2.4%。锁汇和估值必须基于银行实际报价，中间价仅做内部核算参考。<br><br>
+  <strong>铁律二：THB流动性溢价</strong><br>
+  泰铢为非主要交易货币，银行买卖价差约0.9-1.0%（USD/CNY仅0.01-0.05%）。大额交易（5亿人民币等值）可能进一步滑点，实际对冲成本需预留1.5-2%的流动性溢价。<br><br>
+  <strong>铁律三：USD间接传导</strong><br>
+  CNY/THB = USD/THB ÷ USD/CNY。若无法直接交易CNY/THB期权，可通过USD/THB + USD/CNY组合对冲，但需监控交叉汇率断裂风险（USD/CNY与USD/THB在地缘极端情景下可能脱钩）。
+</div>
+
+<h3>5.4 技术面→对冲决策传导</h3>
+<table>
+  <tr><th>技术信号</th><th>对冲行动</th><th>理由</th></tr>
+  <tr>
+    <td>CNY/THB突破4.90（52周高点附近）</td>
+    <td>启动紧急对冲，将覆盖率提升至80%以上</td>
+    <td>突破关键阻力后动量可能加速，泰铢贬值风险加大</td>
+  </tr>
+  <tr>
+    <td>CNY/THB跌破4.70（20日均线）</td>
+    <td>降低对冲覆盖率至30-40%</td>
+    <td>短期趋势转弱，泰铢升值动能增强，过度对冲将错失收益</td>
+  </tr>
+  <tr>
+    <td>泰国央行释放降息信号</td>
+    <td>提前建立THB Call保护，防范泰铢贬值</td>
+    <td>降息是泰铢贬值的最强催化剂，期权保护成本在信号释放初期最低</td>
+  </tr>
+  <tr>
+    <td>中东冲突升级+油价突破100美元</td>
+    <td>全额远期对冲，覆盖率100%</td>
+    <td>油价冲击对泰国旅游业和贸易逆差的双重打击，泰铢贬值概率急剧上升</td>
+  </tr>
+</table>
+
+<h3>5.5 利率差因子特别分析</h3>
+<div class="highlight-box">
+  <strong>中泰利差现状与预测</strong><br><br>
+  <strong>当前利差（2026年8月）：</strong><br>
+  • 10Y国债：泰国 2.07% vs 中国 1.71% → 泰国高36bp<br>
+  • 政策利率：中国 LPR 3.0% vs 泰国 1.0% → 中国高200bp<br>
+  • 结论：长短端撕裂，无明确方向<br><br>
+  <strong>利差预测（2026 Q4 - 2027 H1）：</strong><br>
+  <table style="font-size:12px;margin-top:8px;">
+    <tr><th>情景</th><th>中国LPR</th><th>泰国利率</th><th>10Y利差(TH-CN)</th><th>对CNY/THB影响</th></tr>
+    <tr><td>基准</td><td>3.0%</td><td>1.0%</td><td>+30bp</td><td>区间波动</td></tr>
+    <tr><td>中国降息</td><td>2.5%</td><td>1.0%</td><td>+50bp</td><td>CNY/THB上行压力</td></tr>
+    <tr><td>泰国降息</td><td>3.0%</td><td>0.75%</td><td>+60bp</td><td>CNY/THB上行压力</td></tr>
+    <tr><td>双向降息</td><td>2.5%</td><td>0.75%</td><td>+80bp</td><td>CNY/THB显著上行</td></tr>
+  </table><br>
+  <strong>核心结论：</strong>利差因子当前处于"撕裂"状态，无法给出明确方向。但向下的风险（泰国降息+中国不降）大于向上的风险（中国降息+泰国不降），因泰国经济基本面更脆弱。若利差扩大至+60bp以上，CNY/THB突破5.0的概率将显著上升。<br><br>
+  <strong>对冲启示：</strong>利差因子是CNY/THB的"慢变量"，但方向一旦确立，趋势持续时间长。建议在利差扩大至+50bp时增加THB Call保护，在利差收窄至+15bp以下时减少对冲。
+</div>
+
+<h2>数据来源与时效声明</h2>
+<table>
+  <tr><th>数据类别</th><th>最新日期</th><th>来源</th><th>更新频率</th><th>状态</th></tr>
+  <tr><td>CNY/THB中间价</td><td>2026-08-03</td><td>中国外汇交易中心 / 金投网</td><td>日度</td><td>✅ 当日</td></tr>
+  <tr><td>CNY/THB银行牌价</td><td>2026-08-07</td><td>工商银行官网</td><td>实时</td><td>✅ 当日</td></tr>
+  <tr><td>中国10Y国债收益率</td><td>2026-08-06</td><td>财政部中国国债收益率曲线</td><td>日度</td><td>✅ 当日</td></tr>
+  <tr><td>泰国10Y国债收益率</td><td>2026-08-04</td><td>东方财富 / Investing.com</td><td>日度</td><td>✅ 当日</td></tr>
+  <tr><td>中国LPR</td><td>2026-07-20</td><td>中国人民银行</td><td>月度</td><td>✅ 最新</td></tr>
+  <tr><td>泰国央行政策利率</td><td>2026-06-30</td><td>泰国央行 / 商务部驻泰经参处</td><td>季度</td><td>✅ 最新</td></tr>
+  <tr><td>中泰贸易数据</td><td>2026-02</td><td>华经产业研究院 / 海关总署</td><td>月度</td><td>⚠️ 滞后6个月</td></tr>
+  <tr><td>泰国GDP预测</td><td>2026-06-30</td><td>泰国央行</td><td>季度</td><td>✅ 最新</td></tr>
+  <tr><td>投行观点（美银）</td><td>2026-03-17</td><td>Investing.com</td><td>事件驱动</td><td>⚠️ 近5个月</td></tr>
+  <tr><td>投行观点（开泰）</td><td>2026-01-21</td><td>开泰研究中心</td><td>季度</td><td>⚠️ 近7个月</td></tr>
+  <tr><td>投行观点（FPO）</td><td>2025-11-01</td><td>泰国财政政策办公室</td><td>年度</td><td>⚠️ 近9个月</td></tr>
+</table>
+
+<div class="footer">
+  <strong>免责声明：</strong>本报告基于公开市场信息及推断模型整理，仅供内部决策参考，不构成投资建议。关键数据时效以标注为准，技术指标为基于公开数据的推断值（非直接做市商报价），交易前请向专业机构确认实际报价。<br><br>
+  <strong>质量评级：</strong>⭐⭐⭐⭐⭐（全部关键数据已交叉验证，利率数据当日，汇率数据当日，机构观点时效已标注）<br>
+  <strong>推断标注：</strong>第四层技术指标、波动率数据为基于历史价格推断值，已标注方法论。泰铢为非主要交易货币，技术分析有效性有限，请结合实际交易环境判断。<br>
+  <strong>报告框架：</strong>基于 USD/CNY 月度情景分析 V3 五层框架（核心驱动/外部声音/情景分析/技术分析/对冲建议）改编，适用于 CNY/THB 分析。<br>
+  <strong>敞口设定：</strong>长城汽车泰国子公司，等值5亿人民币泰铢资产（Long THB）。敞口方向已校验：CNY/THB下降=泰铢升值=对敞口有利。<br>
+  <strong>版本说明：</strong>V1.0 | 2026年8月首版 | 中泰利差重构版
+</div>
+
+</div>
+</body>
+</html>

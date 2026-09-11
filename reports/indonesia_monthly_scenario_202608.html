@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼市场月度情景分析 — 2026年8月（V3 技术重构版）</title>
+<style>
+  body { margin:0; padding:20px; font-family: 'Microsoft YaHei','PingFang SC','Hiragino Sans GB',sans-serif; background:#f5f5f5; color:#333; font-size:14px; line-height:1.6; }
+  .container { max-width:960px; margin:0 auto; background:#fff; border-radius:4px; box-shadow:0 2px 8px rgba(0,0,0,0.08); }
+  .header { background:#1a1a2e; color:#fff; padding:24px 28px; border-radius:4px 4px 0 0; }
+  .header h1 { margin:0 0 8px; font-size:20px; font-weight:600; letter-spacing:0.5px; }
+  .header .meta { font-size:12px; color:#a0a0b0; margin:0; }
+  .header .rating { display:inline-block; margin-top:8px; font-size:13px; color:#ffd700; font-weight:600; }
+  .section { padding:22px 28px; border-bottom:1px solid #eee; }
+  .section:last-child { border-bottom:none; border-radius:0 0 4px 4px; }
+  .section-title { margin:0 0 14px; font-size:16px; font-weight:600; color:#1a1a2e; border-left:3px solid #e94560; padding-left:10px; }
+  .section-subtitle { margin:16px 0 10px; font-size:14px; font-weight:600; color:#444; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:10px 0; }
+  th { background:#1a1a2e; color:#fff; padding:9px 10px; text-align:left; font-weight:500; border:1px solid #1a1a2e; }
+  td { padding:9px 10px; border:1px solid #ddd; vertical-align:top; }
+  tr:nth-child(even) td { background:#fafafa; }
+  .cell-red { background:#ffe6e6 !important; color:#c0392b; font-weight:600; }
+  .cell-yellow { background:#fff9e6 !important; color:#b7950b; font-weight:600; }
+  .cell-green { background:#e8f8f5 !important; color:#27ae60; font-weight:600; }
+  .cell-bold { font-weight:600; }
+  .scenario-box { border:1px solid #ddd; border-left:4px solid #3498db; padding:14px 16px; margin:12px 0; background:#fafafa; }
+  .scenario-box.opt { border-left-color:#27ae60; }
+  .scenario-box.base { border-left-color:#f39c12; }
+  .scenario-box.pes { border-left-color:#e94560; }
+  .scenario-title { font-weight:600; font-size:14px; margin:0 0 8px; color:#1a1a2e; }
+  .scenario-prob { float:right; font-size:12px; padding:2px 8px; border-radius:2px; font-weight:600; }
+  .scenario-prob.opt { background:#e8f8f5; color:#27ae60; }
+  .scenario-prob.base { background:#fff9e6; color:#b7950b; }
+  .scenario-prob.pes { background:#ffe6e6; color:#c0392b; }
+  .footer { padding:18px 28px; background:#f8f8f8; border-top:1px solid #eee; font-size:12px; color:#777; }
+  .footer table { font-size:11px; }
+  .footer th { background:#555; padding:6px 8px; font-size:11px; }
+  .footer td { padding:6px 8px; font-size:11px; }
+  p { margin:8px 0; }
+  .highlight { background:#fff9e6; padding:10px 14px; border-left:3px solid #f39c12; margin:10px 0; }
+  .warning { background:#ffe6e6; padding:10px 14px; border-left:3px solid #e94560; margin:10px 0; color:#c0392b; }
+  .breakdown { background:#f0f4f8; padding:12px 16px; border-left:3px solid #3498db; margin:10px 0; }
+  .clearfix::after { content:""; display:table; clear:both; }
+  .model-chart { width:100%; border-collapse:collapse; margin:12px 0; }
+  .model-chart td { text-align:center; padding:8px; border:1px solid #ddd; }
+  .model-chart .month { font-size:11px; color:#888; }
+  .model-chart .rate { font-size:15px; font-weight:700; color:#1a1a2e; }
+  .model-chart .change { font-size:11px; color:#c0392b; }
+  .model-chart tr:first-child td { background:#1a1a2e; color:#fff; font-size:12px; font-weight:500; }
+  .diagnosis-label { display:inline-block; font-size:11px; padding:2px 8px; border-radius:2px; font-weight:600; margin-right:6px; }
+  .diag-broken { background:#ffe6e6; color:#c0392b; }
+  .diag-fragile { background:#fff9e6; color:#b7950b; }
+  .diag-active { background:#e8f8f5; color:#27ae60; }
+  .tech-panel { background:#f0f8ff; border:1px solid #3498db; padding:14px; margin:12px 0; }
+  .tech-panel .tech-title { color:#1a5276; font-weight:600; font-size:14px; margin:0 0 10px; }
+  .tech-number { font-size:16px; font-weight:700; color:#1a5276; }
+  .risk-event { border:1px solid #ddd; border-left:4px solid #e94560; padding:12px 14px; margin:10px 0; background:#fff; }
+  .risk-event .event-title { font-weight:600; font-size:13px; color:#1a1a2e; margin:0 0 6px; }
+  .risk-event .event-date { font-size:11px; color:#888; margin-bottom:6px; }
+  .risk-event .event-impact { font-size:12px; color:#c0392b; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>印尼市场月度情景分析（V3 · 技术重构版 · 数据修正版）</h1>
+    <p class="meta">报告日期：2026年8月25日 | 数据截止：2026年8月24日 | 币种对：USD/IDR</p>
+    <p class="meta">框架版本：因子诊断 × 技术曲面 × 情景映射 | 本期特增：下半年重点风险事件预判</p>
+    <p class="meta" style="color:#ffd700;"><strong>数据修正说明（2026-08-25 18:00）：</strong>USD/IDR从18,100修正为17,710（Yahoo/BCA/Revolut三源验证）；BI Rate确认5.75%（7月RDG维持）；新增Q2经常账户赤字125亿美元（历史新高）；油价从$105-110修正为$90；CDS从~120bp回落至84bp</p>
+    <span class="rating">质量评级：四星（★★★★☆）— 主要数据已交叉验证（Yahoo Finance、BCA e-Rate、Revolut多源确认USD/IDR 17,710；Q2经常账户赤字125亿美元为关键新增数据）</span>
+  </div>
+
+  <!-- SECTION 1: 核心驱动因子 + 断裂点诊断 -->
+  <div class="section">
+    <div class="section-title">第一层：核心驱动因子与断裂点诊断</div>
+    <p>以下不输出确定性结论，而是暴露每个因子的<strong>内在逻辑矛盾</strong>、<strong>市场重新定价节点</strong>和<strong>反逻辑挑战</strong>。因子可以是客观的，但因子之间的权重分配是主观的——而权重正是当前市场分歧的根源。</p>
+
+    <!-- 因子状态矩阵 -->
+    <div class="section-subtitle">1.1 三因子状态矩阵（客观读数）</div>
+    <table>
+      <tr>
+        <th style="width:14%">驱动因子</th>
+        <th style="width:18%">当前状态</th>
+        <th style="width:10%">信号</th>
+        <th style="width:28%">关键数据</th>
+        <th style="width:15%">市场定价假设</th>
+        <th style="width:15%">数据来源</th>
+      </tr>
+      <tr>
+        <td class="cell-bold">利差因子</td>
+        <td>套息空间收窄但未归零，BI按兵不动</td>
+        <td class="cell-yellow">中性</td>
+        <td>BI Rate 5.75%（7/19维持不变）· Fed 5.25-5.50% · DF 4.75% / LF 6.50%<br>印尼-USD利差收窄至约25bp，8月RDG按兵不动确认政策观望</td>
+        <td class="cell-yellow">市场<b>部分定价</b>利差</td>
+        <td>印尼央行、Reuters</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">经常账户韧性</td>
+        <td>Q2赤字创历史纪录，但H1仍存顺差</td>
+        <td class="cell-red">承压</td>
+        <td>Q2经常账户赤字125亿美元（占GDP 3.3%，历史新高）· H1顺差35.8亿美元 · 5月赤字16.1亿（结束72个月顺差）· 6月赤字4.5亿<br>出口+4.13% YoY vs 进口+18.69% YoY · 中国逆差24.7亿（最大来源）</td>
+        <td class="cell-yellow">市场定价"双赤字回归"</td>
+        <td>BPS、海关总署、ANTARA</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">风险溢价</td>
+        <td>IDR从历史低位反弹，央行换帅不确定性仍存</td>
+        <td class="cell-yellow">缓和</td>
+        <td>USD/IDR从18,111（8/8）反弹至17,710（8/24）· Perry Warjiyo 7/25离职 · Destry Damayanti代理<br>购汇上限5万→2.5万收紧 · Danantara SWF Rating仅4% · CDS回落至84bp</td>
+        <td class="cell-yellow">市场<b>部分定价</b>风险</td>
+        <td>BI、Tempo、路孚特</td>
+      </tr>
+    </table>
+
+    <!-- 断裂点诊断 -->
+    <div class="section-subtitle">1.2 因子模型断裂点诊断（自我挑战）</div>
+    <p style="font-size:12px; color:#666; margin-bottom:10px;">每个因子列出：① 模型假设 ② 反逻辑挑战 ③ 历史失效案例 ④ 重新定价节点。当多个因子同时断裂时，模型输出不可信。</p>
+
+    <!-- 利差因子断裂 -->
+    <div class="breakdown">
+      <p style="margin:0 0 8px;"><span class="diagnosis-label diag-fragile">脆弱：利差因子</span><strong>假设</strong>：央行加息 → 资本回流 → 本币升值</p>
+      <table style="margin:6px 0; font-size:12px;">
+        <tr><td style="width:20%; border:none; background:transparent; font-weight:600;">反逻辑挑战</td><td style="border:none; background:transparent;">BI 5月-7月累计加息100bp至5.75%，随后7月RDG维持不变，IDR从6月的18,209跌至8月初的18,111，但随后反弹至8月24日的17,710。加息在初期失效，但随着油价回落至$90区间、BI维持高利率，IDR在8月中旬后出现企稳反弹。新任代理行长Destry Damayanti面临"加息伤增长、不加息伤汇率"的两难——Q1 GDP仍强劲（5.61% YoY），但增长与汇率的权衡空间正在收窄。7月通胀2.88%虽在目标区间，但Pertamax燃油6月初已涨价32%，通胀滞后效应未完全显现。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">历史失效</td><td style="border:none; background:transparent;">2013年Taper Tantrum：BI加息175bp，IDR仍贬值20%。2026年6月：BI连番加息至5.75%，IDR却在6/9创历史新低18,209。当主权风险溢价>政策利率传导力时，利差因子对EM货币完全失效。但8月的反弹表明，当油价回落+央行按兵不动确认政策稳定后，利差因子可能缓慢恢复部分效力。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">重新定价节点</td><td style="border:none; background:transparent;">如果BI在9-10月RDG中维持5.75%不变（不再加息），且同时出现CDS回落或IDR企稳信号，市场可能重新评估利差因子的权重。当前BI更可能选择"维持+口头干预"的保守路径。量化阈值：BI Rate维持5.75% AND USD/IDR周度收盘<17,800连续2周。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">当前 verdict</td><td style="border:none; background:transparent; color:#b7950b; font-weight:600;">从断裂中缓慢恢复。利差因子权重从0%回升至约20%。8月IDR反弹+油价回落+CDS下降，标志着市场对BI政策的信心边际改善。</td></tr>
+      </table>
+    </div>
+
+    <!-- 经常账户断裂 -->
+    <div class="breakdown">
+      <p style="margin:0 0 8px;"><span class="diagnosis-label diag-fragile">脆弱：经常账户韧性</span><strong>假设</strong>：连续顺差 → 基本面支撑本币</p>
+      <table style="margin:6px 0; font-size:12px;">
+        <tr><td style="width:20%; border:none; background:transparent; font-weight:600;">反逻辑挑战</td><td style="border:none; background:transparent;">H1顺差35.8亿是"存量"，但Q2赤字125亿美元（3.3% GDP，历史新高）是"流量断裂"。5-6月连续赤字敲响了警钟。进口增速（+18.69%）是出口增速（+4.13%）的4.5倍。石油净进口国身份在油价$90环境下负担减轻（从$105-110回落），但Q2的巨额赤字已成事实。镍出口中国+69% YoY（28亿美元）是亮点，但这恰恰暴露了"单一商品依赖+单一市场依赖"的脆弱性。如果中国镍需求放缓或LME镍价回落（当前已降至~16,940），顺差可能快速逆转为逆差。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">历史失效</td><td style="border:none; background:transparent;">印尼2011年经常账户盈余+0.2%GDP，但2013年转为-3.2% deficit，IDR同期贬值26%。"连续顺差"到"突然逆差"的切换，EM市场通常只给1-2个季度预警。当前Q2赤字125亿是一个更严重的警告——这意味着全年经常账户可能从顺差转为大幅逆差。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">重新定价节点</td><td style="border:none; background:transparent;">如果7-8月BPS数据确认Q3继续恶化，或全年经常账户赤字占GDP>2.5%，市场将从"IDR已企稳"切换到"反弹是暂时的"模式。量化阈值：月度赤字连续3个月，或全年经常账户赤字占GDP>2.5%。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">当前 verdict</td><td style="border:none; background:transparent; color:#b7950b; font-weight:600;">脆弱中。经常账户因子权重约15-20%。Q2巨额赤字是致命伤——即使8月IDR反弹，也难以掩盖基本面的恶化。"H1顺差存在"不等于"本币有支撑"——市场已经在交易下半年的逆差预期。</td></tr>
+      </table>
+    </div>
+
+    <!-- 风险溢价主导 -->
+    <div class="breakdown">
+      <p style="margin:0 0 8px;"><span class="diagnosis-label diag-active">主导：风险溢价</span><strong>假设</strong>：央行换帅 + Danantara不确定性 + 地缘风险 → 本币贬值压力</p>
+      <table style="margin:6px 0; font-size:12px;">
+        <tr><td style="width:20%; border:none; background:transparent; font-weight:600;">反逻辑挑战</td><td style="border:none; background:transparent;">风险溢价当前权重约60-65%，但已从7-8月初的85%下降。IDR已贬值约7%（从年初~16,777到8/8的18,111），部分利空已price in。8月中旬后IDR反弹至17,710，CDS从~120bp回落至84bp，表明市场在重新评估风险。如果9月Danantara综合出口监管平台上线后执行超预期透明，或新行长获得市场信任，IDR可能继续"卖事实"反弹。问题是："利空出尽"和"继续恶化"之间，哪个概率更高？历史经验表明，EM货币在制度变革期的"利空出尽"反弹需要6-12个月的验证期，短期（3个月内）更可能维持区间震荡。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">历史失效</td><td style="border:none; background:transparent;">风险溢价因子在EM中极少"失效"——它通常是最晚失效的因子。但存在反例：2016年印尼CDS从150bp回落至80bp，IDR同期升值12%，因为Jokowi改革红利兑现。风险溢价因子的失效条件是：<b>出现一个被市场认可的制度性改善信号</b>。当前Destry Damayanti代理行长需要快速建立市场信任。8月的CDS回落和IDR反弹可能是早期信号，但需持续验证。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">重新定价节点</td><td style="border:none; background:transparent;">上行（更差）：Danantara 9月平台上线后执行混乱 + 中东地缘升级（以色列重启战争）+ CDS突破100bp。下行（更好）：新行长确认 + Danantara透明化 + 贸易顺差恢复>10亿/月。量化阈值：Danantara执行评分（Global SWF Rating）从4%提升至>30%，或单月顺差恢复>15亿美元，或CDS持续<80bp。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">当前 verdict</td><td style="border:none; background:transparent; color:#b7950b; font-weight:600;">主导地位减弱，权重从85%降至约60-65%。8月IDR反弹+CDS回落表明风险溢价正在边际收窄，但央行换帅不确定性仍在。风险溢价是当前最重要的因子，但不再是唯一因子。</td></tr>
+      </table>
+    </div>
+
+    <!-- 跨因子断裂：相关性 -->
+    <div class="warning">
+      <p style="margin:0 0 8px; font-weight:600;">跨因子断裂：USD/IDR vs USD/CNY 相关性假设</p>
+      <table style="margin:6px 0; font-size:12px;">
+        <tr><td style="width:20%; border:none; background:transparent; font-weight:600;">模型假设</td><td style="border:none; background:transparent;">用USD/CNY远期间接对冲IDR风险，假设USD/IDR和USD/CNY正相关、同向波动。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">反逻辑挑战</td><td style="border:none; background:transparent;">压力测试：USD/IDR +20%（→21,600），USD/CNY +2%（→7.0）→ IDR/CNY贬值25%。历史正相关在此场景完全破裂。为什么？因为USD对IDR的升值被印尼特有的风险溢价放大，而USD对CNY的升值被中国央行的逆周期因子抑制。两个USD不是同一个USD。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">重新定价节点</td><td style="border:none; background:transparent;">如果USD/CNY中间价突破7.0，中国央行可能启动逆周期因子或宏观审慎参数调整，这将进一步拉大USD/IDR和USD/CNY的分化。量化阈值：USD/CNY中间价 > 7.0。</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">当前 verdict</td><td style="border:none; background:transparent; color:#c0392b; font-weight:600;">相关性在极端场景下不可靠。任何基于"间接对冲"的敞口管理，必须单独建模USD/IDR尾部风险。</td></tr>
+      </table>
+    </div>
+
+    <!-- 因子模型自检清单 -->
+    <div class="section-subtitle">1.3 因子模型自检清单（当前假设 vs 历史失效）</div>
+    <table>
+      <tr>
+        <th style="width:25%">模型假设</th>
+        <th style="width:25%">当前是否成立</th>
+        <th style="width:25%">历史何时失效</th>
+        <th style="width:25%">失效信号</th>
+      </tr>
+      <tr>
+        <td>央行加息支撑本币</td>
+        <td class="cell-yellow">部分成立（7月维持5.75%不变，8月IDR反弹验证）</td>
+        <td>2013 Taper Tantrum、2026年6-7月</td>
+        <td>加息后IDR继续创新低</td>
+      </tr>
+      <tr>
+        <td>经常账户顺差 = 本币支撑</td>
+        <td class="cell-red">不成立（Q2赤字125亿美元创历史新高）</td>
+        <td>2011→2013印尼、2014 Brazil</td>
+        <td>顺差收窄速度 > 市场预期</td>
+      </tr>
+      <tr>
+        <td>风险溢价高 = 继续贬值</td>
+        <td class="cell-yellow">部分成立（高≠更高，8月已回落）</td>
+        <td>2016 Jokowi改革红利期</td>
+        <td>制度性改善信号出现</td>
+      </tr>
+      <tr>
+        <td>USD/CNY和USD/IDR正相关</td>
+        <td class="cell-yellow">常态成立，极端场景断裂</td>
+        <td>2022 Russia制裁、2015 CNY贬值</td>
+        <td>单一国家风险溢价 > 美元全局趋势</td>
+      </tr>
+      <tr>
+        <td>历史波动率可用于预测未来</td>
+        <td class="cell-red">不成立（央行换帅+Danantara变革期）</td>
+        <td>任何重大政策/制度突变</td>
+        <td>政策不确定性指数跳升</td>
+      </tr>
+    </table>
+
+    <!-- 量化聚合路径并入第一层 -->
+    <div class="section-subtitle">1.4 因子聚合路径：量化模型输出（基于当前权重结构）</div>
+    <p>以下不是"预测"，而是<strong>"如果当前因子权重结构不变（风险溢价85%、经常账户15%、利差0%），技术模型会把这种权重编码成什么路径"</strong>。这是因子模型的"压强计"，不是预言。</p>
+    <p style="font-size:12px; color:#666; margin-bottom:8px;">数据来源：Longforecast.com技术分析 + CoinCodex统计模型综合 | 更新日期：2026-08-24</p>
+
+    <table class="model-chart">
+      <tr>
+        <td>当前<br><span class="month">8月24日</span></td>
+        <td>9月底<br><span class="month">预测</span></td>
+        <td>10月底<br><span class="month">预测</span></td>
+        <td>11月底<br><span class="month">预测</span></td>
+        <td>12月底<br><span class="month">预测</span></td>
+        <td>2027年1月底<br><span class="month">预测</span></td>
+        <td>2027年2月底<br><span class="month">预测</span></td>
+      </tr>
+      <tr>
+        <td><span class="rate">17,710</span></td>
+        <td><span class="rate">17,950</span><br><span class="change">+1.4%</span></td>
+        <td><span class="rate">18,200</span><br><span class="change">+1.4%</span></td>
+        <td><span class="rate">18,450</span><br><span class="change">+1.4%</span></td>
+        <td><span class="rate">18,650</span><br><span class="change">+1.1%</span></td>
+        <td><span class="rate">18,850</span><br><span class="change">+1.1%</span></td>
+        <td><span class="rate">19,050</span><br><span class="change">+1.1%</span></td>
+      </tr>
+    </table>
+
+    <div class="highlight">
+      <strong>聚合路径解读（非预测，是模型编码结果）：</strong><br>
+      · 8月：IDR已从18,111反弹至17,710（反弹约2.2%），风险溢价因子边际缓和<br>
+      · 9-10月：因子权重重新平衡（风险溢价60% + 经常账户20% + 利差20%），缓慢贬值期恢复（月均+1.4%）<br>
+      · 11-12月：模型检测到"平台期"信号，贬值速度进一步放缓（月均+1.1%以下）<br>
+      · 年底综合区间<strong>18,450-18,850</strong>，较当前再贬值约4-6%<br>
+      · 隐含2026年全年贬值幅度：<strong>约10-12%</strong>（从年初~16,777计算），较此前估计的12-15%收窄<br>
+      · <strong>关键局限</strong>：该路径假设当前因子权重不变。若9月Danantara平台上线后执行超预期（好或坏），路径会瞬间偏移。
+    </div>
+  </div>
+
+  <!-- SECTION 2: 外部市场声音与情绪 -->
+  <div class="section">
+    <div class="section-title">第二层：外部市场声音与情绪（情绪先行）</div>
+    <p>以下不是对"市场观点"的汇总，而是对<strong>"谁在交易什么"</strong>的逆向工程。汇市不是投票机，是筹码交换的场所——而筹码分布往往领先于观点形成。</p>
+
+    <div class="section-subtitle">2.1 关键行为信号（筹码分布与动量分歧）</div>
+    <table>
+      <tr>
+        <th style="width:22%">信号来源</th>
+        <th style="width:20%">行为信号</th>
+        <th style="width:18%">隐含判断</th>
+        <th style="width:25%">时间锚点</th>
+        <th style="width:15%">置信度</th>
+      </tr>
+      <tr>
+        <td class="cell-bold">印尼央行BI</td>
+        <td class="cell-yellow">维持5.75%不变（7月RDG）+ 口头干预</td>
+        <td>政策观望期，高利率维持以稳定汇率</td>
+        <td>7/19 RDG</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">购汇限额收紧</td>
+        <td class="cell-red">5万→2.5万收紧（个人）、10亿→5000万（企业）</td>
+        <td>资本管制信号强化，但IDR已反弹表明管制部分生效</td>
+        <td>2026年8月起</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">美联储预期</td>
+        <td class="cell-yellow">美联储9月降息预期维持约55-60%</td>
+        <td>全球流动性边际改善，但非大幅放松</td>
+        <td>8月CME FedWatch</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">CDS市场</td>
+        <td class="cell-yellow">印尼5年期CDS约84bp（较7月峰值~120bp大幅回落）</td>
+        <td>主权风险溢价从高点回落，市场信心边际改善</td>
+        <td>8月24日</td>
+        <td class="cell-green">高</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">Danantara SWF</td>
+        <td class="cell-red">Global SWF Rating仅4%，透明度极低</td>
+        <td>国际投资者仍观望，但8月IDR反弹表明部分资本已回流</td>
+        <td>2026年Q2评估</td>
+        <td class="cell-red">高</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">镍出口数据</td>
+        <td class="cell-green">出口中国+69% YoY（28亿美元），价格+22%</td>
+        <td>结构性顺差来源仍在，但过度依赖单一市场</td>
+        <td>2026年H1</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">摩根士丹利</td>
+        <td class="cell-yellow">将印尼列为"高风险新兴市场"</td>
+        <td>国际投行风险偏好下降</td>
+        <td>2026年Q2报告</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">本地企业对冲</td>
+        <td class="cell-yellow">NDF购汇量上升（推测）</td>
+        <td>进口商主动对冲增加</td>
+        <td>2026年8月</td>
+        <td class="cell-yellow">低</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">2.2 行为信号矛盾点（市场到底在交易什么？）</div>
+    <div class="highlight">
+      <strong>矛盾一：央行"不贬值"承诺 vs 市场行动</strong><br>
+      BI代理行长Destry Damayanti在7月RDG后强调"BI拥有维护盾币稳定的工具和决心"。USD/IDR从8月初的18,111反弹至8月24日的17,710——市场确实在听。BI外汇储备从年初的约1450亿美元降至7月的约1380亿美元（估算），消耗了约70亿美元，但8月的反弹表明干预策略正在部分生效。不过弹药有限，如果Q3经常账户继续恶化，外汇储备可能进一步承压。<br><br>
+      <strong>矛盾二：镍出口大增 vs 经常账户恶化</strong><br>
+      镍出口中国+69% YoY是事实，但为什么Q2经常账户赤字高达125亿美元？因为进口增速（+18.69%）远超出口增速（+4.13%），且Q2石油进口激增（中东战争导致油价一度突破$119）。镍的"结构性顺差"被石油的"结构性逆差"和进口激增对冲掉了。市场更关注"净结果"而非"亮点"。8月油价回落至$90区间是IDR反弹的关键原因之一。<br><br>
+      <strong>矛盾三：美联储降息预期 vs 印尼政策空间</strong><br>
+      市场年初押注美联储9月降息 → 全球流动性放松 → EM货币受益。但8月CME FedWatch显示降息概率从75%退至约55%。更关键的是，即使美联储降息，如果印尼BI同时按兵不动（8月已验证），利差收窄反而对IDR不利（因为印尼-USD套息空间趋零）。"美联储降息利好IDR"这个简单叙事，在利差因子断裂的当下，可能完全失效。
+    </div>
+
+    <div class="section-subtitle">2.3 信息质量与可信度评级</div>
+    <table>
+      <tr>
+        <th style="width:25%">信息来源</th>
+        <th style="width:15%">评级</th>
+        <th style="width:35%">可信度理由</th>
+        <th style="width:25%">使用建议</th>
+      </tr>
+      <tr>
+        <td>印尼央行BI官方数据（汇率/利率）</td>
+        <td class="cell-green">5星</td>
+        <td>一手官方数据，但口头干预存在"预期管理"偏差</td>
+        <td>直接采用，但需区分"数据"和"表态"</td>
+      </tr>
+      <tr>
+        <td>BPS贸易数据</td>
+        <td class="cell-green">5星</td>
+        <td>官方统计，月度发布，滞后1-2个月</td>
+        <td>核心参考，注意"存量"vs"流量"区别</td>
+      </tr>
+      <tr>
+        <td>Reuters / Bloomberg市场数据</td>
+        <td class="cell-green">4-5星</td>
+        <td>实时报价，交叉验证通过</td>
+        <td>用于确认市场定价</td>
+      </tr>
+      <tr>
+        <td>投行报告（大摩/高盛等）</td>
+        <td class="cell-yellow">3-4星</td>
+        <td>基于公开数据，但存在"叙事偏见"</td>
+        <td>参考框架，不照搬结论</td>
+      </tr>
+      <tr>
+        <td>Local Media（Tempo等）</td>
+        <td class="cell-yellow">3星</td>
+        <td>一手本地信息，但可能夸大或缺乏全球视角</td>
+        <td>补充验证，不单独采信</td>
+      </tr>
+      <tr>
+        <td>Longforecast.com等量化模型</td>
+        <td class="cell-yellow">3星</td>
+        <td>纯技术/统计驱动，不考虑基本面突变</td>
+        <td>仅作为因子聚合的技术参考</td>
+      </tr>
+      <tr>
+        <td>社交媒体/论坛情绪</td>
+        <td class="cell-red">1-2星</td>
+        <td>情绪放大器，缺乏验证机制</td>
+        <td>仅作为极端情绪信号，不用于决策</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- SECTION 3: 情景分析 -->
+  <div class="section">
+    <div class="section-title">第三层：情景分析（USD/IDR直接标价）</div>
+    <p style="font-size:12px; color:#666; margin-bottom:10px;">以下情景不是"预测"，而是<strong>"如果某个因子组合发生，模型会输出什么"</strong>。每个情景附带触发条件和自我怀疑。</p>
+
+    <!-- 乐观情景 -->
+    <div class="scenario-box opt clearfix">
+      <div class="scenario-title">乐观情景：IDR/CNY（印尼特定因素缓和 + 全球流动性放松）</div>
+      <div class="scenario-prob opt">概率：15% | 月度波动范围：-2%~+1%</div>
+      <table style="margin:10px 0; font-size:12px;">
+        <tr><td style="width:18%; border:none; background:transparent; font-weight:600;">触发条件</td><td style="border:none; background:transparent;">1) 新行长Destry Damayanti快速建立市场信任，政策连贯性得到验证（如9月RDG明确沟通框架）<br>2) Danantara 9月综合出口监管平台上线后执行超预期透明，Global SWF Rating从4%提升至>20%<br>3) 贸易顺差恢复至>10亿/月，或单月顺差>15亿<br>4) 美联储9月降息50bp+，全球流动性显著放松<br>5) 中东地缘风险缓和（以色列推迟军事行动）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">USD/IDR路径</td><td style="border:none; background:transparent;">当前~17,710 → 9月17,800 → 10月17,500 → 11月17,300 → 年底17,000-17,300<br>隐含全年贬值幅度收窄至约1-3%（从当前计算）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">IDR/CNY路径</td><td style="border:none; background:transparent;">当前~2,525 → 年底~2,520（假设USD/CNY维持7.15）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">核心变量</td><td style="border:none; background:transparent;">Danantara执行评分、新行长首次政策声明措辞、贸易顺差恢复速度</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">自我怀疑</td><td style="border:none; background:transparent;">这个情景要求5个条件同时满足，概率极低。即使部分满足（如美联储降息但Danantara执行差），IDR也难大幅反弹。历史上EM货币在"换帅+制度变革"期的反弹需要6-12个月验证，短期（3个月内）不现实。</td></tr>
+      </table>
+    </div>
+
+    <!-- 基准情景 -->
+    <div class="scenario-box base clearfix">
+      <div class="scenario-title">基准情景：IDR/CNY（渐进贬值 + 区间波动）</div>
+      <div class="scenario-prob base">概率：55% | 月度波动范围：+0.5%~+2.5%</div>
+      <table style="margin:10px 0; font-size:12px;">
+        <tr><td style="width:18%; border:none; background:transparent; font-weight:600;">触发条件</td><td style="border:none; background:transparent;">1) BI维持5.75%不变，口头干预为主，9-10月RDG不加息或仅小幅加息25bp<br>2) Danantara 9月平台上线后执行"及格但不够透明"（Rating维持在5-10%）<br>3) 贸易逆差收窄但未能恢复顺差（单月赤字<5亿）<br>4) 美联储9月降息25bp，全球流动性边际改善但非大幅放松<br>5) 中东地缘维持"高度紧张但不爆发"</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">USD/IDR路径</td><td style="border:none; background:transparent;">当前~17,710 → 9月18,000 → 10月18,250 → 11月18,450 → 年底18,600-18,850<br>隐含全年贬值约10-12%（从年初~16,777计算）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">IDR/CNY路径</td><td style="border:none; background:transparent;">当前~2,525 → 年底~2,580-2,620（假设USD/CNY 7.15-7.20）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">核心变量</td><td style="border:none; background:transparent;">BI政策沟通质量、Danantara执行节奏、美联储降息幅度、中东局势</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">自我怀疑</td><td style="border:none; background:transparent;">"渐进贬值"假设了市场有序调整，但如果某个因子突变（如Danantara执行失败或中东战争爆发），路径会瞬间偏移。"渐进"是最难维持的状态——要么反弹，要么加速。</td></tr>
+      </table>
+    </div>
+
+    <!-- 悲观情景 -->
+    <div class="scenario-box pes clearfix">
+      <div class="scenario-title">悲观情景：IDR/CNY（尾部风险）</div>
+      <div class="scenario-prob pes">概率：30% | 月度波动范围：+3%~+6%</div>
+      <table style="margin:10px 0; font-size:12px;">
+        <tr><td style="width:18%; border:none; background:transparent; font-weight:600;">触发条件</td><td style="border:none; background:transparent;">1) Danantara 9月平台上线后执行混乱，引发国际投资者恐慌性撤资<br>2) 贸易逆差连续恶化（单月赤字>10亿，连续3个月）<br>3) 新行长政策摇摆，BI独立性受质疑<br>4) 中东地缘升级（以色列重启对伊朗战争，霍尔木兹海峡通航受阻）<br>5) 美联储推迟降息至2027年，全球流动性持续收紧<br>6) 镍价大幅下跌（中国需求放缓或LME供应增加）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">USD/IDR路径</td><td style="border:none; background:transparent;">当前~17,710 → 9月18,400 → 10月19,000 → 11月19,600 → 年底20,200-20,800<br>隐含全年贬值约20-24%（从年初~16,777计算）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">IDR/CNY路径</td><td style="border:none; background:transparent;">当前~2,525 → 年底~2,800-2,880（假设USD/CNY 7.20-7.30）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">核心变量</td><td style="border:none; background:transparent;">Danantara执行失败信号、连续大额贸易赤字、中东战争爆发、美联储政策转向</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">自我怀疑</td><td style="border:none; background:transparent;">悲观情景的概率被当前市场情绪高估。虽然"制度变革+地缘风险+央行换帅"是完美风暴组合，但印尼基本面（H1顺差35.8亿、镍出口强劲）提供了一定缓冲。悲观情景不是"基准"，是尾部。问题是：市场当前定价了多少悲观？从CDS 84bp看，定价了"担忧"但还没到"恐慌"。</td></tr>
+      </table>
+    </div>
+
+    <!-- 情景映射汇总表 -->
+    <div class="section-subtitle">3.2 情景映射汇总表（关键路径识别）</div>
+    <table>
+      <tr>
+        <th style="width:12%">情景</th>
+        <th style="width:12%">年底USD/IDR</th>
+        <th style="width:12%">年底IDR/CNY</th>
+        <th style="width:20%">核心触发</th>
+        <th style="width:20%">核心风险</th>
+        <th style="width:12%">概率</th>
+        <th style="width:12%">信息质量</th>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#27ae60;">乐观</td>
+        <td>17,000-17,300</td>
+        <td>~2,520</td>
+        <td>Danantara执行超预期 + 新行长获信任 + 美联储大幅降息</td>
+        <td>概率极低，需要多条件同时满足</td>
+        <td class="cell-green">15%</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#f39c12;">基准</td>
+        <td>18,600-18,850</td>
+        <td>~2,580-2,620</td>
+        <td>BI维持现状 + Danantara"及格" + 美联储小幅降息</td>
+        <td>"渐进"是最难维持的状态</td>
+        <td class="cell-yellow">55%</td>
+        <td class="cell-green">高</td>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#e94560;">悲观</td>
+        <td>20,200-20,800</td>
+        <td>~2,800-2,880</td>
+        <td>Danantara执行失败 + 连续赤字 + 中东战争</td>
+        <td>尾部风险，但当前市场情绪已部分定价</td>
+        <td class="cell-red">30%</td>
+        <td class="cell-yellow">中</td>
+      </tr>
+    </table>
+
+    <div class="warning">
+      <strong>情景路径的脆弱性：</strong><br>
+      基准情景（55%概率）假设了"渐进贬值"，但历史数据显示，EM货币在"央行换帅+制度变革+地缘风险"组合下，很少"渐进"。更可能的路径是：<strong>8月IDR已从18,111反弹至17,710（反弹约2.2%）→ 9-10月因某个催化事件选择方向（Danantara评估/中东/美联储）</strong>。也就是说，基准情景的"线性外推"可能是错误的，实际路径更可能是"区间震荡+方向选择"。
+    </div>
+  </div>
+
+  <!-- SECTION 3.5: 下半年重点风险事件及方向预判（本期新增） -->
+  <div class="section">
+    <div class="section-title">第三层·增补：2026年下半年重点风险事件及方向预判</div>
+    <p>以下不是日历，而是<strong>"可能改变因子权重结构的事件清单"</strong>。每个事件标注：① 时间窗口 ② 潜在影响方向 ③ 触发条件 ④ 当前市场定价程度。事件之间可能存在连锁反应。</p>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件一：Danantara综合出口监管平台正式上线（9月）</div>
+      <div class="event-date">时间窗口：2026年9月 | 当前市场定价程度：约60%已定价</div>
+      <div class="event-impact">潜在影响方向：双向极端</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>Danantara（原BPI Danantara）计划9月上线综合出口监管平台（CEP），整合14家部委的出口许可流程，目标是减少官僚主义和缩短审批时间。这是Jokowi政府"下游化"战略的核心制度配套。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发：</strong>平台上线后运行顺畅，审批时间从平均45天缩短至15天，Global SWF Rating从4%跃升至&gt;20%。国际投资者信心恢复，资本流入增加，IDR获得阶段性支撑。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发：</strong>平台技术故障频发，部委间数据不互通，企业投诉激增。评级维持&lt;10%，国际投资者加速撤资，IDR测试19,000心理关口。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>鉴于当前Global SWF Rating仅4%且Jokowi政府已处于"跛脚鸭"末期（2029年卸任），"及格但不够透明"是最可能结果（基准情景）。但需警惕：如果平台上线时出现重大技术故障或腐败丑闻，悲观触发概率可能从10%跳升至30%。</p>
+    </div>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件二：BI行长确认任命（9-10月）</div>
+      <div class="event-date">时间窗口：2026年9-10月 | 当前市场定价程度：约40%已定价</div>
+      <div class="event-impact">潜在影响方向：IDR方向性选择</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>Perry Warjiyo于7月25日突然离职，Destry Damayanti代理行长。市场对新行长人选高度关注——是延续Perry的鹰派路线，还是转向更宽松的政策？</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发：</strong>任命一位被市场认可的"技术官僚"（如Sri Mulyani系或国际机构背景），首次政策声明明确沟通框架（如通胀目标制+汇率区间管理双目标），9-10月RDG加息25-50bp配合前瞻性指引。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发：</strong>任命一位政治背景浓厚的人选（与执政联盟关联过强），政策声明含糊不清，BI独立性受质疑。市场恐慌，IDR测试19,500。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>印尼总统Jokowi在任期末期通常倾向于"稳定优先"，不太可能任命极端人选。更可能的是"中间派"——有技术能力但政治可控。这意味着"渐进恶化"而非"断崖式下跌"。但市场对新行长的"蜜月期"只有1-2个月，如果前两次RDG（9月/10月）未能展现决断力，信心将快速流失。</p>
+    </div>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件三：美联储9月利率决议（9月16-17日）</div>
+      <div class="event-date">时间窗口：2026年9月16-17日 | 当前市场定价程度：约70%已定价</div>
+      <div class="event-impact">潜在影响方向：全球流动性 → EM货币联动</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>美联储9月FOMC会议是全年最关键的政策节点之一。市场当前定价约55%概率降息25bp，15%概率降息50bp，30%概率维持不变。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发（对IDR）：</strong>美联储降息50bp + 点阵图显示2026年累计降息100bp+。全球流动性放松，套息交易回流EM，IDR获得外部支撑。即使BI按兵不动，"美元走弱"也能被动提振IDR。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发（对IDR）：</strong>美联储维持不变 + 鲍威尔鹰派措辞（"通胀仍高，不急于降息"）。全球流动性持续收紧，EM遭遇新一轮抛售，IDR被动承压。此时即使BI加息，也无力对抗美元强势。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>美联储9月决议是"外部变量"，印尼无法控制。但有一个关键细节：即使美联储降息，如果印尼BI同时按兵不动，利差收窄反而对IDR不利（套息交易不再有利可图）。因此，"美联储降息=IDR利好"的简单叙事在2026年可能失效——真正利好IDR的场景是：美联储降息 + BI同步加息（或至少维持高利率并口头强硬）。</p>
+    </div>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件四：中东地缘升级——以色列对伊朗军事行动（8-11月）</div>
+      <div class="event-date">时间窗口：2026年8月-11月 | 当前市场定价程度：约50%已定价</div>
+      <div class="event-impact">潜在影响方向：油价 → 印尼贸易平衡 → IDR</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>截至8月下旬，美伊和谈陷入僵局，以色列公开准备重启对伊朗的军事行动（可能针对核设施或军事目标）。霍尔木兹海峡通航风险是2026年全球能源市场最大的尾部风险。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发：</strong>美伊在第三方斡旋下达成临时协议，以色列推迟军事行动。油价回落至$85-90区间，印尼石油贸易赤字收窄，IDR获得喘息空间。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发：</strong>以色列对伊朗发动大规模空袭，伊朗封锁霍尔木兹海峡或攻击沙特油田。油价突破$130-150，印尼石油净进口身份导致贸易赤字急剧恶化（单月赤字可能&gt;20亿美元），IDR测试20,000。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>中东局势是当前最不可控的外部变量。印尼作为石油净进口国，在油价$90环境下压力已减轻（从6月的$105-110回落，6月油气赤字15.77亿美元）。但如果中东战争升级导致油价突破$130，"石油逆差"将压倒"镍顺差"，经常账户可能从"Q2巨额赤字"进一步恶化。这是下半年IDR最大的尾部风险来源之一。</p>
+    </div>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件五：BPS月度贸易数据（每月发布）</div>
+      <div class="event-date">时间窗口：每月中旬 | 当前市场定价程度：约30%已定价</div>
+      <div class="event-impact">潜在影响方向：经常账户因子权重调整</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>BPS每月发布的贸易平衡数据是验证"经常账户韧性"的最直接指标。5月赤字16.1亿（结束72个月顺差）、6月赤字4.5亿，已经敲响了警钟。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发：</strong>7-8月数据恢复顺差（&gt;5亿/月），或至少赤字收窄至&lt;3亿。市场重新定价经常账户因子权重（从15%回升至25-30%），IDR获得基本面支撑。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发：</strong>连续第三个月赤字（7月或8月），或单月赤字&gt;10亿。市场从"缓慢贬值"切换到"加速贬值"模式，因子模型中"经常账户韧性"权重归零，风险溢价权重升至95%。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>7-8月贸易数据将在9月中旬发布（滞后1-2个月），但市场会通过海关高频数据、航运指数等提前预判。如果高频信号显示进口仍强劲（+15%以上YoY）而出口乏力（&lt;5%），市场可能在官方数据发布前就开始重新定价。</p>
+    </div>
+
+    <div class="risk-event">
+      <div class="event-title">风险事件六：镍价与中国需求（持续监测）</div>
+      <div class="event-date">时间窗口：全年 | 当前市场定价程度：约20%已定价</div>
+      <div class="event-impact">潜在影响方向：印尼出口收入 → 贸易平衡</div>
+      <p style="font-size:12px; margin:6px 0 0;"><strong>事件描述：</strong>2026年H1镍出口中国+69% YoY（28亿美元），是印尼贸易顺差的核心支撑。但镍价和需求的脆弱性在于：① 中国电动车补贴退坡导致电池需求放缓 ② LME镍库存增加 ③ 印尼本地冶炼产能过剩。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>乐观触发：</strong>中国新能源汽车销量持续超预期（+30% YoY），三元电池路线（高镍）市场份额回升。镍价稳定在$16,000-18,000/吨（当前约$16,940），印尼出口收入维持高位。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>悲观触发：</strong>中国电动车销量增速放缓至&lt;15%，磷酸铁锂（LFP）路线进一步挤压三元电池份额。镍价跌破$15,000/吨，印尼镍出口收入下降20-30%。</p>
+      <p style="font-size:12px; margin:4px 0 0;"><strong>方向预判：</strong>镍是当前印尼贸易平衡中唯一的"结构性亮点"，但也是最大的"单一依赖风险"。如果镍出口收入下降20%，相当于印尼月度出口减少约4-5亿美元——这足以将"小幅赤字"推向"大额赤字"。</p>
+    </div>
+
+    <div class="section-subtitle">3.5 下半年风险事件连锁反应图谱</div>
+    <div class="highlight">
+      <strong>连锁反应一：Danantara失败 → 国际撤资 → CDS跳升 → IDR加速贬值</strong><br>
+      如果Danantara 9月平台上线后执行混乱，国际投资者可能不只是"观望"，而是"撤离"。印尼CDS可能从85bp跳升至120bp+，触发算法交易抛售，IDR在1-2周内测试19,500。此连锁反应的概率：约15%。<br><br>
+      <strong>连锁反应二：中东战争 → 油价$130+ → 印尼双赤字恶化 → BI被迫大幅加息</strong><br>
+      如果以色列攻击伊朗导致霍尔木兹海峡关闭，油价可能突破$130（从当前$90水平）。印尼石油净进口身份意味着每月额外负担约8-12亿美元（较当前）。BI可能被迫在10-11月RDG中紧急加息75-100bp至6.50-6.75%——但这会伤害增长（Q1 GDP 5.61%可能骤降至&lt;4%）。加息→增长放缓→资本外流→IDR继续贬值。这是一个恶性循环。此连锁反应的概率：约10%。<br><br>
+      <strong>连锁反应三：美联储维持高利率 + 印尼BI按兵不动 → 利差趋零 → 套息交易平仓</strong><br>
+      如果美联储9月不降息（维持5.25-5.50%）且BI维持5.75%，印尼-USD利差趋零。历史上，当EM货币套息空间&lt;1%时，套息交易大规模平仓。IDR可能遭遇被动抛售，即使基本面没有恶化。此连锁反应的概率：约20%。
+    </div>
+
+    <div class="warning">
+      <strong>方向预判总结（下半年IDR整体方向）：</strong><br>
+      · <strong>基准方向</strong>：缓慢贬值（月均+1.0-1.5%），年底USD/IDR区间18,450-18,850<br>
+      · <strong>上行风险（贬值加速）</strong>：Danantara执行失败、中东战争爆发、连续大额贸易赤字——任一事件发生都可能使年底区间上移至19,500-20,500<br>
+      · <strong>下行风险（贬值放缓/反弹）</strong>：新行长获信任、Danantara超预期、美联储大幅降息、油价持续回落——需要多条件同时满足，概率较低，但如果实现年底区间可能下移至17,000-17,500<br>
+      · <strong>关键时间窗口</strong>：9月（Danantara上线+美联储决议+BI行长动向）、10-11月（中东局势+贸易数据验证）、12月（年底头寸调整+2027年预期形成）
+    </div>
+  </div>
+
+  <!-- SECTION 4: 纯技术分析 -->
+  <div class="section">
+    <div class="section-title">第四层：纯技术分析（USD/IDR与IDR/CNY）</div>
+    <p>以下不输出"预测"，而是输出<strong>"当前技术状态"</strong>。技术分析不是占卜，是标记市场当前的"惯性方向"和"阻力/支撑位置"。当技术信号与基本面因子矛盾时，优先相信基本面——但技术信号可以告诉你"市场当前在交易什么"。</p>
+
+    <div class="tech-panel">
+      <div class="tech-title">USD/IDR 技术面板</div>
+      <table style="font-size:12px; margin:8px 0;">
+        <tr><td style="width:30%; border:none; background:transparent; font-weight:600;">当前价位</td><td style="border:none; background:transparent;"><span class="tech-number">~17,710</span>（8/24收盘，从8/8的18,111反弹约2.2%）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">历史低点</td><td style="border:none; background:transparent;">18,209（2026/6/9）· 18,111（2026/8/8）— 8月中旬后IDR从历史低位区域反弹</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">关键支撑</td><td style="border:none; background:transparent;">17,500（心理关口）· 17,300（8月低点）· 17,000（BI重度干预区间）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">关键阻力</td><td style="border:none; background:transparent;">17,800（6月低点反弹位）· 18,000（心理关口）· 18,200（8月高点）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">趋势判断</td><td style="border:none; background:transparent; color:#c0392b; font-weight:600;">长期下降通道（贬值趋势），但8月出现企稳反弹信号，短期进入区间震荡</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">动量指标</td><td style="border:none; background:transparent;">RSI（推测）：约40-45（从超卖区域回升）· MACD：可能出现 bullish divergence（底背离）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">波动率</td><td style="border:none; background:transparent;">年化约15-18%（高于历史均值12%），反映政策不确定性</td></tr>
+      </table>
+    </div>
+
+    <div class="tech-panel">
+      <div class="tech-title">IDR/CNY 技术面板（交叉汇率推算）</div>
+      <table style="font-size:12px; margin:8px 0;">
+        <tr><td style="width:30%; border:none; background:transparent; font-weight:600;">当前价位</td><td style="border:none; background:transparent;"><span class="tech-number">~2,525</span>（= 17,710 / 7.01，假设USD/CNY 7.01）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">年初价位</td><td style="border:none; background:transparent;">~2,395（= 16,777 / 7.01）— 年内已贬值约5.4%（从年初计算，但8月已反弹约2.2%）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">关键支撑</td><td style="border:none; background:transparent;">2,480（心理关口）· 2,450（6月低点推算）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">关键阻力</td><td style="border:none; background:transparent;">2,550（已突破）· 2,600（年底基准情景推算）· 2,700（悲观情景推算）</td></tr>
+        <tr><td style="border:none; background:transparent; font-weight:600;">USD/CNY联动</td><td style="border:none; background:transparent;">当前USD/CNY约7.01。如果USD/CNY升至7.15-7.20（中国央行允许渐进贬值），IDR/CNY年底可达2,650-2,690。如果USD/CNY突破7.0（人民币升值），IDR/CNY被动上升。</td></tr>
+      </table>
+    </div>
+
+    <div class="section-subtitle">4.2 技术信号与基本面因子的矛盾点</div>
+    <div class="highlight">
+      <strong>矛盾：技术超卖 vs 基本面继续恶化</strong><br>
+      USD/IDR RSI约35-40，接近超卖区域。按照纯技术逻辑，超卖意味着"反弹概率增加"。但基本面因子（风险溢价85%、央行换帅、Danantara不确定性）指向继续贬值。历史上，EM货币在"政策不确定性+制度变革"期，技术超卖可能持续数月（如2013年印尼RSI在30以下维持4个月）。<br><br>
+      <strong>结论：技术信号在当前环境下可信度降低。</strong>当基本面因子中"风险溢价"权重&gt;80%时，技术分析的参考价值从"高"降至"中低"。技术信号更适合用于"择时"（如短期反弹入场/出场点），而非"方向判断"。
+    </div>
+  </div>
+
+  <!-- SECTION 5: 对冲建议（通用版，剔除企业敞口） -->
+  <div class="section">
+    <div class="section-title">第五层：对冲建议（通用操作视角）</div>
+    <p>以下不针对任何特定企业的敞口结构，而是提供<strong>USD/IDR敞口管理的通用框架</strong>。读者需根据自身敞口方向（Long/Short IDR）、期限结构、风险承受能力，将框架适配到具体场景。</p>
+
+    <div class="section-subtitle">5.1 核心原则</div>
+    <table>
+      <tr>
+        <th style="width:20%">原则</th>
+        <th style="width:40%">说明</th>
+        <th style="width:40%">当前适用性</th>
+      </tr>
+      <tr>
+        <td class="cell-bold">原则一：区分"方向性敞口"和"自然对冲"</td>
+        <td>如果IDR收入/成本已自然匹配（如IDR收入覆盖IDR成本），无需额外对冲。只有净敞口（如USD负债+IDR收入）才需要主动管理。</td>
+        <td>当前IDR波动率约15-18%，高于历史均值。自然对冲的吸引力上升，但前提是企业有IDR收入流。</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">原则二：匹配敞口方向</td>
+        <td>Long IDR敞口（IDR资产/收入）→ 担心IDR贬值 → 需要"买USD卖IDR"对冲。Short IDR敞口（IDR负债/成本）→ 担心IDR升值 → 需要"卖USD买IDR"对冲。</td>
+        <td>当前IDR处于历史低位，Short IDR敞口（IDR负债）的风险较低，但Long IDR敞口（IDR资产）面临持续贬值压力。</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">原则三：期限分层</td>
+        <td>不要在一个期限点上集中对冲。将敞口按到期日分层（3个月/6个月/12个月），逐层覆盖。避免"全有或全无"的择时风险。</td>
+        <td>当前市场处于"慢贬+突发跳跃"模式，期限分层可以有效平滑波动，降低单次择时错误的影响。</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">原则四：工具组合</td>
+        <td>单一工具（如远期）无法应对所有场景。组合使用：远期（基础覆盖）+ 期权（尾部保护）+ 自然对冲（结构性降低）。</td>
+        <td>当前期权隐含波动率可能处于高位（因政策不确定性），买入期权的成本较高。可考虑"远期+零成本期权组合"（如Risk Reversal）。</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">5.2 对冲工具优先级（通用框架）</div>
+    <table>
+      <tr>
+        <th style="width:15%">工具</th>
+        <th style="width:20%">适用场景</th>
+        <th style="width:20%">当前成本估算</th>
+        <th style="width:25%">优缺点</th>
+        <th style="width:20%">推荐度</th>
+      </tr>
+      <tr>
+        <td class="cell-bold">IDR远期（DF）</td>
+        <td>基础覆盖，锁定未来汇率</td>
+        <td>DF 4.50% / LF 6.25%，套息空间约175bp</td>
+        <td>优点：简单、透明、无额外费用。缺点：无灵活性，需支付远期点差。</td>
+        <td class="cell-green">首选</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">USD/IDR NDF</td>
+        <td>离岸对冲，灵活度高</td>
+        <td>NDF点差约200-300bp（因风险溢价）</td>
+        <td>优点：离岸操作，不受印尼本地管制限制。缺点：成本高于DF，流动性较差。</td>
+        <td class="cell-yellow">次选</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">买入USD Call / IDR Put</td>
+        <td>尾部保护，防范IDR大幅贬值</td>
+        <td>ATM期权费约2.5-3.5%（年化，因高波动率）</td>
+        <td>优点：有限风险（期权费），无限收益潜力。缺点：成本高，时间价值衰减。</td>
+        <td class="cell-yellow">高成本</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">Risk Reversal</td>
+        <td>零成本（或低成本）获取方向性保护</td>
+        <td>接近零成本（卖出OTM Call收入抵消买入OTM Put成本）</td>
+        <td>优点：低成本。缺点：放弃了极端有利方向的收益（如IDR大幅反弹）。</td>
+        <td class="cell-yellow">平衡型</td>
+      </tr>
+      <tr>
+        <td class="cell-bold">跨币种互换（CCS）</td>
+        <td>长期敞口（&gt;1年），利率+汇率双对冲</td>
+        <td>取决于利率差和信用溢价</td>
+        <td>优点：长期锁定，利率风险一并管理。缺点：结构复杂，交易对手风险。</td>
+        <td class="cell-yellow">长期适用</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">5.3 分情景对冲策略（通用）</div>
+    <table>
+      <tr>
+        <th style="width:15%">情景</th>
+        <th style="width:25%">策略核心</th>
+        <th style="width:30%">工具组合</th>
+        <th style="width:30%">关键操作</th>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#27ae60;">乐观<br>(15%)</td>
+        <td>减少对冲比例，保留上行收益</td>
+        <td>远期覆盖50% + 买入IDR Call（防范反弹踏空）</td>
+        <td>在17,800-18,000区间逐步减仓对冲头寸，保留自然敞口享受IDR反弹。</td>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#f39c12;">基准<br>(55%)</td>
+        <td>分层对冲，动态调整</td>
+        <td>远期覆盖60-70% + Risk Reversal（零成本保护尾部）</td>
+        <td>3个月层覆盖70%，6个月层覆盖60%，12个月层覆盖50%。每月滚动调整。</td>
+      </tr>
+      <tr>
+        <td class="cell-bold" style="color:#e94560;">悲观<br>(30%)</td>
+        <td>高比例覆盖，买入极端保护</td>
+        <td>远期覆盖80-90% + 买入USD Call（Strike 19,000）</td>
+        <td>在17,700以上加速覆盖，买入6个月USD Call作为"灾难保险"。成本约3-4%，但可防范&gt;15%的尾部贬值。</td>
+      </tr>
+    </table>
+
+    <div class="section-subtitle">5.4 当前操作建议（基于2026年8月数据）</div>
+    <div class="warning">
+      <strong>对于Long IDR敞口（IDR资产/收入，担心贬值）：</strong><br>
+      · <strong>立即行动</strong>：如果当前未对冲或对冲比例&lt;50%，建议在17,700-17,800区间加速覆盖至60-70%。IDR已从8月初的18,111反弹，但历史低位区域不一定是底部——在"央行换帅+制度变革"期，低位可以更低。<br>
+      · <strong>工具选择</strong>：优先IDR远期（DF），成本透明。如果本地银行DF额度受限，考虑NDF或CCS。<br>
+      · <strong>期限结构</strong>：3个月70% + 6个月60% + 12个月50%。不要集中在单一点位。<br>
+      · <strong>尾部保护</strong>：买入6个月USD Call（Strike 18,500），成本约3%，作为"灾难保险"。如果悲观情景发生（年底20,800），该期权可对冲约15%的额外损失。<br><br>
+      <strong>对于Short IDR敞口（IDR负债/成本，担心升值）：</strong><br>
+      · <strong>当前风险较低</strong>：IDR已从历史低位反弹至17,710，Short IDR敞口面临的是"升值风险"——但当前基本面（风险溢价仍高+经常账户恶化）指向继续贬值或低位震荡。<br>
+      · <strong>建议</strong>：保持低对冲比例（20-30%），或完全不对冲。如果IDR意外反弹至17,300以下，再考虑增加对冲。<br>
+      · <strong>例外</strong>：如果负债期限很短（&lt;3个月）且IDR波动影响现金流稳定性，可买入IDR Call（Strike 17,300）作为低成本保护。
+    </div>
+
+    <div class="highlight">
+      <strong>重要提示：</strong><br>
+      以上建议为通用框架，不针对任何特定企业或敞口结构。实际操作前，请根据自身敞口方向、期限结构、风险承受能力、会计准则（如IFRS 9套期会计要求）进行适配。建议咨询专业的外汇风险管理顾问或银行交易部门。
+    </div>
+  </div>
+
+  <!-- FOOTER: 数据时效声明 -->
+  <div class="footer">
+    <div class="section-title" style="border-left-color:#555; color:#555;">数据时效声明与免责声明</div>
+    <table>
+      <tr>
+        <th style="width:25%">数据类别</th>
+        <th style="width:20%">最新日期</th>
+        <th style="width:20%">更新频率</th>
+        <th style="width:15%">状态</th>
+        <th style="width:20%">数据来源</th>
+      </tr>
+      <tr>
+        <td>USD/IDR即期汇率</td>
+        <td>2026-08-24</td>
+        <td>实时</td>
+        <td class="cell-green">当日</td>
+        <td>BI、Reuters、Tempo</td>
+      </tr>
+      <tr>
+        <td>BI Rate</td>
+        <td>2026-07-19（7月RDG维持5.75%不变）</td>
+        <td>月度（RDG）</td>
+        <td class="cell-green">最新</td>
+        <td>印尼央行BI</td>
+      </tr>
+      <tr>
+        <td>经常账户数据</td>
+        <td>2026-06-30（Q2赤字125亿美元，历史新高）</td>
+        <td>季度（BPS）</td>
+        <td class="cell-red">滞后但关键</td>
+        <td>BPS印尼统计局</td>
+      </tr>
+      <tr>
+        <td>贸易平衡数据</td>
+        <td>2026-06-30（H1汇总）</td>
+        <td>月度（BPS）</td>
+        <td class="cell-yellow">滞后1-2月</td>
+        <td>BPS印尼统计局</td>
+      </tr>
+      <tr>
+        <td>CDS主权风险溢价</td>
+        <td>2026-08-24（约84bp，较7月峰值~120bp大幅回落）</td>
+        <td>实时</td>
+        <td class="cell-green">当日</td>
+        <td>World Government Bonds、CEIC</td>
+      </tr>
+      <tr>
+        <td>镍出口数据</td>
+        <td>2026-06-30（H1）</td>
+        <td>月度</td>
+        <td class="cell-yellow">滞后1-2月</td>
+        <td>印尼海关总署</td>
+      </tr>
+      <tr>
+        <td>美联储利率预期</td>
+        <td>2026-08-24</td>
+        <td>实时（CME FedWatch）</td>
+        <td class="cell-green">当日</td>
+        <td>CME Group</td>
+      </tr>
+      <tr>
+        <td>量化模型路径</td>
+        <td>2026-08-24</td>
+        <td>日度更新</td>
+        <td class="cell-yellow">模型推断</td>
+        <td>Longforecast.com、CoinCodex</td>
+      </tr>
+      <tr>
+        <td>期权隐含波动率</td>
+        <td>—</td>
+        <td>—</td>
+        <td class="cell-red">未直接获取</td>
+        <td>基于历史波动率推断</td>
+      </tr>
+    </table>
+
+    <p style="margin-top:14px; font-size:11px; color:#999;">
+      <strong>免责声明：</strong>本报告仅供信息参考，不构成投资建议。报告中的情景分析、技术路径和对冲建议基于公开数据和模型推断，存在不确定性和局限性。读者应根据自身情况独立判断，并在必要时咨询专业顾问。过往表现不代表未来结果。汇率市场受多种因素影响，实际走势可能与报告中的任何情景存在显著差异。
+    </p>
+    <p style="font-size:11px; color:#999;">
+      <strong>方法论说明：</strong>本报告采用5层分析框架（因子诊断→外部声音→情景映射→技术分析→对冲建议）。因子权重基于当前市场状态动态调整，非固定。情景概率为定性判断，非精确统计。技术分析基于历史价格和趋势推断，不考虑基本面突变。
+    </p>
+    <p style="font-size:11px; color:#999;">
+      <strong>质量评级说明：</strong>四星（★★★★☆）= 主要数据已交叉验证（USD/IDR经Yahoo Finance、BCA e-Rate、Revolut三源确认；Q2经常账户赤字125亿美元为关键新增数据），但期权数据为推断值（非直接银行间报价），量化模型路径存在局限性。报告已尽力标注数据来源和时效性，但读者仍应自行核实关键数据。
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
